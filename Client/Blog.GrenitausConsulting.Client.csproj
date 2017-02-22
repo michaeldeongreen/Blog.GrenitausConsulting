@@ -75,69 +75,26 @@
     <Content Include="src\app\footer\footer.component.html" />
     <Content Include="src\app\header\header.component.css" />
     <Content Include="src\app\header\header.component.html" />
-    <Content Include="src\app\paging\paging.component.css" />
-    <Content Include="src\app\paging\paging.component.html" />
+    <Content Include="src\app\home\home.component.css" />
+    <Content Include="src\app\home\home.component.html" />
     <Content Include="src\app\search\search.component.css" />
     <Content Include="src\app\search\search.component.html" />
     <Content Include="src\app\side-widget\side-widget.component.css" />
     <Content Include="src\app\side-widget\side-widget.component.html" />
-    <Content Include="src\assets\.gitkeep" />
-    <Content Include="src\assets\bootstrap\css\bootstrap-theme.css" />
-    <Content Include="src\assets\bootstrap\css\bootstrap-theme.min.css" />
-    <Content Include="src\assets\bootstrap\css\bootstrap.css" />
-    <Content Include="src\assets\bootstrap\css\bootstrap.min.css" />
-    <Content Include="src\assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="src\assets\bootstrap\js\bootstrap.js" />
-    <Content Include="src\assets\bootstrap\js\bootstrap.min.js" />
-    <Content Include="src\assets\bootstrap\js\min\bootstrap-min.js" />
-    <Content Include="src\assets\bootstrap\js\min\bootstrap.min-min.js" />
-    <Content Include="src\assets\bootstrap\js\npm.js" />
-    <Content Include="src\assets\css\admin.css" />
-    <Content Include="src\assets\css\hover.css" />
-    <Content Include="src\assets\css\hover.min.css" />
-    <Content Include="src\assets\css\jquery.flex-images.css" />
-    <Content Include="src\assets\css\main.css" />
-    <Content Include="src\assets\css\nivo-default\arrows.png" />
-    <Content Include="src\assets\css\nivo-default\bullets.png" />
-    <Content Include="src\assets\css\nivo-default\default.css" />
-    <Content Include="src\assets\css\nivo-default\loading.gif" />
-    <Content Include="src\assets\css\nivo-slider.css" />
-    <Content Include="src\assets\font-awesome\css\font-awesome.css" />
-    <Content Include="src\assets\font-awesome\css\font-awesome.min.css" />
-    <Content Include="src\assets\font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="src\assets\images\cropped-header_dark-1024x384.jpg" />
-    <Content Include="src\assets\images\fancy_deboss.png" />
-    <Content Include="src\assets\images\header-bg-overlay.png" />
-    <Content Include="src\assets\images\header.jpg" />
-    <Content Include="src\assets\images\nav.png" />
-    <Content Include="src\assets\images\options.png" />
-    <Content Include="src\assets\images\overlay.png" />
-    <Content Include="src\assets\images\placeholder2.jpg" />
-    <Content Include="src\assets\images\shadow.png" />
-    <Content Include="src\assets\js\custom.js" />
-    <Content Include="src\assets\js\customizer.js" />
-    <Content Include="src\assets\js\external.js" />
-    <Content Include="src\assets\js\jquery-migrate.min.js" />
-    <Content Include="src\assets\js\jquery.flex-images.js" />
+    <Content Include="src\assets\css\blog-home.css" />
+    <Content Include="src\assets\css\bootstrap.css" />
+    <Content Include="src\assets\css\bootstrap.min.css" />
+    <Content Include="src\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="src\assets\js\bootstrap.js" />
+    <Content Include="src\assets\js\bootstrap.min.js" />
     <Content Include="src\assets\js\jquery.js" />
-    <Content Include="src\assets\js\jquery.mobilemenu.js" />
-    <Content Include="src\assets\js\jquery.nivo.slider.js" />
-    <Content Include="src\assets\js\jquery.slicknav.js" />
-    <Content Include="src\assets\js\navigation.js" />
-    <Content Include="src\assets\js\skip-link-focus-fix.js" />
     <Content Include="src\tsconfig.json" />
     <Content Include=".angular-cli.json" />
     <Content Include="package.json" />
-    <Content Include="src\assets\bootstrap\css\bootstrap-theme.css.map" />
-    <Content Include="src\assets\bootstrap\css\bootstrap.css.map" />
-    <Content Include="src\assets\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="src\assets\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="src\assets\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="src\assets\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="src\assets\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="src\assets\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="src\assets\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <Content Include="src\assets\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="src\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="src\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="src\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="src\assets\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -156,6 +113,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="src\app\app-routing\app-routing.module.ts" />
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
@@ -165,8 +123,8 @@
     <TypeScriptCompile Include="src\app\footer\footer.component.ts" />
     <TypeScriptCompile Include="src\app\header\header.component.spec.ts" />
     <TypeScriptCompile Include="src\app\header\header.component.ts" />
-    <TypeScriptCompile Include="src\app\paging\paging.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\paging\paging.component.ts" />
+    <TypeScriptCompile Include="src\app\home\home.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\home\home.component.ts" />
     <TypeScriptCompile Include="src\app\search\search.component.spec.ts" />
     <TypeScriptCompile Include="src\app\search\search.component.ts" />
     <TypeScriptCompile Include="src\app\side-widget\side-widget.component.spec.ts" />
@@ -179,6 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\assets\images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
