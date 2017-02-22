@@ -6,9 +6,9 @@
                 <small>Secondary Text</small>
             </h1>
 
-            <div *ngFor="let item of collection | paginate: { itemsPerPage: 5, currentPage: p }">
+            <div *ngFor="let meal of asyncMeals | async | paginate: { id: 'server', itemsPerPage: 5, currentPage: p, totalItems: total }">
                 <h2>
-                    <a href="#">Blog Post Title {{item}}</a>
+                    <a href="#">Blog Post Title {{meal}}</a>
                 </h2>
                 <p class="lead">
                     by <a href="index.php">Start Bootstrap</a>
@@ -23,7 +23,8 @@
         </div>
     </div>
     <br />
-    <div class="row">
-        <pagination-controls (pageChange)="p = $event" #api></pagination-controls>
+    <div class="has-text-centered">
+            <div class="spinner" [ngClass]="{ 'hidden': !loading }"></div>
+            <pagination-controls (pageChange)="getPage($event)" id="server"></pagination-controls>
     </div>
 </div>
