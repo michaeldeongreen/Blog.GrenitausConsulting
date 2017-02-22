@@ -75,6 +75,8 @@
     <Content Include="src\app\footer\footer.component.html" />
     <Content Include="src\app\header\header.component.css" />
     <Content Include="src\app\header\header.component.html" />
+    <Content Include="src\app\paging\paging.component.css" />
+    <Content Include="src\app\paging\paging.component.html" />
     <Content Include="src\app\search\search.component.css" />
     <Content Include="src\app\search\search.component.html" />
     <Content Include="src\app\side-widget\side-widget.component.css" />
@@ -163,6 +165,8 @@
     <TypeScriptCompile Include="src\app\footer\footer.component.ts" />
     <TypeScriptCompile Include="src\app\header\header.component.spec.ts" />
     <TypeScriptCompile Include="src\app\header\header.component.ts" />
+    <TypeScriptCompile Include="src\app\paging\paging.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\paging\paging.component.ts" />
     <TypeScriptCompile Include="src\app\search\search.component.spec.ts" />
     <TypeScriptCompile Include="src\app\search\search.component.ts" />
     <TypeScriptCompile Include="src\app\side-widget\side-widget.component.spec.ts" />
