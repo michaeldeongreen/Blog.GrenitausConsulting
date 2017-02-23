@@ -17,13 +17,11 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
         public PostsController(IPagingService pagingService)
         {
             _pagingService = StructuremapMvc.StructureMapDependencyScope.GetInstance<IPagingService>();
-            var response = _pagingService.Get(1, 10, Build());
-            var t = "";
         }
 
         public PagedResponse Get()
         {
-            return new PagedResponse() { Total = 100, Posts = Build() };
+            return _pagingService.Get(1, 10, Build());
         }
 
         private IEnumerable<Post> Build()
