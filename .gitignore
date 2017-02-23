@@ -2,10 +2,23 @@
 
 *.map
 *.user
+.vs
+
+/WebApi/.vs
+/WebApi/src/.vs
+/WebApi/src/packages
+/WebApi/src/Blog.GrenitausConsulting.Web.Api/bin
+/WebApi/src/Blog.GrenitausConsulting.Web.Api/.vs
+/WebApi/src/Blog.GrenitausConsulting.Web.Api/obj
+/WebApi/src/Blog.GrenitausConsulting.Domain/bin
+/WebApi/src/Blog.GrenitausConsulting.Domain/obj
+/WebApi/src/Blog.GrenitausConsulting.Domain/.vs
 
 /Client/.vs
 /Client/bin
 /Client/obj
+/Client/packages
+
 
 /Client/src/*.js
 /Client/src/app/**/*.js
