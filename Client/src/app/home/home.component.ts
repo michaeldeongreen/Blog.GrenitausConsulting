@@ -8,6 +8,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/delay';
 import { PagerService } from '../pager.service';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -19,7 +20,10 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 })
 export class HomeComponent implements OnInit {
 
-    constructor(private http: Http, private httpService: HttpService, private pagerService: PagerService) {
+    constructor(private http: Http,
+        private httpService: HttpService,
+        private pagerService: PagerService,
+        private route: ActivatedRoute) {
     }
 
     // array of all items to be paged
@@ -31,28 +35,20 @@ export class HomeComponent implements OnInit {
     // paged items
     pagedItems: any[];
 
-
+    pageId: number;
 
     ngOnInit() {
-        this.httpService.getPosts(1)
+
+        let pageId = Number(this.route.snapshot.params['id']) ? Number(this.route.snapshot.params['id']): 1;
+
+        this.httpService.getPosts(pageId)
             .subscribe(data => {
                 // set items to json response
                 this.allItems = data.posts;
 
                 // initialize to page 1
-                this.setPage(1);
+                this.setPage(pageId);
             });
-
-        // get dummy data
-        /*this.http.get('http://localhost:49964/api/posts')
-            .map((response: Response) => response.json())
-            .subscribe(data => {
-                // set items to json response
-                this.allItems = data.posts;
-
-                // initialize to page 1
-                this.setPage(1);
-            });*/
     }
 
     setPage(page: number) {

@@ -29,7 +29,7 @@
             <a (click)="setPage(1)" [routerLink]="['/home', 1]">First</a>
         </li>
         <li [ngClass]="{disabled:pager.currentPage === 1}">
-            <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+            <a (click)="setPage(pager.currentPage - 1)" [routerLink]="['/home', pager.currentPage - 1]">Previous</a>
         </li>
         <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
             <a (click)="setPage(page)" [routerLink]="['/home', page]">{{page}}</a>
