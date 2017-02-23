@@ -11,13 +11,13 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class HttpService {
-    private baseUrl = 'http://localhost:49964/api/posts';
+    private baseUrl = 'http://localhost:49529/api';
     private headers = new Headers({ 'Content-Type': 'application/json' });
 
     constructor(private http: Http) { }
 
     public getPosts(page: Number): any {
-        return this.http.get(this.baseUrl)
+        return this.http.get(`${this.baseUrl}/posts/page/${page}`)
             .map((response: Response) => response.json())
             .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
     }

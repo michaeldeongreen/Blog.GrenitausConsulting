@@ -12,7 +12,12 @@ namespace Blog.GrenitausConsulting.Services
     {
         public PagedResponse Get(int pageNumber, int pageSize, IEnumerable<Post> posts)
         {
-            return new PagedResponse() { Total = posts.Count(), Posts = posts.Skip(pageNumber - 1).Take(pageSize).OrderByDescending(p => p.PostDate) };
+            if (pageNumber == 0)
+                pageNumber = 1;
+
+            int skip = (pageNumber - 1) * pageSize;
+
+            return new PagedResponse() { Total = posts.Count(), Posts = posts.Skip(skip).Take(pageSize).OrderByDescending(p => p.PostDate) };
         }
     }
 }

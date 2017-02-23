@@ -22,29 +22,18 @@ export class HomeComponent implements OnInit {
         private route: ActivatedRoute) {
     }
 
-    // array of all items to be paged
-    private allItems: Post[];
-
     // pager object
     pager: any = {};
 
     // paged items
     pagedItems: Post[];
 
-    pageId: number;
+    pageNumber: number;
 
     ngOnInit() {
 
-        let pageId = Number(this.route.snapshot.params['id']) ? Number(this.route.snapshot.params['id']): 1;
-
-        this.httpService.getPosts(pageId)
-            .subscribe(data => {
-                // set items to json response
-                this.allItems = data.posts;
-
-                // initialize to page 1
-                this.setPage(pageId);
-            });
+        let pageNumber = Number(this.route.snapshot.params['id']) ? Number(this.route.snapshot.params['id']): 1;
+        this.setPage(pageNumber);
     }
 
     setPage(page: number) {
@@ -52,11 +41,14 @@ export class HomeComponent implements OnInit {
             return;
         }
 
-        // get pager object from service
-        this.pager = this.pagerService.getPager(this.allItems.length, page);
+        this.httpService.getPosts(page)
+            .subscribe(data => {
+                // get pager object from service
+                this.pager = this.pagerService.getPager(data.total, page);
 
-        // get current page of items
-        this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
+                // get current page of items
+                this.pagedItems = data.posts;
+            });
     }
 }
 

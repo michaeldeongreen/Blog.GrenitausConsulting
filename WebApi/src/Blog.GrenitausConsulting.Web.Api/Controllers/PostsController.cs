@@ -16,12 +16,13 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
 
         public PostsController(IPagingService pagingService)
         {
-            _pagingService = StructuremapMvc.StructureMapDependencyScope.GetInstance<IPagingService>();
+            _pagingService = pagingService;
         }
 
-        public PagedResponse Get()
+        [Route("api/posts/page/{pageNumber}") ]
+        public PagedResponse Get(int pageNumber)
         {
-            return _pagingService.Get(1, 10, Build());
+            return _pagingService.Get(pageNumber, 10, Build());
         }
 
         private IEnumerable<Post> Build()
@@ -33,7 +34,7 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
                 {
                     Id = i,
                     Author = "Michael D. Green",
-                    PostDate = DateTime.Now.AddDays(i),
+                    PostDate = DateTime.Now.AddDays(-i),
                     Snippet = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.",
                     Title = string.Format("My Great Blog# {0}", i)
                 });
