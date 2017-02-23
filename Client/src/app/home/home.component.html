@@ -6,25 +6,39 @@
                 <small>Secondary Text</small>
             </h1>
 
-            <div *ngFor="let post of asyncPosts | async | paginate: { id: 'server', itemsPerPage: 5, currentPage: p, totalItems: total }">
+            <div *ngFor="let item of pagedItems">
                 <h2>
-                    <a href="#">{{post.title}}</a>
+                    <a href="#">{{item.title}}</a>
                 </h2>
                 <p class="lead">
-                    by <a href="index.php">{{post.author}}</a>
+                    by <a href="index.php">{{item.author}}</a>
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span>{{post.postDate}}</p>
+                <p><span class="glyphicon glyphicon-time"></span>{{item.postDate}}</p>
                 <hr>
                 <img class="img-responsive" src="http://placehold.it/900x300" alt="">
                 <hr>
-                <p>{{post.snippet}}</p>
+                <p>{{item.snippet}}</p>
                 <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
     </div>
     <br />
-    <div class="has-text-centered">
-            <div class="spinner" [ngClass]="{ 'hidden': !loading }"></div>
-            <pagination-controls (pageChange)="getPage($event)" id="server"></pagination-controls>
-    </div>
+    <!-- pager -->
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(1)" [routerLink]="['/home', 1]">First</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+        </li>
+        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a (click)="setPage(page)" [routerLink]="['/home', page]">{{page}}</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.currentPage + 1)" [routerLink]="['/home', pager.currentPage + 1]">Next</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.totalPages)" [routerLink]="['/home', pager.totalPages]">Last</a>
+        </li>
+    </ul>
 </div>

@@ -125,8 +125,10 @@
     <TypeScriptCompile Include="src\app\header\header.component.ts" />
     <TypeScriptCompile Include="src\app\home\home.component.spec.ts" />
     <TypeScriptCompile Include="src\app\home\home.component.ts" />
-    <TypeScriptCompile Include="src\app\post.service.spec.ts" />
-    <TypeScriptCompile Include="src\app\post.service.ts" />
+    <TypeScriptCompile Include="src\app\pager.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\pager.service.ts" />
+    <TypeScriptCompile Include="src\app\http.service.spec.ts" />
+    <TypeScriptCompile Include="src\app\http.service.ts" />
     <TypeScriptCompile Include="src\app\post.ts" />
     <TypeScriptCompile Include="src\app\search\search.component.spec.ts" />
     <TypeScriptCompile Include="src\app\search\search.component.ts" />

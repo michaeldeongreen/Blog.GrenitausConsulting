@@ -12,7 +12,8 @@ import { CategoriesComponent } from './categories/categories.component';
 import { SideWidgetComponent } from './side-widget/side-widget.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { PostService } from './post.service';
+import { HttpService } from './http.service';
+import { PagerService } from './pager.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { PostService } from './post.service';
       Ng2PaginationModule,
       AppRoutingModule
   ],
-  providers: [PostService],
+  providers: [HttpService, PagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

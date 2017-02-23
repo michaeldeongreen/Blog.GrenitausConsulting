@@ -10,15 +10,15 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
 {
     public class PostsController : ApiController
     {
-        public IEnumerable<Post> Get()
+        public PagedResponse Get()
         {
-            return Build();
+            return new PagedResponse() { Total = 30, Posts = Build() };
         }
 
         private IEnumerable<Post> Build()
         {
             var posts = new List<Post>();
-            for (int i = 1; i <= 30; i++)
+            for (int i = 1; i <= 100; i++)
             {
                 posts.Add(new Post() {
                     Id = i,
