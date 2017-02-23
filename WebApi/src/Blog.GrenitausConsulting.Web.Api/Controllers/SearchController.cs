@@ -1,28 +1,27 @@
-﻿using System;
+﻿using Blog.GrenitausConsulting.Domain;
+using Blog.GrenitausConsulting.Services.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using Blog.GrenitausConsulting.Domain;
-using Blog.GrenitausConsulting.Services.Interfaces;
-using Blog.GrenitausConsulting.Web.Api.App_Start;
 
 namespace Blog.GrenitausConsulting.Web.Api.Controllers
 {
-    public class PostsController : ApiController
+    public class SearchController : ApiController
     {
         private readonly IPagingService _pagingService;
 
-        public PostsController(IPagingService pagingService)
+        public SearchController(IPagingService pagingService)
         {
             _pagingService = pagingService;
         }
 
-        [Route("api/posts/page/{pageNumber}") ]
-        public PagedResponse Get(int pageNumber)
+        [Route("api/search/{criteria}/page/{pageNumber}")]
+        public PagedResponse Get(string criteria, int pageNumber)
         {
-            return _pagingService.Get(new PagedCriteria() { PageNumber = pageNumber, PageSize = 10, Posts = Build()});
+            return _pagingService.Search(new PagedCriteria() { PageNumber = pageNumber, PageSize = 10, Posts = Build(), SearchCriteria = criteria });
         }
 
         private IEnumerable<Post> Build()

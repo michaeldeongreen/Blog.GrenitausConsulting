@@ -10,14 +10,45 @@ namespace Blog.GrenitausConsulting.Services
 {
     public class PagingService : IPagingService
     {
-        public PagedResponse Get(int pageNumber, int pageSize, IEnumerable<Post> posts)
+        private int _skip;
+
+        public PagedResponse Get(PagedCriteria criteria)
         {
-            if (pageNumber == 0)
-                pageNumber = 1;
+            ApplyCriteriaLogic(criteria);
+            return new PagedResponse() { Total = criteria.Posts.Count(), Posts = criteria.Posts.Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.PostDate) };
+        }
 
-            int skip = (pageNumber - 1) * pageSize;
+        public PagedResponse Search(PagedCriteria criteria)
+        {
+            ApplyCriteriaLogic(criteria);
+            var query = criteria.Posts.Where(p => p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower()) || p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower()));
 
-            return new PagedResponse() { Total = posts.Count(), Posts = posts.Skip(skip).Take(pageSize).OrderByDescending(p => p.PostDate) };
+            if (query.ToList().Count > 0)
+            {
+                var results = criteria.Posts.Where(p => p.Title.Contains(criteria.SearchCriteria) || p.Title.Contains(criteria.SearchCriteria)).Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.PostDate);
+                return new PagedResponse() { Total = query.ToList().Count(), Posts = results.ToList() };                
+            }
+            else
+            {
+                return new PagedResponse() { Total = 0, Posts = null };
+            }
+        }
+
+        private void ApplyCriteriaLogic(PagedCriteria criteria)
+        {
+            ApplyPageNumberLogic(criteria);
+            ApplySkipLogic(criteria);
+        }
+
+        private void ApplyPageNumberLogic(PagedCriteria criteria)
+        {
+            if (criteria.PageNumber == 0)
+                criteria.PageNumber = 1;
+        }
+
+        private void ApplySkipLogic(PagedCriteria criteria)
+        {
+            _skip = (criteria.PageNumber - 1) * criteria.PageSize;
         }
     }
 }

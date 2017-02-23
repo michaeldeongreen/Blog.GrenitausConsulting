@@ -13,5 +13,6 @@ namespace Blog.GrenitausConsulting.Domain
         public string Author { get; set; }
         public DateTime PostDate { get; set; }
         public string Snippet { get; set; }
+        public string Html { get; set; }
     }
 }

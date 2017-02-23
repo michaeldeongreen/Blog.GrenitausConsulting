@@ -21,7 +21,7 @@ namespace Blog.GrenitausConsulting.Unit.Tests
             //given
             IPagingService service = new PagingService();
             //when
-            PagedResponse response = service.Get(1, 10, Data.Get());
+            PagedResponse response = service.Get(new PagedCriteria() { PageNumber = 1, PageSize = 10, Posts = Data.Get()});
             //then
             response.Total.Should().Be(100);
         }
@@ -32,7 +32,7 @@ namespace Blog.GrenitausConsulting.Unit.Tests
             //given
             IPagingService service = new PagingService();
             //when
-            PagedResponse response = service.Get(1, 25, Data.Get());
+            PagedResponse response = service.Get(new PagedCriteria() { PageNumber = 1, PageSize = 25, Posts = Data.Get() });
             //then
             response.Posts.Count().Should().Be(25);
         }

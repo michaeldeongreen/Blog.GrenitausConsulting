@@ -4,12 +4,8 @@ http://www.codershood.info/2016/12/26/server-side-pagination-angular-2/
 https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
-Concatenate /post in http service
+TODO Later:
+1) Validate Blog Search
+2) Change page size to 5
 
-Figure out how to check the route parameter, so when you go localhost/home/7, it will go to create page
 
-Do clean up, I think you have some unnecessary imports in home.component
-
-Server side paging
-
-Page size needs to be 5 probably, not 10
