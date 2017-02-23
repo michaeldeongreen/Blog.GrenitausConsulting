@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     pager: any = {};
 
     // paged items
-    pagedItems: Post[];
+    pagedItems: Observable<Post[]>;
 
     pageNumber: number;
 

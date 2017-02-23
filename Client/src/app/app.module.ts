@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { HttpService } from './http.service';
 import { PagerService } from './pager.service';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PagerService } from './pager.service';
     CategoriesComponent,
     SideWidgetComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
