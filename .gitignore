@@ -19,6 +19,10 @@
 /WebApi/src/Blog.GrenitausConsulting.Services/obj
 /WebApi/src/Blog.GrenitausConsulting.Services/.vs
 
+/WebApi/src/Blog.GrenitausConsulting.Unit.Tests/bin
+/WebApi/src/Blog.GrenitausConsulting.Unit.Tests/obj
+/WebApi/src/Blog.GrenitausConsulting.Unit.Tests/.vs
+
 /Client/.vs
 /Client/bin
 /Client/obj
