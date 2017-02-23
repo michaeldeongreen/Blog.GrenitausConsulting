@@ -2,10 +2,6 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Post } from '../post';
 import { HttpService } from '../http.service';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/delay';
 import { PagerService } from '../pager.service';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
@@ -27,13 +23,13 @@ export class HomeComponent implements OnInit {
     }
 
     // array of all items to be paged
-    private allItems: any[];
+    private allItems: Post[];
 
     // pager object
     pager: any = {};
 
     // paged items
-    pagedItems: any[];
+    pagedItems: Post[];
 
     pageId: number;
 
