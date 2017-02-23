@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.Domain", "Blog.GrenitausConsulting.Domain\Blog.GrenitausConsulting.Domain.csproj", "{D43B385B-AD97-4A94-86D2-3931375AFD4C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.Services", "Blog.GrenitausConsulting.Services\Blog.GrenitausConsulting.Services.csproj", "{33B4818F-014E-4D9B-A811-A97C63E7517F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D43B385B-AD97-4A94-86D2-3931375AFD4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D43B385B-AD97-4A94-86D2-3931375AFD4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D43B385B-AD97-4A94-86D2-3931375AFD4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33B4818F-014E-4D9B-A811-A97C63E7517F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33B4818F-014E-4D9B-A811-A97C63E7517F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33B4818F-014E-4D9B-A811-A97C63E7517F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33B4818F-014E-4D9B-A811-A97C63E7517F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,7 +12,7 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
     {
         public PagedResponse Get()
         {
-            return new PagedResponse() { Total = 30, Posts = Build() };
+            return new PagedResponse() { Total = 100, Posts = Build() };
         }
 
         private IEnumerable<Post> Build()

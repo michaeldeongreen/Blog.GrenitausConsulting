@@ -10,9 +10,14 @@
 /WebApi/src/Blog.GrenitausConsulting.Web.Api/bin
 /WebApi/src/Blog.GrenitausConsulting.Web.Api/.vs
 /WebApi/src/Blog.GrenitausConsulting.Web.Api/obj
+
 /WebApi/src/Blog.GrenitausConsulting.Domain/bin
 /WebApi/src/Blog.GrenitausConsulting.Domain/obj
 /WebApi/src/Blog.GrenitausConsulting.Domain/.vs
+
+/WebApi/src/Blog.GrenitausConsulting.Services/bin
+/WebApi/src/Blog.GrenitausConsulting.Services/obj
+/WebApi/src/Blog.GrenitausConsulting.Services/.vs
 
 /Client/.vs
 /Client/bin
