@@ -18,9 +18,10 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
         private IEnumerable<Post> Build()
         {
             var posts = new List<Post>();
-            for (int i = 1; i < 30; i++)
+            for (int i = 1; i <= 30; i++)
             {
                 posts.Add(new Post() {
+                    Id = i,
                     Author = "Michael D. Green",
                     PostDate = DateTime.Now.AddDays(i),
                      Snippet = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.",

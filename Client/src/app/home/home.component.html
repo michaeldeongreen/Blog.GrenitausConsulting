@@ -6,18 +6,18 @@
                 <small>Secondary Text</small>
             </h1>
 
-            <div *ngFor="let meal of asyncMeals | async | paginate: { id: 'server', itemsPerPage: 5, currentPage: p, totalItems: total }">
+            <div *ngFor="let post of asyncPosts | async | paginate: { id: 'server', itemsPerPage: 5, currentPage: p, totalItems: total }">
                 <h2>
-                    <a href="#">Blog Post Title {{meal}}</a>
+                    <a href="#">{{post.title}}</a>
                 </h2>
                 <p class="lead">
-                    by <a href="index.php">Start Bootstrap</a>
+                    by <a href="index.php">{{post.author}}</a>
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>
+                <p><span class="glyphicon glyphicon-time"></span>{{post.postDate}}</p>
                 <hr>
                 <img class="img-responsive" src="http://placehold.it/900x300" alt="">
                 <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
+                <p>{{post.snippet}}</p>
                 <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>

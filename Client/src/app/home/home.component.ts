@@ -1,32 +1,32 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { Post } from '../post';
+import { PostService } from '../post.service';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/delay';
 
 interface IServerResponse {
-    items: string[];
+    items: Post[];
     total: number;
 }
 
 @Component({
+    moduleId: module.id,
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
-    meals: string[] = [];
-    asyncMeals: Observable<string[]>;
+    posts: Post[] = [];
+    asyncPosts: Observable<Post[]>;
     p: number = 1;
     total: number;
     loading: boolean;
 
-    constructor() {
-        for (let i = 1; i <= 100; i++) {
-            this.meals.push(`Meal ${i}`);
-        }
+    constructor(private postService: PostService) {
     }
 
     ngOnInit() {
@@ -35,27 +35,28 @@ export class HomeComponent implements OnInit {
 
   getPage(page: number) {
       this.loading = true;
-      this.asyncMeals = serverCall(this.meals, page)
-          .do(res => {
-              this.total = res.total;
-              this.p = page;
-              this.loading = false;
-          })
-          .map(res => res.items);
+
+      this.postService.getPosts().then(response => {
+          this.asyncPosts = serverCall(response, page)
+              .do(results => {
+                  this.total = results.total;
+                  this.p = page;
+                  this.loading = false;              
+              })
+              .map(t => t.items);
+      });
   }
 }
 
-/**
- * Simulate an async HTTP call with a delayed observable.
- */
-function serverCall(meals: string[], page: number): Observable<IServerResponse> {
+function serverCall(posts: Post[], page: number): Observable<IServerResponse> {
     const perPage = 5;
     const start = (page - 1) * perPage;
     const end = start + perPage;
 
     return Observable
         .of({
-            items: meals.slice(start, end),
-            total: 100
-        }).delay(1000);
+            items: posts.slice(start, end),
+            total: 30
+        });
 }
+
