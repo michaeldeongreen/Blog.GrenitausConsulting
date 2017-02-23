@@ -14,7 +14,7 @@ namespace Blog.GrenitausConsulting.Unit.Tests
             List<Post> posts = new List<Post>();
             for (int i = 1; i <= 100; i++)
             {
-                posts.Add(new Post() { Id= i });
+                posts.Add(new Post() { Id = i });
             }
             return posts;
         }

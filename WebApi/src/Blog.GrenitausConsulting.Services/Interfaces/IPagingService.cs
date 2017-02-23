@@ -9,6 +9,6 @@ namespace Blog.GrenitausConsulting.Services.Interfaces
 {
     public interface IPagingService
     {
-        PagedResponse Get(int pageNumber, int pageSize, List<Post> posts);
+        PagedResponse Get(int pageNumber, int pageSize, IEnumerable<Post> posts);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Blog.GrenitausConsulting.Services.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,6 +10,12 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
 {
     public class ValuesController : ApiController
     {
+
+        public ValuesController(IPagingService pagingService)
+        {
+            var t = "";
+        }
+
         // GET api/values
         public IEnumerable<string> Get()
         {

@@ -16,16 +16,25 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-namespace Blog.GrenitausConsulting.Web.Api.DependencyResolution {
+namespace Blog.GrenitausConsulting.Web.Api.DependencyResolution
+{
     using Services;
     using StructureMap;
     using StructureMap.Configuration.DSL;
 
-    public static class IoC {
-        public static IContainer Initialize() {
+    public static class IoC
+    {
+        public static IContainer Initialize()
+        {
             var registry = new Registry();
+            registry.IncludeRegistry<DefaultRegistry>();
             registry.IncludeRegistry<ServicesRegistry>();
-            return new Container(registry);
+            var container = new Container(registry);
+
+            container.WhatDoIHave();
+            container.AssertConfigurationIsValid();
+
+            return container;
         }
     }
 }

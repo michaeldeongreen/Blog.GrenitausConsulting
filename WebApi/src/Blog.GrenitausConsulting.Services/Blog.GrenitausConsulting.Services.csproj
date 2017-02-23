@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{33B4818F-014E-4D9B-A811-A97C63E7517F}</ProjectGuid>
+    <ProjectGuid>{EC459A19-4B45-4E0B-A367-FD216AADB12B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Blog.GrenitausConsulting.Services</RootNamespace>
@@ -55,11 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Blog.GrenitausConsulting.Domain\Blog.GrenitausConsulting.Domain.csproj">
-      <Project>{d43b385b-ad97-4a94-86d2-3931375afd4c}</Project>
+      <Project>{84edb053-270d-4a4b-b266-94d3fdf0a654}</Project>
       <Name>Blog.GrenitausConsulting.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

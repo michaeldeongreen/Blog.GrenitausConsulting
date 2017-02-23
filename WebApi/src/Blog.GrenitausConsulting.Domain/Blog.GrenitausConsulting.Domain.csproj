@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D43B385B-AD97-4A94-86D2-3931375AFD4C}</ProjectGuid>
+    <ProjectGuid>{84EDB053-270D-4A4B-B266-94D3FDF0A654}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Blog.GrenitausConsulting.Domain</RootNamespace>

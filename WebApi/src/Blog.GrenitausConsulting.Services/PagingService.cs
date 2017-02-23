@@ -10,9 +10,9 @@ namespace Blog.GrenitausConsulting.Services
 {
     public class PagingService : IPagingService
     {
-        public PagedResponse Get(int pageNumber, int pageSize, List<Post> posts)
+        public PagedResponse Get(int pageNumber, int pageSize, IEnumerable<Post> posts)
         {
-            return new PagedResponse() { Total = posts.Count, Posts = posts.Skip(pageNumber-1).Take(pageSize).OrderByDescending(p => p.PostDate) };
+            return new PagedResponse() { Total = posts.Count(), Posts = posts.Skip(pageNumber - 1).Take(pageSize).OrderByDescending(p => p.PostDate) };
         }
     }
 }

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{94266669-21A8-4586-85A6-69DD97321A9E}</ProjectGuid>
+    <ProjectGuid>{F897A5C8-14AA-497E-86E5-4D8AE53E51B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Blog.GrenitausConsulting.Unit.Tests</RootNamespace>
@@ -57,17 +57,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Blog.GrenitausConsulting.Domain\Blog.GrenitausConsulting.Domain.csproj">
-      <Project>{d43b385b-ad97-4a94-86d2-3931375afd4c}</Project>
+      <Project>{84edb053-270d-4a4b-b266-94d3fdf0a654}</Project>
       <Name>Blog.GrenitausConsulting.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\Blog.GrenitausConsulting.Services\Blog.GrenitausConsulting.Services.csproj">
-      <Project>{33b4818f-014e-4d9b-a811-a97c63e7517f}</Project>
+      <Project>{ec459a19-4b45-4e0b-a367-fd216aadb12b}</Project>
       <Name>Blog.GrenitausConsulting.Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
