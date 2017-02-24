@@ -4,13 +4,13 @@ http://www.codershood.info/2016/12/26/server-side-pagination-angular-2/
 https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
-TODO Later:
-1) Validate Blog Search
-2) Change page size to 5
-
 TODO Now:
 1) Maybe change the search to not use segments
 2) Enter button and search
+2) Change page size to 5
+
+TODO Later:
+1) Validate Blog Search (see ngif that the pager is using)
 
 https://gist.github.com/sasxa/e1164d9773b31459f6dc
 http://sharpten.com/blog/2016/03/23/using-eventemitters-notify-component-changes-angular-2.html
