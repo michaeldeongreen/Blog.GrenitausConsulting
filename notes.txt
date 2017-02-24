@@ -8,4 +8,9 @@ TODO Later:
 1) Validate Blog Search
 2) Change page size to 5
 
+TODO Now:
+1) Maybe change the search to not use segments
+2) Enter button and search
 
+https://gist.github.com/sasxa/e1164d9773b31459f6dc
+http://sharpten.com/blog/2016/03/23/using-eventemitters-notify-component-changes-angular-2.html

@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpService } from './http.service';
 import { PagerService } from './pager.service';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import { SharedEmitterService } from './shared-emitter.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     SideWidgetComponent,
     FooterComponent,
     HomeComponent,
-    SearchResultsComponent
+      SearchResultsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,8 +34,9 @@ import { SearchResultsComponent } from './search-results/search-results.componen
       HttpModule,
       Ng2PaginationModule,
       AppRoutingModule
+      
   ],
-  providers: [HttpService, PagerService],
+  providers: [HttpService, PagerService, SharedEmitterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

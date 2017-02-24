@@ -21,4 +21,10 @@ export class HttpService {
             .map((response: Response) => response.json())
             .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
     }
+
+    public getSearchResults(page: Number, criteria: string): any {
+        return this.http.get(`${this.baseUrl}/search/${criteria}/page/${page}`)
+            .map((response: Response) => response.json())
+            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+    }
 }

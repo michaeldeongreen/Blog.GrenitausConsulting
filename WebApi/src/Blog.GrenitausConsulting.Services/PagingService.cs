@@ -25,7 +25,7 @@ namespace Blog.GrenitausConsulting.Services
 
             if (query.ToList().Count > 0)
             {
-                var results = criteria.Posts.Where(p => p.Title.Contains(criteria.SearchCriteria) || p.Title.Contains(criteria.SearchCriteria)).Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.PostDate);
+                var results = criteria.Posts.Where(p => p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower()) || p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower())).Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.PostDate);
                 return new PagedResponse() { Total = query.ToList().Count(), Posts = results.ToList() };                
             }
             else
