@@ -49,8 +49,6 @@ export class SearchResultsComponent implements OnInit {
   }
 
 
-  
-
   setPage(page: number) {
       //let criteria = this.route.snapshot.params['criteria'];
 

@@ -1,6 +1,6 @@
 <h4>Blog Search</h4>
 <div class="input-group">
-    <input #searchBox type="text" class="form-control" id="search-box">
+    <input #searchBox type="text" class="form-control" id="search-box" (keyup.enter)="gotoSearchResults(searchBox)">
     <span class="input-group-btn">
         <button class="btn btn-default" type="button" (click)="gotoSearchResults(searchBox)">
             <span class="glyphicon glyphicon-search"></span>
