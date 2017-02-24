@@ -21,11 +21,11 @@ namespace Blog.GrenitausConsulting.Services
         public PagedResponse Search(PagedCriteria criteria)
         {
             ApplyCriteriaLogic(criteria);
-            var query = criteria.Posts.Where(p => p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower()) || p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower()));
+            var query = criteria.Posts.Where(p => p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower()) || p.Snippet.ToLower().Contains(criteria.SearchCriteria.ToLower()));
 
             if (query.ToList().Count > 0)
             {
-                var results = criteria.Posts.Where(p => p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower()) || p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower())).Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.PostDate);
+                var results = criteria.Posts.Where(p => p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower()) || p.Snippet.ToLower().Contains(criteria.SearchCriteria.ToLower())).Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.PostDate);
                 return new PagedResponse() { Total = query.ToList().Count(), Posts = results.ToList() };                
             }
             else

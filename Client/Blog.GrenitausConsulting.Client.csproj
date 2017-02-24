@@ -136,6 +136,7 @@
     <TypeScriptCompile Include="src\app\search-results\search-results.component.ts" />
     <TypeScriptCompile Include="src\app\search\search.component.spec.ts" />
     <TypeScriptCompile Include="src\app\search\search.component.ts" />
+    <TypeScriptCompile Include="src\app\shared-emitter.service.ts" />
     <TypeScriptCompile Include="src\app\side-widget\side-widget.component.spec.ts" />
     <TypeScriptCompile Include="src\app\side-widget\side-widget.component.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />

@@ -1,0 +1,8 @@
+C:\Git\Blog.GrenitausConsulting\WebApi\src\Blog.GrenitausConsulting.Common\bin\Debug\Blog.GrenitausConsulting.Common.dll
+C:\Git\Blog.GrenitausConsulting\WebApi\src\Blog.GrenitausConsulting.Common\bin\Debug\Blog.GrenitausConsulting.Common.pdb
+C:\Git\Blog.GrenitausConsulting\WebApi\src\Blog.GrenitausConsulting.Common\obj\Debug\Blog.GrenitausConsulting.Common.dll
+C:\Git\Blog.GrenitausConsulting\WebApi\src\Blog.GrenitausConsulting.Common\obj\Debug\Blog.GrenitausConsulting.Common.pdb
+C:\Git\Blog.GrenitausConsulting\WebApi\src\Blog.GrenitausConsulting.Common\bin\Debug\StructureMap.dll
+C:\Git\Blog.GrenitausConsulting\WebApi\src\Blog.GrenitausConsulting.Common\bin\Debug\StructureMap.Net4.dll
+C:\Git\Blog.GrenitausConsulting\WebApi\src\Blog.GrenitausConsulting.Common\bin\Debug\StructureMap.pdb
+C:\Git\Blog.GrenitausConsulting\WebApi\src\Blog.GrenitausConsulting.Common\bin\Debug\StructureMap.Net4.pdb

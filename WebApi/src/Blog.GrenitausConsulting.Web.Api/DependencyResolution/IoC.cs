@@ -18,6 +18,7 @@
 
 namespace Blog.GrenitausConsulting.Web.Api.DependencyResolution
 {
+    using Common;
     using Services;
     using StructureMap;
     using StructureMap.Configuration.DSL;
@@ -27,6 +28,7 @@ namespace Blog.GrenitausConsulting.Web.Api.DependencyResolution
         public static IContainer Initialize()
         {
             var registry = new Registry();
+            registry.IncludeRegistry<CommonRegistry>();
             registry.IncludeRegistry<DefaultRegistry>();
             registry.IncludeRegistry<ServicesRegistry>();
             var container = new Container(registry);

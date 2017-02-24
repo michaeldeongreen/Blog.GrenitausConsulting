@@ -232,6 +232,10 @@
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Blog.GrenitausConsulting.Common\Blog.GrenitausConsulting.Common.csproj">
+      <Project>{e742fb9d-38fc-4f4d-a447-b704dd6fbcd7}</Project>
+      <Name>Blog.GrenitausConsulting.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Blog.GrenitausConsulting.Domain\Blog.GrenitausConsulting.Domain.csproj">
       <Project>{84edb053-270d-4a4b-b266-94d3fdf0a654}</Project>
       <Name>Blog.GrenitausConsulting.Domain</Name>

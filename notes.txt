@@ -11,6 +11,7 @@ TODO Now:
 
 TODO Later:
 1) Validate Blog Search (see ngif that the pager is using)
+2) Research why certain characters like # crash web api
 
 https://gist.github.com/sasxa/e1164d9773b31459f6dc
 http://sharpten.com/blog/2016/03/23/using-eventemitters-notify-component-changes-angular-2.html
