@@ -28,7 +28,7 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
         [Route("api/search/{criteria}/page/{pagenumber}")]
         public PagedResponse Get(string criteria, int pageNumber)
         {
-            return _pagingService.Search(new PagedCriteria() { PageNumber = pageNumber, PageSize = _pageSize, Posts = BlogContextManager.PostSummaries, SearchCriteria = criteria });
+            return _pagingService.Search(new PagedCriteria() { PageNumber = pageNumber, PageSize = _pageSize, Posts = BlogContextManager.PostSummaries, SearchCriteria = criteria, IsActive = true });
         }
     }
 }

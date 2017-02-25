@@ -8,9 +8,15 @@ namespace Blog.GrenitausConsulting.Domain
 {
     public class PagedCriteria
     {
+        public PagedCriteria()
+        {
+            IsActive = true;
+        }
+
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
         public IEnumerable<PostSummary> Posts { get; set; }
         public string SearchCriteria { get; set; }
+        public bool IsActive  { get; set; }
     }
 }
