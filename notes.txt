@@ -33,3 +33,5 @@ Understanding Sibling communication via shared service and event emitters
 All the libraries like rxjs
 
 Syntax for data returning
+
+ngOnInit firing multiple times because of an error

@@ -4,5 +4,6 @@ export class Post {
     author: string;
     postDate: Date;
     snippet: string;
-    link: string;
+    link: string;,
+    isActive: boolean
 }
