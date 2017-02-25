@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import { ActivatedRoute } from '@angular/router';
+import { Post } from '../post';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-post',
@@ -9,19 +11,30 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PostComponent implements OnInit {
     html: string;
-    title: string;
+    parameter: string;
+    item: any = {};
 
     constructor(private httpService: HttpService,
         private route: ActivatedRoute) { }
 
 
     ngOnInit() {
-        this.title = this.route.snapshot.params['title'];
-        this.getTitle(this.title);
+        this.parameter = this.route.snapshot.params['title'];
+        this.getPost(this.parameter);
+        this.getHtml(this.parameter);
   }
 
-  getTitle(title: string) {
-      this.httpService.getBlog(title)
+    
+    getPost(title: string) {
+        this.httpService.getPost(title)
+            .subscribe(data => {
+                // get pager object from service
+                this.item = data;
+            });
+    }
+
+  getHtml(title: string) {
+      this.httpService.getPostHtml(title)
           .subscribe(data => {
               // get pager object from service
               this.html = data;

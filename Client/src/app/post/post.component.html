@@ -5,7 +5,15 @@
                 Page Heading
                 <small>Secondary Text</small>
             </h1>
-            <div>
+            <div>{{item.author}}
+                <h2>
+                    {{item.title}}
+                </h2>
+                <p class="lead">
+                    by {{item.author}}
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span>{{item.postDate}}</p>
+                <hr>
                 <p [innerHTML]="html"></p>
             </div>
         </div>
