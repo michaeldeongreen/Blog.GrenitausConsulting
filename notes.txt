@@ -11,13 +11,17 @@ http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-
 
 TODO Now:
 1) Search needs to take html into account
-2) Be on the look out for navigation ie hit link on homepage to view blog and see what happens when browser back button hit
 3) Date formating in angular 2/ mabye do on backend
-
+4) tips on how to survive, image needs to be smaller
+5) one of the blogs has bad encoding for the summary, forgot which
+* prismjs
+* Search => blog post
 
 TODO Later:
 1) Validate Blog Search (see ngif that the pager is using)
 2) Research why certain characters like # crash web api
+3) Tags at bottom of post
+4) Maybe a back button at bottom of post
 
 https://gist.github.com/sasxa/e1164d9773b31459f6dc
 http://sharpten.com/blog/2016/03/23/using-eventemitters-notify-component-changes-angular-2.html

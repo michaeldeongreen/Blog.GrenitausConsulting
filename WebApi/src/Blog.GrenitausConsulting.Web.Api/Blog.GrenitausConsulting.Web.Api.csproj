@@ -203,6 +203,7 @@
   <ItemGroup>
     <Content Include="App_Data\my-interview-with-thoughtworks.txt" />
     <Content Include="App_Data\so-you-want-to-be-a-it-consultant.txt" />
+    <Content Include="App_Data\tips-on-how-to-survive-it-projects-you-dont-like.txt" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Global.asax" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
