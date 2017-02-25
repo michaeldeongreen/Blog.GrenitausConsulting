@@ -4,6 +4,5 @@ export class Post {
     author: string;
     postDate: Date;
     snippet: string;
-    html: string;
     link: string;
 }

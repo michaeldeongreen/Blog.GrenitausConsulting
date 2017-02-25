@@ -203,6 +203,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\a-conversation-about-majority-privilege.txt" />
+    <Content Include="App_Data\angular-2-continuous-deployment-azure-azure-cli-github.txt" />
     <Content Include="App_Data\angular-scrollable-multiselect-dropdown-checkboxes.txt" />
     <Content Include="App_Data\another-reason-why-i-love-unit-tests.txt" />
     <Content Include="App_Data\my-decision-to-trade-in-my-git-gui-client-for-git-bash.txt" />

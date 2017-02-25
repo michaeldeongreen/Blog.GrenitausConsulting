@@ -14,7 +14,6 @@ TODO Now:
 3) Date formating in angular 2/ mabye do on backend
 * prismjs
 tags and category json
-* remove html property from client/server
 * ALL ORDER BYS ON SERVER SHOULD BE BY ID DESCEDING SO NEWEST FIRST
 *add IsActive flag to posts
 

@@ -1,0 +1,187 @@
+<a href="assets/images/azure-angular.png"><img src="assets/images/azure-angular.png" alt="azure-angular" width="700" height="300" class="alignnone size-full wp-image-541" /></a>
+<br><br>
+In this blog, I wanted to demonstrate how to setup Angular 2 Continuous Deployment to Azure using azure-cli and Github.  I am not an expert on Azure or Angular 2 but when I attempted to setup continuous deployment for the Angular 2 QuickStart guide to Azure using GitHub, I felt that the experience was not very intuitive, so I decided to write a blog about my experiences.
+<br><br>
+<strong>What you will need</strong>
+<br><br>
+<ul>
+<li>A Azure Account</li>
+<li>A Github Account</li>
+<li>Git</li>
+<li>Node Package Manager</li>
+<li>Visual Studio 2015</li>
+</ul>
+<br><br>
+<strong>Assumptions</strong>
+<br><br>
+<ul>
+<li>You have basic knowledge of Azure Web Apps, Git, Github, Node Package Manager and Visual Studio</li>
+<li>You have the proper access and permissions to the Azure Portal and Github</li>
+<li>You have completed the  <a href="https://angular.io/docs/ts/latest/cookbook/visual-studio-2015.html" target="_blank">Angular 2 Visual Studio 2015 QuickStart</a></li>
+</ul>
+<br><br>
+<strong>Step 1 - GitHub</strong>
+<br><br>
+<ul>
+<li>Ensure that the solution file (.sln), the (.csproj) and the Angular 2 QuickStart files are in the root directory.  Later in this blog, I discuss why I needed to set my project up this way.  Your root directory should look like the picture below:</li>
+<br><br>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-001.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-001.png" alt="grenitausconsulting-com-angular-2-continuous-deployment-with-azure-and-github-001" width="112" height="300" class="alignnone size-medium wp-image-486" /></a>
+<br><br>
+<li>If you haven't already, create a Github repository and push your Angular 2 QuickStart Project to Github.  Your Github repository should look similar to the picture below (<i>ignore the .deployment and deploy.cmd files for now</i>):</li>
+<br><br>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-002.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-002.png" alt="grenitausconsulting-com-angular-2-continuous-deployment-with-azure-and-github-002" width="150" height="150" class="alignnone size-thumbnail wp-image-483" /></a>
+</ul>
+<br><br>
+<strong>Step 2 - Azure Portal</strong>
+<br><br>
+<ul>
+<li>First, log into the <a href="https://portal.azure.com" target=_blank>Azure Portal</a></li>
+<li>Expand the menu on the left, choose App Services and on this screen, click the Add button at the top</li>
+<li>Once the App Services Screen loads, under Web Apps, choose Web App and on the bottom right, click the Create button</li>
+<li>On the Web App Screen, enter the App name, your Subscription, the Resource Group and your App Service Plan and click the Create Button.  If you are unfamiliar with these options, you can view the official Microsoft documentation <a href="https://azure.microsoft.com/en-us/documentation/services/app-service/web/" target="_blank">here</a> </li>
+<li>Next, when you click on All Resources on the left menu, you should see your new Web App.  I have called my Web App AngularIOQuickStartWeb and you can see it below:</li>
+<br><br>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-003.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-003.png" alt="angular 2 continuous deployment to azure" width="592" height="133" class="alignnone size-full wp-image-484" /></a>
+<br><br>
+<li>Next, click your Web App, click Deployment Options, Choose Source and select GitHub.  Enter your GitHub Authorization, Choose your GitHub Project and Choose your branch</li>
+<br><br>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-004.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-004.png" alt="angular 2 continuous deployment to azure" width="620" height="312" class="alignnone size-full wp-image-489" /></a>
+<br><br>
+<li>Once you have setup Continuous Deployment for the first time, Azure will automatically build and deploy your project.</li>
+<li>To see the results of the build and deployment, click on your Web App, choose Deployment options, click on the log item (middle pane), then click the View Log, to see the build and deployment log </li>
+<br><br>
+<li>You should notice that the build failed and you have many errors in your log.  Below is my log: </li>
+<br><br>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-005.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-005.png" alt="angular 2 continuous deployment to azure" width="640" height="471" class="alignnone size-large wp-image-491" /></a>
+</ul>
+<br><br>
+<strong>Step 3 - Why did my Azure Continuous Deployment Fail, Round 1</strong>
+<br><br>
+<ul>
+<li>If you look closely at the Deployment log, you will see that many of the errors are TypeScript errors.  As it turns out, we need to somehow install our node modules in the Cloud.  The way we do this is with the handy <a href="https://azure.microsoft.com/en-us/documentation/articles/xplat-cli-install/" target="_blank">Azure CLI</a> tool.  Azure-cli will create a custom deploy.cmd deployment script that will run during Continuous Deployment</li>
+<br><br>
+<li>Next, navigate to the root folder of your QuickStart Project and open up a terminal (I am using Git Bash) and type in the following:</li>
+<br><br>
+<pre style="background-color: #f5f5f5;"><code>
+npm install -g azure-cli
+</code></pre>
+<br><br>
+<li>Next, we need to associate the azure-cli tool with your Azure account.  We do this by typing the following: </li>
+<pre style="background-color: #f5f5f5;"><code>
+azure login
+</code></pre>
+<br><br>
+<li>Once you have typed this in, it should output a code and the website you will use to enter the code.</li>
+<br><br>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-006.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-006.png" alt="angular 2 continuous deployment to azure" width="642" height="100" class="alignnone size-full wp-image-495" /></a>
+<br><br>
+<li>Once you have entered the code, you should see output similar to the following: </li>
+<br><br>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-007.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-007.png" alt="angular 2 continuous deployment to azure" width="397" height="46" class="alignnone size-full wp-image-497" /></a>
+<br><br>
+<li>Next, type in the below in your cli to switch azure-cli to <a href="https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-command-line-tools/" target="_blank">Service Management Mode</a>: </li>
+<pre style="background-color: #f5f5f5;"><code>
+azure config mode asm
+</code></pre>
+<br><br>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-008.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-008.png" alt="angular 2 continuous deployment to azure" width="294" height="51" class="alignnone size-full wp-image-501" /></a>
+<br><br>
+<li>After you have done this, type the following command:</li>
+<pre style="background-color: #f5f5f5;"><code>
+azure site deploymentscript --node
+</code></pre>
+<br><br>
+<li>In the root folder of your project, you should now see 2 new files, .deployment and deploy.cmd.  </li>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-009.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-009.png" alt="angular 2 continuous deployment to azure" width="253" height="133" class="alignnone size-full wp-image-503" /></a>
+<br><br>
+<li>Open deploy.cmd, under the "<b>:Deployment</b>" section, right below the "<b>Install npm packages</b>" section, place the following:</li>
+<br><br>
+<pre style="background-color: #f5f5f5;"><code>
+:: 4. Compile TypeScript
+echo Transpiling TypeScript in %DEPLOYMENT_TARGET%...
+call :ExecuteCmd node %DEPLOYMENT_TARGET%\node_modules\typescript\bin\tsc -p "%DEPLOYMENT_TARGET%"
+</code></pre>
+<br><br>
+The section you just modified should like similar to the picture below:
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-010.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-010.png" alt="angular 2 continuous deployment to azure" width="640" height="201" class="alignnone size-large wp-image-505" /></a>
+<br><br>
+<li>Jeremy Foster has written a very good blog that goes into great detail about the deploy.cmd file and the changes that we have made.  You can find his blog <a href="http://www.codefoster.com/tscazure/" target="_blank">here</a>.  To summarize, we have created a custom deploy.cmd deployment script that Azure will now execute as part of the deployment process. If a package.json file exists, our node modules will be installed.  Also, the script that we added ensures that any typescript files that are in the Cloud will be transpiled into JavaScript.</li>
+<br><br>
+<li>After we have made these changes, let's push them to GitHub</li>
+<br><br>
+<li>If you have a similar version of the Angular 2 QuickStart source code that I do, when you view the latest deployment log in azure, you should notice that although it states that the deployment was successful in the middle pane, the log has errors and should look like below: </li>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-011.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-011.png" alt="angular 2 continuous deployment to azure" width="780" height="405" class="alignnone size-full wp-image-508" /></a>
+<br><br>
+<li>Why are we getting this error? Head to the next step and you will find out why!</li>
+<br><br>
+</ul>
+<br><br>
+<strong>Step 4 - Why did my Azure Continuous Deployment Fail, Round 2</strong>
+<br><br>
+<ul>
+<li>If you look closely at the error in the latest deployment log, it is literally stating that it cannot find the typescript folder that should be in the node_modules folder.  Also, when I navigated to the deployed website, which you can do by clicking on your Web App, click Overview and click the URL link, I had a very interesting JavaScript error that gave even more insight into the issue I was having.</li>
+<br><br>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-018.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-018.png" alt="angular 2 continuous deployment to azure" width="640" height="131" class="alignnone size-large wp-image-523" /></a>
+<br><br>
+<li>When I first encountered this problem, the first thing that popped into my head was, "I would like to see what has been deployed to the Cloud."  The way you can do this is by logging into your Cloud server via FTP.</li>
+<li>In the Azure Portal, in the left menu, click on All resources, click on your Web App, click on Deployment credentials.  On this screen, enter a username and password that you would like to use to FTP into the Cloud server.</li>
+<br><br>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-012.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-012.png" alt="angular 2 continuous deployment to azure" width="561" height="329" class="alignnone size-full wp-image-510" /></a>
+<br><br>
+<li>Next, under your Web App, scroll down and find Diagnostics logs.  On this screen, you can turn on logging and it also has the FTP, FTPS (<i>I used this option</i>), full username and path that we need to access the Cloud server</li>
+<br><br>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-013.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-013.png" alt="angular 2 continuous deployment to azure" width="288" height="219" class="alignnone size-full wp-image-512" /></a>
+<br><br>
+<li>I use the free FTP Client FileZilla to access FTP locations but you are free to use whatever client to access your Cloud server.  You can find FileZilla <a href="https://filezilla-project.org/download.php?type=client" target="_blank">here</a></li>
+<li>When I accessed the Cloud server, navigated to wwwroot and looked inside of the node_modules folder, sure enough, the typescript folder had not been the deployed.</li>
+<br><br>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-014.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-014.png" alt="angular 2 continuous deployment to azure" width="315" height="200" class="alignnone size-full wp-image-513" /></a>
+<br><br>
+<li>So why hasn't the typescript node module been deployed?  It turns out that the Angular 2 QuickStart source that I downloaded from their official GitHub site is missing an entry in the package.json.</li>
+<li>In your Visual Studio Project, open the package.json file and notice that the "devDependencies" section has an entry for typescript.  However, if you view the "dependencies" section of the package.json file (<i>which is used for Production</i>), there is no entry for typescript. So we just need to copy the below into the dependencies section: </li>
+<br><br>
+<pre style="background-color: #f5f5f5;"><code>
+"typescript": "^2.0.3"
+</code></pre>
+<br><br>
+Your dependencies section should look similar to the picture below:
+<br><br>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-015.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-015.png" alt="angular 2 continuous deployment to azure" width="367" height="305" class="alignnone size-full wp-image-517" /></a>
+<br><br>
+<li>After we push our changes to GitHub and view the deployment log, you should see that the previous error about not being able to find the typescript folder has gone away and there should be a part of the deployment log that denotes that the typescript (.ts) files are being transpiled.  Also, if you re-log into the Cloud server, you should see the typescript folder in the node_modules folder.</li>
+<br><br>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-016.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-016.png" alt="angular 2 continuous deployment to azure" width="352" height="41" class="alignnone size-full wp-image-519" /></a>
+<br><br>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-017.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-017.png" alt="angular 2 continuous deployment to azure" width="325" height="222" class="alignnone size-full wp-image-520" /></a>
+<br><br>
+<li>When you navigate to your Azure website, the Angular 2 QuickStart should load.  Below is my Angular 2 QuickStart in the Cloud.</li>
+<br><br>
+<a href="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-019.png"><img src="assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-019.png" alt="angular 2 continuous deployment to azure" width="755" height="333" class="alignnone size-full wp-image-526" /></a>
+</ul>
+<br><br>
+<strong>Troubleshooting</strong>
+<br><br>
+Admittedly, deploying the Angular 2 QuickStart tutorial to the Azure Cloud was a little tougher than I thought it would be.  One of the major issues that I faced was that the latest Angular 2  QuickStart source code would not compile.  I was under the impression that as long as you had installed the latest version of typescript globally using npm and you went into the Visual Studio Options and under External Web Tools, have placed the PATH variable above the DevEnvDir variables, that your PATH Environment variables would be evaluated first.  
+<br><br>
+Sadly, this was not the case.  Visual Studio is still going to use the version of typescript that is in "<b>C:\Program Files (x86)\Microsoft SDKs\TypeScript</b>".  Allen Conway wrote a great blog about this issue, which you can find <a href="http://www.allenconway.net/2015/07/which-version-of-typescript-is.html" target="_blank">here</a>.  Once I installed the latest version of typescript (<i>at the time of this blog, 2.0.7</i>) for Visual Studio, which you can find <a href="https://www.microsoft.com/en-us/download/details.aspx?id=48593" target="_blank">here</a>, the Angular 2 QuickStart finally compiled.
+<br><br>
+Another issue that I faced was that when I originally created the Visual Studio Project for the Angular 2 QuickStart by following the instructions on the Angular.io website, the solution file (.sln) was in its own folder in the root and the project (.csproj) file and all the QuickStart files were in a sub folder.  After I had deployed the Angular 2 QuickStart guide to Azure, I got "<b>You do not have permission to view this directory or page</b>".  Under your Web App settings, under Application settings, Azure has default pages configured but if the index.html page in the QuickStart tutorial is not in the root directory, you will get the permission error that I received.  This is why I stated at the beginning of the tutorial that the QuickStart files should be in the root directory.  
+<br><br>
+<strong>Pros</strong>
+<br><br>
+<ul>
+<li><b>Logging</b> - As someone who has spent many restless nights troubleshooting production issues, I am a huge fan of logging.  I really like how descriptive the Deployment options logs are and that you can also access the logs via FTP.</li>
+<li><b>Information is Readily Available</b> - Prior to this tutorial, I had not logged into the Azure Portal in a very long time and the site has changed a lot since then.  Also, I am not an expert on Azure, hence the reason I wanted to start traveling down that road.  I really liked that it was fairly simple to set GitHub and FTP credentials and the information I needed to actually FTP into my Cloud server was easy to find.</li>
+</ul>
+<br><br>
+<strong>Cons</strong>
+<br><br>
+<ul>
+<li><b>Continuous Deployment</b> - I was a little surprised that Azure Continuous Deployment was really Continuous Integration + Continuous Deployment.  I suspect that when some people see Continuous Deployment, they will assume that no compiling or installs will occur, only the needed bits will be deployed to the Cloud.  In my opinion, there should a separate step for Continuous Integration and a separate step for Continuous Deployment, where only the Html, JavaScript and relevant .Net libraries are deployed.</li>
+<li><b>Root Directory</b> - As I mentioned earlier, I initially had the Angular 2 QuickStart files in a sub directory.  Azure Continuous Deployment checks out your source code from GitHub and places it on the Application Server in the same structure as it is on GitHub.  If the Angular 2 QuickStart files are not in the root folder, you will get permissions errors.  I suspect that the deploy.cmd script can be used to clean up and restructure the deployment directory.</li>
+<li><b>Pre-Deployment Cleanup</b> - On a few occasions, I noticed that deleted/modified files from previous deployments were still on the server.  On 2 occasions I had to FTP into the Cloud server and delete the entire root directory to remove files that I had deleted/modified on GitHub </li>
+</ul>
+<br><br>
+<strong>Conclusion</strong>
+<br><br>
+Although there were some challenges when trying to deploy my first Angular 2 application to Azure, I felt it was fun, informative and time well spent.  I hope you all found this blog post informative.
