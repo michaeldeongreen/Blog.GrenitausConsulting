@@ -6,8 +6,21 @@
     "postDate": "2014-05-14T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green gives advice to people who are considering becoming IT Consultants.",
     "link": "so-you-want-to-be-a-it-consultant",
-    "isActive": true
-
+    "isActive": true,
+    "categories": [
+        {
+          "id": 1,
+          "name": "Career Advice"
+        },
+        {
+          "id": 2,
+          "name": "Social Justice"
+        },
+        {
+          "id": 3,
+          "name": "Technology"
+        }
+    ]
   },
   {
     "id": 2,
@@ -16,16 +29,44 @@
     "postDate": "2014-05-18T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green talks about his interview with ThoughtWorks and provides simple advice for candidates.",
     "link": "my-interview-with-thoughtworks",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
-    "id": 3,
-    "title": "Tips on how to survive IT projects you don't like",
     "author": "Michael D. Green",
+    "id": 3,
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "link": "tips-on-how-to-survive-it-projects-you-dont-like",
     "postDate": "2014-09-23T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green talks about how to survive projects you don't like.",
-    "link": "tips-on-how-to-survive-it-projects-you-dont-like",
-    "isActive": true
+    "title": "Tips on how to survive IT projects you don't like"
   },
   {
     "id": 4,
@@ -34,7 +75,21 @@
     "postDate": "2014-12-04T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green talks about the importance of soft skills such as timesheets, expenses and resume management.",
     "link": "those-pesky-soft-skills-who-needs-them-part-1",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 5,
@@ -43,7 +98,21 @@
     "postDate": "2014-12-10T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green talks about how being laid off for the first time provided very valuable life experiences.",
     "link": "lessons-i-learned-after-being-laid-off-for-the-first-time",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 6,
@@ -52,7 +121,21 @@
     "postDate": "2015-01-09T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green talks about the importance of soft skills such as being professional, taking ownership and communication.",
     "link": "those-pesky-soft-skills-who-needs-them-part-2",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 7,
@@ -61,7 +144,21 @@
     "postDate": "2015-01-18T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green shares his thoughts on the pros and cons of agile scrum.",
     "link": "what-are-the-pros-and-cons-of-agile-scrum-part-1",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 8,
@@ -70,7 +167,21 @@
     "postDate": "2015-01-29T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green talks about the importance of soft skills such as sales and recruiting.",
     "link": "those-pesky-soft-skills-who-needs-them-part-3",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 9,
@@ -79,7 +190,21 @@
     "postDate": "2015-02-15T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green shares his thoughts on the pros and cons of agile scrum.",
     "link": "what-are-the-pros-and-cons-of-agile-scrum-part-2",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 10,
@@ -88,7 +213,21 @@
     "postDate": "2015-04-05T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green talks about the concept of Majority Privilege. How it works, how it doesn't work, who benefits from it and its consequences.",
     "link": "a-conversation-about-majority-privilege",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 11,
@@ -97,7 +236,21 @@
     "postDate": "2015-04-12T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green talks about PROCO lists, what they are and how they can help you determine overall job and career satisfaction.",
     "link": "dont-rage-quit-your-job-make-a-proco-list",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 12,
@@ -106,7 +259,21 @@
     "postDate": "2015-04-25T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green shares a scrollable multiselect dropdown with checkboxes written in angular.",
     "link": "angular-scrollable-multiselect-dropdown-checkboxes",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 13,
@@ -115,7 +282,21 @@
     "postDate": "2015-06-11T20:07:29.9375939-06:00",
     "snippet": "Michael D. Green shares his thoughts on Unit Testing.",
     "link": "another-reason-why-i-love-unit-tests",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 14,
@@ -124,7 +305,21 @@
     "postDate": "2015-07-09T20:07:29.9375939-06:00",
     "snippet": "Michael D. Green shares the slides used during his talk at Architecting Innovation about Extreme Programming.",
     "link": "going-extreme-with-extreme-programming",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 15,
@@ -133,7 +328,21 @@
     "postDate": "2015-09-19T20:07:29.9375939-06:00",
     "snippet": "Michael D. Green shares his thoughts on how to pass the PMP Exam on your first attempt.",
     "link": "how-to-pass-the-pmp-exam-on-your-first-attempt",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 16,
@@ -142,7 +351,21 @@
     "postDate": "2017-02-08T20:07:29.9375939-06:00",
     "snippet": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     "link": "how-to-convert-an-svn-repository-to-stash-using-tortoisegit",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 17,
@@ -151,7 +374,21 @@
     "postDate": "2016-07-14T20:07:29.9375939-06:00",
     "snippet": "In this blog post Michael D. Green talks about the 3 types of employees in an organization.",
     "link": "the-3-types-of-employees",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 18,
@@ -160,7 +397,21 @@
     "postDate": "2016-08-25T20:07:29.9375939-06:00",
     "snippet": "In this tutorial I will be demonstrating how to setup continuous deployment for a SQL Server database using Git, PowerShell, SSDT and TeamCity.",
     "link": "how-to-setup-continuous-deployment-for-a-sql-server-database-using-git-powershell-ssdt-and-teamcity",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 19,
@@ -169,7 +420,21 @@
     "postDate": "2016-09-28T20:07:29.9375939-06:00",
     "snippet": "In this blog, Michael D. Green talks about the most important relationship on an Agile Team.",
     "link": "the-most-important-relationship-on-an-agile-team",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 20,
@@ -178,7 +443,21 @@
     "postDate": "2016-11-01T20:07:29.9375939-06:00",
     "snippet": "In this blog, I wanted to discuss my decision to trade in my Git GUI Client for Git Bash. I would like to discuss some of the reasons why I have been using a Git GUI Client and why I have ultimately decided to start using Git Bash.",
     "link": "my-decision-to-trade-in-my-git-gui-client-for-git-bash",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 21,
@@ -187,7 +466,21 @@
     "postDate": "2016-11-06T20:07:29.9375939-06:00",
     "snippet": "In this tutorial, Michael D. Green uses the Angular 2 QuickStart guide to demonstrate Angular 2 Continuous Deployment to Azure using azure-cli and GitHub.",
     "link": "angular-2-continuous-deployment-azure-azure-cli-github",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 22,
@@ -196,7 +489,21 @@
     "postDate": "2016-11-07T20:07:29.9375939-06:00",
     "snippet": "Michael D. Green demonstrates how to refactor your existing code to use the async/await features from the .Net Framework Task Parallel Library.",
     "link": "refactoring-code-in-my-open-source-project-to-use-async-await",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 23,
@@ -205,7 +512,21 @@
     "postDate": "2016-11-20T20:07:29.9375939-06:00",
     "snippet": "Michael D. Green talks about the Angular 2 Tour of Heroes Web API in Azure he created and how to use it with the Angular 2 Tour of Heroes Guide.",
     "link": "angular-2-tour-of-heroes-web-api-in-azure",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 24,
@@ -214,7 +535,21 @@
     "postDate": "2016-11-25T20:07:29.9375939-06:00",
     "snippet": "Michael D. Green explains how he got bored on Thanksgiving and decided to take the Tic Tac Toe challenge.",
     "link": "bored-take-the-tic-tac-toe-challenge",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 25,
@@ -223,7 +558,21 @@
     "postDate": "2016-11-30T20:07:29.9375939-06:00",
     "snippet": "Michael D. Green talks about how to use async/wait to make the Angular 2 Tour of Heroes Web API Heroes Search hosted in Azure asynchronous.",
     "link": "implement-async-wait-in-the-angular-2-tour-of-heroes-web-api",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 26,
@@ -232,7 +581,21 @@
     "postDate": "2016-11-30T20:07:29.9375939-06:00",
     "snippet": "In this blog, Michael D. Green talks about why you should never accept a counteroffer and shares some of his experiences after he took a counteroffer.",
     "link": "why-you-should-never-accept-a-counteroffer",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 27,
@@ -241,7 +604,21 @@
     "postDate": "2017-01-24T20:07:29.9375939-06:00",
     "snippet": "Michael D. Green gives his thoughts on Programming Interviews, how they should be implemented, what they should measure and some his real world experiences.",
     "link": "the-programming-interview",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 27,
@@ -250,7 +627,21 @@
     "postDate": "2017-01-24T20:07:29.9375939-06:00",
     "snippet": "In this blog, Michael D. Green talks about some of the reasons why he started blogging and why other technologist should blog.",
     "link": "why-i-started-blogging",
-    "isActive": true
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 28,
@@ -259,7 +650,21 @@
     "postDate": "2017-02-09T20:07:29.9375939-06:00",
     "snippet": "Michael D. Green talks about why tension often exists between the QA and Development Team and what are some ways to resolve issues between them.",
     "link": "the-often-acrimonious-relationship-between-the-qa-and-development-team",
-    "isActive": false
+    "isActive": false,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 29,
@@ -268,7 +673,21 @@
     "postDate": "2017-02-11T20:07:29.9375939-06:00",
     "snippet": "In this blog post I wanted to take some time to demonstrate how to control SQL Login permissions in SQL Azure.  When you create a SQL Azure Database, an admin user will be created in the SQL Azure Database.  In most cases, you will not want to give normal users access to this account and you probably don’t want applications accessing your SQL Azure Database using this account.",
     "link": "how-to-set-sql-login-user-permissions-in-sql-azure",
-    "isActive": false
+    "isActive": false,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 30,
@@ -277,7 +696,21 @@
     "postDate": "2017-02-15T20:07:29.9375939-06:00",
     "snippet": "In this blog, Michael D. Green talks about his first impressions of the Angular 2 framework.",
     "link": "my-first-impressions-of-angular-2",
-    "isActive": false
+    "isActive": false,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 31,
@@ -286,15 +719,43 @@
     "postDate": "2017-02-19T20:07:29.9375939-06:00",
     "snippet": "Michael D. Green talks about upgrading Grenitausconsulting.com to Angular 2 using angular-cli and his thoughts about angular-cli.",
     "link": "upgrading-an-application-to-angular-2-using-angular-cli",
-    "isActive": false
+    "isActive": false,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   },
   {
     "id": 32,
-    "title": "Upgading an Application to Angular 2 using angular-cli",
+    "title": "Odd Azure Storage, Azure Portal and Visual Studio 2015 Behavior",
     "author": "Michael D. Green",
-    "postDate": "2017-02-19T20:07:29.9375939-06:00",
-    "snippet": "Michael D. Green talks about upgrading Grenitausconsulting.com to Angular 2 using angular-cli and his thoughts about angular-cli.",
-    "link": "upgrading-an-application-to-angular-2-using-angular-cli",
-    "isActive": true
+    "postDate": "2017-02-22T20:07:29.9375939-06:00",
+    "snippet": "Michael D. Green talks about the issues he faced when working with Azure Storage Accounts created with the Resource manager and Classic deployment option.",
+    "link": "odd-azure-storage-azure-portal-and-visual-studio-2015-behavior",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      },
+      {
+        "id": 2,
+        "name": "Social Justice"
+      },
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ]
   }
 ]  

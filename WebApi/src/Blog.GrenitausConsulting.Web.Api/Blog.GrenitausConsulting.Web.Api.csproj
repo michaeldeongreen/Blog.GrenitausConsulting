@@ -219,6 +219,7 @@
     <Content Include="App_Data\lessons-i-learned-after-being-laid-off-for-the-first-time.txt" />
     <Content Include="App_Data\my-first-impressions-of-angular-2.txt" />
     <Content Include="App_Data\my-interview-with-thoughtworks.txt" />
+    <Content Include="App_Data\odd-azure-storage-azure-portal-and-visual-studio-2015-behavior.txt" />
     <Content Include="App_Data\refactoring-code-in-my-open-source-project-to-use-async-await.txt" />
     <Content Include="App_Data\the-3-types-of-employees.txt" />
     <Content Include="App_Data\the-most-important-relationship-on-an-agile-team.txt" />
