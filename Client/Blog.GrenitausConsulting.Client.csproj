@@ -69,6 +69,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="src\app\about\about.component.css" />
+    <Content Include="src\app\about\about.component.html" />
     <Content Include="src\app\categories\categories.component.css" />
     <Content Include="src\app\categories\categories.component.html" />
     <Content Include="src\app\footer\footer.component.css" />
@@ -117,12 +119,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="src\app\about\about.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\about\about.component.ts" />
     <TypeScriptCompile Include="src\app\app-routing\app-routing.module.ts" />
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\categories\categories.component.spec.ts" />
     <TypeScriptCompile Include="src\app\categories\categories.component.ts" />
+    <TypeScriptCompile Include="src\app\category.ts" />
     <TypeScriptCompile Include="src\app\footer\footer.component.spec.ts" />
     <TypeScriptCompile Include="src\app\footer\footer.component.ts" />
     <TypeScriptCompile Include="src\app\header\header.component.spec.ts" />
