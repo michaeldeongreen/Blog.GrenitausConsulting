@@ -15,7 +15,7 @@ namespace Blog.GrenitausConsulting.Services
         public PagedResponse Get(PagedCriteria criteria)
         {
             ApplyCriteriaLogic(criteria);
-            return new PagedResponse() { Total = criteria.Posts.Count(), Posts = criteria.Posts.Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.PostDate) };
+            return new PagedResponse() { Total = criteria.Posts.Count(), Posts = criteria.Posts.Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.Id) };
         }
 
         public PagedResponse Search(PagedCriteria criteria)
@@ -25,7 +25,7 @@ namespace Blog.GrenitausConsulting.Services
 
             if (query.ToList().Count > 0)
             {
-                var results = criteria.Posts.Where(p => p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower()) || p.Snippet.ToLower().Contains(criteria.SearchCriteria.ToLower())).Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.PostDate);
+                var results = criteria.Posts.Where(p => p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower()) || p.Snippet.ToLower().Contains(criteria.SearchCriteria.ToLower())).Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.Id);
                 return new PagedResponse() { Total = query.ToList().Count(), Posts = results.ToList() };                
             }
             else
