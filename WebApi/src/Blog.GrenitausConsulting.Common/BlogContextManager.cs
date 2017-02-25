@@ -13,6 +13,8 @@ namespace Blog.GrenitausConsulting.Common
         private static readonly BlogContext _blogContext = new BlogContext();
         public static IEnumerable<PostSummary> PostSummaries { get { return _blogContext.PostSummaries; } }
         public static IList<PostHtml> PostHtmlList { get { return _blogContext.PostHtmlList; } }
+        public static IEnumerable<Category> Categories { get {return _blogContext.Categories; } }
+
 
 
         public static async Task Init(string path)
