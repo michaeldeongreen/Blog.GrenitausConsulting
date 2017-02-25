@@ -201,6 +201,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\a-conversation-about-majority-privilege.txt" />
+    <Content Include="App_Data\angular-scrollable-multiselect-dropdown-checkboxes.txt" />
+    <Content Include="App_Data\another-reason-why-i-love-unit-tests.txt" />
+    <Content Include="App_Data\dont-rage-quit-your-job-make-a-proco-list.txt" />
+    <Content Include="App_Data\going-extreme-with-extreme-programming.txt" />
+    <Content Include="App_Data\how-to-pass-the-pmp-exam-on-your-first-attempt.txt" />
     <Content Include="App_Data\lessons-i-learned-after-being-laid-off-for-the-first-time.txt" />
     <Content Include="App_Data\my-interview-with-thoughtworks.txt" />
     <Content Include="App_Data\those-pesky-soft-skills-who-needs-them-part-2.txt" />

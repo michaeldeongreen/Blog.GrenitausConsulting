@@ -1,0 +1,3 @@
+Hey there!
+<br><br>
+I recently just gave a talk at <a href="http://architectinginnovation.com/" target="_blank">Architecting Innovation</a> about going extreme with Extreme Programming.  I have uploaded the slides on my blog.  Feel free to look over the slides and share them with others.  You can find the slides <a href="assets/attachments/Going-Extreme-with-Extreme-Programming.pptx" target="_blank">here</a>.
