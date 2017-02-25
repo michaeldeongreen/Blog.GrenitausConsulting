@@ -1,0 +1,3 @@
+<a href="assets/images/Blogs-By-Grenitaus.png"><img src="assets/images/Blogs-By-Grenitaus.png" alt="" width="600" height="400" class="alignnone size-full wp-image-257" /></a>
+<br><br>
+Check out my latest blog I wrote for my client <a href="http://architectinginnovation.com" target="_blank">Architecting Innovation</a> about some of the odd behavior I encountered while working with The Azure Portal, Azure Storage and Visual Studio.  In this blog, I talk about working on the Contoso Ads Demo Application and I outline some of the issues that I faced with Azure..  You can find the blog <a href="http://blog.architectinginnovation.com/navigating-odd-behaviors-azure/" target="_blank">here</a>.

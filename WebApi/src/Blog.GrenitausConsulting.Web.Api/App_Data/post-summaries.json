@@ -260,5 +260,41 @@
     "snippet": "Michael D. Green talks about why tension often exists between the QA and Development Team and what are some ways to resolve issues between them.",
     "link": "the-often-acrimonious-relationship-between-the-qa-and-development-team",
     "isActive": false
+  },
+  {
+    "id": 29,
+    "title": "How to Set SQL Login User Permissions in SQL Azure",
+    "author": "Michael D. Green",
+    "postDate": "2017-02-11T20:07:29.9375939-06:00",
+    "snippet": "In this blog post I wanted to take some time to demonstrate how to control SQL Login permissions in SQL Azure.  When you create a SQL Azure Database, an admin user will be created in the SQL Azure Database.  In most cases, you will not want to give normal users access to this account and you probably don’t want applications accessing your SQL Azure Database using this account.",
+    "link": "how-to-set-sql-login-user-permissions-in-sql-azure",
+    "isActive": false
+  },
+  {
+    "id": 30,
+    "title": "My First Impressions of Angular 2!",
+    "author": "Michael D. Green",
+    "postDate": "2017-02-15T20:07:29.9375939-06:00",
+    "snippet": "In this blog, Michael D. Green talks about his first impressions of the Angular 2 framework.",
+    "link": "my-first-impressions-of-angular-2",
+    "isActive": false
+  },
+  {
+    "id": 31,
+    "title": "Upgading an Application to Angular 2 using angular-cli",
+    "author": "Michael D. Green",
+    "postDate": "2017-02-19T20:07:29.9375939-06:00",
+    "snippet": "Michael D. Green talks about upgrading Grenitausconsulting.com to Angular 2 using angular-cli and his thoughts about angular-cli.",
+    "link": "upgrading-an-application-to-angular-2-using-angular-cli",
+    "isActive": false
+  },
+  {
+    "id": 32,
+    "title": "Upgading an Application to Angular 2 using angular-cli",
+    "author": "Michael D. Green",
+    "postDate": "2017-02-19T20:07:29.9375939-06:00",
+    "snippet": "Michael D. Green talks about upgrading Grenitausconsulting.com to Angular 2 using angular-cli and his thoughts about angular-cli.",
+    "link": "upgrading-an-application-to-angular-2-using-angular-cli",
+    "isActive": true
   }
 ]  

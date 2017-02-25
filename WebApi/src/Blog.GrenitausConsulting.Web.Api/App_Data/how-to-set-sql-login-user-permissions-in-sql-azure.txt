@@ -1,0 +1,100 @@
+In this blog post I wanted to take some time to demonstrate how to control SQL Login permissions in SQL Azure.  When you create a SQL Azure Database, an admin user will be created in the SQL Azure Database.  In most cases, you will not want to give normal users access to this account and you probably don’t want applications accessing your SQL Azure Database using this account.
+<br><br>
+<strong>This tutorial will assume:</strong>
+<br><br>
+<ul>
+<li>You have access to an Azure Subscription</li>
+<li>You have access to SQL Server Management Studio</li>
+<li>You have access to a SQL Azure Database</li>
+<li>You have the ability to log into the SQL Azure Database as the default Admin user</li>
+</ul>
+<br><br>
+<strong>Create a Read Only User!</strong>
+<br><br>
+Step 1) Open up SQL Server Management Studio and log into your SQL Azure Database as the Admin user.  Navigate to the “master”, right-click and choose “New Query”.
+<br><br>
+Step 2) In the Query Window, paste the following script and change the Login and password to those of your choosing:
+<br><br>
+<pre><code class="language-sql">
+
+/*
+Run on the master database
+*/
+CREATE LOGIN SomeReadOnlyLogin WITH password='somepassword'
+GO
+CREATE USER [SomeReadOnlyLoginUser] FOR LOGIN [SomeReadOnlyLogin] WITH DEFAULT_SCHEMA=[dbo]
+GO
+</code></pre>
+
+In SQL Azure, SQL Users access the Server though Logins and Logins are Server-wide.
+
+Step 3) Next, since the Using command does not work in SQL Azure, you will want to navigate to each Database on the server that you wish to give the Read Only User access to and execute the following script:
+<pre><code class="language-sql">
+/*
+Run on each database the user will have access too
+*/
+CREATE USER [SomeReadOnlyLoginUser] FOR LOGIN [SomeReadOnlyLogin] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/*
+Add user to the db_datareader role to restrict permissions to read only
+*/
+EXEC sp_addrolemember 'db_datareader', 'SomeReadOnlyLoginUser';
+GO
+</code></pre>
+
+<br><br>
+<strong>Create a READ/WRITE/EXECUTE Stored Procedures User!</strong>
+<br><br>
+Step 1) Open up SQL Server Management Studio and log into your SQL Azure Database as the Admin user.  Navigate to the “master”, right-click and choose “New Query”.
+<br><br>
+Step 2) In the Query Window, paste the following script and change the Login and password to those of your choosing:
+<br><br>
+<pre><code class="language-sql">
+/*
+Run on the master database
+*/
+CREATE LOGIN SomeReadWriteExecuteProcedureLogin WITH password='somepassword'
+GO
+CREATE USER [SomeReadWriteExecuteProcedureLoginUser] FOR LOGIN [SomeReadWriteExecuteProcedureLogin] WITH DEFAULT_SCHEMA=[dbo]
+GO
+</code></pre>
+
+<br><br>
+Step 3) Next, since the Using command does not work in SQL Azure, you will want to navigate to each Database on the server that you wish to give the READ/WRITE/EXECUTE Stored Procedures User access to and execute the following script:
+<br><br>
+<pre><code class="language-sql">
+/*
+Run on each database the user will have access too
+*/
+/*
+Create a new database role that allows users to execute stored procedures
+*/
+CREATE ROLE [db_executor] AUTHORIZATION [dbo]
+GO
+GRANT EXECUTE TO [db_executor]
+GO
+/*
+Add user to roles for reading, writing and executing stored procedures
+*/
+CREATE USER [SomeReadWriteExecuteProcedureUser] FOR LOGIN [SomeReadWriteExecuteProcedureLogin] WITH DEFAULT_SCHEMA=[dbo]
+GO
+EXEC sp_addrolemember 'db_datareader', 'SomeReadWriteExecuteProcedureUser';
+GO
+EXEC sp_addrolemember 'db_datawriter', 'SomeReadWriteExecuteProcedureUser';
+GO
+EXEC sp_addrolemember 'db_executor', 'SomeReadWriteExecuteProcedureUser';
+</code></pre>
+<br><br>
+<strong>Resources</strong>
+<br><br>
+<ul>
+<li>
+You can find a list of built in SQL Azure roles <a href="https://msdn.microsoft.com/en-us/library/ms189121.aspx" target="_blank">here</a>
+</li>
+<li>
+You can find more information about SQL Logins in Azure <a href="https://docs.microsoft.com/en-us/azure/sql-database/sql-database-manage-logins" target="_blank">here</a>
+</li>
+</ul>
+
+
+
