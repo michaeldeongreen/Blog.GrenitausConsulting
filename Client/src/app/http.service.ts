@@ -28,8 +28,8 @@ export class HttpService {
             .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
     }
 
-    public getTest(): any {
-        return this.http.get(`${this.baseUrl}/posts`)
+    public getBlog(title: string): any {
+        return this.http.get(`${this.baseUrl}/post/${title}`)
             .map((response: Response) => response.json())
             .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
     }
