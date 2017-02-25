@@ -15,17 +15,30 @@ namespace Blog.GrenitausConsulting.Services
         public PagedResponse Get(PagedCriteria criteria)
         {
             ApplyCriteriaLogic(criteria);
-            return new PagedResponse() { Total = criteria.Posts.Where(p => p.IsActive == criteria.IsActive).Count(), Posts = criteria.Posts.Where(p => p.IsActive == criteria.IsActive).Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.Id) };
+            var posts = criteria.Posts.Where(p => p.IsActive == criteria.IsActive);
+
+            return new PagedResponse() { Total = posts.Count(),
+                Posts = posts.Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.Id)
+            };
         }
 
         public PagedResponse Search(PagedCriteria criteria)
         {
             ApplyCriteriaLogic(criteria);
-            var query = criteria.Posts.Where(p => (p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower()) || p.Snippet.ToLower().Contains(criteria.SearchCriteria.ToLower()) && (p.IsActive == criteria.IsActive) ));
+            var posts = criteria.Posts.Where(p => p.IsActive == criteria.IsActive);
+
+            var query = posts.Where(p =>  
+                p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower()) ||
+                p.Snippet.ToLower().Contains(criteria.SearchCriteria.ToLower())
+                );
 
             if (query.ToList().Count > 0)
             {
-                var results = criteria.Posts.Where(p => (p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower()) || p.Snippet.ToLower().Contains(criteria.SearchCriteria.ToLower()) && (p.IsActive == criteria.IsActive))).Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.Id);
+                var results = posts.Where(p => 
+                p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower()) || 
+                p.Snippet.ToLower().Contains(criteria.SearchCriteria.ToLower()))
+                .Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.Id);
+
                 return new PagedResponse() { Total = query.ToList().Count(), Posts = results.ToList() };                
             }
             else

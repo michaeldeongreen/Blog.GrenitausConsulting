@@ -204,8 +204,11 @@
   <ItemGroup>
     <Content Include="App_Data\a-conversation-about-majority-privilege.txt" />
     <Content Include="App_Data\angular-2-continuous-deployment-azure-azure-cli-github.txt" />
+    <Content Include="App_Data\angular-2-tour-of-heroes-web-api-in-azure.txt" />
     <Content Include="App_Data\angular-scrollable-multiselect-dropdown-checkboxes.txt" />
     <Content Include="App_Data\another-reason-why-i-love-unit-tests.txt" />
+    <Content Include="App_Data\bored-take-the-tic-tac-toe-challenge.txt" />
+    <Content Include="App_Data\implement-async-wait-in-the-angular-2-tour-of-heroes-web-api.txt" />
     <Content Include="App_Data\my-decision-to-trade-in-my-git-gui-client-for-git-bash.txt" />
     <Content Include="App_Data\dont-rage-quit-your-job-make-a-proco-list.txt" />
     <Content Include="App_Data\going-extreme-with-extreme-programming.txt" />
@@ -214,8 +217,11 @@
     <Content Include="App_Data\how-to-setup-continuous-deployment-for-a-sql-server-database-using-git-powershell-ssdt-and-teamcity.txt" />
     <Content Include="App_Data\lessons-i-learned-after-being-laid-off-for-the-first-time.txt" />
     <Content Include="App_Data\my-interview-with-thoughtworks.txt" />
+    <Content Include="App_Data\refactoring-code-in-my-open-source-project-to-use-async-await.txt" />
     <Content Include="App_Data\the-3-types-of-employees.txt" />
     <Content Include="App_Data\the-most-important-relationship-on-an-agile-team.txt" />
+    <Content Include="App_Data\the-often-acrimonious-relationship-between-the-qa-and-development-team.txt" />
+    <Content Include="App_Data\the-programming-interview.txt" />
     <Content Include="App_Data\those-pesky-soft-skills-who-needs-them-part-2.txt" />
     <Content Include="App_Data\so-you-want-to-be-a-it-consultant.txt" />
     <Content Include="App_Data\those-pesky-soft-skills-who-needs-them-part-1.txt" />
@@ -223,6 +229,8 @@
     <Content Include="App_Data\tips-on-how-to-survive-it-projects-you-dont-like.txt" />
     <Content Include="App_Data\what-are-the-pros-and-cons-of-agile-scrum-part-1.txt" />
     <Content Include="App_Data\what-are-the-pros-and-cons-of-agile-scrum-part-2.txt" />
+    <Content Include="App_Data\why-i-started-blogging.txt" />
+    <Content Include="App_Data\why-you-should-never-accept-a-counteroffer.txt" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Global.asax" />
     <Content Include="Areas\HelpPage\Views\Web.config" />

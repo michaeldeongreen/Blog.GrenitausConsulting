@@ -5,7 +5,6 @@
     "author": "Michael D. Green",
     "postDate": "2014-05-14T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green gives advice to people who are considering becoming IT Consultants.",
-    "html": null,
     "link": "so-you-want-to-be-a-it-consultant",
     "isActive": true
 
@@ -16,7 +15,6 @@
     "author": "Michael D. Green",
     "postDate": "2014-05-18T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green talks about his interview with ThoughtWorks and provides simple advice for candidates.",
-    "html": null,
     "link": "my-interview-with-thoughtworks",
     "isActive": true
   },
@@ -26,7 +24,6 @@
     "author": "Michael D. Green",
     "postDate": "2014-09-23T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green talks about how to survive projects you don't like.",
-    "html": null,
     "link": "tips-on-how-to-survive-it-projects-you-dont-like",
     "isActive": true
   },
@@ -36,7 +33,6 @@
     "author": "Michael D. Green",
     "postDate": "2014-12-04T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green talks about the importance of soft skills such as timesheets, expenses and resume management.",
-    "html": null,
     "link": "those-pesky-soft-skills-who-needs-them-part-1",
     "isActive": true
   },
@@ -46,7 +42,6 @@
     "author": "Michael D. Green",
     "postDate": "2014-12-10T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green talks about how being laid off for the first time provided very valuable life experiences.",
-    "html": null,
     "link": "lessons-i-learned-after-being-laid-off-for-the-first-time",
     "isActive": true
   },
@@ -56,7 +51,6 @@
     "author": "Michael D. Green",
     "postDate": "2015-01-09T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green talks about the importance of soft skills such as being professional, taking ownership and communication.",
-    "html": null,
     "link": "those-pesky-soft-skills-who-needs-them-part-2",
     "isActive": true
   },
@@ -66,7 +60,6 @@
     "author": "Michael D. Green",
     "postDate": "2015-01-18T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green shares his thoughts on the pros and cons of agile scrum.",
-    "html": null,
     "link": "what-are-the-pros-and-cons-of-agile-scrum-part-1",
     "isActive": true
   },
@@ -76,7 +69,6 @@
     "author": "Michael D. Green",
     "postDate": "2015-01-29T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green talks about the importance of soft skills such as sales and recruiting.",
-    "html": null,
     "link": "those-pesky-soft-skills-who-needs-them-part-3",
     "isActive": true
   },
@@ -86,7 +78,6 @@
     "author": "Michael D. Green",
     "postDate": "2015-02-15T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green shares his thoughts on the pros and cons of agile scrum.",
-    "html": null,
     "link": "what-are-the-pros-and-cons-of-agile-scrum-part-2",
     "isActive": true
   },
@@ -96,7 +87,6 @@
     "author": "Michael D. Green",
     "postDate": "2015-04-05T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green talks about the concept of Majority Privilege. How it works, how it doesn't work, who benefits from it and its consequences.",
-    "html": null,
     "link": "a-conversation-about-majority-privilege",
     "isActive": true
   },
@@ -106,7 +96,6 @@
     "author": "Michael D. Green",
     "postDate": "2015-04-12T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green talks about PROCO lists, what they are and how they can help you determine overall job and career satisfaction.",
-    "html": null,
     "link": "dont-rage-quit-your-job-make-a-proco-list",
     "isActive": true
   },
@@ -116,7 +105,6 @@
     "author": "Michael D. Green",
     "postDate": "2015-04-25T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green shares a scrollable multiselect dropdown with checkboxes written in angular.",
-    "html": null,
     "link": "angular-scrollable-multiselect-dropdown-checkboxes",
     "isActive": true
   },
@@ -126,7 +114,6 @@
     "author": "Michael D. Green",
     "postDate": "2015-06-11T20:07:29.9375939-06:00",
     "snippet": "Michael D. Green shares his thoughts on Unit Testing.",
-    "html": null,
     "link": "another-reason-why-i-love-unit-tests",
     "isActive": true
   },
@@ -136,7 +123,6 @@
     "author": "Michael D. Green",
     "postDate": "2015-07-09T20:07:29.9375939-06:00",
     "snippet": "Michael D. Green shares the slides used during his talk at Architecting Innovation about Extreme Programming.",
-    "html": null,
     "link": "going-extreme-with-extreme-programming",
     "isActive": true
   },
@@ -146,7 +132,6 @@
     "author": "Michael D. Green",
     "postDate": "2015-09-19T20:07:29.9375939-06:00",
     "snippet": "Michael D. Green shares his thoughts on how to pass the PMP Exam on your first attempt.",
-    "html": null,
     "link": "how-to-pass-the-pmp-exam-on-your-first-attempt",
     "isActive": true
   },
@@ -156,7 +141,6 @@
     "author": "Michael D. Green",
     "postDate": "2017-02-08T20:07:29.9375939-06:00",
     "snippet": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    "html": null,
     "link": "how-to-convert-an-svn-repository-to-stash-using-tortoisegit",
     "isActive": true
   },
@@ -166,7 +150,6 @@
     "author": "Michael D. Green",
     "postDate": "2016-07-14T20:07:29.9375939-06:00",
     "snippet": "In this blog post Michael D. Green talks about the 3 types of employees in an organization.",
-    "html": null,
     "link": "the-3-types-of-employees",
     "isActive": true
   },
@@ -176,7 +159,6 @@
     "author": "Michael D. Green",
     "postDate": "2016-08-25T20:07:29.9375939-06:00",
     "snippet": "In this tutorial I will be demonstrating how to setup continuous deployment for a SQL Server database using Git, PowerShell, SSDT and TeamCity.",
-    "html": null,
     "link": "how-to-setup-continuous-deployment-for-a-sql-server-database-using-git-powershell-ssdt-and-teamcity",
     "isActive": true
   },
@@ -186,7 +168,6 @@
     "author": "Michael D. Green",
     "postDate": "2016-09-28T20:07:29.9375939-06:00",
     "snippet": "In this blog, Michael D. Green talks about the most important relationship on an Agile Team.",
-    "html": null,
     "link": "the-most-important-relationship-on-an-agile-team",
     "isActive": true
   },
@@ -196,7 +177,6 @@
     "author": "Michael D. Green",
     "postDate": "2016-11-01T20:07:29.9375939-06:00",
     "snippet": "In this blog, I wanted to discuss my decision to trade in my Git GUI Client for Git Bash. I would like to discuss some of the reasons why I have been using a Git GUI Client and why I have ultimately decided to start using Git Bash.",
-    "html": null,
     "link": "my-decision-to-trade-in-my-git-gui-client-for-git-bash",
     "isActive": true
   },
@@ -206,8 +186,79 @@
     "author": "Michael D. Green",
     "postDate": "2016-11-06T20:07:29.9375939-06:00",
     "snippet": "In this tutorial, Michael D. Green uses the Angular 2 QuickStart guide to demonstrate Angular 2 Continuous Deployment to Azure using azure-cli and GitHub.",
-    "html": null,
     "link": "angular-2-continuous-deployment-azure-azure-cli-github",
     "isActive": true
+  },
+  {
+    "id": 22,
+    "title": "Refactoring Code In My Open Source Project to use async/await",
+    "author": "Michael D. Green",
+    "postDate": "2016-11-07T20:07:29.9375939-06:00",
+    "snippet": "Michael D. Green demonstrates how to refactor your existing code to use the async/await features from the .Net Framework Task Parallel Library.",
+    "link": "refactoring-code-in-my-open-source-project-to-use-async-await",
+    "isActive": true
+  },
+  {
+    "id": 23,
+    "title": "Angular 2 Tour of Heroes Web API in Azure",
+    "author": "Michael D. Green",
+    "postDate": "2016-11-20T20:07:29.9375939-06:00",
+    "snippet": "Michael D. Green talks about the Angular 2 Tour of Heroes Web API in Azure he created and how to use it with the Angular 2 Tour of Heroes Guide.",
+    "link": "angular-2-tour-of-heroes-web-api-in-azure",
+    "isActive": true
+  },
+  {
+    "id": 24,
+    "title": "Bored?  Take the Tic Tac Toe Challenge!",
+    "author": "Michael D. Green",
+    "postDate": "2016-11-25T20:07:29.9375939-06:00",
+    "snippet": "Michael D. Green explains how he got bored on Thanksgiving and decided to take the Tic Tac Toe challenge.",
+    "link": "bored-take-the-tic-tac-toe-challenge",
+    "isActive": true
+  },
+  {
+    "id": 25,
+    "title": "Implement async/wait in the Angular 2 Tour of Heroes Web API",
+    "author": "Michael D. Green",
+    "postDate": "2016-11-30T20:07:29.9375939-06:00",
+    "snippet": "Michael D. Green talks about how to use async/wait to make the Angular 2 Tour of Heroes Web API Heroes Search hosted in Azure asynchronous.",
+    "link": "implement-async-wait-in-the-angular-2-tour-of-heroes-web-api",
+    "isActive": true
+  },
+  {
+    "id": 26,
+    "title": "Why You Should Never Accept a Counteroffer",
+    "author": "Michael D. Green",
+    "postDate": "2016-11-30T20:07:29.9375939-06:00",
+    "snippet": "In this blog, Michael D. Green talks about why you should never accept a counteroffer and shares some of his experiences after he took a counteroffer.",
+    "link": "why-you-should-never-accept-a-counteroffer",
+    "isActive": true
+  },
+  {
+    "id": 27,
+    "title": "The Programming Interview",
+    "author": "Michael D. Green",
+    "postDate": "2017-01-24T20:07:29.9375939-06:00",
+    "snippet": "Michael D. Green gives his thoughts on Programming Interviews, how they should be implemented, what they should measure and some his real world experiences.",
+    "link": "the-programming-interview",
+    "isActive": true
+  },
+  {
+    "id": 27,
+    "title": "Why I Started Blogging!",
+    "author": "Michael D. Green",
+    "postDate": "2017-01-24T20:07:29.9375939-06:00",
+    "snippet": "In this blog, Michael D. Green talks about some of the reasons why he started blogging and why other technologist should blog.",
+    "link": "why-i-started-blogging",
+    "isActive": true
+  },
+  {
+    "id": 28,
+    "title": "The Often Acrimonious Relationship Between The QA and Development Team!",
+    "author": "Michael D. Green",
+    "postDate": "2017-02-09T20:07:29.9375939-06:00",
+    "snippet": "Michael D. Green talks about why tension often exists between the QA and Development Team and what are some ways to resolve issues between them.",
+    "link": "the-often-acrimonious-relationship-between-the-qa-and-development-team",
+    "isActive": false
   }
 ]  
