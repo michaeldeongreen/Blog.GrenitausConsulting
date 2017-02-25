@@ -149,7 +149,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -249,6 +248,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\posts-summary.json" />
     <None Include="Properties\PublishProfiles\Test.pubxml" />
   </ItemGroup>
   <PropertyGroup>
