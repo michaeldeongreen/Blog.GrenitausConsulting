@@ -11,7 +11,7 @@
                     <a [routerLink]="['/post', item.link]">{{item.title}}</a>
                 </h2>
                 <p class="lead">
-                    by <a href="index.php">{{item.author}}</a>
+                    by <a [routerLink]="['/about']">{{item.author}}</a>
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span>{{item.postDate}}</p>
                 <hr>

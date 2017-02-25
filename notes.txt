@@ -13,8 +13,6 @@ TODO Now:
 1) Search needs to take html into account
 3) Date formating in angular 2/ mabye do on backend
 * prismjs
-* Search => blog post
-* download all blog pictures
 tags and category json
 * remove html property from client/server
 * ALL ORDER BYS ON SERVER SHOULD BE BY ID DESCEDING SO NEWEST FIRST

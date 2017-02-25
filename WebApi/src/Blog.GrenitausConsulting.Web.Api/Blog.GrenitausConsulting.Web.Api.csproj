@@ -203,9 +203,13 @@
   <ItemGroup>
     <Content Include="App_Data\lessons-i-learned-after-being-laid-off-for-the-first-time.txt" />
     <Content Include="App_Data\my-interview-with-thoughtworks.txt" />
+    <Content Include="App_Data\those-pesky-soft-skills-who-needs-them-part-2.txt" />
     <Content Include="App_Data\so-you-want-to-be-a-it-consultant.txt" />
     <Content Include="App_Data\those-pesky-soft-skills-who-needs-them-part-1.txt" />
+    <Content Include="App_Data\those-pesky-soft-skills-who-needs-them-part-3.txt" />
     <Content Include="App_Data\tips-on-how-to-survive-it-projects-you-dont-like.txt" />
+    <Content Include="App_Data\what-are-the-pros-and-cons-of-agile-scrum-part-1.txt" />
+    <Content Include="App_Data\what-are-the-pros-and-cons-of-agile-scrum-part-2.txt" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Global.asax" />
     <Content Include="Areas\HelpPage\Views\Web.config" />

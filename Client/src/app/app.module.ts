@@ -17,6 +17,7 @@ import { PagerService } from './pager.service';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { SharedEmitterService } from './shared-emitter.service';
 import { PostComponent } from './post/post.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PostComponent } from './post/post.component';
     FooterComponent,
     HomeComponent,
       SearchResultsComponent,
-      PostComponent
+      PostComponent,
+      AboutComponent
   ],
   imports: [
     BrowserModule,
