@@ -16,15 +16,18 @@ namespace Blog.GrenitausConsulting.Common
         private string _path = string.Empty;
         private IEnumerable<PostSummary> _postSummaries;
         private IList<PostHtml> _postHtmlList = new List<PostHtml>();
+        private IEnumerable<Category> _categories;
 
         public IEnumerable<PostSummary> PostSummaries { get { return _postSummaries; }  }
         public IList<PostHtml> PostHtmlList { get { return _postHtmlList; } }
+        public IEnumerable<Category> Categories { get { return _categories; } }
 
         public async Task Init(string path)
         {
             _path = path;
             await BuildPostSummaries();
             await BuildPostHtml();
+            await BuildCategories();
         }
 
         private async Task BuildPostSummaries()
@@ -44,6 +47,11 @@ namespace Blog.GrenitausConsulting.Common
                     _postHtmlList.Add(new PostHtml() { Hmtl = contents, Link = post.Link });
                 }
             }
+        }
+
+        private async Task BuildCategories()
+        {
+            _categories = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<IEnumerable<Category>>(File.ReadAllText(string.Format(@"{0}\categories.json", _path))));
         }
     }
 }
