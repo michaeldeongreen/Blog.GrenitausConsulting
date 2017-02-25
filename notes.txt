@@ -2,6 +2,11 @@ Cloud FTP Account
 grenitausdeploy
 WzVhZq2pw8SrN3Aw
 
+Azure gtmetrix
+https://gtmetrix.com/reports/grenitausconsulting.azurewebsites.net/l33RPqsC
+Wordpress
+https://gtmetrix.com/reports/blog.grenitausconsulting.com/2yNIESxy
+
 
 https://github.com/BlackrockDigital/startbootstrap-blog-home
 http://plnkr.co/edit/JVQMPvV8z2brCIzdG3N4?p=preview

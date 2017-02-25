@@ -73,6 +73,8 @@
     <Content Include="src\app\about\about.component.html" />
     <Content Include="src\app\categories\categories.component.css" />
     <Content Include="src\app\categories\categories.component.html" />
+    <Content Include="src\app\category-results\category-results.component.css" />
+    <Content Include="src\app\category-results\category-results.component.html" />
     <Content Include="src\app\footer\footer.component.css" />
     <Content Include="src\app\footer\footer.component.html" />
     <Content Include="src\app\header\header.component.css" />
@@ -127,6 +129,8 @@
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\categories\categories.component.spec.ts" />
     <TypeScriptCompile Include="src\app\categories\categories.component.ts" />
+    <TypeScriptCompile Include="src\app\category-results\category-results.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\category-results\category-results.component.ts" />
     <TypeScriptCompile Include="src\app\category.ts" />
     <TypeScriptCompile Include="src\app\footer\footer.component.spec.ts" />
     <TypeScriptCompile Include="src\app\footer\footer.component.ts" />
