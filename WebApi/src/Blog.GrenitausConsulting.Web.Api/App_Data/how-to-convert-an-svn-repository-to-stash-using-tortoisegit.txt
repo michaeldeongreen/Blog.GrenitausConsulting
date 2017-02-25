@@ -1,0 +1,52 @@
+Hi there!
+<br><br>
+In this blog post, I will be demonstrating how to convert an SVN Repository to Stash using TortoiseGit with all of your SVN commit history.
+<br><br>
+<strong>Caveat</strong>
+<br><br>
+There are many ways to convert an SVN repository to a Stash repository, the following is a tutorial for how I recently converted a project hosted in SVN to a Stash repository. The developer who worked on this project before me had already put roughly the last 100 commits into Stash.  However, this person left the project before I joined and I was not able to do any knowledge transfer.  
+<br><br>
+I continued to use SVN until I had time to learn how to convert the SVN repository to Stash and understand what changes needed to be made in the project’s TeamCity configurations to start using Git.
+<br><br>
+Also, this tutorial assumes that you have a basic understanding of SVN and Stash.
+<br><br>
+<strong>What do you need?</strong>
+<br><br>
+<ul>
+	<li><a href="https://tortoisegit.org/download/" target="_blank">TortoiseGit</a> - TortoiseGit will be used to convert your SVN branch to a Stash branch.</li>
+	<li><strong>SVN Repository Access</strong> - You will need the SVN branch url and permission to access the SVN branch that you would like to convert to Stash.</li>
+	<li><strong>Stash Repository Access</strong> - The new remote Stash repository for your new project needs to have already been created or you need to have permission to be able to create a new repository.</li>
+
+</ul>
+<br><br>
+
+<strong>Step By Step!</strong>
+<br><br>
+<strong>Step 1.</strong> Create the new Stash repository.  The sample repository name that I will be using is greensharesthoughts.tutorial
+<br><br>
+<strong>Step 2.</strong> Once the repository has been created in Stash, clone the new Stash repository in a temporary directory.  You are doing this because you want to get the settings in the local .git/config file.
+<br><br>
+<strong>Step 3.</strong> Once the Stash repository has been cloned, inside of the cloned directory, Right-click on the mouse and select TortoiseGit  then select Settings and choose <em>Edit local .git/config file</em> and copy the settings to a text editor such as Notepad++ for future reference.
+<br><br>
+<strong>Step 4.</strong> Navigate to the directory where your permanent Stash repository will be stored.  Inside of this directory, Right-click and select Git Clone.  On the clone screen: 
+<br><br>
+<ol>
+	<li>Enter the SVN Repository URL of the branch you want as your master.  Example: <em>http://svn.greensharesthoughts.com/svn/tutorials/branches/prod</em></li>
+	<li>Enter the Directory.  Example: <em>C:\stash\greensharesthoughts.tutorial</em></li>
+	<li>Next, select the From SVN Repository checkbox and uncheck every checkbox below this option</li>
+	<li>Press OK and allow TortoiseGit to convert the SVN Repository to a Stash Repository, this will take a while, depending upon the size of your SVN branch</li>
+</ol>
+<br><br>
+<a href="assets/images/how-to-convert-an-svn-repository-to-stash-using-tortoisegit.png"><img src="assets/images/how-to-convert-an-svn-repository-to-stash-using-tortoisegit.png" alt="Convert an SVN Repository to Stash using TortoiseGit" width="300" height="226" class="alignnone size-medium wp-image-289" /></a>
+<br><br>
+<strong>Step 5.</strong> Once the conversion is complete, you should see your repository files.  Inside of the repository root directory (<em>in my case, C:\stash\greensharesthoughts.tutorial</em>), you will want to Right-click , select TortoiseGit, select Settings and select Edit local .git/config and overwrite the settings with the Git settings that you copied from the temporary Stash directory you downloaded earlier and save these changes (<em>Step 3</em>).
+<br><br>
+<strong>Step 6.</strong> As you Right-click, you will notice that there are SVN options on the context menu for TortoiseGit.  To remove this, you will want to navigate to the root directory (in my case, <em>C:\stash\greensharesthoughts.tutorial</em>) and inside of this directory, find the .git folder (you may have to allow hidden folders to be seen in your Windows settings).  Inside of this folder, there should be a folder called svn.  Delete the svn file and the SVN options should be removed from your TortoiseGit context menu.
+<br><br>
+<strong>Step 7.</strong> Next, using TortoiseGit, you will want to do a pull (if there is code in the remote repository, which was the case for me) and fix any merge issues.
+<br><br>
+<strong>Step 8.</strong> Once all merge issues are fixed (if any), using TortoiseGit, you will want to do a commit and then push to the remote Stash repository and you have now converted your SVN repository to a Stash Repository with all of your SVN commit history.
+<br><br>
+<strong>Final Thoughts!</strong>
+<br><br>
+The project that I worked on had a very small codebase and I was the only developer on the project.  If the project had been larger, I would have probably waited until the last push to Production occurred.   I would then suspend all development (probably over the weekend) and merge all relevant branches into my SVN pristine/prod branch, so all needed changes are in one branch.  Next, I would perform all of the steps mentioned in this tutorial and once the SVN repository has been converted to Stash (master), I would then start re-creating the branch structure I used in SVN ie Development, QA, Pre-Prod, Prod etc etc and then development would continue.

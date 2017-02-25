@@ -16,6 +16,7 @@ TODO Now:
 tags and category json
 * remove html property from client/server
 * ALL ORDER BYS ON SERVER SHOULD BE BY ID DESCEDING SO NEWEST FIRST
+*add IsActive flag to posts
 
 TODO Later:
 1) Validate Blog Search (see ngif that the pager is using)

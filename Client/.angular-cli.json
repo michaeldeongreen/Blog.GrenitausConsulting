@@ -20,11 +20,13 @@
       "styles": [
         "styles.css",
         "assets/css/bootstrap.min.css",
-        "assets/css/blog-home.css"
+        "assets/css/blog-home.css",
+        "assets/css/prism.css"
       ],
       "scripts": [
         "assets/js/jquery.js",
-        "assets/js/bootstrap.min.js"
+        "assets/js/bootstrap.min.js",
+        "assets/js/prism.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

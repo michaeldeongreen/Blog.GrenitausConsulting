@@ -205,11 +205,16 @@
     <Content Include="App_Data\a-conversation-about-majority-privilege.txt" />
     <Content Include="App_Data\angular-scrollable-multiselect-dropdown-checkboxes.txt" />
     <Content Include="App_Data\another-reason-why-i-love-unit-tests.txt" />
+    <Content Include="App_Data\my-decision-to-trade-in-my-git-gui-client-for-git-bash.txt" />
     <Content Include="App_Data\dont-rage-quit-your-job-make-a-proco-list.txt" />
     <Content Include="App_Data\going-extreme-with-extreme-programming.txt" />
+    <Content Include="App_Data\how-to-convert-an-svn-repository-to-stash-using-tortoisegit.txt" />
     <Content Include="App_Data\how-to-pass-the-pmp-exam-on-your-first-attempt.txt" />
+    <Content Include="App_Data\how-to-setup-continuous-deployment-for-a-sql-server-database-using-git-powershell-ssdt-and-teamcity.txt" />
     <Content Include="App_Data\lessons-i-learned-after-being-laid-off-for-the-first-time.txt" />
     <Content Include="App_Data\my-interview-with-thoughtworks.txt" />
+    <Content Include="App_Data\the-3-types-of-employees.txt" />
+    <Content Include="App_Data\the-most-important-relationship-on-an-agile-team.txt" />
     <Content Include="App_Data\those-pesky-soft-skills-who-needs-them-part-2.txt" />
     <Content Include="App_Data\so-you-want-to-be-a-it-consultant.txt" />
     <Content Include="App_Data\those-pesky-soft-skills-who-needs-them-part-1.txt" />
