@@ -40,5 +40,11 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
         {
             return BlogContextManager.PostSummaries.Where(p => p.Link.ToLower().Trim() == link.ToLower().Trim()).FirstOrDefault();
         }
+
+        [Route("api/posts/category/{category}/page/{pageNumber}")]
+        public PagedResponse Get(int pageNumber, string category)
+        {
+            return _pagingService.SearchByCategory(new PagedCriteria() { PageNumber = pageNumber, PageSize = _pageSize, Posts = BlogContextManager.PostSummaries, SearchCriteria = category });
+        }
     }
 }

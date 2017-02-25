@@ -12,5 +12,7 @@ namespace Blog.GrenitausConsulting.Services.Interfaces
         PagedResponse Get(PagedCriteria criteria);
 
         PagedResponse Search(PagedCriteria criteria);
+
+        PagedResponse SearchByCategory(PagedCriteria criteria);
     }
 }

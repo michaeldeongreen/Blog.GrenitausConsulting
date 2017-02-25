@@ -11,14 +11,6 @@
         {
           "id": 1,
           "name": "Career Advice"
-        },
-        {
-          "id": 2,
-          "name": "Social Justice"
-        },
-        {
-          "id": 3,
-          "name": "Technology"
         }
     ]
   },
@@ -31,14 +23,6 @@
     "link": "my-interview-with-thoughtworks",
     "isActive": true,
     "categories": [
-      {
-        "id": 1,
-        "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
       {
         "id": 3,
         "name": "Technology"
@@ -53,14 +37,6 @@
       {
         "id": 1,
         "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
-        "id": 3,
-        "name": "Technology"
       }
     ],
     "link": "tips-on-how-to-survive-it-projects-you-dont-like",
@@ -80,14 +56,6 @@
       {
         "id": 1,
         "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
-        "id": 3,
-        "name": "Technology"
       }
     ]
   },
@@ -103,14 +71,6 @@
       {
         "id": 1,
         "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
-        "id": 3,
-        "name": "Technology"
       }
     ]
   },
@@ -126,14 +86,6 @@
       {
         "id": 1,
         "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
-        "id": 3,
-        "name": "Technology"
       }
     ]
   },
@@ -149,10 +101,6 @@
       {
         "id": 1,
         "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
       },
       {
         "id": 3,
@@ -172,14 +120,6 @@
       {
         "id": 1,
         "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
-        "id": 3,
-        "name": "Technology"
       }
     ]
   },
@@ -197,10 +137,6 @@
         "name": "Career Advice"
       },
       {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
         "id": 3,
         "name": "Technology"
       }
@@ -216,16 +152,8 @@
     "isActive": true,
     "categories": [
       {
-        "id": 1,
-        "name": "Career Advice"
-      },
-      {
         "id": 2,
         "name": "Social Justice"
-      },
-      {
-        "id": 3,
-        "name": "Technology"
       }
     ]
   },
@@ -241,14 +169,6 @@
       {
         "id": 1,
         "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
-        "id": 3,
-        "name": "Technology"
       }
     ]
   },
@@ -261,14 +181,6 @@
     "link": "angular-scrollable-multiselect-dropdown-checkboxes",
     "isActive": true,
     "categories": [
-      {
-        "id": 1,
-        "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
       {
         "id": 3,
         "name": "Technology"
@@ -285,14 +197,6 @@
     "isActive": true,
     "categories": [
       {
-        "id": 1,
-        "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
         "id": 3,
         "name": "Technology"
       }
@@ -307,14 +211,6 @@
     "link": "going-extreme-with-extreme-programming",
     "isActive": true,
     "categories": [
-      {
-        "id": 1,
-        "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
       {
         "id": 3,
         "name": "Technology"
@@ -333,14 +229,6 @@
       {
         "id": 1,
         "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
-        "id": 3,
-        "name": "Technology"
       }
     ]
   },
@@ -353,14 +241,6 @@
     "link": "how-to-convert-an-svn-repository-to-stash-using-tortoisegit",
     "isActive": true,
     "categories": [
-      {
-        "id": 1,
-        "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
       {
         "id": 3,
         "name": "Technology"
@@ -379,14 +259,6 @@
       {
         "id": 1,
         "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
-        "id": 3,
-        "name": "Technology"
       }
     ]
   },
@@ -399,14 +271,6 @@
     "link": "how-to-setup-continuous-deployment-for-a-sql-server-database-using-git-powershell-ssdt-and-teamcity",
     "isActive": true,
     "categories": [
-      {
-        "id": 1,
-        "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
       {
         "id": 3,
         "name": "Technology"
@@ -427,10 +291,6 @@
         "name": "Career Advice"
       },
       {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
         "id": 3,
         "name": "Technology"
       }
@@ -445,14 +305,6 @@
     "link": "my-decision-to-trade-in-my-git-gui-client-for-git-bash",
     "isActive": true,
     "categories": [
-      {
-        "id": 1,
-        "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
       {
         "id": 3,
         "name": "Technology"
@@ -469,14 +321,6 @@
     "isActive": true,
     "categories": [
       {
-        "id": 1,
-        "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
         "id": 3,
         "name": "Technology"
       }
@@ -491,14 +335,6 @@
     "link": "refactoring-code-in-my-open-source-project-to-use-async-await",
     "isActive": true,
     "categories": [
-      {
-        "id": 1,
-        "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
       {
         "id": 3,
         "name": "Technology"
@@ -515,14 +351,6 @@
     "isActive": true,
     "categories": [
       {
-        "id": 1,
-        "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
         "id": 3,
         "name": "Technology"
       }
@@ -538,14 +366,6 @@
     "isActive": true,
     "categories": [
       {
-        "id": 1,
-        "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
         "id": 3,
         "name": "Technology"
       }
@@ -560,14 +380,6 @@
     "link": "implement-async-wait-in-the-angular-2-tour-of-heroes-web-api",
     "isActive": true,
     "categories": [
-      {
-        "id": 1,
-        "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
       {
         "id": 3,
         "name": "Technology"
@@ -586,14 +398,6 @@
       {
         "id": 1,
         "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
-        "id": 3,
-        "name": "Technology"
       }
     ]
   },
@@ -609,10 +413,6 @@
       {
         "id": 1,
         "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
       },
       {
         "id": 3,
@@ -632,14 +432,6 @@
       {
         "id": 1,
         "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
-        "id": 3,
-        "name": "Technology"
       }
     ]
   },
@@ -657,10 +449,6 @@
         "name": "Career Advice"
       },
       {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
         "id": 3,
         "name": "Technology"
       }
@@ -675,14 +463,6 @@
     "link": "how-to-set-sql-login-user-permissions-in-sql-azure",
     "isActive": false,
     "categories": [
-      {
-        "id": 1,
-        "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
       {
         "id": 3,
         "name": "Technology"
@@ -699,14 +479,6 @@
     "isActive": false,
     "categories": [
       {
-        "id": 1,
-        "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
         "id": 3,
         "name": "Technology"
       }
@@ -722,14 +494,6 @@
     "isActive": false,
     "categories": [
       {
-        "id": 1,
-        "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
-      {
         "id": 3,
         "name": "Technology"
       }
@@ -744,14 +508,6 @@
     "link": "odd-azure-storage-azure-portal-and-visual-studio-2015-behavior",
     "isActive": true,
     "categories": [
-      {
-        "id": 1,
-        "name": "Career Advice"
-      },
-      {
-        "id": 2,
-        "name": "Social Justice"
-      },
       {
         "id": 3,
         "name": "Technology"
