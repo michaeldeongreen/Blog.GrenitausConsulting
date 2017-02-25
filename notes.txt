@@ -14,7 +14,6 @@ TODO Now:
 3) Date formating in angular 2/ mabye do on backend
 tags json
 * ALL ORDER BYS ON SERVER SHOULD BE BY ID DESCEDING SO NEWEST FIRST
-* the categories links need to have pointer css.
 
 TODO Later:
 1) Validate Blog Search (see ngif that the pager is using)
