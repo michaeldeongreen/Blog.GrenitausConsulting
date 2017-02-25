@@ -14,5 +14,6 @@ namespace Blog.GrenitausConsulting.Domain
         public DateTime PostDate { get; set; }
         public string Snippet { get; set; }
         public string Html { get; set; }
+        public string Link { get; set; }
     }
 }

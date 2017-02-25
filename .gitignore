@@ -23,6 +23,12 @@
 /WebApi/src/Blog.GrenitausConsulting.Unit.Tests/obj
 /WebApi/src/Blog.GrenitausConsulting.Unit.Tests/.vs
 
+
+/WebApi/src/Blog.GrenitausConsulting.Common/bin
+/WebApi/src/Blog.GrenitausConsulting.Common/obj
+/WebApi/src/Blog.GrenitausConsulting.Unit.Tests/.vs
+
+
 /Client/.vs
 /Client/bin
 /Client/obj

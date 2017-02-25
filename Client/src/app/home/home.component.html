@@ -8,7 +8,7 @@
 
             <div *ngFor="let item of pagedItems">
                 <h2>
-                    <a href="#">{{item.title}}</a>
+                    <a [routerLink]="['/post', item.link]">{{item.title}}</a>
                 </h2>
                 <p class="lead">
                     by <a href="index.php">{{item.author}}</a>

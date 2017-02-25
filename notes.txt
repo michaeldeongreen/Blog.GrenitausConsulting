@@ -1,3 +1,8 @@
+Cloud FTP Account
+grenitausdeploy
+WzVhZq2pw8SrN3Aw
+
+
 https://github.com/BlackrockDigital/startbootstrap-blog-home
 http://plnkr.co/edit/JVQMPvV8z2brCIzdG3N4?p=preview
 http://www.codershood.info/2016/12/26/server-side-pagination-angular-2/
@@ -5,7 +10,6 @@ https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
 TODO Now:
-2) Enter button and search
 
 TODO Later:
 1) Validate Blog Search (see ngif that the pager is using)

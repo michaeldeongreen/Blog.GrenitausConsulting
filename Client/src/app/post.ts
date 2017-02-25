@@ -5,4 +5,5 @@ export class Post {
     postDate: Date;
     snippet: string;
     html: string;
+    link: string;
 }

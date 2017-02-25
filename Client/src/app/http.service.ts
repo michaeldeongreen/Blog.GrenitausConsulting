@@ -27,4 +27,10 @@ export class HttpService {
             .map((response: Response) => response.json())
             .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
     }
+
+    public getTest(): any {
+        return this.http.get(`${this.baseUrl}/posts`)
+            .map((response: Response) => response.json())
+            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+    }
 }
