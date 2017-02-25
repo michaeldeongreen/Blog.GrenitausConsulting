@@ -9,12 +9,12 @@ namespace Blog.GrenitausConsulting.Unit.Tests
 {
     public static class Data
     {
-        public static List<Post> Get()
+        public static List<PostSummary> Get()
         {
-            List<Post> posts = new List<Post>();
+            List<PostSummary> posts = new List<PostSummary>();
             for (int i = 1; i <= 100; i++)
             {
-                posts.Add(new Post() { Id = i });
+                posts.Add(new PostSummary() { Id = i });
             }
             return posts;
         }

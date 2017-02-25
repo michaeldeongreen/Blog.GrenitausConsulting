@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blog.GrenitausConsulting.Domain
 {
-    public class Post
+    public class PostSummary
     {
         public int Id { get; set; }
         public string Title { get; set; }

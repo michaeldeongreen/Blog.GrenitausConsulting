@@ -42,7 +42,8 @@
   <ItemGroup>
     <Compile Include="PagedCriteria.cs" />
     <Compile Include="PagedResponse.cs" />
-    <Compile Include="Post.cs" />
+    <Compile Include="PostHtml.cs" />
+    <Compile Include="PostSummary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

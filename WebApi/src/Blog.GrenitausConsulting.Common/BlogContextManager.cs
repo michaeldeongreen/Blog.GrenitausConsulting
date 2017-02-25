@@ -11,7 +11,8 @@ namespace Blog.GrenitausConsulting.Common
     public sealed class BlogContextManager
     {
         private static readonly BlogContext _blogContext = new BlogContext();
-        public static IEnumerable<Post> PostSummaries{ get { return _blogContext.PostSummaries; } }
+        public static IEnumerable<PostSummary> PostSummaries { get { return _blogContext.PostSummaries; } }
+        public static IList<PostHtml> PostHtmlList { get { return _blogContext.PostHtmlList; } }
 
 
         public static async Task Init(string path)

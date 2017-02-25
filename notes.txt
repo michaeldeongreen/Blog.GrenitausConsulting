@@ -10,7 +10,7 @@ https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
 TODO Now:
-1) Search API needs to read from Full Post and Not Summaries.  Will do later, not a priority
+Search needs to take html into account
 
 TODO Later:
 1) Validate Blog Search (see ngif that the pager is using)

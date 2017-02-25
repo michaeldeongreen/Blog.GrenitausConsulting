@@ -200,6 +200,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\my-interview-with-thoughtworks.txt" />
+    <Content Include="App_Data\so-you-want-to-be-a-it-consultant.txt" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Global.asax" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -248,7 +250,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\posts-summary.json" />
+    <Content Include="App_Data\post-summaries.json" />
     <None Include="Properties\PublishProfiles\Test.pubxml" />
   </ItemGroup>
   <PropertyGroup>

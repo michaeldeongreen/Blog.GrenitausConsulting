@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Blog.GrenitausConsulting.Domain
 {
-    public class PagedResponse
+    public class PostHtml
     {
-        public int Total { get; set; }
-        public IEnumerable<PostSummary> Posts { get; set; }
+        public string Link { get; set; }
+        public string Hmtl { get; set; }
     }
 }

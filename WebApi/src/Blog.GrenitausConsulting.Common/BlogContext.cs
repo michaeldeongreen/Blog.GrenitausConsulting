@@ -13,19 +13,36 @@ namespace Blog.GrenitausConsulting.Common
     public sealed class BlogContext
     {
         private string _path = string.Empty;
-        private IEnumerable<Post> _postSummaries;
+        private IEnumerable<PostSummary> _postSummaries;
+        private IList<PostHtml> _postHtmlList = new List<PostHtml>();
 
-        public IEnumerable<Post> PostSummaries { get { return _postSummaries; }  }
+        public IEnumerable<PostSummary> PostSummaries { get { return _postSummaries; }  }
+        public IList<PostHtml> PostHtmlList { get { return _postHtmlList; } }
 
         public async Task Init(string path)
         {
             _path = path;
             await BuildPostSummaries();
+            await BuildPostHtml();
         }
 
         private async Task BuildPostSummaries()
         {
-            _postSummaries = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<IEnumerable<Post>>(File.ReadAllText(_path)));
+            _postSummaries = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<IEnumerable<PostSummary>>(File.ReadAllText(string.Format(@"{0}\post-summaries.json", _path))));
+        }
+
+        private async Task BuildPostHtml()
+        {
+            var blogs = Directory.GetFiles(_path, "*.txt");
+            foreach (var blog in blogs)
+            {
+                using (var reader = File.OpenText(blog))
+                {
+                    string contents = await reader.ReadToEndAsync();
+                    var post = _postSummaries.Where(p => p.Link == Path.GetFileNameWithoutExtension(blog)).FirstOrDefault();
+                    _postHtmlList.Add(new PostHtml() { Hmtl = contents, Link = post.Link });
+                }
+            }
         }
     }
 }
