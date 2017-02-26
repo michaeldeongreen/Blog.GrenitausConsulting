@@ -19,6 +19,12 @@ Social Media Buttons
 Meta tag component
 Find nice 900x300 image for posts
 
+Meta tag
+http://blog.devcross.net/2016/03/20/angular-2-seo/
+
+404 issues with images on prod, look at this, this is web.config fix, hashlocator next if it doesn't work:
+http://stackoverflow.com/questions/35284988/angular-2-404-error-occur-when-i-refresh-through-browser
+
 
 TODO Later:
 1) Validate Blog Search (see ngif that the pager is using)
