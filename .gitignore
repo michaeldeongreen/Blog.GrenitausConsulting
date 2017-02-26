@@ -3,6 +3,8 @@
 *.map
 *.user
 .vs
+*.dll
+*.pdb
 
 /WebApi/.vs
 /WebApi/src/.vs
@@ -28,6 +30,14 @@
 /WebApi/src/Blog.GrenitausConsulting.Common/obj
 /WebApi/src/Blog.GrenitausConsulting.Unit.Tests/.vs
 
+/WebApi/src/Blog.GrenitausConsulting.Common/bin/Debug/Blog.GrenitausConsulting.Common.dll
+/WebApi/src/Blog.GrenitausConsulting.Common/bin/Debug/Blog.GrenitausConsulting.Common.pdb
+
+/WebApi/src/Blog.GrenitausConsulting.Common/bin/Debug/Blog.GrenitausConsulting.Domain.dll
+/WebApi/src/Blog.GrenitausConsulting.Common/bin/Debug/Blog.GrenitausConsulting.Domain.pdb
+
+/WebApi/src/Blog.GrenitausConsulting.Common/obj/Debug/Blog.GrenitausConsulting.Common.dll
+/WebApi/src/Blog.GrenitausConsulting.Common/obj/Debug/Blog.GrenitausConsulting.Common.pdb
 
 /Client/.vs
 /Client/bin
