@@ -14,10 +14,8 @@
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span>{{item.postDate}}</p>
                 <div>
-                    <small>Categories: </small><span *ngFor="let category of item.categories; let isLast=last"><a [routerLink]="['/categoryResults', category.name]">{{category.name}}{{isLast ? '' : ', '}} </a></span>
-                </div>
-                <div>
-                    <small>Tags: </small><span *ngFor="let tag of item.tags; let isLast=last"><a href="#">{{tag.name}}{{isLast ? '' : ', '}} </a></span>
+                    <small>Posted in </small><span *ngFor="let category of item.categories; let isLast=last"><a [routerLink]="['/categoryResults', category.name]">{{category.name}}{{isLast ? '' : ', '}} </a></span>
+                    <small>Tagged </small><span *ngFor="let tag of item.tags; let isLast=last"><a href="#">{{tag.name}}{{isLast ? '' : ', '}} </a></span>
                 </div>
                 <hr>
                 <p [innerHTML]="html"></p>
