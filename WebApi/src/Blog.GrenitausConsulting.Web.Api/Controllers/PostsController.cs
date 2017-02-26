@@ -36,15 +36,21 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
         }
 
         [Route("api/post/{link}")]
-        public PostSummary Get(string link)
+        public PostSummary GetByLink(string link)
         {
             return BlogContextManager.PostSummaries.Where(p => p.Link.ToLower().Trim() == link.ToLower().Trim()).FirstOrDefault();
         }
 
         [Route("api/posts/category/{category}/page/{pageNumber}")]
-        public PagedResponse Get(int pageNumber, string category)
+        public PagedResponse GetByCategory(int pageNumber, string category)
         {
-            return _pagingService.SearchByCategory(new PagedCriteria() { PageNumber = pageNumber, PageSize = _pageSize, Posts = BlogContextManager.PostSummaries, SearchCriteria = category });
+            return _pagingService.GetByCategory(new PagedCriteria() { PageNumber = pageNumber, PageSize = _pageSize, Posts = BlogContextManager.PostSummaries, SearchCriteria = category });
+        }
+
+        [Route("api/posts/tag/{tag}/page/{pageNumber}")]
+        public PagedResponse GetByTag(int pageNumber, string tag)
+        {
+            return _pagingService.GetByTag(new PagedCriteria() { PageNumber = pageNumber, PageSize = _pageSize, Posts = BlogContextManager.PostSummaries, SearchCriteria = tag });
         }
     }
 }
