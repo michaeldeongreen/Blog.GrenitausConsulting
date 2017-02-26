@@ -15,10 +15,9 @@ https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
 TODO Now:
-1) Search needs to take html into account
 3) Date formating in angular 2/ mabye do on backend
 tags json
-* ALL ORDER BYS ON SERVER SHOULD BE BY ID DESCEDING SO NEWEST FIRST
+
 
 TODO Later:
 1) Validate Blog Search (see ngif that the pager is using)

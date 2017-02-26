@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Blog.GrenitausConsulting.Domain;
+using Blog.GrenitausConsulting.Common;
 
 namespace Blog.GrenitausConsulting.Services
 {
@@ -15,7 +16,7 @@ namespace Blog.GrenitausConsulting.Services
         public PagedResponse Get(PagedCriteria criteria)
         {
             ApplyCriteriaLogic(criteria);
-            var posts = criteria.Posts.Where(p => p.IsActive == criteria.IsActive);
+            var posts = criteria.Posts.Where(p => p.IsActive == criteria.IsActive).OrderByDescending(p => p.Id);
 
             return new PagedResponse() { Total = posts.Count(),
                 Posts = posts.Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.Id)
@@ -25,18 +26,20 @@ namespace Blog.GrenitausConsulting.Services
         public PagedResponse Search(PagedCriteria criteria)
         {
             ApplyCriteriaLogic(criteria);
-            var posts = criteria.Posts.Where(p => p.IsActive == criteria.IsActive);
+            var posts = criteria.Posts.Where(p => p.IsActive == criteria.IsActive).OrderByDescending(p => p.Id);
 
             var query = posts.Where(p =>  
                 p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower()) ||
-                p.Snippet.ToLower().Contains(criteria.SearchCriteria.ToLower())
+                p.Snippet.ToLower().Contains(criteria.SearchCriteria.ToLower()) ||
+                BlogContextManager.PostHtmlList.Where(h => h.Link.ToLower() == p.Link.ToLower() && h.Hmtl.Contains(criteria.SearchCriteria)).Count() > 0
                 );
 
             if (query.ToList().Count > 0)
             {
                 var results = posts.Where(p => 
                 p.Title.ToLower().Contains(criteria.SearchCriteria.ToLower()) || 
-                p.Snippet.ToLower().Contains(criteria.SearchCriteria.ToLower()))
+                p.Snippet.ToLower().Contains(criteria.SearchCriteria.ToLower()) ||
+                BlogContextManager.PostHtmlList.Where(h => h.Link.ToLower() == p.Link.ToLower() && h.Hmtl.Contains(criteria.SearchCriteria)).Count() > 0)
                 .Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.Id);
 
                 return new PagedResponse() { Total = query.ToList().Count(), Posts = results.ToList() };                
@@ -50,7 +53,7 @@ namespace Blog.GrenitausConsulting.Services
         public PagedResponse GetByCategory(PagedCriteria criteria)
         {
             ApplyCriteriaLogic(criteria);
-            var posts = criteria.Posts.Where(p => p.IsActive == criteria.IsActive);
+            var posts = criteria.Posts.Where(p => p.IsActive == criteria.IsActive).OrderByDescending(p => p.Id);
 
             var query = posts.Where(p =>
                 p.Categories.Any(c => c.Name.ToLower().Trim() == criteria.SearchCriteria.ToLower().Trim())
@@ -73,7 +76,7 @@ namespace Blog.GrenitausConsulting.Services
         public PagedResponse GetByTag(PagedCriteria criteria)
         {
             ApplyCriteriaLogic(criteria);
-            var posts = criteria.Posts.Where(p => p.IsActive == criteria.IsActive);
+            var posts = criteria.Posts.Where(p => p.IsActive == criteria.IsActive).OrderByDescending(p => p.Id);
 
             var query = posts.Where(p =>
                 p.Tags.Any(c => c.Name.ToLower().Trim() == criteria.SearchCriteria.ToLower().Trim())

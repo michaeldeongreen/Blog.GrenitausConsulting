@@ -27,8 +27,8 @@ namespace Blog.GrenitausConsulting.Common
         public async Task Init(string path)
         {
             _path = path;
-           _postSummaries = await BuildPostSummaries();
-           _postHtmlList = await BuildPostHtml();
+            _postSummaries = await BuildPostSummaries();
+            _postHtmlList = await BuildPostHtml();
             _categories = await BuildCategories();
             _tags = await BuildTags();
         }
