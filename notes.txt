@@ -2,6 +2,9 @@ Cloud FTP Account
 grenitausdeploy
 WzVhZq2pw8SrN3Aw
 
+deploy to godaddy
+http://www.c-sharpcorner.com/article/how-to-host-your-Asp-Net-mvc-website-on-godaddy-server/
+
 Azure gtmetrix
 https://gtmetrix.com/reports/grenitausconsulting.azurewebsites.net/l33RPqsC
 Wordpress
