@@ -152,6 +152,7 @@
     <TypeScriptCompile Include="src\app\shared-emitter.service.ts" />
     <TypeScriptCompile Include="src\app\side-widget\side-widget.component.spec.ts" />
     <TypeScriptCompile Include="src\app\side-widget\side-widget.component.ts" />
+    <TypeScriptCompile Include="src\app\tag.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />

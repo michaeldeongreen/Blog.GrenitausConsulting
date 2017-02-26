@@ -39,3 +39,6 @@ Syntax for data returning
 ngOnInit firing multiple times because of an error
 
 prsimjs <xmp> see upgrading an app blog
+
+comma list for tags/categories
+http://stackoverflow.com/questions/34053860/using-comma-as-a-list-separator-in-angular-2
