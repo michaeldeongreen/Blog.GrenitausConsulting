@@ -20,6 +20,7 @@ import { PostComponent } from './post/post.component';
 import { AboutComponent } from './about/about.component';
 import { CategoryResultsComponent } from './category-results/category-results.component';
 import { TagResultsComponent } from './tag-results/tag-results.component';
+import { SeoService } from './seo.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { TagResultsComponent } from './tag-results/tag-results.component';
       AppRoutingModule
       
   ],
-  providers: [HttpService, PagerService, SharedEmitterService],
+  providers: [HttpService, PagerService, SharedEmitterService, SeoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

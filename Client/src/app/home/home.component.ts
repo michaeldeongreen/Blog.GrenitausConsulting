@@ -5,6 +5,7 @@ import { HttpService } from '../http.service';
 import { PagerService } from '../pager.service';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
+import { SeoService } from '../seo.service';
 
 
 @Component({
@@ -19,8 +20,12 @@ export class HomeComponent implements OnInit {
     constructor(private http: Http,
         private httpService: HttpService,
         private pagerService: PagerService,
-        private route: ActivatedRoute) {
+        private route: ActivatedRoute,
+        private seoService: SeoService) {
+
+        seoService.setTitle("Did my title change!");
     }
+
 
     // pager object
     pager: any = {};
