@@ -25,7 +25,7 @@ TODO Later:
 2) Research why certain characters like # crash web api
 4) Maybe a back button at bottom of post
 * See if you can get the links to move you up to top elegantly
-
+*Possible timer like dachecache to refresh memory
 
 https://gist.github.com/sasxa/e1164d9773b31459f6dc
 http://sharpten.com/blog/2016/03/23/using-eventemitters-notify-component-changes-angular-2.html

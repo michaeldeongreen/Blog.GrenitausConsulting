@@ -16,5 +16,6 @@ namespace Blog.GrenitausConsulting.Domain
         public string Link { get; set; }
         public bool IsActive { get; set; }
         public IList<Category> Categories { get; set; }
+        public IList<Tag> Tags { get; set; }
     }
 }

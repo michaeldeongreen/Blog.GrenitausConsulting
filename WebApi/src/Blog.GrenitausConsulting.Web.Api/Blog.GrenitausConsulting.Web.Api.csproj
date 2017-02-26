@@ -285,6 +285,7 @@
   <ItemGroup>
     <Content Include="App_Data\post-summaries.json" />
     <Content Include="App_Data\categories.json" />
+    <Content Include="App_Data\tags.json" />
     <None Include="Properties\PublishProfiles\Test.pubxml" />
   </ItemGroup>
   <PropertyGroup>

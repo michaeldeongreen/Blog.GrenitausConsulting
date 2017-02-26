@@ -14,6 +14,7 @@ namespace Blog.GrenitausConsulting.Common
         public static IEnumerable<PostSummary> PostSummaries { get { return _blogContext.PostSummaries; } }
         public static IList<PostHtml> PostHtmlList { get { return _blogContext.PostHtmlList; } }
         public static IEnumerable<Category> Categories { get {return _blogContext.Categories; } }
+        public static IEnumerable<Tag> Tags { get { return _blogContext.Tags; }  }
 
 
 

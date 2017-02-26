@@ -8,10 +8,20 @@
     "link": "so-you-want-to-be-a-it-consultant",
     "isActive": true,
     "categories": [
-        {
-          "id": 1,
-          "name": "Career Advice"
-        }
+      {
+        "id": 1,
+        "name": "Career Advice"
+      }
+    ],
+    "tags": [
+      {
+        "id": 1,
+        "name": "Consulting"
+      },
+      {
+        "id": 2,
+        "name": "IT"
+      }
     ]
   },
   {
@@ -26,6 +36,16 @@
       {
         "id": 3,
         "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 1,
+        "name": "Consulting"
+      },
+      {
+        "id": 3,
+        "name": "Interviewing"
       }
     ]
   },
@@ -42,7 +62,17 @@
     "link": "tips-on-how-to-survive-it-projects-you-dont-like",
     "postDate": "2014-09-23T20:07:29.9370937-06:00",
     "snippet": "Michael D. Green talks about how to survive projects you don't like.",
-    "title": "Tips on how to survive IT projects you don't like"
+    "title": "Tips on how to survive IT projects you don't like",
+    "tags": [
+      {
+        "id": 4,
+        "name": "Career"
+      },
+      {
+        "id": 1,
+        "name": "Consulting"
+      }
+    ]
   },
   {
     "id": 4,
@@ -56,6 +86,20 @@
       {
         "id": 1,
         "name": "Career Advice"
+      }
+    ],
+    "tags": [
+      {
+        "id": 4,
+        "name": "Career"
+      },
+      {
+        "id": 1,
+        "name": "Consulting"
+      },
+      {
+        "id": 5,
+        "name": "Soft Skills"
       }
     ]
   },
@@ -72,6 +116,12 @@
         "id": 1,
         "name": "Career Advice"
       }
+    ],
+    "tags": [
+      {
+        "id": 4,
+        "name": "Career"
+      }
     ]
   },
   {
@@ -86,6 +136,12 @@
       {
         "id": 1,
         "name": "Career Advice"
+      }
+    ],
+    "tags": [
+      {
+        "id": 5,
+        "name": "Soft Skills"
       }
     ]
   },
@@ -106,6 +162,20 @@
         "id": 3,
         "name": "Technology"
       }
+    ],
+    "tags": [
+      {
+        "id": 6,
+        "name": "Agile"
+      },
+      {
+        "id": 7,
+        "name": "Project Management"
+      },
+      {
+        "id": 8,
+        "name": "SCRUM"
+      }
     ]
   },
   {
@@ -120,6 +190,12 @@
       {
         "id": 1,
         "name": "Career Advice"
+      }
+    ],
+    "tags": [
+      {
+        "id": 5,
+        "name": "Soft Skills"
       }
     ]
   },
@@ -140,6 +216,20 @@
         "id": 3,
         "name": "Technology"
       }
+    ],
+    "tags": [
+      {
+        "id": 6,
+        "name": "Agile"
+      },
+      {
+        "id": 7,
+        "name": "Project Management"
+      },
+      {
+        "id": 1,
+        "name": "SCRUM"
+      }
     ]
   },
   {
@@ -154,6 +244,12 @@
       {
         "id": 2,
         "name": "Social Justice"
+      }
+    ],
+    "tags": [
+      {
+        "id": 9,
+        "name": "Racism"
       }
     ]
   },
@@ -170,6 +266,12 @@
         "id": 1,
         "name": "Career Advice"
       }
+    ],
+    "tags": [
+      {
+        "id": 4,
+        "name": "Career"
+      }
     ]
   },
   {
@@ -184,6 +286,16 @@
       {
         "id": 3,
         "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 10,
+        "name": "AngularJS"
+      },
+      {
+        "id": 11,
+        "name": "JavaScript"
       }
     ]
   },
@@ -200,6 +312,16 @@
         "id": 3,
         "name": "Technology"
       }
+    ],
+    "tags": [
+      {
+        "id": 12,
+        "name": "Test Driven Development"
+      },
+      {
+        "id": 13,
+        "name": "Unit Testing"
+      }
     ]
   },
   {
@@ -214,6 +336,16 @@
       {
         "id": 3,
         "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 14,
+        "name": "Agile XP"
+      },
+      {
+        "id": 15,
+        "name": "Extreme Programming"
       }
     ]
   },
@@ -230,6 +362,20 @@
         "id": 1,
         "name": "Career Advice"
       }
+    ],
+    "tags": [
+      {
+        "id": 16,
+        "name": "PMBOK"
+      },
+      {
+        "id": 17,
+        "name": "PMP"
+      },
+      {
+        "id": 7,
+        "name": "Project Management"
+      }
     ]
   },
   {
@@ -244,6 +390,20 @@
       {
         "id": 3,
         "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 18,
+        "name": "Git"
+      },
+      {
+        "id": 19,
+        "name": "SVN"
+      },
+      {
+        "id": 20,
+        "name": "TortoiseGit"
       }
     ]
   },
@@ -260,6 +420,12 @@
         "id": 1,
         "name": "Career Advice"
       }
+    ],
+    "tags": [
+      {
+        "id": 4,
+        "name": "Career"
+      }
     ]
   },
   {
@@ -274,6 +440,36 @@
       {
         "id": 3,
         "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 21,
+        "name": "Continuous Deployment"
+      },
+      {
+        "id": 18,
+        "name": "Git"
+      },
+      {
+        "id": 22,
+        "name": "PowerShell"
+      },
+      {
+        "id": 23,
+        "name": "SQL Server"
+      },
+      {
+        "id": 24,
+        "name": "SSDT"
+      },
+      {
+        "id": 25,
+        "name": "TeamCity"
+      },
+      {
+        "id": 27,
+        "name": "Visual Studio 2015"
       }
     ]
   },
@@ -294,6 +490,20 @@
         "id": 3,
         "name": "Technology"
       }
+    ],
+    "tags": [
+      {
+        "id": 6,
+        "name": "Agile"
+      },
+      {
+        "id": 26,
+        "name": "Partnerships"
+      },
+      {
+        "id": 29,
+        "name": "Software Development"
+      }
     ]
   },
   {
@@ -308,6 +518,20 @@
       {
         "id": 3,
         "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 20,
+        "name": "TortoiseGit"
+      },
+      {
+        "id": 18,
+        "name": "Git"
+      },
+      {
+        "id": 33,
+        "name": "Git Bash"
       }
     ]
   },
@@ -324,6 +548,36 @@
         "id": 3,
         "name": "Technology"
       }
+    ],
+    "tags": [
+      {
+        "id": 28,
+        "name": "Angular 2"
+      },
+      {
+        "id": 31,
+        "name": "Azure Web App"
+      },
+      {
+        "id": 32,
+        "name": "azure-cli"
+      },
+      {
+        "id": 33,
+        "name": "Git Bash"
+      },
+      {
+        "id": 18,
+        "name": "Git"
+      },
+      {
+        "id": 34,
+        "name": "GitHub"
+      },
+      {
+        "id": 35,
+        "name": "TypeScript"
+      }
     ]
   },
   {
@@ -338,6 +592,28 @@
       {
         "id": 3,
         "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 36,
+        "name": "async/await"
+      },
+      {
+        "id": 37,
+        "name": "asynchronous programming"
+      },
+      {
+        "id": 38,
+        "name": "C#"
+      },
+      {
+        "id": 39,
+        "name": "Refactoring"
+      },
+      {
+        "id": 40,
+        "name": "Task Parallel Library"
       }
     ]
   },
@@ -354,6 +630,48 @@
         "id": 3,
         "name": "Technology"
       }
+    ],
+    "tags": [
+      {
+        "id": 28,
+        "name": "Angular 2"
+      },
+      {
+        "id": 41,
+        "name": "ASP.Net Web API"
+      },
+      {
+        "id": 30,
+        "name": "Azure"
+      },
+      {
+        "id": 42,
+        "name": "Azure API App"
+      },
+      {
+        "id": 31,
+        "name": "Azure Web App"
+      },
+      {
+        "id": 38,
+        "name": "C#"
+      },
+      {
+        "id": 43,
+        "name": "Entity Framework"
+      },
+      {
+        "id": 23,
+        "name": "SQL Server"
+      },
+      {
+        "id": 44,
+        "name": "StructureMap"
+      },
+      {
+        "id": 45,
+        "name": "Swagger"
+      }
     ]
   },
   {
@@ -368,6 +686,24 @@
       {
         "id": 3,
         "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 38,
+        "name": "C#"
+      },
+      {
+        "id": 46,
+        "name": "FluentAssertions"
+      },
+      {
+        "id": 58,
+        "name": "NUnit"
+      },
+      {
+        "id": 27,
+        "name": "Visual Studio 2015"
       }
     ]
   },
@@ -384,6 +720,16 @@
         "id": 3,
         "name": "Technology"
       }
+    ],
+    "tags": [
+      {
+        "id": 41,
+        "name": "ASP.Net Web API"
+      },
+      {
+        "id": 36,
+        "name": "async/await"
+      }
     ]
   },
   {
@@ -398,6 +744,16 @@
       {
         "id": 1,
         "name": "Career Advice"
+      }
+    ],
+    "tags": [
+      {
+        "id": 48,
+        "name": "Counteroffer"
+      },
+      {
+        "id": 49,
+        "name": "Negotiation"
       }
     ]
   },
@@ -418,6 +774,16 @@
         "id": 3,
         "name": "Technology"
       }
+    ],
+    "tags": [
+      {
+        "id": 4,
+        "name": "Career"
+      },
+      {
+        "id": 3,
+        "name": "Interviewing"
+      }
     ]
   },
   {
@@ -432,6 +798,12 @@
       {
         "id": 1,
         "name": "Career Advice"
+      }
+    ],
+    "tags": [
+      {
+        "id": 50,
+        "name": "Blogging"
       }
     ]
   },
@@ -452,6 +824,28 @@
         "id": 3,
         "name": "Technology"
       }
+    ],
+    "tags": [
+      {
+        "id": 6,
+        "name": "Agile"
+      },
+      {
+        "id": 7,
+        "name": "Project Management"
+      },
+      {
+        "id": 59,
+        "name": "QA"
+      },
+      {
+        "id": 8,
+        "name": "SCRUM"
+      },
+      {
+        "id": 29,
+        "name": "Software Development"
+      }
     ]
   },
   {
@@ -466,6 +860,16 @@
       {
         "id": 3,
         "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 60,
+        "name": "SQL Azure"
+      },
+      {
+        "id": 61,
+        "name": "SQL Logins"
       }
     ]
   },
@@ -482,6 +886,56 @@
         "id": 3,
         "name": "Technology"
       }
+    ],
+    "tags": [
+      {
+        "id": 28,
+        "name": "Angular 2"
+      },
+      {
+        "id": 10,
+        "name": "AngularJS"
+      },
+      {
+        "id": 11,
+        "name": "JavaScript"
+      },
+      {
+        "id": 62,
+        "name": "JSON"
+      },
+      {
+        "id": 51,
+        "name": "Node.js"
+      },
+      {
+        "id": 52,
+        "name": "NPM"
+      },
+      {
+        "id": 53,
+        "name": "REST"
+      },
+      {
+        "id": 54,
+        "name": "SystemJS"
+      },
+      {
+        "id": 35,
+        "name": "TypeScript"
+      },
+      {
+        "id": 27,
+        "name": "Visual Studio 2015"
+      },
+      {
+        "id": 41,
+        "name": "ASP.Net Web API"
+      },
+      {
+        "id": 55,
+        "name": "Webpack"
+      }
     ]
   },
   {
@@ -497,6 +951,44 @@
         "id": 3,
         "name": "Technology"
       }
+    ],
+    "tags": [
+      {
+        "id": 28,
+        "name": "Angular 2"
+      },
+      {
+        "id": 32,
+        "name": "angular-cli"
+      },
+      {
+        "id": 18,
+        "name": "Git"
+      },
+      {
+        "id": 33,
+        "name": "Git Bash"
+      },
+      {
+        "id": 34,
+        "name": "GitHub"
+      },
+      {
+        "id": 51,
+        "name": "Node.js"
+      },
+      {
+        "id": 52,
+        "name": "NPM"
+      },
+      {
+        "id": 35,
+        "name": "TypeScript"
+      },
+      {
+        "id": 27,
+        "name": "Visual Studio 2015"
+      }
     ]
   },
   {
@@ -511,6 +1003,24 @@
       {
         "id": 3,
         "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 30,
+        "name": "Azure"
+      },
+      {
+        "id": 56,
+        "name": "Career Advice"
+      },
+      {
+        "id": 57,
+        "name": "Azure Cloud Service"
+      },
+      {
+        "id": 27,
+        "name": "Visual Studio 2015"
       }
     ]
   }
