@@ -6,6 +6,7 @@ import { SearchResultsComponent } from '../search-results/search-results.compone
 import { PostComponent } from '../post/post.component';
 import { AboutComponent } from '../about/about.component';
 import { CategoryResultsComponent } from '../category-results/category-results.component'
+import { TagResultsComponent } from '../tag-results/tag-results.component'
 
 const routes: Routes = [
     { path: '', redirectTo: '/home/1', pathMatch: 'full' },
@@ -13,7 +14,8 @@ const routes: Routes = [
     { path: 'searchResults/:criteria', component: SearchResultsComponent },
     { path: 'post/:title', component: PostComponent },
     { path: 'about', component: AboutComponent },
-    { path: 'categoryResults/:category', component: CategoryResultsComponent }
+    { path: 'categoryResults/:category', component: CategoryResultsComponent },
+    { path: 'tagResults/:tag', component: TagResultsComponent }
 ];
 
 @NgModule({

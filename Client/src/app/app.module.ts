@@ -19,6 +19,7 @@ import { SharedEmitterService } from './shared-emitter.service';
 import { PostComponent } from './post/post.component';
 import { AboutComponent } from './about/about.component';
 import { CategoryResultsComponent } from './category-results/category-results.component';
+import { TagResultsComponent } from './tag-results/tag-results.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CategoryResultsComponent } from './category-results/category-results.co
       SearchResultsComponent,
       PostComponent,
       AboutComponent,
-      CategoryResultsComponent
+      CategoryResultsComponent,
+      TagResultsComponent
   ],
   imports: [
     BrowserModule,

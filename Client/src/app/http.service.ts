@@ -51,4 +51,10 @@ export class HttpService {
             .map((response: Response) => response.json())
             .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
     }
+
+    public getPostsByTag(tag: string, page: number): any {
+        return this.http.get(`${this.baseUrl}/posts/tag/${tag}/page/${page}`)
+            .map((response: Response) => response.json())
+            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+    }
 }
