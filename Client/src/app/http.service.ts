@@ -11,8 +11,11 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class HttpService {
-    private baseUrl = 'http://localhost:49529/api';
-    private headers = new Headers({ 'Content-Type': 'application/json' });
+    private baseUrl = 'http://grenitausconsulting.azurewebsites.net/api';
+    private headers = new Headers({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+    });
 
     constructor(private http: Http) { }
 
