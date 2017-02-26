@@ -83,3 +83,7 @@ http://stackoverflow.com/questions/34053860/using-comma-as-a-list-separator-in-a
 
 Rosylyn
 https://blog.gldraphael.com/removing-roslyn-from-asp-net-4-5-2-project-template/
+
+little bitty things:
+get full current path, see url variable in post component
+refresh 404

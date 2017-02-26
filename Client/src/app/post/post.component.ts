@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Post } from '../post';
 import { Observable } from 'rxjs/Observable';
 import { SeoService } from '../seo.service';
+import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @Component({
   selector: 'app-post',
@@ -14,10 +15,16 @@ export class PostComponent implements OnInit {
     html: string;
     parameter: string;
     item: any = {};
+    url: string;
+    path: string;
 
     constructor(private httpService: HttpService,
         private route: ActivatedRoute,
-        private seoService: SeoService) { }
+        private seoService: SeoService,
+        private location: Location) {
+        this.path = location.prepareExternalUrl(location.path(true));
+        this.url = `${window.location.protocol}//${window.location.host}/${this.path}`;
+    }
 
 
     ngOnInit() {
