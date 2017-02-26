@@ -2,11 +2,12 @@ Cloud FTP Account
 grenitausdeploy
 WzVhZq2pw8SrN3Aw
 
-deploy to godaddy
-http://www.c-sharpcorner.com/article/how-to-host-your-Asp-Net-mvc-website-on-godaddy-server/
-
 Azure gtmetrix
 https://gtmetrix.com/reports/grenitausconsulting.azurewebsites.net/l33RPqsC
+
+Temp. on grenitausconsulting.com
+https://gtmetrix.com/reports/grenitausconsulting.com/9Z96xeji
+
 Wordpress
 https://gtmetrix.com/reports/blog.grenitausconsulting.com/2yNIESxy
 
@@ -23,7 +24,11 @@ Meta tag component - implemented on home page, seems to be working
 Find nice 900x300 image for posts
 update sitemaps
 
+Meta tag
+http://blog.devcross.net/2016/03/20/angular-2-seo/
 
+404 issues with images on prod, look at this, this is web.config fix, hashlocator next if it doesn't work:
+http://stackoverflow.com/questions/35284988/angular-2-404-error-occur-when-i-refresh-through-browser
 
 
 TODO Later:
@@ -33,32 +38,11 @@ TODO Later:
 * See if you can get the links to move you up to top elegantly
 *Possible timer like dachecache to refresh memory
 
-
-Meta tag sample:
-<title>Why You Should Never Accept a Counteroffer - Grenitaus Consulting, LLC</title>
-<meta name="description" content="In this blog, Michael D. Green talks about why you should never accept a counteroffer and shares some of his experiences after he took a counteroffer.">
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Why You Should Never Accept a Counteroffer - Grenitaus Consulting, LLC">
-<meta property="og:description" content="In this blog, Michael D. Green talks about why you should never accept a counteroffer and shares some of his experiences after he took a counteroffer.">
-<meta property="og:url" content="http://blog.grenitausconsulting.com/why-you-should-never-accept-a-counteroffer/">
-<meta property="og:site_name" content="Grenitaus Consulting, LLC">
-<meta property="article:tag" content="Counteroffer">
-<meta property="article:tag" content="Negotiation">
-<meta property="article:section" content="Career Advice">
-<meta property="article:published_time" content="2017-01-24T13:23:31+00:00">
-<meta property="article:modified_time" content="2017-01-24T14:12:04+00:00">
-<meta property="og:updated_time" content="2017-01-24T14:12:04+00:00">
-<meta property="og:image" content="http://blog.grenitausconsulting.com/wp-content/uploads/2017/01/Grenitatusconsulting-com-michael-d-green-why-you-shoulnd-never-accept-a-counteroffer-001.png">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:description" content="In this blog, Michael D. Green talks about why you should never accept a counteroffer and shares some of his experiences after he took a counteroffer.">
-<meta name="twitter:title" content="Why You Should Never Accept a Counteroffer - Grenitaus Consulting, LLC">
-<meta name="twitter:image" content="http://blog.grenitausconsulting.com/wp-content/uploads/2017/01/Grenitatusconsulting-com-michael-d-green-why-you-shoulnd-never-accept-a-counteroffer-001.png">
+https://gist.github.com/sasxa/e1164d9773b31459f6dc
+http://sharpten.com/blog/2016/03/23/using-eventemitters-notify-component-changes-angular-2.html
 
 Blog 
 Understanding Sibling communication via shared service and event emitters
-https://gist.github.com/sasxa/e1164d9773b31459f6dc
-http://sharpten.com/blog/2016/03/23/using-eventemitters-notify-component-changes-angular-2.html
 
 All the libraries like rxjs
 
@@ -71,8 +55,5 @@ prsimjs <xmp> see upgrading an app blog
 comma list for tags/categories
 http://stackoverflow.com/questions/34053860/using-comma-as-a-list-separator-in-angular-2
 
-404 issues with images on prod, look at this, this is web.config fix, hashlocator next if it doesn't work:
-http://stackoverflow.com/questions/35284988/angular-2-404-error-occur-when-i-refresh-through-browser
-
-Meta tag
-http://blog.devcross.net/2016/03/20/angular-2-seo/
+Rosylyn
+https://blog.gldraphael.com/removing-roslyn-from-asp-net-4-5-2-project-template/
