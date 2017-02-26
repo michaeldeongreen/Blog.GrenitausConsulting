@@ -34,8 +34,13 @@ export class TagResultsComponent implements OnInit {
 
     setTag() {
         if (this.tag != 'undefined' && this.tag) {
+            this.clearPager();
             this.setPage(1);
         }
+    }
+
+    clearPager() {
+        this.pager = {};
     }
 
     setPage(page: number) {

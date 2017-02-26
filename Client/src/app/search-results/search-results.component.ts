@@ -42,8 +42,13 @@ export class SearchResultsComponent implements OnInit {
         this.setCriteria();
   }
 
+    clearPager() {
+        this.pager = {};
+    }
+
   setCriteria() {
       if (this.criteria != 'undefined' && this.criteria) {
+          this.clearPager();
           this.setPage(1);
       }
   }

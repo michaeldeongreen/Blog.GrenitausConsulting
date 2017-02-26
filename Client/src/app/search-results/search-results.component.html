@@ -3,7 +3,9 @@
         <div class="col-md-8">
             <h1 class="page-header">
                 Search Results
-                <small>Secondary Text</small>
+                <small *ngIf="pager.totalItems == 0">(0 items found)</small>
+                <small *ngIf="pager.pageSize >= pager.totalItems && pager.totalItems > 0">(displaying {{pager.totalItems}} of {{pager.totalItems}})</small>
+                <small *ngIf="pager.pageSize < pager.totalItems && pager.totalItems > 0">(displaying {{pager.pageSize}} of {{pager.totalItems}})</small>
             </h1>
 
             <div *ngFor="let item of pagedItems">

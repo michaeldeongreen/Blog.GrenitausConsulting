@@ -40,8 +40,13 @@ export class CategoryResultsComponent implements OnInit {
         this.setPage(1);
   }
 
+    clearPager() {
+        this.pager = {};
+    }
+
     setCategory() {
         if (this.category != 'undefined' && this.category) {
+            this.clearPager();
             this.setPage(1);
         }
     }
