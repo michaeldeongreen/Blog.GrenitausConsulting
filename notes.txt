@@ -15,8 +15,7 @@ https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
 TODO Now:
-3) Date formating in angular 2/ mabye do on backend
-tags json
+
 
 
 TODO Later:

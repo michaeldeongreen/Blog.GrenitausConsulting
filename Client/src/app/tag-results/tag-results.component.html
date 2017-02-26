@@ -13,7 +13,7 @@
                 <p class="lead">
                     by <a [routerLink]="['/about']">{{item.author}}</a>
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span>{{item.postDate}}</p>
+                <p><span class="glyphicon glyphicon-time"></span>{{item.postDate | date: 'dd/MM/yyyy'}}</p>
                 <hr>
                 <img class="img-responsive" src="http://placehold.it/900x300" alt="">
                 <hr>
