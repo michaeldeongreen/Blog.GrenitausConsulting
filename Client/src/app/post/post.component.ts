@@ -3,6 +3,7 @@ import { HttpService } from '../http.service';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from '../post';
 import { Observable } from 'rxjs/Observable';
+import { SeoService } from '../seo.service';
 
 @Component({
   selector: 'app-post',
@@ -15,7 +16,8 @@ export class PostComponent implements OnInit {
     item: any = {};
 
     constructor(private httpService: HttpService,
-        private route: ActivatedRoute) { }
+        private route: ActivatedRoute,
+        private seoService: SeoService) { }
 
 
     ngOnInit() {
@@ -30,6 +32,8 @@ export class PostComponent implements OnInit {
             .subscribe(data => {
                 // get pager object from service
                 this.item = data;
+                this.seoService.setTitle(this.item.title);
+                this.seoService.setMetaDescription(this.item.snippet);
             });
     }
 
