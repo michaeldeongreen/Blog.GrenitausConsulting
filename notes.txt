@@ -19,6 +19,8 @@ Social Media Buttons
 Meta tag component - implemented on home page, seems to be working
 Find nice 900x300 image for posts
 update sitemaps
+styling
+Put found N number of results on search pages or something like that
 
 Meta tag
 http://blog.devcross.net/2016/03/20/angular-2-seo/

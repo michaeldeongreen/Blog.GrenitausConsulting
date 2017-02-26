@@ -19,7 +19,7 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "assets/css/bootstrap.min.css",
+        "assets/css/bootstrap.css",
         "assets/css/blog-home.css",
         "assets/css/prism.css"
       ],
