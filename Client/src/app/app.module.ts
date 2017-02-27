@@ -19,7 +19,7 @@ import { SharedEmitterService } from './shared-emitter.service';
 import { PostComponent } from './post/post.component';
 import { AboutComponent } from './about/about.component';
 import { CategoryComponent } from './category/category.component';
-import { TagResultsComponent } from './tag-results/tag-results.component';
+import { TagComponent } from './tag/tag.component';
 import { SeoService } from './seo.service';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
@@ -36,7 +36,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
       PostComponent,
       AboutComponent,
       CategoryComponent,
-      TagResultsComponent
+      TagComponent
   ],
   imports: [
     BrowserModule,

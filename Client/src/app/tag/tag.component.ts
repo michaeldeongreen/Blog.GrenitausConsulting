@@ -8,10 +8,10 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tag-results',
-  templateUrl: './tag-results.component.html',
-  styleUrls: ['./tag-results.component.css']
+  templateUrl: './tag.component.html',
+  styleUrls: ['./tag.component.css']
 })
-export class TagResultsComponent implements OnInit {
+export class TagComponent implements OnInit {
     tag: string;
 
     constructor(private http: Http,

@@ -21,10 +21,7 @@ https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
 TODO Now:
-rename tag results and category results to tag and category, you you want tag/pmp and category/technology
-
 Social Media Buttons fix
-Social Media Buttons to point to your profile ie like gc.com bottom
 
 Find out why prismjs not working (missing closing double quotes but check anyway) (compare with: http://test.grenitausconsulting.com/#/post/refactoring-code-in-my-open-source-project-to-use-async-await)
 http://test.grenitausconsulting.com/#/post/implement-async-wait-in-the-angular-2-tour-of-heroes-web-api
