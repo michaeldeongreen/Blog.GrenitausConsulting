@@ -28,9 +28,9 @@ export class CategoriesComponent implements OnInit {
           });
   }
 
-  gotoCategoryResults(category: string): void {
+  gotoCategory(category: string): void {
       this.sharedEmitterService.categoryChangedEvent(category);
-      let link = ['/categoryResults', category]
+      let link = ['/category', category]
       this.router.navigate(link);
   }
 }

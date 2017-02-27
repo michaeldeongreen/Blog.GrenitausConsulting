@@ -8,11 +8,11 @@ import { ActivatedRoute } from '@angular/router';
 import { SharedEmitterService } from '../shared-emitter.service';
 
 @Component({
-  selector: 'app-category-results',
-  templateUrl: './category-results.component.html',
-  styleUrls: ['./category-results.component.css']
+  selector: 'app-category',
+  templateUrl: './category.component.html',
+  styleUrls: ['./category.component.css']
 })
-export class CategoryResultsComponent implements OnInit {
+export class CategoryComponent implements OnInit {
     category: string;
 
     constructor(private http: Http,

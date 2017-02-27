@@ -5,7 +5,7 @@ import { HomeComponent } from '../home/home.component';
 import { SearchResultsComponent } from '../search-results/search-results.component'
 import { PostComponent } from '../post/post.component';
 import { AboutComponent } from '../about/about.component';
-import { CategoryResultsComponent } from '../category-results/category-results.component'
+import { CategoryComponent } from '../category/category.component'
 import { TagResultsComponent } from '../tag-results/tag-results.component'
 
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
     { path: 'searchResults/:criteria', component: SearchResultsComponent },
     { path: 'post/:title', component: PostComponent },
     { path: 'about', component: AboutComponent },
-    { path: 'categoryResults/:category', component: CategoryResultsComponent },
+    { path: 'category/:category', component: CategoryComponent },
     { path: 'tagResults/:tag', component: TagResultsComponent }
 ];
 

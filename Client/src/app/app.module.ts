@@ -18,7 +18,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 import { SharedEmitterService } from './shared-emitter.service';
 import { PostComponent } from './post/post.component';
 import { AboutComponent } from './about/about.component';
-import { CategoryResultsComponent } from './category-results/category-results.component';
+import { CategoryComponent } from './category/category.component';
 import { TagResultsComponent } from './tag-results/tag-results.component';
 import { SeoService } from './seo.service';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
@@ -35,7 +35,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
       SearchResultsComponent,
       PostComponent,
       AboutComponent,
-      CategoryResultsComponent,
+      CategoryComponent,
       TagResultsComponent
   ],
   imports: [
