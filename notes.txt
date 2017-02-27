@@ -1,5 +1,9 @@
-Cloud FTP Account
-grenitausdeploy
+Cloud FTP Account (Client)
+grenitausdeploy2
+WzVhZq2pw8SrN3Aw
+
+Cloud FTP Account (API)
+grenitausdeploy2
 WzVhZq2pw8SrN3Aw
 
 Azure gtmetrix
@@ -29,6 +33,9 @@ Social Media Buttons fix, not sure why facebook wont work
 
 Side Widget Well?
 
+Why is the data on web api null on first get
+deploy, go to a get endpoint, notice it throws exceptions on first try, then works after
+{"message":"An error has occurred.","exceptionMessage":"Value cannot be null.\r\nParameter name: source","exceptionType":"System.ArgumentNullException","stackTrace":" at System.Linq.Enumerable.Where[TSource](IEnumerable`1 source, Func`2 predicate)\r\n at Blog.GrenitausConsulting.Services.PagingService.Get(PagedCriteria criteria)\r\n at Blog.GrenitausConsulting.Web.Api.Controllers.PostsController.Get(Int32 pageNumber)\r\n at lambda_method(Closure , Object , Object[] )\r\n at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.b__9(Object instance, Object[] methodParameters)\r\n at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)\r\n at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n at System.Web.Http.Controllers.ApiControllerActionInvoker.d__0.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n at System.Web.Http.Controllers.ActionFilterResult.d__2.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n at System.Web.Http.Dispatcher.HttpControllerDispatcher.d__1.MoveNext()"}
 
 Share buttons
 https://simplesharebuttons.com/html-share-buttons/
@@ -42,7 +49,12 @@ http://blog.devcross.net/2016/03/20/angular-2-seo/
 
 404 issues with images on prod, look at this, this is web.config fix, hashlocator next if it doesn't work:
 http://stackoverflow.com/questions/35284988/angular-2-404-error-occur-when-i-refresh-through-browser
+https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions#how-to-configure-your-server-to-work-with-html5mode
 
+1)      Looks good, man.
+4)      I get 2 404’s one from the favicon (so there is no favicon for me) and the other is the infamous Bootstrap halflings error. 
+7)      Took a minute to load the first time, but I think I was paying the .net JIT tax on that one because after that everything was speedy
+9)      I like how the main page keeps the same color scheme as the blog (some people miss that) but on your main page you are mixing Serif and Sans-serif fonts.  I’m guessing you just haven’t paid much attention to that side yet (still see the template copyright statement at the bottom of the page).
 
 TODO Later:
 1) Validate Blog Search (see ngif that the pager is using)
@@ -90,6 +102,9 @@ http://stackoverflow.com/questions/34053860/using-comma-as-a-list-separator-in-a
 
 Rosylyn
 https://blog.gldraphael.com/removing-roslyn-from-asp-net-4-5-2-project-template/
+
+404 (separate deployments)
+https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions#how-to-configure-your-server-to-work-with-html5mode
 
 little bitty things:
 get full current path, see url variable in post component

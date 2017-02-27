@@ -13,3 +13,7 @@ display: inline;
 .navbar-nav a {
     font-size:18px;
 }
+
+.no-text-decoration {
+    text-decoration:none;
+}
