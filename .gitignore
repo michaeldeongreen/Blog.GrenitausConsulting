@@ -6,6 +6,9 @@
 *.dll
 *.pdb
 
+/Combined/packages
+/Combined/.vs
+
 /WebApi/.vs
 /WebApi/src/.vs
 /WebApi/src/packages
