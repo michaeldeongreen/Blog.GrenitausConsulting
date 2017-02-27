@@ -21,12 +21,18 @@ https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
 TODO Now:
-Social Media Buttons fix
+Tag pager needs the same class that home/category has to show pointer on hover of page numbers
 
-Find out why prismjs not working (missing closing double quotes but check anyway) (compare with: http://test.grenitausconsulting.com/#/post/refactoring-code-in-my-open-source-project-to-use-async-await)
+Find out why prismjs not working (compare with: http://test.grenitausconsulting.com/#/post/refactoring-code-in-my-open-source-project-to-use-async-await)
 http://test.grenitausconsulting.com/#/post/implement-async-wait-in-the-angular-2-tour-of-heroes-web-api
 
+Social Media Buttons fix, not sure why facebook wont work
 
+What do you want to do with Vecteezy_Social_Media_Icons (on desktop)?
+
+Side Widget Well?
+
+Remove the word Blog from search and categories on right menu
 
 Share buttons
 https://simplesharebuttons.com/html-share-buttons/
