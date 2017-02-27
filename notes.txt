@@ -28,11 +28,8 @@ http://test.grenitausconsulting.com/#/post/implement-async-wait-in-the-angular-2
 
 Social Media Buttons fix, not sure why facebook wont work
 
-What do you want to do with Vecteezy_Social_Media_Icons (on desktop)?
-
 Side Widget Well?
 
-Remove the word Blog from search and categories on right menu
 
 Share buttons
 https://simplesharebuttons.com/html-share-buttons/
