@@ -73,8 +73,8 @@
     <Content Include="src\app\about\about.component.html" />
     <Content Include="src\app\categories\categories.component.css" />
     <Content Include="src\app\categories\categories.component.html" />
-    <Content Include="src\app\category-results\category-results.component.css" />
-    <Content Include="src\app\category-results\category-results.component.html" />
+    <Content Include="src\app\category\category.component.css" />
+    <Content Include="src\app\category\category.component.html" />
     <Content Include="src\app\footer\footer.component.css" />
     <Content Include="src\app\footer\footer.component.html" />
     <Content Include="src\app\header\header.component.css" />
@@ -89,8 +89,8 @@
     <Content Include="src\app\search\search.component.html" />
     <Content Include="src\app\side-widget\side-widget.component.css" />
     <Content Include="src\app\side-widget\side-widget.component.html" />
-    <Content Include="src\app\tag-results\tag-results.component.css" />
-    <Content Include="src\app\tag-results\tag-results.component.html" />
+    <Content Include="src\app\tag\tag.component.css" />
+    <Content Include="src\app\tag\tag.component.html" />
     <Content Include="src\assets\css\blog-home.css" />
     <Content Include="src\assets\css\bootstrap.css" />
     <Content Include="src\assets\fonts\glyphicons-halflings-regular.svg" />
@@ -130,8 +130,8 @@
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\categories\categories.component.spec.ts" />
     <TypeScriptCompile Include="src\app\categories\categories.component.ts" />
-    <TypeScriptCompile Include="src\app\category-results\category-results.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\category-results\category-results.component.ts" />
+    <TypeScriptCompile Include="src\app\category\category.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\category\category.component.ts" />
     <TypeScriptCompile Include="src\app\category.ts" />
     <TypeScriptCompile Include="src\app\footer\footer.component.spec.ts" />
     <TypeScriptCompile Include="src\app\footer\footer.component.ts" />
@@ -155,8 +155,8 @@
     <TypeScriptCompile Include="src\app\shared-emitter.service.ts" />
     <TypeScriptCompile Include="src\app\side-widget\side-widget.component.spec.ts" />
     <TypeScriptCompile Include="src\app\side-widget\side-widget.component.ts" />
-    <TypeScriptCompile Include="src\app\tag-results\tag-results.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\tag-results\tag-results.component.ts" />
+    <TypeScriptCompile Include="src\app\tag\tag.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\tag\tag.component.ts" />
     <TypeScriptCompile Include="src\app\tag.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
