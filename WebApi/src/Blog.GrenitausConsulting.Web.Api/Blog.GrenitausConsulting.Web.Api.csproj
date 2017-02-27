@@ -280,6 +280,7 @@
     <Content Include="App_Data\post-summaries.json" />
     <Content Include="App_Data\categories.json" />
     <Content Include="App_Data\tags.json" />
+    <Content Include="App_Data\quote-of-the-week.json" />
     <None Include="Properties\PublishProfiles\Test.pubxml" />
   </ItemGroup>
   <PropertyGroup>
