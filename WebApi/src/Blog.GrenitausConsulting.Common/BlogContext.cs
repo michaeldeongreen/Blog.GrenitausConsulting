@@ -24,50 +24,43 @@ namespace Blog.GrenitausConsulting.Common
         public IEnumerable<Category> Categories { get { return _categories; } }
         public IEnumerable<Tag> Tags { get { return _tags; } }
 
-        public async Task Init(string path)
+        public void Init(string path)
         {
             _path = path;
-            _postSummaries = await BuildPostSummaries();
-            _postHtmlList = await BuildPostHtml();
-            _categories = await BuildCategories();
-            _tags = await BuildTags();
+            BuildPostSummaries();
+            BuildPostHtml();
+            BuildCategories();
+            BuildTags();
         }
 
-        private async Task<IEnumerable<PostSummary>> BuildPostSummaries()
+        private void BuildPostSummaries()
         {
-            var summaries = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<IEnumerable<PostSummary>>(File.ReadAllText(string.Format(@"{0}\post-summaries.json", _path))));
-
-            return summaries;
+            _postSummaries = JsonConvert.DeserializeObject<IEnumerable<PostSummary>>(File.ReadAllText(string.Format(@"{0}\post-summaries.json", _path)));
         }
 
-        private async Task<IList<PostHtml>> BuildPostHtml()
+        private void BuildPostHtml()
         {
             var blogs = Directory.GetFiles(_path, "*.txt");
-            var htmlList = new List<PostHtml>();
+
             foreach (var blog in blogs)
             {
                 using (var reader = File.OpenText(blog))
                 {
-                    string contents = await reader.ReadToEndAsync();
+                    string contents = reader.ReadToEnd();
                     var post = _postSummaries.Where(p => p.Link == Path.GetFileNameWithoutExtension(blog)).FirstOrDefault();
-                    htmlList.Add(new PostHtml() { Hmtl = contents, Link = post.Link });
+                    _postHtmlList.Add(new PostHtml() { Hmtl = contents, Link = post.Link });
                 }
             }
-            return htmlList;
         }
 
-        private async Task<IEnumerable<Category>> BuildCategories()
+        private void BuildCategories()
         {
-            var categories = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<IEnumerable<Category>>(File.ReadAllText(string.Format(@"{0}\categories.json", _path))));
-
-            return categories;
+            _categories = JsonConvert.DeserializeObject<IEnumerable<Category>>(File.ReadAllText(string.Format(@"{0}\categories.json", _path)));
         }
 
-        private async Task<IEnumerable<Tag>> BuildTags()
+        private void BuildTags()
         {
-            var tags = await Task.Factory.StartNew(() => JsonConvert.DeserializeObject<IEnumerable<Tag>>(File.ReadAllText(string.Format(@"{0}\tags.json", _path))));
-
-            return tags;
+            _tags = JsonConvert.DeserializeObject<IEnumerable<Tag>>(File.ReadAllText(string.Format(@"{0}\tags.json", _path)));
         }
     }
 }

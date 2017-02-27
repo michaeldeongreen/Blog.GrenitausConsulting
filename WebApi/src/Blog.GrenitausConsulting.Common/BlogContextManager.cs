@@ -18,9 +18,9 @@ namespace Blog.GrenitausConsulting.Common
 
 
 
-        public static async Task Init(string path)
+        public static void Init(string path)
         {
-            await _blogContext.Init(path);
+            _blogContext.Init(path);
         }
 
     }

@@ -20,7 +20,7 @@ Here is an overview of my project structure:
 Here is a brief code snippet of the code before I made the Hero Search Asynchronous:
 <br><br>
 <b>In the HeroesSearchController <i>(Angular.io.QuickStart.Web.Api)</i>:</b>
-<pre>code class="language-csharp">
+<pre><code class="language-csharp">
         /// <summary>
         /// Endpoint is used to get all heroes whose name contains the name parameter
         /// </summary>
@@ -35,7 +35,7 @@ Here is a brief code snippet of the code before I made the Hero Search Asynchron
 
 <b>In the HeroService<i>(Angular.io.QuickStart.Web.Api.Services)</i>:</b>
 <br><br>
-<pre>code class="language-csharp">
+<pre><code class="language-csharp">
         /// <summary>
         /// Endpoint is used to get all heroes whose name contains the name parameter
         /// </summary>
@@ -48,7 +48,7 @@ Here is a brief code snippet of the code before I made the Hero Search Asynchron
 </code></pre>
 <br><br>
 <b>In the Generic Repository<i>(Angular.io.QuickStart.Web.Api.Repository)</i>:</b>
-<pre>code class="language-csharp">
+<pre><code class="language-csharp">
         public Repository(TourOfHeroesContext dbContext)
         {
             _dbContext = dbContext;
@@ -74,7 +74,7 @@ To implement async/wait on the Heroes Search Endpoint, I started with the Data A
 <br><br>
 <b>Added new async method called FindAsync to the Generic Repository<i>(Angular.io.QuickStart.Web.Api.Repository)</i>:</b>
 <br><br>
-<pre>code class="language-csharp">
+<pre><code class="language-csharp">
         public virtual async Task<IEnumerable<TEntity>> FindAsync(Expression<Func<TEntity, bool>> filter)
         {
             IQueryable<TEntity> query = _dbSet;
@@ -89,7 +89,7 @@ To implement async/wait on the Heroes Search Endpoint, I started with the Data A
 </code></pre>
 <br><br>
 <b>Added a new async method called FindAsync to the HeroService<i>(Angular.io.QuickStart.Web.Api.Services)</i>:</b>
-<pre>code class="language-csharp">
+<pre><code class="language-csharp">
         public async Task<IEnumerable<Hero>> FindAsync(string name)
         {
             _heroValidationService.SearchValidation(new HeroDTO() { Name = name });
@@ -99,7 +99,7 @@ To implement async/wait on the Heroes Search Endpoint, I started with the Data A
 </code></pre>
 <br><br>
 <b>Modified the existing Get Endpoint on the HeroesSearchController to be async<i>(Angular.io.QuickStart.Web.Api.)</i>:</b>
-<pre>code class="language-csharp">
+<pre><code class="language-csharp">
         /// <summary>
         /// Endpoint is used to get all heroes whose name contains the name parameter
         /// </summary>

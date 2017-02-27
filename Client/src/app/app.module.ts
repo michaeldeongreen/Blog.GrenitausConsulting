@@ -21,7 +21,6 @@ import { AboutComponent } from './about/about.component';
 import { CategoryComponent } from './category/category.component';
 import { TagComponent } from './tag/tag.component';
 import { SeoService } from './seo.service';
-//import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -46,7 +45,6 @@ import { SeoService } from './seo.service';
       AppRoutingModule
       
   ],
-  //providers: [HttpService, PagerService, SharedEmitterService, SeoService, { provide: LocationStrategy, useClass: HashLocationStrategy }],
   providers: [HttpService, PagerService, SharedEmitterService, SeoService],
   bootstrap: [AppComponent]
 })
