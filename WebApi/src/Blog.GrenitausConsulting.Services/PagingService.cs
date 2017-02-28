@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Blog.GrenitausConsulting.Domain;
 using Blog.GrenitausConsulting.Common;
+using System.Globalization;
 
 namespace Blog.GrenitausConsulting.Services
 {
@@ -111,7 +112,7 @@ namespace Blog.GrenitausConsulting.Services
                 p.PostDate.Month == criteria.MonthCriteria && p.PostDate.Year == criteria.YearCriteria)
                 .Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.Id);
 
-                return new PagedResponse() { Total = query.ToList().Count(), Posts = results.ToList() };
+                return new PagedResponse() { Total = query.ToList().Count(), Posts = results.ToList(), ArchiveYear = criteria.YearCriteria, ArchiveMonth = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(criteria.MonthCriteria) };
             }
             else
             {

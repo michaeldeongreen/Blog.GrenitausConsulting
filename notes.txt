@@ -25,7 +25,6 @@ https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
 TODO Now:
-twitter share button has simplesharebuttons on it
 
 Side Widget Well?
 

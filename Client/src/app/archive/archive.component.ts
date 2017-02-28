@@ -62,7 +62,7 @@ export class ArchiveComponent implements OnInit {
 
               // get current page of items
               this.pagedItems = data.posts;
-              this.monthYear = `${this.month} - ${this.year}`;
+              this.monthYear = `${data.archiveMonth} ${data.archiveYear}`;
           });
   }
 }

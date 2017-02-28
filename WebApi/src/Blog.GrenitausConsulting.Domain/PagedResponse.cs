@@ -10,5 +10,7 @@ namespace Blog.GrenitausConsulting.Domain
     {
         public int Total { get; set; }
         public IEnumerable<PostSummary> Posts { get; set; }
+        public string ArchiveMonth { get; set; }
+        public int ArchiveYear { get; set; }
     }
 }
