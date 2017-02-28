@@ -1,4 +1,4 @@
-<img src="assets/images/those-pesky-soft-skills.jpg" alt="" width="500" height="260" class="aligncenter size-full wp-image-21" />
+<a href="assets/images/those-pesky-soft-skills.jpg"><img src="assets/images/those-pesky-soft-skills.jpg" alt="" width="500" height="260" class="aligncenter size-full wp-image-21" /></a>
 <br><br>
 Hi there, welcome to part 3 of my blog series on <a href="http://en.wikipedia.org/wiki/Soft_skills" title="soft skills" target="_blank">soft skills</a>, if you haven’t read part 2, you can view <a href="post/those-pesky-soft-skills-who-needs-them-part-2/" title="those pesky soft skills! part 2" target="_blank">it here</a>.
 <br><br>

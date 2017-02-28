@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Archive.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="Image.cs" />
     <Compile Include="PagedCriteria.cs" />
     <Compile Include="PagedResponse.cs" />
     <Compile Include="PostHtml.cs" />

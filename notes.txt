@@ -1,4 +1,4 @@
-Cloud FTP Account (Client)
+﻿Cloud FTP Account (Client)
 grenitausdeploy2
 WzVhZq2pw8SrN3Aw
 
@@ -25,6 +25,11 @@ https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
 TODO Now:
+sitemap tool
+
+double // in share button links
+
+add github png to top menu
 
 Side Widget Well?
 
@@ -39,7 +44,14 @@ http://blog.devcross.net/2016/03/20/angular-2-seo/
 
 
 4)      I get 2 404’s one from the favicon (so there is no favicon for me) and the other is the infamous Bootstrap halflings error. 
-9)      I like how the main page keeps the same color scheme as the blog (some people miss that) but on your main page you are mixing Serif and Sans-serif fonts.  I’m guessing you just haven’t paid much attention to that side yet (still see the template copyright statement at the bottom of the page).
+
+facebook comment section
+https://developers.facebook.com/docs/plugins/comments/
+
+look at why search doesn't work for things that should
+thoughtworks
+pmbok
+
 
 TODO Later:
 1) Validate Blog Search (see ngif that the pager is using)
