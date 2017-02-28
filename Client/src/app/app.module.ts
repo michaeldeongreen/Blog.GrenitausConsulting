@@ -21,6 +21,7 @@ import { AboutComponent } from './about/about.component';
 import { CategoryComponent } from './category/category.component';
 import { TagComponent } from './tag/tag.component';
 import { SeoService } from './seo.service';
+import { ArchivesComponent } from './archives/archives.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SeoService } from './seo.service';
       PostComponent,
       AboutComponent,
       CategoryComponent,
-      TagComponent
+      TagComponent,
+      ArchivesComponent
   ],
   imports: [
     BrowserModule,

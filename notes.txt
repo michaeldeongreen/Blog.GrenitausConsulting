@@ -100,3 +100,6 @@ Share buttons
 https://simplesharebuttons.com/html-share-buttons/
 
 Angular is noisy and broadcasts itself, look at page source
+
+Hard to tell sometimes when to dereference (home ng2-spin)
+<sk-rotating-plane [isRunning]="isRunning"></sk-rotating-plane>

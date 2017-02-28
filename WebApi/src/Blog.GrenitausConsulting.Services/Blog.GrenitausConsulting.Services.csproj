@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArchiveService.cs" />
+    <Compile Include="Interfaces\IArchiveService.cs" />
     <Compile Include="Interfaces\IPagingService.cs" />
     <Compile Include="PagingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

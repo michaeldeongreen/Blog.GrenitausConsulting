@@ -180,6 +180,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ArchivesController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HtmlController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
@@ -280,7 +281,6 @@
     <Content Include="App_Data\post-summaries.json" />
     <Content Include="App_Data\categories.json" />
     <Content Include="App_Data\tags.json" />
-    <Content Include="App_Data\quote-of-the-week.json" />
     <None Include="Properties\PublishProfiles\Test.pubxml" />
   </ItemGroup>
   <PropertyGroup>

@@ -2,10 +2,9 @@
 <div class="row">
     <div class="col-lg-6">
         <ul class="list-unstyled">
-            <li *ngFor="let item of categories">
+            <li *ngFor="let item of categories" class="side-widgets-padding-top">
                 <a class="anchor-pointer" (click)="gotoCategory(item.name)">{{item.name}}</a>
             </li>
         </ul>
     </div>
 </div>
-<!-- /.row -->

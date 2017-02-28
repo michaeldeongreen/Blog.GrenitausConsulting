@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Archive.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="PagedCriteria.cs" />
     <Compile Include="PagedResponse.cs" />
