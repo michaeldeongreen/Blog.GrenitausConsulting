@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Archive } from '../archive';
 import { Observable } from 'rxjs/Observable';
 import { HttpService } from '../http.service';
+import { SharedEmitterService } from '../shared-emitter.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-archives',
@@ -10,7 +12,9 @@ import { HttpService } from '../http.service';
 })
 export class ArchivesComponent implements OnInit {
     archives: Observable<Archive>;
-  constructor(private httpService: HttpService) { }
+    constructor(private httpService: HttpService,
+        public sharedEmitterService: SharedEmitterService,
+        private router: Router) { }
 
   ngOnInit() {
       this.getArchives();
@@ -21,5 +25,11 @@ export class ArchivesComponent implements OnInit {
           .subscribe(data => {
               this.archives = data;
           });
+  }
+
+  gotoArchive(month: number, year: number): void {
+      this.sharedEmitterService.archiveChangedEvent({month:month,year:year});
+      let link = ['/archive', month, year]
+      this.router.navigate(link);
   }
 }

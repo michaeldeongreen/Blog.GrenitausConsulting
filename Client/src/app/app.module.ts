@@ -22,6 +22,7 @@ import { CategoryComponent } from './category/category.component';
 import { TagComponent } from './tag/tag.component';
 import { SeoService } from './seo.service';
 import { ArchivesComponent } from './archives/archives.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ArchivesComponent } from './archives/archives.component';
       AboutComponent,
       CategoryComponent,
       TagComponent,
-      ArchivesComponent
+      ArchivesComponent,
+      ArchiveComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,8 @@ export class SharedEmitterService {
 
     categoryChanged = new EventEmitter();
 
+    archiveChanged = new EventEmitter();
+
     constructor() { }
 
     searchCriteriaChangedEvent(value) {
@@ -15,5 +17,9 @@ export class SharedEmitterService {
 
     categoryChangedEvent(value) {
         this.categoryChanged.emit(value);
+    }
+
+    archiveChangedEvent(segment) {
+        this.archiveChanged.emit(segment);
     }
 }
