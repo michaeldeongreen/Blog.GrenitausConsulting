@@ -18,5 +18,7 @@ namespace Blog.GrenitausConsulting.Domain
         public IEnumerable<PostSummary> Posts { get; set; }
         public string SearchCriteria { get; set; }
         public bool IsActive  { get; set; }
+        public int MonthCriteria { get; set; }
+        public int YearCriteria { get; set; }
     }
 }

@@ -52,5 +52,11 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
         {
             return _pagingService.GetByTag(new PagedCriteria() { PageNumber = pageNumber, PageSize = _pageSize, Posts = BlogContextManager.PostSummaries, SearchCriteria = tag });
         }
+
+        [Route("api/posts/month/{month}/year/{year}/page/{pageNumber}")]
+        public PagedResponse GetByMonthAndYear(int pageNumber, int month, int year)
+        {
+            return _pagingService.GetByMonthAndYear(new PagedCriteria() { PageNumber = pageNumber, PageSize = _pageSize, Posts = BlogContextManager.PostSummaries, MonthCriteria = month, YearCriteria = year });
+        }
     }
 }

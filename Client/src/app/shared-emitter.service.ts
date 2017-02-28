@@ -19,7 +19,7 @@ export class SharedEmitterService {
         this.categoryChanged.emit(value);
     }
 
-    archiveChangedEvent(segment) {
-        this.archiveChanged.emit(segment);
+    archiveChangedEvent(archive) {
+        this.archiveChanged.emit(archive);
     }
 }

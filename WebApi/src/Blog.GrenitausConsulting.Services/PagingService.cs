@@ -96,6 +96,29 @@ namespace Blog.GrenitausConsulting.Services
             }
         }
 
+        public PagedResponse GetByMonthAndYear(PagedCriteria criteria)
+        {
+            ApplyCriteriaLogic(criteria);
+            var posts = criteria.Posts.Where(p => p.IsActive == criteria.IsActive).OrderByDescending(p => p.Id);
+
+            var query = posts.Where(p =>
+                p.PostDate.Month == criteria.MonthCriteria && p.PostDate.Year == criteria.YearCriteria
+                );
+
+            if (query.ToList().Count > 0)
+            {
+                var results = posts.Where(p =>
+                p.PostDate.Month == criteria.MonthCriteria && p.PostDate.Year == criteria.YearCriteria)
+                .Skip(_skip).Take(criteria.PageSize).OrderByDescending(p => p.Id);
+
+                return new PagedResponse() { Total = query.ToList().Count(), Posts = results.ToList() };
+            }
+            else
+            {
+                return new PagedResponse() { Total = 0, Posts = null };
+            }
+        }
+
         private void ApplyCriteriaLogic(PagedCriteria criteria)
         {
             ApplyPageNumberLogic(criteria);
