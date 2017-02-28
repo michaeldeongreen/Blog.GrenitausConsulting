@@ -34,6 +34,9 @@
             this.txtConfigurationFiles = new System.Windows.Forms.TextBox();
             this.btnBrowseConfigurationFiles = new System.Windows.Forms.Button();
             this.btnGenerateSitemap = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblSitemapOutput = new System.Windows.Forms.Label();
+            this.txtSitemapOutput = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtDomainName
@@ -83,18 +86,49 @@
             // 
             // btnGenerateSitemap
             // 
-            this.btnGenerateSitemap.Location = new System.Drawing.Point(540, 150);
+            this.btnGenerateSitemap.Location = new System.Drawing.Point(540, 207);
             this.btnGenerateSitemap.Name = "btnGenerateSitemap";
             this.btnGenerateSitemap.Size = new System.Drawing.Size(189, 34);
             this.btnGenerateSitemap.TabIndex = 5;
             this.btnGenerateSitemap.Text = "Generate Sitemap";
             this.btnGenerateSitemap.UseVisualStyleBackColor = true;
+            this.btnGenerateSitemap.Click += new System.EventHandler(this.btnGenerateSitemap_Click);
+            // 
+            // button1
+            // 
+            this.button1.Image = global::Blog.GrenitausConsulting.SitemapTool.App.Properties.Resources.Avosoft_Warm_Toolbar_Folder_open;
+            this.button1.Location = new System.Drawing.Point(658, 118);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(71, 35);
+            this.button1.TabIndex = 8;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblSitemapOutput
+            // 
+            this.lblSitemapOutput.AutoSize = true;
+            this.lblSitemapOutput.Location = new System.Drawing.Point(35, 136);
+            this.lblSitemapOutput.Name = "lblSitemapOutput";
+            this.lblSitemapOutput.Size = new System.Drawing.Size(83, 13);
+            this.lblSitemapOutput.TabIndex = 7;
+            this.lblSitemapOutput.Text = "Sitemap Output:";
+            // 
+            // txtSitemapOutput
+            // 
+            this.txtSitemapOutput.Location = new System.Drawing.Point(168, 133);
+            this.txtSitemapOutput.Name = "txtSitemapOutput";
+            this.txtSitemapOutput.Size = new System.Drawing.Size(469, 20);
+            this.txtSitemapOutput.TabIndex = 6;
+            this.txtSitemapOutput.Text = "C:\\temp\\My Sitemaps";
             // 
             // GenerateSitemapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 204);
+            this.ClientSize = new System.Drawing.Size(802, 314);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblSitemapOutput);
+            this.Controls.Add(this.txtSitemapOutput);
             this.Controls.Add(this.btnGenerateSitemap);
             this.Controls.Add(this.btnBrowseConfigurationFiles);
             this.Controls.Add(this.lblConfigurationFiles);
@@ -117,6 +151,9 @@
         private System.Windows.Forms.TextBox txtConfigurationFiles;
         private System.Windows.Forms.Button btnBrowseConfigurationFiles;
         private System.Windows.Forms.Button btnGenerateSitemap;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblSitemapOutput;
+        private System.Windows.Forms.TextBox txtSitemapOutput;
     }
 }
 

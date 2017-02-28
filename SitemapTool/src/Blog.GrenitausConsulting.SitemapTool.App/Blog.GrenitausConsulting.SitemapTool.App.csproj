@@ -85,6 +85,12 @@
   <ItemGroup>
     <None Include="Icons\Avosoft-Warm-Toolbar-Folder-open.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.GrenitausConsulting.SitemapTool.App.Services\Blog.GrenitausConsulting.SitemapTool.App.Services.csproj">
+      <Project>{d46ee5a5-f83a-4874-b32d-e622a92e2660}</Project>
+      <Name>Blog.GrenitausConsulting.SitemapTool.App.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

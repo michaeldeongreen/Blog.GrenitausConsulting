@@ -60,6 +60,8 @@ TODO Later:
 * See if you can get the links to move you up to top elegantly
 *Possible timer like dachecache to refresh memory
 
+<add input="{REQUEST_URI}" matchType="Pattern" pattern="^/api/.*$" ignoreCase="true" negate="true" />
+
 <meta name="description" content="Michael D. Green talks about the issues he faced when working with Azure Storage Accounts created with the Resource manager and Classic deployment option.">
 <meta name="robots" content="noodp">
 <meta property="og:locale" content="en_US">

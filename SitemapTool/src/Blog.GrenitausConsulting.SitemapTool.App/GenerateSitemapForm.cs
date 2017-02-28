@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BatchGuy.App.ThirdParty.FolderSelectDialog;
+using Blog.GrenitausConsulting.SitemapTool.App.Services.Interfaces;
+using Blog.GrenitausConsulting.SitemapTool.App.Services;
 
 namespace Blog.GrenitausConsulting.SitemapTool.App
 {
@@ -32,6 +34,38 @@ namespace Blog.GrenitausConsulting.SitemapTool.App
             catch (Exception ex)
             {
                 MessageBox.Show("There was an error trying to set the configuration files location", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnGenerateSitemap_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string configurationPath = txtConfigurationFiles.Text;
+                string sitemapOutputPath = txtSitemapOutput.Text;
+                ISitemapService sitemapService = new SitemapService();
+                sitemapService.Generate(configurationPath,sitemapOutputPath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error trying to generate the sitemaps", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var fsd = new FolderSelectDialog();
+                fsd.Title = "Sitemaps Output Location";
+                if (fsd.ShowDialog(IntPtr.Zero))
+                {
+                  txtSitemapOutput.Text = fsd.FileName;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error trying to set the sitemap output location", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
