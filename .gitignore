@@ -42,6 +42,11 @@
 /WebApi/src/Blog.GrenitausConsulting.Common/obj/Debug/Blog.GrenitausConsulting.Common.dll
 /WebApi/src/Blog.GrenitausConsulting.Common/obj/Debug/Blog.GrenitausConsulting.Common.pdb
 
+/SitemapTool/src/.vs
+/SitemapTool/src/Blog.GrenitausConsulting.SitemapTool.App/.vs
+/SitemapTool/src/Blog.GrenitausConsulting.SitemapTool.App/bin
+/SitemapTool/src/Blog.GrenitausConsulting.SitemapTool.App/obj
+
 /Client/.vs
 /Client/bin
 /Client/obj
