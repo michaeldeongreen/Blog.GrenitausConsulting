@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D46EE5A5-F83A-4874-B32D-E622A92E2660}</ProjectGuid>
+    <ProjectGuid>{EF64D87C-A88C-4369-90F4-C9EA48DA1AE9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Blog.GrenitausConsulting.SitemapTool.App.Services</RootNamespace>
-    <AssemblyName>Blog.GrenitausConsulting.SitemapTool.App.Services</AssemblyName>
+    <RootNamespace>Blog.GrenitausConsulting.SitemapTool.App.Domain</RootNamespace>
+    <AssemblyName>Blog.GrenitausConsulting.SitemapTool.App.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,26 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SitemapService.cs" />
-    <Compile Include="Interfaces\ISitemapService.cs" />
+    <Compile Include="Sitemap.cs" />
+    <Compile Include="SitemapImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\WebApi\src\Blog.GrenitausConsulting.Common\Blog.GrenitausConsulting.Common.csproj">
-      <Project>{e742fb9d-38fc-4f4d-a447-b704dd6fbcd7}</Project>
-      <Name>Blog.GrenitausConsulting.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\WebApi\src\Blog.GrenitausConsulting.Domain\Blog.GrenitausConsulting.Domain.csproj">
-      <Project>{84edb053-270d-4a4b-b266-94d3fdf0a654}</Project>
-      <Name>Blog.GrenitausConsulting.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Blog.GrenitausConsulting.SitemapTool.App.Domain\Blog.GrenitausConsulting.SitemapTool.App.Domain.csproj">
-      <Project>{ef64d87c-a88c-4369-90f4-c9ea48da1ae9}</Project>
-      <Name>Blog.GrenitausConsulting.SitemapTool.App.Domain</Name>
-    </ProjectReference>
+    <Compile Include="SitemapLocation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

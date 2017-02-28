@@ -51,6 +51,11 @@
 /SitemapTool/src/Blog.GrenitausConsulting.SitemapTool.App.Services/obj
 /SitemapTool/src/Blog.GrenitausConsulting.SitemapTool.App.Services/bin
 
+/SitemapTool/src/Blog.GrenitausConsulting.SitemapTool.App.Domain/.vs
+/SitemapTool/src/Blog.GrenitausConsulting.SitemapTool.App.Domain/bin
+/SitemapTool/src/Blog.GrenitausConsulting.SitemapTool.App.Domain/obj
+
+
 /Client/.vs
 /Client/bin
 /Client/obj

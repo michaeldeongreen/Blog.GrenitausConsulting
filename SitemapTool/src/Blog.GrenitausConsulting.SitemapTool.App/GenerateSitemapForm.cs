@@ -41,10 +41,12 @@ namespace Blog.GrenitausConsulting.SitemapTool.App
         {
             try
             {
+                string domain = txtDomainName.Text;
                 string configurationPath = txtConfigurationFiles.Text;
                 string sitemapOutputPath = txtSitemapOutput.Text;
                 ISitemapService sitemapService = new SitemapService();
-                sitemapService.Generate(configurationPath,sitemapOutputPath);
+                sitemapService.Generate(domain,configurationPath,sitemapOutputPath);
+                MessageBox.Show("Sitmaps have been generated!", "Sitemaps Created!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
