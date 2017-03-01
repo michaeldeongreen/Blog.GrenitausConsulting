@@ -16,6 +16,7 @@ import { SharedEmitterService } from '../shared-emitter.service';
 })
 export class SearchResultsComponent implements OnInit {
     criteria: string;
+    busy: boolean = true;
 
     constructor(private http: Http,
         private httpService: HttpService,
@@ -68,6 +69,7 @@ export class SearchResultsComponent implements OnInit {
 
               // get current page of items
               this.pagedItems = data.posts;
+              this.busy = false;
           });
   }
 }

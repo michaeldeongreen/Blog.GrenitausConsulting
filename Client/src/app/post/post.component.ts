@@ -17,6 +17,7 @@ export class PostComponent implements OnInit {
     item: any = {};
     url: string;
     path: string;
+    busy: boolean = true;
 
     constructor(private httpService: HttpService,
         private route: ActivatedRoute,
@@ -49,6 +50,7 @@ export class PostComponent implements OnInit {
           .subscribe(data => {
               // get pager object from service
               this.html = data;
+              this.busy = false;
           });
   }
 }

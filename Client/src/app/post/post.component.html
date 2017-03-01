@@ -1,51 +1,56 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
-            <h1 class="page-header">
-                {{item.title}}
-            </h1>
-            <div>
-                <p class="lead">
-                    by <a [routerLink]="['/about']">{{item.author}}</a>
-                </p>
-                <p><span class="glyphicon glyphicon-time"></span> {{item.postDate | date: 'MM/dd/yyyy'}}</p>
+        <div id="my-loader" *ngIf="busy" class="loader"></div>
+    </div>
+    <div *ngIf="busy == false">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="page-header">
+                    {{item.title}}
+                </h1>
                 <div>
-                    <small>Posted in </small><span *ngFor="let category of item.categories; let isLast=last"><a [routerLink]="['/category', category.name]">{{category.name}}{{isLast ? '' : ', '}} </a></span>
-                    <small>Tagged </small><span *ngFor="let tag of item.tags; let isLast=last"><a [routerLink]="['/tag', tag.name]">{{tag.name}}{{isLast ? '' : ', '}} </a></span>
+                    <p class="lead">
+                        by <a [routerLink]="['/about']">{{item.author}}</a>
+                    </p>
+                    <p><span class="glyphicon glyphicon-time"></span> {{item.postDate | date: 'MM/dd/yyyy'}}</p>
+                    <div>
+                        <small>Posted in </small><span *ngFor="let category of item.categories; let isLast=last"><a [routerLink]="['/category', category.name]">{{category.name}}{{isLast ? '' : ', '}} </a></span>
+                        <small>Tagged </small><span *ngFor="let tag of item.tags; let isLast=last"><a [routerLink]="['/tag', tag.name]">{{tag.name}}{{isLast ? '' : ', '}} </a></span>
+                    </div>
+                    <hr>
+                    <p [innerHTML]="html"></p>
                 </div>
-                <hr>
-                <p [innerHTML]="html"></p>
             </div>
         </div>
-    </div>
-    <br />
-    <div class="row">
-        <!--https://simplesharebuttons.com/html-share-buttons/-->
-        <span>
-            <a  style="text-decoration:none;" href="mailto:?Subject={{item.title}}&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 {{url}}">
-                <img src="assets/images/email.png" alt="Email" width="48" height="48" />
-            </a>
-            <a style="text-decoration:none;" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{url}}" target="_blank">
-                <img src="assets/images/linkedin.png" alt="LinkedIn" width="48" height="48" />
-            </a>
-            <a style="text-decoration:none;" href="https://plus.google.com/share?url={{url}}" target="_blank">
-                <img src="assets/images/google.png" alt="Google" width="48" height="48" />
-            </a>
-            <a href="http://www.facebook.com/sharer.php?u={{url}}" target="_blank">
-                <img src="assets/images/facebook.png" alt="Facebook" width="48" height="48" />
-            </a>
-            <a style="text-decoration:none;" href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
-                <img src="assets/images/pinterest.png" alt="Pinterest" width="48" height="48" />
-            </a>
-            <a style="text-decoration:none;" href="http://reddit.com/submit?url={{url}}&amp;title={{item.title}}" target="_blank">
-                <img src="assets/images/reddit.png" alt="Reddit" width="48" height="48"/>
-            </a>
-            <a style="text-decoration:none;" href="http://www.tumblr.com/share/link?url={{url}}&amp;title={{item.title}}" target="_blank">
-                <img src="assets/images/tumblr.png" alt="Tumblr" width="48" height="48" />
-            </a>
-            <a style="text-decoration:none;" href="https://twitter.com/share?url={{url}}&amp;text={{item.title}}&amp;hashtags=grenitausconsulting" target="_blank">
-                <img src="assets/images/twitter.png" alt="Twitter" width="48" height="48" />
-            </a>
-        </span>
+        <br />
+        <div class="row">
+            <!--https://simplesharebuttons.com/html-share-buttons/-->
+            <span>
+                <a style="text-decoration:none;" href="mailto:?Subject={{item.title}}&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 {{url}}">
+                    <img src="assets/images/email.png" alt="Email" width="48" height="48" />
+                </a>
+                <a style="text-decoration:none;" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{url}}" target="_blank">
+                    <img src="assets/images/linkedin.png" alt="LinkedIn" width="48" height="48" />
+                </a>
+                <a style="text-decoration:none;" href="https://plus.google.com/share?url={{url}}" target="_blank">
+                    <img src="assets/images/google.png" alt="Google" width="48" height="48" />
+                </a>
+                <a href="http://www.facebook.com/sharer.php?u={{url}}" target="_blank">
+                    <img src="assets/images/facebook.png" alt="Facebook" width="48" height="48" />
+                </a>
+                <a style="text-decoration:none;" href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+                    <img src="assets/images/pinterest.png" alt="Pinterest" width="48" height="48" />
+                </a>
+                <a style="text-decoration:none;" href="http://reddit.com/submit?url={{url}}&amp;title={{item.title}}" target="_blank">
+                    <img src="assets/images/reddit.png" alt="Reddit" width="48" height="48" />
+                </a>
+                <a style="text-decoration:none;" href="http://www.tumblr.com/share/link?url={{url}}&amp;title={{item.title}}" target="_blank">
+                    <img src="assets/images/tumblr.png" alt="Tumblr" width="48" height="48" />
+                </a>
+                <a style="text-decoration:none;" href="https://twitter.com/share?url={{url}}&amp;text={{item.title}}&amp;hashtags=grenitausconsulting" target="_blank">
+                    <img src="assets/images/twitter.png" alt="Twitter" width="48" height="48" />
+                </a>
+            </span>
+        </div>
     </div>
 </div>

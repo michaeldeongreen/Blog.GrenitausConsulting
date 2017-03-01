@@ -14,6 +14,7 @@ import { SharedEmitterService } from '../shared-emitter.service';
 })
 export class CategoryComponent implements OnInit {
     category: string;
+    busy: boolean = true;
 
     constructor(private http: Http,
         private httpService: HttpService,
@@ -26,6 +27,7 @@ export class CategoryComponent implements OnInit {
             this.setCategory();
         });
     }
+
 
     // pager object
     pager: any = {};
@@ -65,6 +67,7 @@ export class CategoryComponent implements OnInit {
 
                 // get current page of items
                 this.pagedItems = data.posts;
+                this.busy = false;
             });
     }
 }

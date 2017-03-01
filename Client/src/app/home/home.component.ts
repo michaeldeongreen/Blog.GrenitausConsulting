@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
         private route: ActivatedRoute) {
     }
 
+    busy: boolean = true;
 
     // pager object
     pager: any = {};
@@ -45,9 +46,9 @@ export class HomeComponent implements OnInit {
             .subscribe(data => {
                 // get pager object from service
                 this.pager = this.pagerService.getPager(data.total, page);
-
                 // get current page of items
                 this.pagedItems = data.posts;
+                this.busy = false;
             });
     }
 }

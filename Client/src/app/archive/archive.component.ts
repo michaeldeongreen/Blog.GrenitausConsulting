@@ -15,6 +15,7 @@ export class ArchiveComponent implements OnInit {
     month: number;
     year: number;
     monthYear: string;
+    busy: boolean = true;
 
     constructor(private httpService: HttpService,
         private pagerService: PagerService,
@@ -63,6 +64,7 @@ export class ArchiveComponent implements OnInit {
               // get current page of items
               this.pagedItems = data.posts;
               this.monthYear = `${data.archiveMonth} ${data.archiveYear}`;
+              this.busy = false;
           });
   }
 }

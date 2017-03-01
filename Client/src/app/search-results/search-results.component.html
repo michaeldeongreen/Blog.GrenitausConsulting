@@ -1,46 +1,51 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
-            <h1 class="page-header">
-                Search Results
-                <small *ngIf="pager.totalItems == 0">(0 items found)</small>
-                <small *ngIf="pager.pageSize >= pager.totalItems && pager.totalItems > 0">(displaying {{pager.totalItems}} of {{pager.totalItems}})</small>
-                <small *ngIf="pager.pageSize < pager.totalItems && pager.totalItems > 0">(displaying {{pager.pageSize}} of {{pager.totalItems}})</small>
-            </h1>
+        <div id="my-loader" *ngIf="busy" class="loader"></div>
+    </div>
+    <div *ngIf="busy == false">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="page-header">
+                    Search Results
+                    <small *ngIf="pager.totalItems == 0">(0 items found)</small>
+                    <small *ngIf="pager.pageSize >= pager.totalItems && pager.totalItems > 0">(displaying {{pager.totalItems}} of {{pager.totalItems}})</small>
+                    <small *ngIf="pager.pageSize < pager.totalItems && pager.totalItems > 0">(displaying {{pager.pageSize}} of {{pager.totalItems}})</small>
+                </h1>
 
-            <div *ngFor="let item of pagedItems">
-                <h2>
-                    <a [routerLink]="['/post', item.link]">{{item.title}}</a>
-                </h2>
-                <p class="lead">
-                    by <a [routerLink]="['/about']">{{item.author}}</a>
-                </p>
-                <p><span class="glyphicon glyphicon-time"></span> {{item.postDate | date: 'MM/dd/yyyy'}}</p>
-                <hr>
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
-                <hr>
-                <p>{{item.snippet}}</p>
-                <a class="btn btn-primary" [routerLink]="['/post', item.link]">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <div *ngFor="let item of pagedItems">
+                    <h2>
+                        <a [routerLink]="['/post', item.link]">{{item.title}}</a>
+                    </h2>
+                    <p class="lead">
+                        by <a [routerLink]="['/about']">{{item.author}}</a>
+                    </p>
+                    <p><span class="glyphicon glyphicon-time"></span> {{item.postDate | date: 'MM/dd/yyyy'}}</p>
+                    <hr>
+                    <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                    <hr>
+                    <p>{{item.snippet}}</p>
+                    <a class="btn btn-primary" [routerLink]="['/post', item.link]">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
             </div>
         </div>
+        <br />
+        <!-- pager -->
+        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a class="anchor-pointer" (click)="setPage(1)">First</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a class="anchor-pointer" (click)="setPage(pager.currentPage - 1)">Previous</a>
+            </li>
+            <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                <a class="anchor-pointer" (click)="setPage(page)">{{page}}</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a class="anchor-pointer" (click)="setPage(pager.currentPage + 1)">Next</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a class="anchor-pointer" (click)="setPage(pager.totalPages)">Last</a>
+            </li>
+        </ul>
     </div>
-    <br />
-    <!-- pager -->
-    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
-        <li [ngClass]="{disabled:pager.currentPage === 1}">
-            <a class="anchor-pointer" (click)="setPage(1)" >First</a>
-        </li>
-        <li [ngClass]="{disabled:pager.currentPage === 1}">
-            <a class="anchor-pointer" (click)="setPage(pager.currentPage - 1)">Previous</a>
-        </li>
-        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-            <a class="anchor-pointer" (click)="setPage(page)" >{{page}}</a>
-        </li>
-        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-            <a class="anchor-pointer" (click)="setPage(pager.currentPage + 1)" >Next</a>
-        </li>
-        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-            <a class="anchor-pointer" (click)="setPage(pager.totalPages)">Last</a>
-        </li>
-    </ul>
 </div>

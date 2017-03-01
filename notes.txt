@@ -42,13 +42,6 @@ http://blog.devcross.net/2016/03/20/angular-2-seo/
 
 4)      I get 2 404’s one from the favicon (so there is no favicon for me) and the other is the infamous Bootstrap halflings error. 
 
-facebook comment section
-https://developers.facebook.com/docs/plugins/comments/
-
-look at why search doesn't work for things that should
-thoughtworks
-pmbok
-
 
 TODO Later:
 1) Validate Blog Search (see ngif that the pager is using)
@@ -56,6 +49,8 @@ TODO Later:
 4) Maybe a back button at bottom of post
 * See if you can get the links to move you up to top elegantly
 *Possible timer like dachecache to refresh memory
+facebook comment section
+https://developers.facebook.com/docs/plugins/comments/
 
 <add input="{REQUEST_URI}" matchType="Pattern" pattern="^/api/.*$" ignoreCase="true" negate="true" />
 

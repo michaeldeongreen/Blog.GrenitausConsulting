@@ -13,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TagComponent implements OnInit {
     tag: string;
+    busy: boolean = true;
 
     constructor(private http: Http,
         private httpService: HttpService,
@@ -57,6 +58,7 @@ export class TagComponent implements OnInit {
 
                 // get current page of items
                 this.pagedItems = data.posts;
+                this.busy = false;
             });
     }
 
