@@ -23,6 +23,7 @@ namespace Blog.GrenitausConsulting.Common
         public IList<PostHtml> PostHtmlList { get { return _postHtmlList; } }
         public IEnumerable<Category> Categories { get { return _categories; } }
         public IEnumerable<Tag> Tags { get { return _tags; } }
+        public string JsonPath { get { return _path; } }
 
         public void Init(string path)
         {
