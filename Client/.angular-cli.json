@@ -15,7 +15,8 @@
         "page-sitemap.xml",
         "post_tag-sitemap.xml",
         "post-sitemap.xml",
-        "sitemap.xml"
+        "sitemap.xml",
+        "rss.xml"
       ],
       "index": "index.html",
       "main": "main.ts",

@@ -90,7 +90,7 @@
             this.btnGenerateSitemap.Name = "btnGenerateSitemap";
             this.btnGenerateSitemap.Size = new System.Drawing.Size(189, 34);
             this.btnGenerateSitemap.TabIndex = 5;
-            this.btnGenerateSitemap.Text = "Generate Sitemaps & RSS";
+            this.btnGenerateSitemap.Text = "Generate Sitemaps and RSS";
             this.btnGenerateSitemap.UseVisualStyleBackColor = true;
             this.btnGenerateSitemap.Click += new System.EventHandler(this.btnGenerateSitemap_Click);
             // 
