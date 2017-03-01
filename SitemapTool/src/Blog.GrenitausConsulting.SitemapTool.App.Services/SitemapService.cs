@@ -88,7 +88,7 @@ namespace Blog.GrenitausConsulting.SitemapTool.App.Services
         {
             Sitemap map = new Sitemap();
             string outputPath = string.Format(@"{0}\post-sitemap.xml", _sitemapOutputPath);
-            foreach (var post in BlogContextManager.PostSummaries)
+            foreach (var post in BlogContextManager.PostSummaries.Where(p => p.IsActive == true))
             {
                 SitemapLocation location = new SitemapLocation() { Url = string.Format("{0}/post/{1}",_domain, post.Link),
                  LastModified = DateTime.Now};

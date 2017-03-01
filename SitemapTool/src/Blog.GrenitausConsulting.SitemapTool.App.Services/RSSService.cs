@@ -34,7 +34,7 @@ namespace Blog.GrenitausConsulting.SitemapTool.App.Services
                 writer.WriteElementString("description", "Grenitaus Consulting Blog RSS Feed");
                 writer.WriteElementString("copyright", "Copyright 2017 Grenitaus Consulting");
 
-                foreach (var post in BlogContextManager.PostSummaries)
+                foreach (var post in BlogContextManager.PostSummaries.Where(p => p.IsActive == true))
                 {
                     writer.WriteStartElement("item");
                     writer.WriteElementString("title",post.Title);
