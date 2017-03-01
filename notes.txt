@@ -30,8 +30,6 @@ http://blog.architectinginnovation.com/first-impressions-angular-2/
 
 sitemap tool
 
-double // in share button links
-
 add github png to top menu
 
 Side Widget Well?

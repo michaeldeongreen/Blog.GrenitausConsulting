@@ -23,7 +23,7 @@ export class PostComponent implements OnInit {
         private seoService: SeoService,
         private location: Location) {
         this.path = location.prepareExternalUrl(location.path(true));
-        this.url = `${window.location.protocol}//${window.location.host}/${this.path}/`;
+        this.url = `${window.location.protocol}//${window.location.host}${this.path}/`;
     }
 
 
