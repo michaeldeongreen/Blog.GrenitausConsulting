@@ -28,6 +28,7 @@ namespace Blog.GrenitausConsulting.SitemapTool.App.Services
                 writer.WriteStartDocument();
                 writer.WriteStartElement("rss");
                 writer.WriteAttributeString("version", "2.0");
+                writer.WriteAttributeString("xmlns:atom", "http://www.w3.org/2005/Atom");
                 writer.WriteStartElement("channel");
                 writer.WriteElementString("title", "Grenitaus Consulting Blogs");
                 writer.WriteElementString("link", _domain);
