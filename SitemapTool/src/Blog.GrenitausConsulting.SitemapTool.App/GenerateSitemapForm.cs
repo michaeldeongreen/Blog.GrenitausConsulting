@@ -43,14 +43,20 @@ namespace Blog.GrenitausConsulting.SitemapTool.App
             {
                 string domain = txtDomainName.Text;
                 string configurationPath = txtConfigurationFiles.Text;
-                string sitemapOutputPath = txtSitemapOutput.Text;
+                string outputPath = txtSitemapOutput.Text;
+
                 ISitemapService sitemapService = new SitemapService();
-                sitemapService.Generate(domain,configurationPath,sitemapOutputPath);
-                MessageBox.Show("Sitmaps have been generated!", "Sitemaps Created!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                IRSSService rssService = new RSSService();
+
+
+                sitemapService.Generate(domain,configurationPath,outputPath);
+                rssService.Generate(domain, outputPath);
+
+                MessageBox.Show("Sitmaps and rss feed have been generated!", "Sitemaps & RSS Created!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("There was an error trying to generate the sitemaps", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("There was an error trying to generate the sitemaps and rss feed", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

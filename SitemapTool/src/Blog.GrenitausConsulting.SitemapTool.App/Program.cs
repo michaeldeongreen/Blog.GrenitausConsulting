@@ -16,7 +16,7 @@ namespace Blog.GrenitausConsulting.SitemapTool.App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GenerateSitemapForm());
+            Application.Run(new MainForm());
         }
     }
 }

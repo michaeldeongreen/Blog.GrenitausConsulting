@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace Blog.GrenitausConsulting.SitemapTool.App.Domain
@@ -52,15 +53,16 @@ namespace Blog.GrenitausConsulting.SitemapTool.App.Domain
 
         public void WriteSitemapToFile(string path)
         {
-
             using (FileStream fs = new FileStream(path, FileMode.Create))
             {
+                using (XmlWriter w = new XmlTextWriter(fs, Encoding.UTF8))
+                {
+                    XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+                    ns.Add("image", "http://www.google.com/schemas/sitemap-image/1.1");
 
-                XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-                ns.Add("image", "http://www.google.com/schemas/sitemap-image/1.1");
-
-                XmlSerializer xs = new XmlSerializer(typeof(Sitemap));
-                xs.Serialize(fs, this, ns);
+                    XmlSerializer xs = new XmlSerializer(typeof(Sitemap));
+                    xs.Serialize(w, this, ns);
+                }
             }
         }
     }
