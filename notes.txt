@@ -30,17 +30,8 @@ http://blog.architectinginnovation.com/first-impressions-angular-2/
 
 Side Widget Well?
 
-Write refresh Endpoint to update all the data
-
 Meta tags hard code, see what values social media pulls for existing blogs
 Find nice 900x300 image for posts
-
-
-Meta tag
-http://blog.devcross.net/2016/03/20/angular-2-seo/
-
-
-4)      I get 2 404’s one from the favicon (so there is no favicon for me) and the other is the infamous Bootstrap halflings error. 
 
 
 TODO Later:
@@ -115,3 +106,6 @@ https://github.com/naik899/SitemapGenerator
 RSS
 http://www.aspsnippets.com/Articles/Create-and-add-dynamic-RSS-Feed-from-Database-in-ASPNet-Website.aspx
 https://validator.w3.org
+
+Meta tag
+http://blog.devcross.net/2016/03/20/angular-2-seo/
