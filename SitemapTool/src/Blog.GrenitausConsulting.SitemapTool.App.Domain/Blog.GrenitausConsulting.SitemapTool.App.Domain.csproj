@@ -43,6 +43,7 @@
     <Compile Include="Sitemap.cs" />
     <Compile Include="SitemapImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SitemapIndex.cs" />
     <Compile Include="SitemapLocation.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
