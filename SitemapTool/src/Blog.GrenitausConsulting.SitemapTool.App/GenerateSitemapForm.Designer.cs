@@ -119,7 +119,7 @@
             this.txtSitemapOutput.Name = "txtSitemapOutput";
             this.txtSitemapOutput.Size = new System.Drawing.Size(469, 20);
             this.txtSitemapOutput.TabIndex = 6;
-            this.txtSitemapOutput.Text = "C:\\temp\\My Sitemaps";
+            this.txtSitemapOutput.Text = "C:\\Git\\Blog.GrenitausConsulting\\Client\\src";
             // 
             // GenerateSitemapForm
             // 
