@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Ng2PaginationModule } from 'ng2-pagination';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { MetaModule } from '@nglibs/meta';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -46,8 +47,8 @@ import { ArchiveComponent } from './archive/archive.component';
     FormsModule,
       HttpModule,
       Ng2PaginationModule,
-      AppRoutingModule
-      
+      AppRoutingModule,
+      MetaModule.forRoot()
   ],
   providers: [HttpService, PagerService, SharedEmitterService, SeoService],
   bootstrap: [AppComponent]

@@ -5,6 +5,7 @@ import { Post } from '../post';
 import { Observable } from 'rxjs/Observable';
 import { SeoService } from '../seo.service';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { MetaService } from '@nglibs/meta';
 
 @Component({
   selector: 'app-post',
@@ -22,7 +23,8 @@ export class PostComponent implements OnInit {
     constructor(private httpService: HttpService,
         private route: ActivatedRoute,
         private seoService: SeoService,
-        private location: Location) {
+        private location: Location,
+        private readonly metaService: MetaService) {
         this.path = location.prepareExternalUrl(location.path(true));
         this.url = `${window.location.protocol}//${window.location.host}${this.path}/`;
     }
@@ -40,8 +42,7 @@ export class PostComponent implements OnInit {
             .subscribe(data => {
                 // get pager object from service
                 this.item = data;
-                this.seoService.setTitle(this.item.title);
-                this.seoService.setMetaDescription(this.item.snippet);
+                this.setSEO();
             });
     }
 
@@ -53,4 +54,24 @@ export class PostComponent implements OnInit {
               this.busy = false;
           });
   }
+
+  setSEO() {
+      this.metaService.setTitle(this.item.title);
+      this.metaService.setTag('description', this.item.snippet);
+      this.metaService.setTag('og:type', 'article');
+      this.metaService.setTag('og:title', this.item.title);
+      this.metaService.setTag('og:description', this.item.snippet);
+      this.metaService.setTag('og:url', this.url);
+      this.metaService.setTag('og:image', this.item.images[0].url);
+      this.metaService.setTag('twitter:description', this.item.snippet);
+      this.metaService.setTag('twitter:title', this.item.title);
+      this.metaService.setTag('twitter:image', this.item.images[0].url);
+      for (let tag of this.item.tags) {
+          this.metaService.setTag('article:tag', tag.name);
+      }
+      for (let category of this.item.categories) {
+          this.metaService.setTag('article:section', category.name);
+      }
+  }
+
 }
