@@ -16,6 +16,7 @@ namespace Blog.GrenitausConsulting.Common
         public static IEnumerable<Category> Categories { get {return _blogContext.Categories; } }
         public static IEnumerable<Tag> Tags { get { return _blogContext.Tags; }  }
         public static string JsonPath { get { return _blogContext.JsonPath; }  }
+        public static IEnumerable<Quote> Quotes { get { return _blogContext.Quotes; } }
 
 
         public static void Init(string path)

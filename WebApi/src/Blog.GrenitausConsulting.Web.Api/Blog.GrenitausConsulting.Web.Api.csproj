@@ -184,6 +184,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HtmlController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
+    <Compile Include="Controllers\QuotesController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="DependencyResolution\DefaultRegistry.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
@@ -281,6 +282,7 @@
     <Content Include="App_Data\post-summaries.json" />
     <Content Include="App_Data\categories.json" />
     <Content Include="App_Data\tags.json" />
+    <Content Include="App_Data\quotes.json" />
     <None Include="Properties\PublishProfiles\Test.pubxml" />
   </ItemGroup>
   <PropertyGroup>

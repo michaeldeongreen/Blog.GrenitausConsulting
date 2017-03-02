@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';
 import { CategoriesComponent } from './categories/categories.component';
-import { SideWidgetComponent } from './side-widget/side-widget.component';
+import { QuoteComponent } from './quote/quote.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { HttpService } from './http.service';
@@ -31,7 +31,7 @@ import { ArchiveComponent } from './archive/archive.component';
     HeaderComponent,
     SearchComponent,
     CategoriesComponent,
-    SideWidgetComponent,
+    QuoteComponent,
     FooterComponent,
     HomeComponent,
       SearchResultsComponent,

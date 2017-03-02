@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SideWidgetComponent } from './side-widget.component';
+import { QuoteComponent } from './quote.component';
 
-describe('SideWidgetComponent', () => {
-  let component: SideWidgetComponent;
-  let fixture: ComponentFixture<SideWidgetComponent>;
+describe('QuoteComponent', () => {
+    let component: QuoteComponent;
+    let fixture: ComponentFixture<QuoteComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SideWidgetComponent ]
+        declarations: [QuoteComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SideWidgetComponent);
+      fixture = TestBed.createComponent(QuoteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

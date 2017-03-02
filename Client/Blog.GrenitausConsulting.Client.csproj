@@ -84,8 +84,8 @@
     <Content Include="src\app\search-results\search-results.component.html" />
     <Content Include="src\app\search\search.component.css" />
     <Content Include="src\app\search\search.component.html" />
-    <Content Include="src\app\side-widget\side-widget.component.css" />
-    <Content Include="src\app\side-widget\side-widget.component.html" />
+    <Content Include="src\app\quote\quote.component.css" />
+    <Content Include="src\app\quote\quote.component.html" />
     <Content Include="src\app\tag\tag.component.css" />
     <Content Include="src\app\tag\tag.component.html" />
     <Content Include="src\assets\css\blog-home.css" />
@@ -152,6 +152,7 @@
     <TypeScriptCompile Include="src\app\post.ts" />
     <TypeScriptCompile Include="src\app\post\post.component.spec.ts" />
     <TypeScriptCompile Include="src\app\post\post.component.ts" />
+    <TypeScriptCompile Include="src\app\quote.ts" />
     <TypeScriptCompile Include="src\app\search-results\search-results.component.spec.ts" />
     <TypeScriptCompile Include="src\app\search-results\search-results.component.ts" />
     <TypeScriptCompile Include="src\app\search\search.component.spec.ts" />
@@ -159,8 +160,8 @@
     <TypeScriptCompile Include="src\app\seo.service.spec.ts" />
     <TypeScriptCompile Include="src\app\seo.service.ts" />
     <TypeScriptCompile Include="src\app\shared-emitter.service.ts" />
-    <TypeScriptCompile Include="src\app\side-widget\side-widget.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\side-widget\side-widget.component.ts" />
+    <TypeScriptCompile Include="src\app\quote\quote.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\quote\quote.component.ts" />
     <TypeScriptCompile Include="src\app\tag\tag.component.spec.ts" />
     <TypeScriptCompile Include="src\app\tag\tag.component.ts" />
     <TypeScriptCompile Include="src\app\tag.ts" />

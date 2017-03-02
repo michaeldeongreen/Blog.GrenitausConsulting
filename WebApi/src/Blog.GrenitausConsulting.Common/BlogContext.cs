@@ -18,12 +18,14 @@ namespace Blog.GrenitausConsulting.Common
         private IList<PostHtml> _postHtmlList = new List<PostHtml>();
         private IEnumerable<Category> _categories;
         private IEnumerable<Tag> _tags;
+        private IEnumerable<Quote> _quotes;
 
         public IEnumerable<PostSummary> PostSummaries { get { return _postSummaries; }  }
         public IList<PostHtml> PostHtmlList { get { return _postHtmlList; } }
         public IEnumerable<Category> Categories { get { return _categories; } }
         public IEnumerable<Tag> Tags { get { return _tags; } }
         public string JsonPath { get { return _path; } }
+        public IEnumerable<Quote> Quotes{ get { return _quotes; } }
 
         public void Init(string path)
         {
@@ -32,6 +34,7 @@ namespace Blog.GrenitausConsulting.Common
             BuildPostHtml();
             BuildCategories();
             BuildTags();
+            BuildQuotes();
         }
 
         private void BuildPostSummaries()
@@ -62,6 +65,11 @@ namespace Blog.GrenitausConsulting.Common
         private void BuildTags()
         {
             _tags = JsonConvert.DeserializeObject<IEnumerable<Tag>>(File.ReadAllText(string.Format(@"{0}\tags.json", _path)));
+        }
+
+        private void BuildQuotes()
+        {
+            _quotes = JsonConvert.DeserializeObject<IEnumerable<Quote>>(File.ReadAllText(string.Format(@"{0}\quotes.json", _path)));
         }
     }
 }
