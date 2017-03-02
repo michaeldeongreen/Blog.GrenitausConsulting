@@ -1,4 +1,4 @@
-<a href="assets/images/azure-angular-web-api.png"><img src="assets/images/azure-angular-web-api.png" alt="Michael D. Green - Angular 2 Tour of Heroes Web API in Azure" width="700" height="300" class="aligncenter size-full wp-image-620" /></a>
+<a href="assets/images/azure-angular-web-api.png"><img src="assets/images/azure-angular-web-api.png" alt="Michael D. Green - Angular 2 Tour of Heroes Web API in Azure" width="700" height="300" class="img-responsive" /></a>
 <br><br>
 The Angular 2 Tour of Heroes guide created by the Angular Team is a wonderful introduction to Angular 2.  For those who have completed the guide, you already know that the last step, HTTP, creates an angular-in-memory-web-api to demonstrate how Angular 2 works with REST services.
 <br><br>

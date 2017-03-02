@@ -1,3 +1,5 @@
+<a href="assets/images/grenitaus-consulting-logo.png"><img class="img-responsive" src="assets/images/grenitaus-consulting-logo.png" alt="Grenitaus Consulting"></a>
+<br><br>
 Check out my latest blog I wrote for my client <a href="http://architectinginnovation.com" target="_blank">Architecting Innovation</a> about how to automate the deployment of a SQL Server database using Git, Powershell, SQL Server, SSDT and TeamCity.
 <br><br>
 You can find the blog <a href="http://blog.architectinginnovation.com/how-to-setup-continuous-deployment-for-a-sql-server-database-using-git-powershell-ssdt-and-teamcity/" target="_blank">here</a>.

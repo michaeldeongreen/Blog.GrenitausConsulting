@@ -1,4 +1,4 @@
-<a href="assets/images/tips-on-how-to-survive-it-projects-you-dont-like-1024x683.jpg" ><img src="assets/images/tips-on-how-to-survive-it-projects-you-dont-like-1024x683.jpg" alt="" width="730" height="486" class="aligncenter size-full wp-image-15" /></a>
+<a href="assets/images/tips-on-how-to-survive-it-projects-you-dont-like-1024x683.jpg" ><img src="assets/images/tips-on-how-to-survive-it-projects-you-dont-like-1024x683.jpg" alt="" width="730" height="486" class="img-responsive" /></a>
 <br><br>
 In consulting, one of the problems that I see on a consistent basis is how people handle being on projects that they do not like.  A consultant may dislike a project for many reasons.  The project may not align with their career, they may not like the client or the project may be a <a href="http://en.wikipedia.org/wiki/Death_march_(project_management)" title="Death March" target="_blank">Death March</a>.  As I take more leadership roles on projects, I decided to take some time to write a blog about some of the ways a consultant can manage when placed on a project that is not particularly interesting.
 <br><br>

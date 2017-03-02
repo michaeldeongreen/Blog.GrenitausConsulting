@@ -1,4 +1,4 @@
-<a href="assets/images/my-decision-to-trade-in-my-git-gui-client-for-git-bash-git-windows-logo.png"><img class="alignright size-full wp-image-448" src="assets/images/my-decision-to-trade-in-my-git-gui-client-for-git-bash-git-windows-logo.png" alt="Git Bash" width="325" height="325" /></a>
+<a href="assets/images/my-decision-to-trade-in-my-git-gui-client-for-git-bash-git-windows-logo.png"><img class="img-responsive" src="assets/images/my-decision-to-trade-in-my-git-gui-client-for-git-bash-git-windows-logo.png" alt="Git Bash" width="325" height="325" /></a>
 <br><br>
 In this blog, I wanted to discuss my decision to trade in my Git GUI Client for Git Bash. I would like to discuss some of the reasons why I have been using a Git GUI Client and why I have ultimately decided to start using Git Bash.
 <br><br>

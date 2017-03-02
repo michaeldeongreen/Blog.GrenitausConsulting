@@ -1,1 +1,3 @@
+<a href="assets/images/grenitaus-consulting-logo.png"><img class="img-responsive" src="assets/images/grenitaus-consulting-logo.png" alt="Grenitaus Consulting"></a>
+<br><br>
 Check out my latest blog I wrote for my client <a href="http://architectinginnovation.com" target="_blank">Architecting Innovation</a> about why I started blogging.  In the blog I wrote, I talk about some of the reasons why I started blogging and attempt to make strong case that you should start blogging too.  You can find the blog <a href="http://blog.architectinginnovation.com/why-i-started-blogging/" target="_blank">here</a>.
