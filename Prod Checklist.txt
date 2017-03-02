@@ -1,0 +1,5 @@
+1) http-service api url should point to http://api.grenitausconsulting.com
+
+2) index.html og:image needs to point to blog.grenitausconsulting.com
+
+3) Meta tags need to be for the latest blog

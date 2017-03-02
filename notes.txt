@@ -25,15 +25,15 @@ https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
 TODO Now:
+Add preview expire bool/expire date and endpoint to share posts not yet released
+
+Maybe add a base coontroller to check to see if you are in dev, so survey data can be refreshed
+
 Use class="img-responsive" for images
 
 Make ico for page, it has angular logo now
 
 Implement meta service in all pages where necessary
-
-og:image I think has to be fully qualified, so no relative link
-
-Maybe put consulting in the logo
 
 Release this blog, but only when new blog is ready
 http://blog.architectinginnovation.com/first-impressions-angular-2/
