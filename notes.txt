@@ -27,6 +27,14 @@ http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-
 TODO Now:
 Use class="img-responsive" for images
 
+Make ico for page, it has angular logo now
+
+Implement meta service in all pages where necessary
+
+og:image I think has to be fully qualified, so no relative link
+
+Maybe put consulting in the logo
+
 Release this blog, but only when new blog is ready
 http://blog.architectinginnovation.com/first-impressions-angular-2/
 
