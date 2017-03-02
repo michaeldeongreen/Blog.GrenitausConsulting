@@ -25,12 +25,10 @@ https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
 TODO Now:
-class="img-responsive"
+Use class="img-responsive" for images
 
 Release this blog, but only when new blog is ready
 http://blog.architectinginnovation.com/first-impressions-angular-2/
-
-Side Widget Well?
 
 Meta tags hard code, see what values social media pulls for existing blogs
 
@@ -42,10 +40,11 @@ TODO Later:
 4) Maybe a back button at bottom of post
 * See if you can get the links to move you up to top elegantly
 *Possible timer like dachecache to refresh memory
-facebook comment section
-https://developers.facebook.com/docs/plugins/comments/
+*facebook comment section
+	https://developers.facebook.com/docs/plugins/comments/
 
-<add input="{REQUEST_URI}" matchType="Pattern" pattern="^/api/.*$" ignoreCase="true" negate="true" />
+* Try to see if this allows api/web to be hosted together
+	<add input="{REQUEST_URI}" matchType="Pattern" pattern="^/api/.*$" ignoreCase="true" negate="true" />
 
 
 

@@ -10,6 +10,7 @@ import { HttpService } from '../http.service';
 })
 export class QuoteComponent implements OnInit {
     item: any = {};
+    busy: boolean = true;
 
   constructor(private httpService: HttpService) { }
 
@@ -21,6 +22,7 @@ export class QuoteComponent implements OnInit {
       this.httpService.getQuote()
           .subscribe(data => {
               this.item = data;
+              this.busy = false;
           });
   }
 
