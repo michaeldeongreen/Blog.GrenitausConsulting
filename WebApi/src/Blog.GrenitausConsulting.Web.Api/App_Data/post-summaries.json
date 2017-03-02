@@ -22,6 +22,12 @@
         "id": 2,
         "name": "IT"
       }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
+      }
     ]
   },
   {
@@ -139,6 +145,12 @@
       {
         "id": 4,
         "name": "Career"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
     ]
   },
@@ -266,6 +278,12 @@
         "id": 1,
         "name": "SCRUM"
       }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
+      }
     ]
   },
   {
@@ -287,6 +305,12 @@
         "id": 9,
         "name": "Racism"
       }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
+      }
     ]
   },
   {
@@ -307,6 +331,12 @@
       {
         "id": 4,
         "name": "Career"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
     ]
   },
@@ -333,6 +363,12 @@
         "id": 11,
         "name": "JavaScript"
       }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
+      }
     ]
   },
   {
@@ -358,6 +394,12 @@
         "id": 13,
         "name": "Unit Testing"
       }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
+      }
     ]
   },
   {
@@ -382,6 +424,12 @@
       {
         "id": 15,
         "name": "Extreme Programming"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
     ]
   },
@@ -411,6 +459,12 @@
       {
         "id": 7,
         "name": "Project Management"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
     ]
   },
@@ -468,6 +522,12 @@
         "id": 4,
         "name": "Career"
       }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
+      }
     ]
   },
   {
@@ -513,6 +573,12 @@
         "id": 27,
         "name": "Visual Studio 2015"
       }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
+      }
     ]
   },
   {
@@ -545,6 +611,12 @@
       {
         "id": 29,
         "name": "Software Development"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
     ]
   },
@@ -948,6 +1020,12 @@
         "id": 3,
         "name": "Interviewing"
       }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
+      }
     ]
   },
   {
@@ -968,6 +1046,12 @@
       {
         "id": 50,
         "name": "Blogging"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
     ]
   },
@@ -1010,6 +1094,12 @@
         "id": 29,
         "name": "Software Development"
       }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
+      }
     ]
   },
   {
@@ -1034,6 +1124,12 @@
       {
         "id": 61,
         "name": "SQL Logins"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
     ]
   },
@@ -1100,6 +1196,12 @@
         "id": 55,
         "name": "Webpack"
       }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
+      }
     ]
   },
   {
@@ -1152,6 +1254,12 @@
       {
         "id": 27,
         "name": "Visual Studio 2015"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
     ]
   },
