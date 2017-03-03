@@ -27,12 +27,6 @@ http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-
 TODO Now:
 Make keep alive monitor
 
-Go get all AI blogs you wrote, put them on your site and add a "Oringially posted on..."
-
-Make ico for page, it has angular logo now
-
-Implement meta service in all pages where necessary
-
 Release this blog, but only when new blog is ready
 http://blog.architectinginnovation.com/first-impressions-angular-2/
 
@@ -45,11 +39,13 @@ TODO Later:
 *Possible timer like dachecache to refresh memory
 *facebook comment section
 	https://developers.facebook.com/docs/plugins/comments/
-
+	
+*Implement meta service in all pages where necessary
+	
 * Try to see if this allows api/web to be hosted together
 	<add input="{REQUEST_URI}" matchType="Pattern" pattern="^/api/.*$" ignoreCase="true" negate="true" />
 
-
+*Make ico for page, it has angular logo now
 
 Blog 
 Understanding Sibling communication via shared service and event emitters

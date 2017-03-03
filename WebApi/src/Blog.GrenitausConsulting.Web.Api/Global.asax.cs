@@ -17,7 +17,7 @@ namespace Blog.GrenitausConsulting.Web.Api
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            BlogContextManager.Init(Server.MapPath(@"/App_Data"));
+            BlogConfig.Configure(Server.MapPath(@"/App_Data"));
         }
     }
 }

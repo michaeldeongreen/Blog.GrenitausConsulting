@@ -70,4 +70,4 @@ Below are some the resources I found helpful when I started trying to learn Angu
 <br><br>
 <a href="https://angular.io/docs/ts/latest/tutorial/" target="_blank">Angular 2 Tour of Heroes Tutorial</a>
 <br><br>
-<i>This blog post originally appeared on February 18, 2017 at <a>blog.architectinginnovation.com</a href="http://blog.architectinginnovation.com/http://blog.architectinginnovation.com/first-impressions-angular-2/" target="_blank"></i>
+<i>This blog post originally appeared on February 18, 2017 at <a href="http://blog.architectinginnovation.com/http://blog.architectinginnovation.com/first-impressions-angular-2/" target="_blank">blog.architectinginnovation.com</a></i>

@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlogContext.cs" />
+    <Compile Include="BlogMonitor.cs" />
+    <Compile Include="BlogMonitorManager.cs" />
     <Compile Include="CommonRegistry.cs" />
     <Compile Include="ConfigurationManagerWrapper.cs" />
     <Compile Include="BlogContextManager.cs" />

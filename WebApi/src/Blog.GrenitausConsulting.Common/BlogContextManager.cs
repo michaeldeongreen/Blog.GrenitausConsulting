@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace Blog.GrenitausConsulting.Common
 {
@@ -18,11 +19,9 @@ namespace Blog.GrenitausConsulting.Common
         public static string JsonPath { get { return _blogContext.JsonPath; }  }
         public static IEnumerable<Quote> Quotes { get { return _blogContext.Quotes; } }
 
-
         public static void Init(string path)
         {
             _blogContext.Init(path);
         }
-
     }
 }
