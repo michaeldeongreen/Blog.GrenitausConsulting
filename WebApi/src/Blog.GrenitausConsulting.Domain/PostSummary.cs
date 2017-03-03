@@ -18,5 +18,7 @@ namespace Blog.GrenitausConsulting.Domain
         public IList<Category> Categories { get; set; }
         public IList<Tag> Tags { get; set; }
         public IList<Image> Images { get; set; }
+        public bool CanPreview { get; set; }
+        public DateTime? PreviewExpirationDate { get; set; }
     }
 }

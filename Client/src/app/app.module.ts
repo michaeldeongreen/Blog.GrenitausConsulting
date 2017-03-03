@@ -24,6 +24,7 @@ import { TagComponent } from './tag/tag.component';
 import { SeoService } from './seo.service';
 import { ArchivesComponent } from './archives/archives.component';
 import { ArchiveComponent } from './archive/archive.component';
+import { PreviewComponent } from './preview/preview.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ArchiveComponent } from './archive/archive.component';
       CategoryComponent,
       TagComponent,
       ArchivesComponent,
-      ArchiveComponent
+      ArchiveComponent,
+      PreviewComponent
   ],
   imports: [
     BrowserModule,

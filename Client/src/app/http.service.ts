@@ -80,4 +80,16 @@ export class HttpService {
             .map((response: Response) => response.json())
             .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
     }
+
+    public getPostPreviewHtml(title: string): any {
+        return this.http.get(`${this.baseUrl}/html/${title}/preview`)
+            .map((response: Response) => response.json())
+            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+    }
+
+    public getPostPreview(title: string): any {
+        return this.http.get(`${this.baseUrl}/post/${title}/preview`)
+            .map((response: Response) => response.json())
+            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+    }
 }

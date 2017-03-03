@@ -14,4 +14,6 @@ export class Post {
     categories: Observable<Category>;
     tags: Observable<Tag>;
     images: Observable<Image>;
+    canPreview: boolean;
+    previewExpirationDate: Date;
 }

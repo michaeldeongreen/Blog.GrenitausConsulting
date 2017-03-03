@@ -28,7 +28,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate" :  null
   },
   {
     "id": 2,
@@ -59,7 +61,9 @@
         "name": "TW-Colour-Logos_green-1024x310-300x91.jpg",
         "url": "http://test.grenitausconsulting.com/assets/images/TW-Colour-Logos_green-1024x310-300x91.jpg"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "author": "Michael D. Green",
@@ -90,7 +94,9 @@
         "name": "tips-on-how-to-survive-it-projects-you-dont-like-1024x683.jpg",
         "url": "http://test.grenitausconsulting.com/assets/images/tips-on-how-to-survive-it-projects-you-dont-like-1024x683.jpg"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 4,
@@ -125,7 +131,9 @@
         "name": "those-pesky-soft-skills.jpg",
         "url": "http://test.grenitausconsulting.com/assets/images/those-pesky-soft-skills.jpg"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 5,
@@ -152,7 +160,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 6,
@@ -179,7 +189,9 @@
         "name": "those-pesky-soft-skills.jpg",
         "url": "http://test.grenitausconsulting.com/assets/images/those-pesky-soft-skills.jpg"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 7,
@@ -218,7 +230,9 @@
         "name": "michael-d-green-grenitausconsulting-com-what-are-the-pros-and-cons-of-agile-scrum-part-1-001.png",
         "url": "http://test.grenitausconsulting.com/assets/images/michael-d-green-grenitausconsulting-com-what-are-the-pros-and-cons-of-agile-scrum-part-1-001.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 8,
@@ -245,7 +259,9 @@
         "name": "those-pesky-soft-skills.jpg",
         "url": "http://test.grenitausconsulting.com/assets/images/those-pesky-soft-skills.jpg"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 9,
@@ -284,7 +300,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 10,
@@ -311,7 +329,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 11,
@@ -338,7 +358,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 12,
@@ -369,7 +391,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 13,
@@ -400,7 +424,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 14,
@@ -431,7 +457,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 15,
@@ -466,7 +494,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 16,
@@ -501,7 +531,9 @@
         "name": "how-to-convert-an-svn-repository-to-stash-using-tortoisegit.png",
         "url": "http://test.grenitausconsulting.com/assets/images/how-to-convert-an-svn-repository-to-stash-using-tortoisegit.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 17,
@@ -528,7 +560,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 18,
@@ -579,7 +613,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 19,
@@ -618,7 +654,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 20,
@@ -653,7 +691,9 @@
         "name": "my-decision-to-trade-in-my-git-gui-client-for-git-bash-git-windows-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/my-decision-to-trade-in-my-git-gui-client-for-git-bash-git-windows-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 21,
@@ -780,7 +820,9 @@
         "name": "grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-019.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitausconsulting.com-angular-2-continuous-deployment-with-azure-and-github-019.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 22,
@@ -823,7 +865,9 @@
         "name": "michael-d-green-grenitausconsulting-com-refactoring-code-in-my-open-source-project-to-use-async-await-001.png",
         "url": "http://test.grenitausconsulting.com/assets/images/michael-d-green-grenitausconsulting-com-refactoring-code-in-my-open-source-project-to-use-async-await-001.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 23,
@@ -886,7 +930,9 @@
         "name": "azure-angular-web-api.png",
         "url": "http://test.grenitausconsulting.com/assets/images/azure-angular-web-api.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 24,
@@ -929,7 +975,9 @@
         "name": "michael-d-green-grenitausconsulting-com-bored-take-the-tic-tac-toe-challenge-002.png",
         "url": "http://test.grenitausconsulting.com/assets/images/michael-d-green-grenitausconsulting-com-bored-take-the-tic-tac-toe-challenge-002.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 25,
@@ -960,7 +1008,9 @@
         "name": "michael-d-green-grenitausconsulting-com-making-the-angular-2-tour-of-heroes-Web-api-heroes-search-in-azure-asynchronous-001.png",
         "url": "http://test.grenitausconsulting.com/assets/images/michael-d-green-grenitausconsulting-com-making-the-angular-2-tour-of-heroes-Web-api-heroes-search-in-azure-asynchronous-001.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 26,
@@ -991,7 +1041,9 @@
         "name": "Grenitatusconsulting-com-michael-d-green-why-you-shoulnd-never-accept-a-counteroffer-001.png",
         "url": "http://test.grenitausconsulting.com/assets/images/Grenitatusconsulting-com-michael-d-green-why-you-shoulnd-never-accept-a-counteroffer-001.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 27,
@@ -1026,7 +1078,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 27,
@@ -1053,7 +1107,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 28,
@@ -1100,7 +1156,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 29,
@@ -1131,7 +1189,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": true,
+    "previewExpirationDate": "2017-03-03"
   },
   {
     "id": 30,
@@ -1202,7 +1262,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 31,
@@ -1261,7 +1323,9 @@
         "name": "grenitaus-consulting-logo.png",
         "url": "http://test.grenitausconsulting.com/assets/images/grenitaus-consulting-logo.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   },
   {
     "id": 32,
@@ -1300,6 +1364,8 @@
         "name": "Blogs-By-Grenitaus.png",
         "url": "http://test.grenitausconsulting.com/assets/images/Blogs-By-Grenitaus.png"
       }
-    ]
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   }
 ]  

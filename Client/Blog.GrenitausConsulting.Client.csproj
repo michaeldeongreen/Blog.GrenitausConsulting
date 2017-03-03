@@ -80,6 +80,8 @@
     <Content Include="src\app\home\home.component.html" />
     <Content Include="src\app\post\post.component.css" />
     <Content Include="src\app\post\post.component.html" />
+    <Content Include="src\app\preview\preview.component.css" />
+    <Content Include="src\app\preview\preview.component.html" />
     <Content Include="src\app\search-results\search-results.component.css" />
     <Content Include="src\app\search-results\search-results.component.html" />
     <Content Include="src\app\search\search.component.css" />
@@ -152,6 +154,8 @@
     <TypeScriptCompile Include="src\app\post.ts" />
     <TypeScriptCompile Include="src\app\post\post.component.spec.ts" />
     <TypeScriptCompile Include="src\app\post\post.component.ts" />
+    <TypeScriptCompile Include="src\app\preview\preview.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\preview\preview.component.ts" />
     <TypeScriptCompile Include="src\app\quote.ts" />
     <TypeScriptCompile Include="src\app\search-results\search-results.component.spec.ts" />
     <TypeScriptCompile Include="src\app\search-results\search-results.component.ts" />

@@ -38,7 +38,7 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
         [Route("api/post/{link}")]
         public PostSummary GetByLink(string link)
         {
-            return BlogContextManager.PostSummaries.Where(p => p.Link.ToLower().Trim() == link.ToLower().Trim()).FirstOrDefault();
+            return BlogContextManager.PostSummaries.Where(p => p.Link.ToLower().Trim() == link.ToLower().Trim() && p.IsActive).FirstOrDefault();
         }
 
         [Route("api/posts/category/{category}/page/{pageNumber}")]
@@ -57,6 +57,12 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
         public PagedResponse GetByMonthAndYear(int pageNumber, int month, int year)
         {
             return _pagingService.GetByMonthAndYear(new PagedCriteria() { PageNumber = pageNumber, PageSize = _pageSize, Posts = BlogContextManager.PostSummaries, MonthCriteria = month, YearCriteria = year });
+        }
+
+        [Route("api/post/{link}/preview")]
+        public PostSummary GetPreview(string link)
+        {
+            return BlogContextManager.PostSummaries.Where(p => p.Link == link && p.CanPreview && p.PreviewExpirationDate.Value.Date >= DateTime.Now.Date).FirstOrDefault();
         }
     }
 }
