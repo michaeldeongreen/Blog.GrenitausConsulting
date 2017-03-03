@@ -69,3 +69,5 @@ Below are some the resources I found helpful when I started trying to learn Angu
 <a href="https://angular.io/docs/ts/latest/quickstart.html" target="_blank">Official Angular 2 Quickstart Guide</a>
 <br><br>
 <a href="https://angular.io/docs/ts/latest/tutorial/" target="_blank">Angular 2 Tour of Heroes Tutorial</a>
+<br><br>
+<i>This blog post originally appeared on February 18, 2017 at <a>blog.architectinginnovation.com</a href="http://blog.architectinginnovation.com/http://blog.architectinginnovation.com/first-impressions-angular-2/" target="_blank"></i>

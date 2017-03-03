@@ -25,7 +25,9 @@ https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
 TODO Now:
-Use class="img-responsive" for images
+Make keep alive monitor
+
+Go get all AI blogs you wrote, put them on your site and add a "Oringially posted on..."
 
 Make ico for page, it has angular logo now
 
@@ -33,9 +35,6 @@ Implement meta service in all pages where necessary
 
 Release this blog, but only when new blog is ready
 http://blog.architectinginnovation.com/first-impressions-angular-2/
-
-Meta tags hard code, see what values social media pulls for existing blogs
-
 
 
 TODO Later:
@@ -95,3 +94,6 @@ https://validator.w3.org
 
 Meta tag
 http://blog.devcross.net/2016/03/20/angular-2-seo/
+
+spinner
+https://www.w3schools.com/howto/howto_css_loader.asp

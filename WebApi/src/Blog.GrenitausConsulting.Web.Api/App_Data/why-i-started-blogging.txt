@@ -1,3 +1,46 @@
 <a href="assets/images/grenitaus-consulting-logo.png"><img class="img-responsive" src="assets/images/grenitaus-consulting-logo.png" alt="Grenitaus Consulting"></a>
 <br><br>
-Check out my latest blog I wrote for my client <a href="http://architectinginnovation.com" target="_blank">Architecting Innovation</a> about why I started blogging.  In the blog I wrote, I talk about some of the reasons why I started blogging and attempt to make strong case that you should start blogging too.  You can find the blog <a href="http://blog.architectinginnovation.com/why-i-started-blogging/" target="_blank">here</a>.
+
+
+This post was inspired when I recently convinced a very good friend that he should be blogging. This friend was partly responsible for getting me into IT consulting, so I wanted to help him out. Blogging has been great for me and my career, and I wanted the same for him. He had admitted to having the time to blog, he just lacked the motivation. After I explained my reasons for blogging and all that it had done for me, my friend finally got started. I think it will be well worth his effort!
+<br><br>
+I would love to convince others like me and my friend to dive in, so I decided to share this post with the reasons I started blogging, and why you should consider blogging too.
+
+<br><br>
+<strong>Background!</strong>
+<br>
+Like most people in Information Technology, I make heavy use of the World Wide Web and in particular, blogs to solve everyday problems and to learn about technologies that interest me.  Whether I am curious about a new technology, trying to research an issue or I am just interested in what a particular person or organization has to say, blogs are a great source to find this information.  After spending years reading blogs from <a href="https://www.martinfowler.com/">Martin Fowler</a>, <a href="http://www.hanselman.com/" target="_blank">Scott Hanselman</a>, <a href="https://8thlight.com/blog/" target="_blank">8thlight</a>, <a href="https://www.thoughtworks.com/blogs" target="_blank">ThoughtWorks </a> and <a href="https://weblogs.asp.net/scottgu" target="_blank">Scott Guthrie</a>, to name a few, I became interested in blogging myself.  I was interested in how to blog, what blogging software to use and how bloggers came up with the topics that they blogged about.
+<br><br>
+The main problem that I faced was I was too timid, scared and full of doubt about blogging myself.  The negative voice that just about every human being is familiar with would say things like, "Why would anyone listen to anything you have to say?" or "Meh, whatever you plan on blogging about, somebody has probably already written about it and probably did a better job then you could ever hope to do.".
+<br><br>
+Years after having the desire to start my own blog, I sat on the sidelines and let the "more" knowledgeable people do the blogging.  What ultimately got me off the sidelines and starting to create my own blogs is that I joined an organization where my co-workers encouraged me to blog and after penning my <a href="post/so-you-want-to-be-a-it-consultant/" target="_blank">first </a> blog, I received very positive feedback and re-enforcement.
+<br><br>
+I have been blogging consistently for about 3 years and I want to share some of the reasons I started blogging, continue to blog and why I think others should think about starting a blog.
+<br><br>
+<strong>I Have Something to Say!</strong>
+<br>
+When I think about why I started blogging, the first reason is that I actually have something to say to the world.  Every human being on Earth is unique and because we are all unique, we all have a unique story to tell.  I started blogging because I wanted to talk about social issues, technology and give people career advice based upon my own experiences.  I wanted to tell the world what it felt like to be <a href="https://medium.com/@mikedeongreen/lessons-i-learned-after-being-laid-off-for-the-first-time-8ee418b8771a#.wy92b3vwj" target="_blank">laid off</a> for the first time, how to <a href="post/how-to-pass-the-pmp-exam-on-your-first-attempt/" target="_blank">pass the PMP exam</a> on your first try or how to <a href="post/angular-2-continuous-deployment-azure-azure-cli-github/" target="_blank">Continuous Deploy an Angular 2 application</a> using Azure.
+<br><br>
+Once I went through the initial stage of doing all the "boilerplate" work of setting up a blog, I was amazed at how much I had to say to the world and the ease at which new ideas for blogs would come to me.
+<br><br>
+<strong>Building a Brand!</strong>
+<br>
+Another reason why I started blogging was because I wanted to start to build a reputation for myself, which some people refer to as building a personal brand.  As I wrote about subjects that interested me, I wanted others to appreciate my work and I wanted to become someone who was known for those subjects.  As I started blogging, I cannot count how many times I would be discussing a topic with a friend, client or co-worker and I could say, "Yeah, I just blogged about that".  I was in the Architecting Innovation Office the other day and a co-worker asked me about my thoughts about Angular 2 and I pointed him to my blog.  On that same day, I remember telling another co-worker that if they were already using GitHub and Azure, that they didn't have to use <a href="https://www.visualstudio.com/tfs/" target="_blank">Team Foundation Server</a> to automate deployments and btw, here is a <a href="post/how-to-setup-continuous-deployment-for-a-sql-server-database-using-git-powershell-ssdt-and-teamcity/" target="_blank">link</a> to my blog where I show you step by step how to do it.
+<br><br>
+As I continued to blog, I started to share my posts on Twitter, LinkedIn, Medium and Facebook.  I started to get random emails, tweets, comments and messages from people commenting on my blogs and to my surprise, asking me questions about the subject of a particular blog as though I were an expert.  Eventually, I started to put the link to my personal blog on my r&eacutesum&eacute, my LinkedIn and Twitter profiles and I had potential employers specifically tell me that they contacted me for opportunities because of the contents of my blog.  I now view my blog as an extension of myself, part of my brand and as a vehicle to give back to the community and to allow movers and shakers to become aware of me, my experiences and how I can help them.
+<br><br>
+<strong>I've Become More Knowledgeable!</strong>
+<br>
+A natural byproduct of blogging is that you become much more knowledgeable about a broad number of topics.  Before I started to blog, I knew very little about <a href="https://en.wikipedia.org/wiki/Search_engine_optimization" target="_blank">Search Engine Optimization</a> (SEO), Wordpress and the subjects that I would ultimately write about.  When I blog about a particular subject, I try to ensure that I have a very well-rounded and decent handle on a subject before I write about it because people will not only read your blog, they will definitely let you know if they feel that you have no idea what you are talking about.
+<br><br>
+It has been fun learning how to write blogs in a way for better Search Engine Optimization, readability, learning how to admin my own Wordpress site, the myriad of Wordpress plugins and becoming more proficient at Photoshop due to having to create unique images for my blogs.  
+<br><br>
+<strong>Conclusion!</strong>
+<br>
+Although I have been blogging for roughly 3 years, I feel that I still have a lot to learn about blogging, the subjects I tend to write about and being a better writer in general.  I believe that blogging has helped me bring my own unique voice to the masses, helped me build my own personal brand, has made me a better writer and made me a much more knowledgeable person overall.
+<br><br>
+As I told my friend, I think it is very beneficial for people in the technology field to blog.  You not only build your own brand but you often times solve someone else's problem and make their lives a little bit more easier.
+<br><br>
+Happy Blogging!
+<br><br>
+<i>This blog post originally appeared on February 7, 2017 at <a>blog.architectinginnovation.com</a href="http://blog.architectinginnovation.com/why-i-started-blogging/" target="_blank"></i>

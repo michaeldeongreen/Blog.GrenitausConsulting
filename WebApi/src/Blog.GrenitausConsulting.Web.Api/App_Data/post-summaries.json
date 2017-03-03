@@ -1200,7 +1200,7 @@
     "postDate": "2017-02-15T20:07:29.9375939-06:00",
     "snippet": "In this blog, Michael D. Green talks about his first impressions of the Angular 2 framework.",
     "link": "my-first-impressions-of-angular-2",
-    "isActive": false,
+    "isActive": true,
     "categories": [
       {
         "id": 3,
