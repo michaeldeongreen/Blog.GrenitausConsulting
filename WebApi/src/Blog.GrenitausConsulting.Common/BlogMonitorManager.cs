@@ -26,7 +26,7 @@ namespace Blog.GrenitausConsulting.Common
 
         public static void HandleBlogMonitorElapsedEvent(Object source, ElapsedEventArgs e)
         {
-            string url = _configurationManagerWrapper.Convert("BlogMonitorUrl").ToAString();
+            string url = _configurationManagerWrapper.Convert("BlogMonitorApiUrl").ToAString();
             var client = new WebClient();
             var content = client.DownloadString(url);
         }
