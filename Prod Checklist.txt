@@ -5,3 +5,5 @@
 3) Meta tags need to be for the latest blog
 
 4) Regenerate Sitemaps and RSS for blog.grenitausconsulting.com
+
+5) Change monitor settings in web.release.config on api

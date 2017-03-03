@@ -35,6 +35,7 @@ However, when I navigated to the Storage accounts tab in the Azure Portal, only 
 <a href="assets/images/michael-d-green-grenitausconsulting-com-odd-azure-storage-azure-portal-and-visual-studio-2015-behavior-007.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-odd-azure-storage-azure-portal-and-visual-studio-2015-behavior-007.png" alt="" width="893" height="314" class="img-responsive" /></a>
 <br><br>
 <strong>Conclusion!</strong>
+<br><br>
 I am sure that the behavior that I describe as "odd" is a known issue by Microsoft, and most likely it is behavior that was implemented (or not implemented) by design. It is my understanding that the Azure Portal was completely re-done over the last few years, and as a result, the Azure Team probably had to make some compromises to retrofit some of the Azure Resources that were created in the Azure Classic Portal into the new Azure Portal. I just wanted to write a quick blog talking about the issues I faced, in case others run into the same problems and to point out that right now, there is some confusion around Azure Classic and the current Azure Portal.
 <br><br>
 <i>This blog post originally appeared on February 21, 2017 at <a>blog.architectinginnovation.com <a href="http://blog.architectinginnovation.com/navigating-odd-behaviors-azure/" target="_blank">blog.architectinginnovation.com</a></i>
