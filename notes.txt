@@ -25,6 +25,8 @@ https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
 TODO Now:
+Can you put things in .json and pull out and set to variables like api url
+
 Make keep alive monitor
 
 Release this blog, but only when new blog is ready
