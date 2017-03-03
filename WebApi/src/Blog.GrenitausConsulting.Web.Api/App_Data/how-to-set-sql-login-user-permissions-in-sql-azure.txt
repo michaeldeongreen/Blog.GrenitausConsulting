@@ -1,3 +1,5 @@
+<a href="assets/images/sql-azure.png"><img class="img-responsive" src="assets/images/sql-azure.png" alt="SQL Azure" /></a>
+<br><br>
 In this blog post I wanted to take some time to demonstrate how to control SQL Login permissions in SQL Azure.  When you create a SQL Azure Database, an admin user will be created in the SQL Azure Database.  In most cases, you will not want to give normal users access to this account and you probably don’t want applications accessing your SQL Azure Database using this account.
 <br><br>
 <strong>This tutorial will assume:</strong>
