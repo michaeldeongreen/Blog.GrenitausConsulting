@@ -95,7 +95,7 @@ namespace Blog.GrenitausConsulting.CLI.Services
                 {
                     foreach (var image in post.Images)
                     {
-                        location.Images.Add(new SitemapImage() { Location = image.Url });
+                        location.Images.Add(new SitemapImage() { Location = string.Format("{0}/{1}",_domain,image.Url) });
                     }
                 }
                 map.Add(location);
