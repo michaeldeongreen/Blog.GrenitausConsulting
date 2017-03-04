@@ -42,18 +42,18 @@
 /WebApi/src/Blog.GrenitausConsulting.Common/obj/Debug/Blog.GrenitausConsulting.Common.dll
 /WebApi/src/Blog.GrenitausConsulting.Common/obj/Debug/Blog.GrenitausConsulting.Common.pdb
 
-/SitemapTool/src/.vs
-/SitemapTool/src/packages
-/SitemapTool/src/Blog.GrenitausConsulting.SitemapTool.App/.vs
-/SitemapTool/src/Blog.GrenitausConsulting.SitemapTool.App/bin
-/SitemapTool/src/Blog.GrenitausConsulting.SitemapTool.App/obj
+/ArtifactGeneratorTool/src/.vs
+/ArtifactGeneratorTool/src/packages
+/ArtifactGeneratorTool/src/Blog.GrenitausConsulting.ArtifactGeneratorTool.App/.vs
+/ArtifactGeneratorTool/src/Blog.GrenitausConsulting.ArtifactGeneratorTool.App/bin
+/ArtifactGeneratorTool/src/Blog.GrenitausConsulting.ArtifactGeneratorTool.App/obj
 
-/SitemapTool/src/Blog.GrenitausConsulting.SitemapTool.App.Services/obj
-/SitemapTool/src/Blog.GrenitausConsulting.SitemapTool.App.Services/bin
+/ArtifactGeneratorTool/src/Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Services/obj
+/ArtifactGeneratorTool/src/Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Services/bin
 
-/SitemapTool/src/Blog.GrenitausConsulting.SitemapTool.App.Domain/.vs
-/SitemapTool/src/Blog.GrenitausConsulting.SitemapTool.App.Domain/bin
-/SitemapTool/src/Blog.GrenitausConsulting.SitemapTool.App.Domain/obj
+/ArtifactGeneratorTool/src/Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain/.vs
+/ArtifactGeneratorTool/src/Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain/bin
+/ArtifactGeneratorTool/src/Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain/obj
 
 
 /Client/.vs
