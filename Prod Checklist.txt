@@ -6,4 +6,4 @@
 
 5) Change monitor settings in web.release.config on api
 
-6) gc-cli
+6) gc-cli / point environment variable to prod

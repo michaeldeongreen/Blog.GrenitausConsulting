@@ -42,18 +42,17 @@
 /WebApi/src/Blog.GrenitausConsulting.Common/obj/Debug/Blog.GrenitausConsulting.Common.dll
 /WebApi/src/Blog.GrenitausConsulting.Common/obj/Debug/Blog.GrenitausConsulting.Common.pdb
 
-/ArtifactGeneratorTool/src/.vs
-/ArtifactGeneratorTool/src/packages
-/ArtifactGeneratorTool/src/Blog.GrenitausConsulting.ArtifactGeneratorTool.App/.vs
-/ArtifactGeneratorTool/src/Blog.GrenitausConsulting.ArtifactGeneratorTool.App/bin
-/ArtifactGeneratorTool/src/Blog.GrenitausConsulting.ArtifactGeneratorTool.App/obj
+/cli/src/.vs
+/cli/src/packages
+/cli/src/gc-cli/bin
+/cli/src/gc-cli/obj
 
-/ArtifactGeneratorTool/src/Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Services/obj
-/ArtifactGeneratorTool/src/Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Services/bin
+/cli/src/Blog.GrenitausConsulting.CLI.Services/obj
+/cli/src/Blog.GrenitausConsulting.CLI.Services/bin
 
-/ArtifactGeneratorTool/src/Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain/.vs
-/ArtifactGeneratorTool/src/Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain/bin
-/ArtifactGeneratorTool/src/Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain/obj
+/cli/src/Blog.GrenitausConsulting.CLI.Domain/.vs
+/cli/src/Blog.GrenitausConsulting.CLI.Domain/bin
+/cli/src/Blog.GrenitausConsulting.CLI.Domain/obj
 
 
 /Client/.vs

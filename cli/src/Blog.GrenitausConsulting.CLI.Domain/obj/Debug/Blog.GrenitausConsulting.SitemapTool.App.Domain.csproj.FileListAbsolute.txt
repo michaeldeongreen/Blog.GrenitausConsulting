@@ -1,5 +1,0 @@
-C:\Git\Blog.GrenitausConsulting\SitemapTool\src\Blog.GrenitausConsulting.SitemapTool.App.Domain\bin\Debug\Blog.GrenitausConsulting.SitemapTool.App.Domain.dll
-C:\Git\Blog.GrenitausConsulting\SitemapTool\src\Blog.GrenitausConsulting.SitemapTool.App.Domain\bin\Debug\Blog.GrenitausConsulting.SitemapTool.App.Domain.pdb
-C:\Git\Blog.GrenitausConsulting\SitemapTool\src\Blog.GrenitausConsulting.SitemapTool.App.Domain\obj\Debug\Blog.GrenitausConsulting.SitemapTool.App.Domain.csprojResolveAssemblyReference.cache
-C:\Git\Blog.GrenitausConsulting\SitemapTool\src\Blog.GrenitausConsulting.SitemapTool.App.Domain\obj\Debug\Blog.GrenitausConsulting.SitemapTool.App.Domain.dll
-C:\Git\Blog.GrenitausConsulting\SitemapTool\src\Blog.GrenitausConsulting.SitemapTool.App.Domain\obj\Debug\Blog.GrenitausConsulting.SitemapTool.App.Domain.pdb
