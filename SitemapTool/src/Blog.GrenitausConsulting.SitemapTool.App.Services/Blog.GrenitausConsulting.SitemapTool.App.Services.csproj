@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HtmlService.cs" />
+    <Compile Include="Interfaces\IHtmlService.cs" />
     <Compile Include="Interfaces\IRSSService.cs" />
     <Compile Include="RSSService.cs" />
     <Compile Include="SitemapService.cs" />

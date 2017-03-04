@@ -20,7 +20,6 @@ namespace Blog.GrenitausConsulting.SitemapTool.App.Services
             _domain = domian;
             _configurationPath = configurationPath;
             _sitemapOutputPath = sitemapOutputPath;
-            BlogContextManager.Init(configurationPath);
 
             GenerateCategorySitemap();
             GeneratePageSitemap();

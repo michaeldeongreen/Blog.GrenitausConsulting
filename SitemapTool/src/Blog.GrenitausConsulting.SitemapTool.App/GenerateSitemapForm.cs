@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BatchGuy.App.ThirdParty.FolderSelectDialog;
 using Blog.GrenitausConsulting.SitemapTool.App.Services.Interfaces;
 using Blog.GrenitausConsulting.SitemapTool.App.Services;
+using Blog.GrenitausConsulting.Common;
 
 namespace Blog.GrenitausConsulting.SitemapTool.App
 {
@@ -45,12 +46,16 @@ namespace Blog.GrenitausConsulting.SitemapTool.App
                 string configurationPath = txtConfigurationFiles.Text;
                 string outputPath = txtSitemapOutput.Text;
 
+                BlogContextManager.Init(configurationPath);
+
                 ISitemapService sitemapService = new SitemapService();
                 IRSSService rssService = new RSSService();
+                IHtmlService htmlService = new HtmlService();
 
 
-                sitemapService.Generate(domain,configurationPath,outputPath);
-                rssService.Generate(domain, outputPath);
+                //sitemapService.Generate(domain,configurationPath,outputPath);
+                //rssService.Generate(domain, outputPath);
+                htmlService.Generate(domain,outputPath);
 
                 MessageBox.Show("Sitmaps and rss feed have been generated!", "Sitemaps & RSS Created!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

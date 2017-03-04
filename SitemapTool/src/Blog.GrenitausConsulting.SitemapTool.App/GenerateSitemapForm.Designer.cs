@@ -45,7 +45,7 @@
             this.txtDomainName.Name = "txtDomainName";
             this.txtDomainName.Size = new System.Drawing.Size(469, 20);
             this.txtDomainName.TabIndex = 0;
-            this.txtDomainName.Text = "http://test.grenitausconsulting.com";
+            this.txtDomainName.Text = "http://localhost:4200";
             // 
             // lblDomainName
             // 

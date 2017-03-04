@@ -95,6 +95,10 @@
     <None Include="Icons\Avosoft-Warm-Toolbar-Folder-open.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\WebApi\src\Blog.GrenitausConsulting.Common\Blog.GrenitausConsulting.Common.csproj">
+      <Project>{e742fb9d-38fc-4f4d-a447-b704dd6fbcd7}</Project>
+      <Name>Blog.GrenitausConsulting.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Blog.GrenitausConsulting.SitemapTool.App.Services\Blog.GrenitausConsulting.SitemapTool.App.Services.csproj">
       <Project>{d46ee5a5-f83a-4874-b32d-e622a92e2660}</Project>
       <Name>Blog.GrenitausConsulting.SitemapTool.App.Services</Name>

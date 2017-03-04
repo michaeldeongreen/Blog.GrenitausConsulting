@@ -43,4 +43,4 @@ As I told my friend, I think it is very beneficial for people in the technology 
 <br><br>
 Happy Blogging!
 <br><br>
-<i>This blog post originally appeared on February 7, 2017 at <a>blog.architectinginnovation.com <a href="http://blog.architectinginnovation.com/why-i-started-blogging/" target="_blank">blog.architectinginnovation.com</a></i>
+<i>This blog post originally appeared on February 7, 2017 at <a href="http://blog.architectinginnovation.com/why-i-started-blogging/" target="_blank">blog.architectinginnovation.com</a></i>

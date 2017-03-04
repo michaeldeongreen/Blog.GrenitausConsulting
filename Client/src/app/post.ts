@@ -16,4 +16,5 @@ export class Post {
     images: Observable<Image>;
     canPreview: boolean;
     previewExpirationDate: Date;
+    staticHtml: string;
 }

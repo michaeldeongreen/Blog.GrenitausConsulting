@@ -60,6 +60,7 @@
 /Client/bin
 /Client/obj
 /Client/packages
+/Client/src/static-pages
 
 
 /Client/src/*.js

@@ -16,7 +16,8 @@
         "post_tag-sitemap.xml",
         "post-sitemap.xml",
         "sitemap.xml",
-        "rss.xml"
+        "rss.xml",
+        "static-pages"
       ],
       "index": "index.html",
       "main": "main.ts",
