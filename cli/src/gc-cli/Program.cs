@@ -13,7 +13,7 @@ namespace gc_cli
     {
         static void Main(string[] args)
         {
-            args = new string[] {"build", "-dev" };
+            //args = new string[] {"build", "-prod" };
 
             IArgumentValidationService argumentValidationService = new ArgumentValidationService();
             IEnvironmentSettingsService environmentSettingsService = new EnvironmentSettingsService();

@@ -26,7 +26,6 @@ export class PostComponent implements OnInit {
         private location: Location,
         private readonly metaService: MetaService) {
         this.path = location.prepareExternalUrl(location.path(true));
-        this.url = `${window.location.protocol}//${window.location.host}${this.path}/`;
     }
 
 
@@ -40,16 +39,15 @@ export class PostComponent implements OnInit {
     getPost(title: string) {
         this.httpService.getPost(title)
             .subscribe(data => {
-                // get pager object from service
                 this.item = data;
                 this.setSEO();
+                this.url = `${window.location.protocol}//${window.location.host}/${this.item.staticHtml}/`;
             });
     }
 
   getHtml(title: string) {
       this.httpService.getPostHtml(title)
           .subscribe(data => {
-              // get pager object from service
               this.html = data;
               this.busy = false;
           });

@@ -20,6 +20,6 @@ namespace Blog.GrenitausConsulting.Domain
         public IList<Image> Images { get; set; }
         public bool CanPreview { get; set; }
         public DateTime? PreviewExpirationDate { get; set; }
-        public string StaticHtml { get { return string.Format("static/{0}.html", Link); } }
+        public string StaticHtml { get { return string.Format("static-pages/{0}.html", Link); } }
     }
 }
