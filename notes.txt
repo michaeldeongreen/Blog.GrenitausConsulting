@@ -29,6 +29,7 @@ Known bugs on tool
 *Share button urls are wrong
 *Hardcoded angular-cli src folder
 *re label buttons on tool to reflech it generates static pages
+tagged and categories printing wrong
 
 url to ping both api and blog
 
