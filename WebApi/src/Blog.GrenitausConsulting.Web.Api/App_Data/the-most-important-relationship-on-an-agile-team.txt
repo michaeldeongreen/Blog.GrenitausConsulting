@@ -30,4 +30,4 @@ As soon as the team was given frequent access to the Product Owner on a daily ba
 <br><br>
 Although we worked a lot of hours to get the project over the finish line, the team ended up delivering a product that was an overwhelming success.  The product was created in 2014 and it is still being used by our client to this day.  We were able to be successful because like a marriage, we were eventually able to keep the Product Owner and the product extremely close.
 <br><br>
-<i>This blog post originally appeared on September 28, 2016 at </a href="http://blog.architectinginnovation.com/the-most-important-relationship-on-an-agile-team/" target="_blank">blog.architectinginnovation.com</a></i>
+<i>This blog post originally appeared on September 28, 2016 at <a href="http://blog.architectinginnovation.com/the-most-important-relationship-on-an-agile-team/" target="_blank">blog.architectinginnovation.com</a></i>

@@ -97,3 +97,10 @@ http://blog.devcross.net/2016/03/20/angular-2-seo/
 
 spinner
 https://www.w3schools.com/howto/howto_css_loader.asp
+
+Trying to make wp faster:
+GTmetrix report before Cache + Cloudflare
+https://gtmetrix.com/reports/blog.grenitausconsulting.com/8hGGxMxo
+
+Tutorial.  WP Fastest Cache doesn't seem to be in use anymore, so probably going with W3 Total Cache
+http://www.onlinemediamasters.com/slow-wordpress-hosting-godaddy/#wp-optimize

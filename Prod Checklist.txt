@@ -1,9 +1,10 @@
-1) http-service api url should point to http://api.grenitausconsulting.com
+1) Public Web Api
 
-2) index.html meta tag images needs to point to blog.grenitausconsulting.com
+2) gc-cli build -prod
 
-4) Regenerate Sitemaps and RSS for blog.grenitausconsulting.com
+3) Make sure http-service api url points to http://api.grenitausconsulting.com
 
-5) Change monitor settings in web.release.config on api
+4) ng build -prod
 
-6) gc-cli / point environment variable to prod
+
+
