@@ -166,7 +166,7 @@ INSERT INTO [dbo].Employees VALUES ('Percy', 'Miller', 'Mogul')
 <br>
 <li>Next, in Solution Explorer, right-click on the Tables folder and choose Add and Table.  Name the table Orders, create a field called OrderId, set it as the Primary Key.  Create a field called EmployeeId and make it a Foreign Key reference to the EmployeeId in the Employees table.  Below is the SQL script:
 </li>
-<pre style="background-color:#F5F5F5"><code>
+<pre><code class="language-sql">
 CREATE TABLE [dbo].[Orders] (
     [OrderId]    INT IDENTITY (1, 1) NOT NULL,
     [EmployeeId] INT NOT NULL,
@@ -175,9 +175,12 @@ CREATE TABLE [dbo].[Orders] (
 );
 </code></pre>
 <br>
-<li>Commit your changes to Github, verify that TeamCity executes and completes with no errors and that the Employees table now has data and the Orders table has been created in the QA database.
-<a href="assets/images/Blog-How-to-Setup-Continuous-Deployment-for-a-SQL-Server-Database-using-Git-Powershell-SSDT-and-TeamCity-Screen-014.png"><img src="assets/images/Blog-How-to-Setup-Continuous-Deployment-for-a-SQL-Server-Database-using-Git-Powershell-SSDT-and-TeamCity-Screen-014.png" alt="blog-how-to-setup-continuous-deployment-for-a-sql-server-database-using-git-powershell-ssdt-and-teamcity-screen-014" width="300" height="230" /></a>
-</li><br>
+<li>
+	Commit your changes to Github, verify that TeamCity executes and completes with no errors and that the Employees table now has data and the Orders table has been created in the QA database.
+	<br>
+	<a href="assets/images/Blog-How-to-Setup-Continuous-Deployment-for-a-SQL-Server-Database-using-Git-Powershell-SSDT-and-TeamCity-Screen-014.png"><img src="assets/images/Blog-How-to-Setup-Continuous-Deployment-for-a-SQL-Server-Database-using-Git-Powershell-SSDT-and-TeamCity-Screen-014.png" alt="blog-how-to-setup-continuous-deployment-for-a-sql-server-database-using-git-powershell-ssdt-and-teamcity-screen-014" width="300" height="230" /></a>
+</li>
+<br>
 </ol>
 <br><br>
 

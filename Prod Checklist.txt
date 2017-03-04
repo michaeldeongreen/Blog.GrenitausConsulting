@@ -2,8 +2,8 @@
 
 2) index.html meta tag images needs to point to blog.grenitausconsulting.com
 
-3) Meta tags need to be for the latest blog
-
 4) Regenerate Sitemaps and RSS for blog.grenitausconsulting.com
 
 5) Change monitor settings in web.release.config on api
+
+6) gc-cli

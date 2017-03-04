@@ -1,0 +1,4 @@
+C:\Git\Blog.GrenitausConsulting\cli\src\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain\bin\Debug\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain.dll
+C:\Git\Blog.GrenitausConsulting\cli\src\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain\bin\Debug\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain.pdb
+C:\Git\Blog.GrenitausConsulting\cli\src\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain\obj\Debug\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain.dll
+C:\Git\Blog.GrenitausConsulting\cli\src\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain\obj\Debug\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain.pdb

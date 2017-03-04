@@ -19,13 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{E7F6DE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.Client", "..\Client\Blog.GrenitausConsulting.Client.csproj", "{799C980D-7D97-4B87-A1A6-F14B5C4ABC53}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ArtifactGeneratorTool", "ArtifactGeneratorTool", "{331C0A68-6315-41A6-9620-0ACC3F0948EC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cli", "cli", "{331C0A68-6315-41A6-9620-0ACC3F0948EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.ArtifactGeneratorTool.App", "..\ArtifactGeneratorTool\src\Blog.GrenitausConsulting.ArtifactGeneratorTool.App\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.csproj", "{0831D2A7-D368-46B3-B540-41453410AC67}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gc-cli", "..\cli\src\gc-cli\gc-cli.csproj", "{359EDF65-7A9D-4D3A-AFC3-1CE5D5C423FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain", "..\ArtifactGeneratorTool\src\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain.csproj", "{EF64D87C-A88C-4369-90F4-C9EA48DA1AE9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.CLI.Domain", "..\cli\src\Blog.GrenitausConsulting.CLI.Domain\Blog.GrenitausConsulting.CLI.Domain.csproj", "{EF64D87C-A88C-4369-90F4-C9EA48DA1AE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Services", "..\ArtifactGeneratorTool\src\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Services\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Services.csproj", "{D46EE5A5-F83A-4874-B32D-E622A92E2660}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.CLI.Services", "..\cli\src\Blog.GrenitausConsulting.CLI.Services\Blog.GrenitausConsulting.CLI.Services.csproj", "{D46EE5A5-F83A-4874-B32D-E622A92E2660}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,10 +57,10 @@ Global
 		{799C980D-7D97-4B87-A1A6-F14B5C4ABC53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{799C980D-7D97-4B87-A1A6-F14B5C4ABC53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{799C980D-7D97-4B87-A1A6-F14B5C4ABC53}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0831D2A7-D368-46B3-B540-41453410AC67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0831D2A7-D368-46B3-B540-41453410AC67}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0831D2A7-D368-46B3-B540-41453410AC67}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0831D2A7-D368-46B3-B540-41453410AC67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{359EDF65-7A9D-4D3A-AFC3-1CE5D5C423FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{359EDF65-7A9D-4D3A-AFC3-1CE5D5C423FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{359EDF65-7A9D-4D3A-AFC3-1CE5D5C423FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{359EDF65-7A9D-4D3A-AFC3-1CE5D5C423FA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EF64D87C-A88C-4369-90F4-C9EA48DA1AE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EF64D87C-A88C-4369-90F4-C9EA48DA1AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF64D87C-A88C-4369-90F4-C9EA48DA1AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -80,7 +80,7 @@ Global
 		{F897A5C8-14AA-497E-86E5-4D8AE53E51B3} = {2BD2560E-BB22-41D7-AE28-C41008A800BD}
 		{E742FB9D-38FC-4F4D-A447-B704DD6FBCD7} = {2BD2560E-BB22-41D7-AE28-C41008A800BD}
 		{799C980D-7D97-4B87-A1A6-F14B5C4ABC53} = {E7F6DECE-ACDC-480F-A036-C9FDC0605D12}
-		{0831D2A7-D368-46B3-B540-41453410AC67} = {331C0A68-6315-41A6-9620-0ACC3F0948EC}
+		{359EDF65-7A9D-4D3A-AFC3-1CE5D5C423FA} = {331C0A68-6315-41A6-9620-0ACC3F0948EC}
 		{EF64D87C-A88C-4369-90F4-C9EA48DA1AE9} = {331C0A68-6315-41A6-9620-0ACC3F0948EC}
 		{D46EE5A5-F83A-4874-B32D-E622A92E2660} = {331C0A68-6315-41A6-9620-0ACC3F0948EC}
 	EndGlobalSection

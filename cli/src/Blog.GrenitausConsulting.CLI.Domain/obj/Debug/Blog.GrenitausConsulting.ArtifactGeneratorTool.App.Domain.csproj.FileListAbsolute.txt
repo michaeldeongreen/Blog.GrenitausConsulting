@@ -1,0 +1,5 @@
+C:\Git\Blog.GrenitausConsulting\ArtifactGeneratorTool\src\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain\bin\Debug\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain.dll
+C:\Git\Blog.GrenitausConsulting\ArtifactGeneratorTool\src\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain\bin\Debug\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain.pdb
+C:\Git\Blog.GrenitausConsulting\ArtifactGeneratorTool\src\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain\obj\Debug\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain.csprojResolveAssemblyReference.cache
+C:\Git\Blog.GrenitausConsulting\ArtifactGeneratorTool\src\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain\obj\Debug\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain.dll
+C:\Git\Blog.GrenitausConsulting\ArtifactGeneratorTool\src\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain\obj\Debug\Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain.pdb

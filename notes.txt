@@ -25,15 +25,8 @@ https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
 TODO Now:
-Known bugs on tool
-*Share button urls are wrong
-*Hardcoded angular-cli src folder
-*re label buttons on tool to reflech it generates static pages
-tagged and categories printing wrong
-
 url to ping both api and blog
 
-put static in git ignore
 
 Release this blog, but only when new blog is ready
 http://blog.architectinginnovation.com/first-impressions-angular-2/
