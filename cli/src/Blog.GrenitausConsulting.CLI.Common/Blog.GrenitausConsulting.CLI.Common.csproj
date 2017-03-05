@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{359EDF65-7A9D-4D3A-AFC3-1CE5D5C423FA}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{7E45AAC0-4447-44AC-A09B-A3873EFD5510}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>gc_cli</RootNamespace>
-    <AssemblyName>gc-cli</AssemblyName>
+    <RootNamespace>Blog.GrenitausConsulting.CLI.Common</RootNamespace>
+    <AssemblyName>Blog.GrenitausConsulting.CLI.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,25 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="CLIProcessStatusChangedEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Common\Blog.GrenitausConsulting.CLI.Common.csproj">
-      <Project>{7e45aac0-4447-44ac-a09b-a3873efd5510}</Project>
-      <Name>Blog.GrenitausConsulting.CLI.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Domain\Blog.GrenitausConsulting.CLI.Domain.csproj">
-      <Project>{ef64d87c-a88c-4369-90f4-c9ea48da1ae9}</Project>
-      <Name>Blog.GrenitausConsulting.CLI.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Services\Blog.GrenitausConsulting.CLI.Services.csproj">
-      <Project>{d46ee5a5-f83a-4874-b32d-e622a92e2660}</Project>
-      <Name>Blog.GrenitausConsulting.CLI.Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

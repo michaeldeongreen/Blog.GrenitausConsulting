@@ -55,6 +55,11 @@
 /cli/src/Blog.GrenitausConsulting.CLI.Domain/obj
 
 
+/cli/src/Blog.GrenitausConsulting.CLI.Common/.vs
+/cli/src/Blog.GrenitausConsulting.CLI.Common/bin
+/cli/src/Blog.GrenitausConsulting.CLI.Common/obj
+
+
 /Client/.vs
 /Client/bin
 /Client/obj

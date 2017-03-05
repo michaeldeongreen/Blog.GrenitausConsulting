@@ -71,6 +71,10 @@
       <Project>{84edb053-270d-4a4b-b266-94d3fdf0a654}</Project>
       <Name>Blog.GrenitausConsulting.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Common\Blog.GrenitausConsulting.CLI.Common.csproj">
+      <Project>{7e45aac0-4447-44ac-a09b-a3873efd5510}</Project>
+      <Name>Blog.GrenitausConsulting.CLI.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Domain\Blog.GrenitausConsulting.CLI.Domain.csproj">
       <Project>{ef64d87c-a88c-4369-90f4-c9ea48da1ae9}</Project>
       <Name>Blog.GrenitausConsulting.CLI.Domain</Name>

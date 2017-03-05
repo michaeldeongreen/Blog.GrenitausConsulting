@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.CL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gc-cli", "gc-cli\gc-cli.csproj", "{359EDF65-7A9D-4D3A-AFC3-1CE5D5C423FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.CLI.Common", "Blog.GrenitausConsulting.CLI.Common\Blog.GrenitausConsulting.CLI.Common.csproj", "{7E45AAC0-4447-44AC-A09B-A3873EFD5510}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{359EDF65-7A9D-4D3A-AFC3-1CE5D5C423FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{359EDF65-7A9D-4D3A-AFC3-1CE5D5C423FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{359EDF65-7A9D-4D3A-AFC3-1CE5D5C423FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E45AAC0-4447-44AC-A09B-A3873EFD5510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E45AAC0-4447-44AC-A09B-A3873EFD5510}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E45AAC0-4447-44AC-A09B-A3873EFD5510}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E45AAC0-4447-44AC-A09B-A3873EFD5510}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

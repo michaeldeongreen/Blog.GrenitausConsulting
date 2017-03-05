@@ -104,3 +104,5 @@ https://gtmetrix.com/reports/blog.grenitausconsulting.com/8hGGxMxo
 
 Tutorial.  WP Fastest Cache doesn't seem to be in use anymore, so probably going with W3 Total Cache
 http://www.onlinemediamasters.com/slow-wordpress-hosting-godaddy/#wp-optimize
+
+gc-cli

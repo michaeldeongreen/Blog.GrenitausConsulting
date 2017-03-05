@@ -1,4 +1,5 @@
 ﻿using Blog.GrenitausConsulting.ArtifactGeneratorTool.App.Domain;
+using Blog.GrenitausConsulting.CLI.Common;
 using Blog.GrenitausConsulting.CLI.Services;
 using Blog.GrenitausConsulting.CLI.Services.Interfaces;
 using System;
@@ -28,12 +29,20 @@ namespace gc_cli
             {
                 EnvironmentSettings settings = environmentSettingsService.Get(args[1]);
                 ICLIService cliService = new CLIService(settings);
+
+                cliService.CLIProcessStatusChanged += CLIProcessStatusChangedHandler;
                 cliService.Generate();
+                cliService.CLIProcessStatusChanged -= CLIProcessStatusChangedHandler;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("There was an error processing your command.");
             }
+        }
+
+        public static void CLIProcessStatusChangedHandler(object sender, CLIProcessStatusChangedEventArgs e)
+        {
+            Console.WriteLine(e.Message);
         }
     }
 }
