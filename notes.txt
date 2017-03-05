@@ -28,9 +28,6 @@ TODO Now:
 url to ping both api and blog
 
 
-Release this blog, but only when new blog is ready
-http://blog.architectinginnovation.com/first-impressions-angular-2/
-
 
 TODO Later:
 *Can you put things in .json and pull out and set to variables like api url
@@ -50,6 +47,12 @@ TODO Later:
 *Make ico for page, it has angular logo now
 
 Blog 
+Why did you do it
+
+What did you need to replace in Wordpress
+
+Went live on 3/4/2017
+
 Understanding Sibling communication via shared service and event emitters
 https://gist.github.com/sasxa/e1164d9773b31459f6dc
 http://sharpten.com/blog/2016/03/23/using-eventemitters-notify-component-changes-angular-2.html
@@ -106,3 +109,6 @@ Tutorial.  WP Fastest Cache doesn't seem to be in use anymore, so probably going
 http://www.onlinemediamasters.com/slow-wordpress-hosting-godaddy/#wp-optimize
 
 gc-cli
+
+how much time:
+according to github first checkin was 12 days until prod release

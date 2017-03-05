@@ -284,3 +284,5 @@ I will even admit, before I understood the "ng serve" command, I attempted to op
 Overall, although I got incredibly frustrated at times, this was a very enjoyable and valuable learning experience.  I was able to deploy my first Angular 2 application to a Production environment and I learned a lot more about angular-cli.
 <br><br>
 You can find the GrenitausConsulting repository on GitHub <a href="https://github.com/michaeldeongreen/GrenitausConsulting" target="_blank">here</a>.  The Angular 2 conversion is in the master branch and the legacy static HTML projects is located in the static-html branch.
+<br><br>
+After I completed this project, I took on an even more ambitious project, which was to ditch my Wordpress blog in favor of a custom Angular 2 solution.  I will be blogging about my experiences very soon!

@@ -227,7 +227,7 @@
     <Content Include="App_Data\those-pesky-soft-skills-who-needs-them-part-1.txt" />
     <Content Include="App_Data\those-pesky-soft-skills-who-needs-them-part-3.txt" />
     <Content Include="App_Data\tips-on-how-to-survive-it-projects-you-dont-like.txt" />
-    <Content Include="App_Data\upgrading-an-application-to-angular-2-using-angular-cli.txt" />
+    <Content Include="App_Data\upgrading-my-homepage-to-angular-2-using-angular-cli.txt" />
     <Content Include="App_Data\what-are-the-pros-and-cons-of-agile-scrum-part-1.txt" />
     <Content Include="App_Data\what-are-the-pros-and-cons-of-agile-scrum-part-2.txt" />
     <Content Include="App_Data\why-i-started-blogging.txt" />
