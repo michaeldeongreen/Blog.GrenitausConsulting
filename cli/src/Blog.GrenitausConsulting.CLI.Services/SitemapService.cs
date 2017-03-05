@@ -89,7 +89,7 @@ namespace Blog.GrenitausConsulting.CLI.Services
             string outputPath = string.Format(@"{0}\post-sitemap.xml", _sitemapOutputPath);
             foreach (var post in BlogContextManager.PostSummaries.Where(p => p.IsActive == true))
             {
-                SitemapLocation location = new SitemapLocation() { Url = string.Format("{0}/post/{1}",_domain, post.Link),
+                SitemapLocation location = new SitemapLocation() { Url = string.Format("{0}/{1}",_domain, post.StaticHtml),
                  LastModified = DateTime.Now};
                 if (post.Images != null)
                 {
