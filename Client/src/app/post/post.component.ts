@@ -40,8 +40,8 @@ export class PostComponent implements OnInit {
         this.httpService.getPost(title)
             .subscribe(data => {
                 this.item = data;
+                this.url = `${window.location.protocol}//${window.location.host}/${this.item.staticHtml}`;
                 this.setSEO();
-                this.url = `${window.location.protocol}//${window.location.host}/${this.item.staticHtml}/`;
             });
     }
 
@@ -60,10 +60,10 @@ export class PostComponent implements OnInit {
       this.metaService.setTag('og:title', this.item.title);
       this.metaService.setTag('og:description', this.item.snippet);
       this.metaService.setTag('og:url', this.url);
-      this.metaService.setTag('og:image', this.item.images[0].url);
+      this.metaService.setTag('og:image', `${window.location.protocol}//${window.location.host}/${this.item.images[0].url}`);
       this.metaService.setTag('twitter:description', this.item.snippet);
       this.metaService.setTag('twitter:title', this.item.title);
-      this.metaService.setTag('twitter:image', this.item.images[0].url);
+      this.metaService.setTag('twitter:image', `${window.location.protocol}//${window.location.host}/${this.item.images[0].url}`);
       for (let tag of this.item.tags) {
           this.metaService.setTag('article:tag', tag.name);
       }
