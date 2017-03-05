@@ -30,7 +30,7 @@
       }
     ],
     "canPreview": false,
-    "previewExpirationDate" :  null
+    "previewExpirationDate": null
   },
   {
     "id": 2,
@@ -1367,5 +1367,62 @@
     ],
     "canPreview": false,
     "previewExpirationDate": null
+  },
+  {
+    "id": 33,
+    "title": "Installing Plex Media Server on My Ubuntu 14.04 Server Using Putty and Firefox",
+    "author": "Michael D. Green",
+    "postDate": "2017-03-05",
+    "snippet": "Michael D. Green talks how he installed Plex Media Server on a Ubuntu 14.04 Server using Putty and Firefox.",
+    "link": "installing-plex-media-server-on-my-ubuntu-14-04-server-using-putty-and-firefox",
+    "isActive": false,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 63,
+        "name": "Firefox"
+      },
+      {
+        "id": 64,
+        "name": "Plex Media Server"
+      },
+      {
+        "id": 65,
+        "name": "Putty"
+      },
+      {
+        "id": 66,
+        "name": "Linux"
+      },
+      {
+        "id": 67,
+        "name": "Ubuntu"
+      }
+    ],
+    "images": [
+      {
+        "name": "plex-ubuntu-logo.png",
+        "url": "assets/images/plex-ubuntu-logo.png"
+      },
+      {
+        "name": "installing-plex-media-server-on-my-ubuntu-14-04-server-using-putty-and-firefox-001.png",
+        "url": "assets/images/installing-plex-media-server-on-my-ubuntu-14-04-server-using-putty-and-firefox-001.png"
+      },
+      {
+        "name": "installing-plex-media-server-on-my-ubuntu-14-04-server-using-putty-and-firefox-002.png",
+        "url": "assets/images/installing-plex-media-server-on-my-ubuntu-14-04-server-using-putty-and-firefox-002.png"
+      },
+      {
+        "name": "installing-plex-media-server-on-my-ubuntu-14-04-server-using-putty-and-firefox-003.png",
+        "url": "assets/images/installing-plex-media-server-on-my-ubuntu-14-04-server-using-putty-and-firefox-003.png"
+      }
+    ],
+    "canPreview": true,
+    "previewExpirationDate": "2017-03-10"
   }
 ]  

@@ -230,7 +230,7 @@
   {
     "id": 58,
     "name": "NUnit"
-  },  
+  },
   {
     "id": 59,
     "name": "QA"
@@ -238,7 +238,7 @@
   {
     "id": 60,
     "name": "SQL Azure"
-  },   
+  },
   {
     "id": 61,
     "name": "SQL Logins"
@@ -246,5 +246,25 @@
   {
     "id": 62,
     "name": "JSON"
-  }  
+  },
+  {
+    "id": 63,
+    "name": "Firefox"
+  },
+  {
+    "id": 64,
+    "name": "Plex Media Server"
+  },
+  {
+    "id": 65,
+    "name": "Putty"
+  },
+  {
+    "id": 66,
+    "name": "Linux"
+  },
+  {
+    "id": 67,
+    "name": "Ubuntu"
+  }
 ]

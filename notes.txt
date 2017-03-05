@@ -25,7 +25,9 @@ https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
 TODO Now:
-url to ping both api and blog
+url to ping blog as well
+
+maybe create a static html about me page on both home and blog
 
 
 
@@ -41,9 +43,6 @@ TODO Later:
 	
 *Implement meta service in all pages where necessary
 	
-* Try to see if this allows api/web to be hosted together
-	<add input="{REQUEST_URI}" matchType="Pattern" pattern="^/api/.*$" ignoreCase="true" negate="true" />
-
 *Make ico for page, it has angular logo now
 
 Blog 
@@ -109,6 +108,11 @@ Tutorial.  WP Fastest Cache doesn't seem to be in use anymore, so probably going
 http://www.onlinemediamasters.com/slow-wordpress-hosting-godaddy/#wp-optimize
 
 gc-cli
+talk about release process
 
 how much time:
 according to github first checkin was 12 days until prod release
+
+
+* Try to see if this allows api/web to be hosted together
+	<add input="{REQUEST_URI}" matchType="Pattern" pattern="^/api/.*$" ignoreCase="true" negate="true" />
