@@ -86,7 +86,7 @@ namespace Blog.GrenitausConsulting.CLI.Services
             sb.AppendLine("<meta property=\"og:type\" content=\"article\">");
             sb.AppendLine(string.Format("<meta property=\"og:title\" content=\"{0}\">", post.Title));
             sb.AppendLine(string.Format("<meta property=\"og:description\" content=\"{0}\">", post.Snippet));
-            sb.AppendLine(string.Format("<meta property=\"og:url\" content=\"{0}\">", post.Images[0].Url));
+            sb.AppendLine(string.Format("<meta property=\"og:url\" content=\"{0}/{1}\">",_domain, post.Images[0].Url));
             sb.AppendLine("<meta property=\"og:site_name\" content=\"Grenitaus Consulting, LLC\">");
 
             foreach (var tag in post.Tags)
@@ -99,7 +99,7 @@ namespace Blog.GrenitausConsulting.CLI.Services
                 sb.AppendLine(string.Format("<meta name=\"article:section\" content=\"{0}\">", category.Name));
             }
 
-            sb.AppendLine(string.Format("<meta property=\"og:image\" content=\"{0}\">", post.Images[0].Url));
+            sb.AppendLine(string.Format("<meta property=\"og:image\" content=\"{0}/{1}\">",_domain, post.Images[0].Url));
             sb.AppendLine("<meta name=\"twitter:card\" content=\"summary\">");
             sb.AppendLine(string.Format("<meta name=\"twitter:description\" content=\"{0}\">", post.Snippet));
             sb.AppendLine(string.Format("<meta name=\"twitter:title\" content=\"{0}\">", post.Title));

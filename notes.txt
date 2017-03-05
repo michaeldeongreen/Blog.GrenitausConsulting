@@ -108,7 +108,7 @@ Tutorial.  WP Fastest Cache doesn't seem to be in use anymore, so probably going
 http://www.onlinemediamasters.com/slow-wordpress-hosting-godaddy/#wp-optimize
 
 gc-cli
-talk about release process
+talk about release process and the shadow blog
 
 how much time:
 according to github first checkin was 12 days until prod release
