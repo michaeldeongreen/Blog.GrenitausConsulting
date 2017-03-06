@@ -1375,7 +1375,7 @@
     "postDate": "2017-03-05",
     "snippet": "Michael D. Green talks how he installed Plex Media Server on a Ubuntu 14.04 Server using Putty and Firefox.",
     "link": "installing-plex-media-server-on-my-ubuntu-14-04-server",
-    "isActive": false,
+    "isActive": true,
     "categories": [
       {
         "id": 3,
@@ -1422,7 +1422,7 @@
         "url": "assets/images/installing-plex-media-server-on-my-ubuntu-14-04-server-using-putty-and-firefox-003.png"
       }
     ],
-    "canPreview": true,
-    "previewExpirationDate": "2017-03-10"
+    "canPreview": false,
+    "previewExpirationDate": null
   }
 ]  
