@@ -44,7 +44,7 @@ namespace Blog.GrenitausConsulting.Common
 
         private void BuildPostHtml()
         {
-            var blogs = Directory.GetFiles(_path, "*.txt");
+            var blogs = Directory.GetFiles(_path, "*.html");
 
             foreach (var blog in blogs)
             {
