@@ -1115,10 +1115,10 @@
     "id": 28,
     "title": "The Often Acrimonious Relationship Between The QA and Development Team!",
     "author": "Michael D. Green",
-    "postDate": "2017-02-09T20:07:29.9375939-06:00",
+    "postDate": "2017-03-07",
     "snippet": "Michael D. Green talks about why tension often exists between the QA and Development Team and what are some ways to resolve issues between them.",
     "link": "the-often-acrimonious-relationship-between-the-qa-and-development-team",
-    "isActive": false,
+    "isActive": true,
     "categories": [
       {
         "id": 1,
@@ -1153,8 +1153,8 @@
     ],
     "images": [
       {
-        "name": "grenitaus-consulting-logo.png",
-        "url": "assets/images/grenitaus-consulting-logo.png"
+        "name": "the-often-contentious-relationship-between-the-qa-and-development-team-001.png",
+        "url": "assets/images/the-often-contentious-relationship-between-the-qa-and-development-team-001.png"
       }
     ],
     "canPreview": false,

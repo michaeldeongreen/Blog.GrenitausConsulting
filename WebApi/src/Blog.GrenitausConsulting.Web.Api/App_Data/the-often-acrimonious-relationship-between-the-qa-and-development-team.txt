@@ -1,4 +1,6 @@
-The dynamics between the QA and Development Team has always been an interesting topic to me.  In my 16 years of experience in Information Technology, I have observed that one of the most fragile relationships in an Agile environment is the relationship between the QA Team and Development Team.  I wanted to take some time to talk about my experiences on this subject, give some reasons why I think acrimony often occurs between the two groups and my opinions on how to prevent a breakdown in the relationship between the two groups.
+<a href="assets/images/the-often-acrimonious-relationship-between-the-qa-and-development-team-001.png" target="_blank"><img src="assets/images/the-often-acrimonious-relationship-between-the-qa-and-development-team-001.png" class="img-responsive" /></a>
+<br /><br />
+The dynamics between the QA and Development Team has always been an interesting topic to me.  In my 16 years of experience in Information Technology, I have observed that one of the most fragile relationships in an Agile environment is the relationship between the QA Team and Development Team.  I wanted to take some time to talk about my experiences on this subject, give some reasons why I think tension often occurs between the two groups and my opinions on how to prevent a breakdown in the relationship between the two groups.
 <br><br>
 <strong>It's Only Natural!</strong>
 <br><br>
