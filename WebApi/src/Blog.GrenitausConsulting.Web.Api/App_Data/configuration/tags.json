@@ -282,5 +282,13 @@
   {
     "id": 71,
     "name": "SEO"
-  }                        
+  },
+  {
+    "id": 72,
+    "name": "angular-cli"
+  },
+  {
+    "id": 73,
+    "name": "prismjs"
+  }
 ]

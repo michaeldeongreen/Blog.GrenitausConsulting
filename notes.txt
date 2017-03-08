@@ -116,3 +116,7 @@ according to github first checkin was 12 days until prod release
 
 * Try to see if this allows api/web to be hosted together
 	<add input="{REQUEST_URI}" matchType="Pattern" pattern="^/api/.*$" ignoreCase="true" negate="true" />
+
+improvements
+reload data per request on dev
+comments section

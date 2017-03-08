@@ -1430,7 +1430,7 @@
     "title": "Replacing my Wordpress Blog with Angular 2 and ASP.Net Web API Part 1",
     "author": "Michael D. Green",
     "postDate": "2017-03-06",
-    "snippet": "In this first of 3 part series, Michael D. Green talks about how he implemented a custom blogging solution using Angular 2 and ASP.Net Web API.",
+    "snippet": "In this first post of 3 part series, Michael D. Green talks about how he implemented a custom blogging solution using Angular 2 and ASP.Net Web API.",
     "link": "replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-1",
     "isActive": false,
     "categories": [
@@ -1440,50 +1440,54 @@
       }
     ],
     "tags": [
-	  {
-	    "id": 41,
-	    "name": "ASP.Net Web API"
-	  },
-	  {
-	    "id": 28,
-	    "name": "Angular 2"
-	  },
-	  {
-	    "id": 58,
-	    "name": "NUnit"
-	  },
-	  {
-	    "id": 68,
-	    "name": "CSS"
-	  },
-	  {
-	    "id": 35,
-	    "name": "TypeScript"
-	  },
-	  {
-	    "id": 27,
-	    "name": "Visual Studio 2015"
-	  },
-	  {
-	    "id": 38,
-	    "name": "C#"
-	  },
-	  {
-	    "id": 44,
-	    "name": "StructureMap"
-	  },
-	  {
-	    "id": 69,
-	    "name": "Json.net"
-	  },
-	  {
-	    "id": 70,
-	    "name": "Bootstrap 3"
-	  },
-	  {
-	    "id": 71,
-	    "name": "SEO"
-	  }   	    	     	  	  	  	  
+      {
+        "id": 41,
+        "name": "ASP.Net Web API"
+      },
+      {
+        "id": 28,
+        "name": "Angular 2"
+      },
+      {
+        "id": 58,
+        "name": "NUnit"
+      },
+      {
+        "id": 68,
+        "name": "CSS"
+      },
+      {
+        "id": 35,
+        "name": "TypeScript"
+      },
+      {
+        "id": 27,
+        "name": "Visual Studio 2015"
+      },
+      {
+        "id": 38,
+        "name": "C#"
+      },
+      {
+        "id": 44,
+        "name": "StructureMap"
+      },
+      {
+        "id": 69,
+        "name": "Json.net"
+      },
+      {
+        "id": 70,
+        "name": "Bootstrap 3"
+      },
+      {
+        "id": 71,
+        "name": "SEO"
+      },
+      {
+        "id": 72,
+        "name": "angular-cli"
+      }
     ],
     "images": [
       {
@@ -1493,6 +1497,91 @@
       {
         "name": "replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-1-002.png",
         "url": "assets/images/replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-1-002.png"
+      }
+    ],
+    "canPreview": true,
+    "previewExpirationDate": "2017-03-15"
+  },
+  {
+    "id": 35,
+    "title": "Replacing my Wordpress Blog with Angular 2 and ASP.Net Web API Part 2",
+    "author": "Michael D. Green",
+    "postDate": "2017-03-06",
+    "snippet": "In the 2nd post of this 3 part series, Michael D. Green goes into detail about how he implemented the Angular 2 Front-end component of his custom blogging solution using Angular 2 and ASP.Net Web API.",
+    "link": "replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-2",
+    "isActive": false,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 41,
+        "name": "ASP.Net Web API"
+      },
+      {
+        "id": 28,
+        "name": "Angular 2"
+      },
+      {
+        "id": 58,
+        "name": "NUnit"
+      },
+      {
+        "id": 68,
+        "name": "CSS"
+      },
+      {
+        "id": 35,
+        "name": "TypeScript"
+      },
+      {
+        "id": 27,
+        "name": "Visual Studio 2015"
+      },
+      {
+        "id": 38,
+        "name": "C#"
+      },
+      {
+        "id": 44,
+        "name": "StructureMap"
+      },
+      {
+        "id": 69,
+        "name": "Json.net"
+      },
+      {
+        "id": 70,
+        "name": "Bootstrap 3"
+      },
+      {
+        "id": 71,
+        "name": "SEO"
+      },
+      {
+        "id": 72,
+        "name": "angular-cli"
+      },
+      {
+        "id": 73,
+        "name": "prismjs"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "assets/images/grenitaus-consulting-logo.png"
+      },
+      {
+        "name": "replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-2-001.png",
+        "url": "assets/images/replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-2-001.png"
+      },
+      {
+        "name": "replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-2-002.png",
+        "url": "assets/images/replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-2-002.png"
       }
     ],
     "canPreview": true,
