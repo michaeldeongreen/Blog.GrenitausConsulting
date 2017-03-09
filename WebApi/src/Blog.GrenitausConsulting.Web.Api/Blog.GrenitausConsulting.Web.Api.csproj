@@ -221,6 +221,7 @@
     <Content Include="App_Data\html\refactoring-code-in-my-open-source-project-to-use-async-await.html" />
     <Content Include="App_Data\html\replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-1.html" />
     <Content Include="App_Data\html\replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-2.html" />
+    <Content Include="App_Data\html\replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-3.html" />
     <Content Include="App_Data\html\so-you-want-to-be-a-it-consultant.html" />
     <Content Include="App_Data\html\the-3-types-of-employees.html" />
     <Content Include="App_Data\html\the-most-important-relationship-on-an-agile-team.html" />

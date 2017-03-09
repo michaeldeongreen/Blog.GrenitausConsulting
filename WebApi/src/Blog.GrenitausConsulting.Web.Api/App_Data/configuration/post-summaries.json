@@ -1586,5 +1586,82 @@
     ],
     "canPreview": true,
     "previewExpirationDate": "2017-03-15"
+  },
+  {
+    "id": 36,
+    "title": "Replacing my Wordpress Blog with Angular 2 and ASP.Net Web API Part 3",
+    "author": "Michael D. Green",
+    "postDate": "2017-03-06",
+    "snippet": "In the 3rd and final post of this 3 part series, Michael D. Green talks about how he implemented the ASP.Net Web API and cli tool used to generate Sitemaps, RSS and static html files.",
+    "link": "replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-3",
+    "isActive": false,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 41,
+        "name": "ASP.Net Web API"
+      },
+      {
+        "id": 28,
+        "name": "Angular 2"
+      },
+      {
+        "id": 58,
+        "name": "NUnit"
+      },
+      {
+        "id": 68,
+        "name": "CSS"
+      },
+      {
+        "id": 35,
+        "name": "TypeScript"
+      },
+      {
+        "id": 27,
+        "name": "Visual Studio 2015"
+      },
+      {
+        "id": 38,
+        "name": "C#"
+      },
+      {
+        "id": 44,
+        "name": "StructureMap"
+      },
+      {
+        "id": 69,
+        "name": "Json.net"
+      },
+      {
+        "id": 70,
+        "name": "Bootstrap 3"
+      },
+      {
+        "id": 71,
+        "name": "SEO"
+      },
+      {
+        "id": 72,
+        "name": "angular-cli"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "assets/images/grenitaus-consulting-logo.png"
+      },
+      {
+        "name": "replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-3-001.png",
+        "url": "assets/images/replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-3-001.png"
+      }
+    ],
+    "canPreview": true,
+    "previewExpirationDate": "2017-03-15"
   }
 ]  
