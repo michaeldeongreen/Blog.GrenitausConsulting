@@ -13,7 +13,7 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
     {
         public Quote Get()
         {
-            return BlogContextManager.Quotes.OrderByDescending(q => q.AddedDate).SingleOrDefault();
+            return BlogContextManager.Quotes.OrderByDescending(q => q.AddedDate).Take(1).SingleOrDefault();
         }
     }
 }
