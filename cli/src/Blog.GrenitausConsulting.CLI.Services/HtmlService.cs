@@ -1,6 +1,8 @@
 ﻿using Blog.GrenitausConsulting.CLI.Services.Interfaces;
 using Blog.GrenitausConsulting.Common;
 using Blog.GrenitausConsulting.Domain;
+using Blog.GrenitausConsulting.Services;
+using Blog.GrenitausConsulting.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,6 +18,7 @@ namespace Blog.GrenitausConsulting.CLI.Services
         private string _domain;
         private string _angularCliSrcPath;
         private string _staticPageHtmlPath;
+        private IPagingService _pagingService;
 
         public void Generate(string domain, string htmlOutputPath, string angularCliSrcPath)
         {
@@ -23,6 +26,7 @@ namespace Blog.GrenitausConsulting.CLI.Services
             _staticPageHtmlPath = "static-pages";
             _htmlOutputPath = string.Format(@"{0}\{1}", htmlOutputPath,_staticPageHtmlPath);
             _angularCliSrcPath = angularCliSrcPath;
+            _pagingService = new PagingService();
 
             if (!Directory.Exists(_htmlOutputPath))
                 Directory.CreateDirectory(_htmlOutputPath);
@@ -208,6 +212,7 @@ namespace Blog.GrenitausConsulting.CLI.Services
 
             sb.AppendLine("</div>");
 
+            //post
             sb.AppendLine("<hr>");
             sb.AppendLine(string.Format("<p>{0}</p>", postHtml.Hmtl));
             sb.AppendLine("</div>");
@@ -215,6 +220,7 @@ namespace Blog.GrenitausConsulting.CLI.Services
             sb.AppendLine("</div>");
             sb.AppendLine("<br />");
 
+            //share buttons
             sb.AppendLine("<div class=\"row\">");
             sb.AppendLine("<span>");
             sb.AppendLine(string.Format("<a style=\"text-decoration:none;\" href=\"mailto:?Subject={0}&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 {1}.html\"><img src=\"assets/images/email.png\" alt=\"Email\" width=\"48\" height=\"48\"/></a>",post.Title,post.Link));
@@ -227,6 +233,27 @@ namespace Blog.GrenitausConsulting.CLI.Services
             sb.AppendLine(string.Format("<a style=\"text-decoration:none;\" href=\"https://twitter.com/share?url={0}/{1}/{2}.html&amp;text={3}&amp;hashtags=grenitausconsulting\" target=\"_blank\"><img src=\"assets/images/twitter.png\" alt=\"Twitter\" width=\"48\" height=\"48\" /></a>",_domain,_staticPageHtmlPath,post.Link,post.Title ));
             sb.AppendLine("</span>");
             sb.AppendLine("</div>");
+
+            //also on
+            PagedResponse response = _pagingService.GetAlsoOn(new PagedCriteria() { IsActive = true, Posts = BlogContextManager.PostSummaries, SearchCriteriaInt = post.Id });
+            if (response.Total > 0)
+            {
+                sb.AppendLine("<hr>");
+                sb.AppendLine("<div class=\"row\"><h4> Also on Blog.GrenitausConsulting.com...</h4></div>");
+                sb.AppendLine("<br />");
+                sb.AppendLine("<div class=\"row\">");
+                foreach (var p in response.Posts)
+                {
+                    sb.AppendLine("<div class=\"col-md-6\">");
+                    sb.AppendLine(string.Format("<h4><a href=\"{0}/post/{1}\">{2}</a></h4>", _domain,p.Link, p.Title));
+                    sb.AppendLine(string.Format("by <a href=\"{0}/about\">{1}</a>", _domain, p.Author));
+                    sb.AppendLine(string.Format("<p><span class=\"glyphicon glyphicon-time\"></span> {0}</p>", p.PostDate.ToString("MM/dd/yyyy")));
+                    sb.AppendLine(string.Format("<p>{0}</p>",p.Snippet));
+                    sb.AppendLine("</div>");
+                }
+                sb.AppendLine("</div>");
+            }
+
             sb.AppendLine("</div>"); //container
             
             return sb.ToString();
