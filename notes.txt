@@ -25,9 +25,6 @@ https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
 TODO Now:
-Display 2 posts at the bottom of post page for user to see after reading the blog "Also on"
-http://blog.amitapple.com/post/2015/06/scheduling-azure-webjobs/#.WMSSYTvyvmg
-
 1) Validate Blog Search (see ngif that the pager is using)
 
 url to ping blog as well
