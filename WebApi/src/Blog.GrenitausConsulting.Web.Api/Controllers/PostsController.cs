@@ -64,5 +64,11 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
         {
             return BlogContextManager.PostSummaries.Where(p => p.Link == link && p.CanPreview && p.PreviewExpirationDate.Value.Date >= DateTime.Now.Date).FirstOrDefault();
         }
+
+        [Route("api/post/{id}/alsoon")]
+        public PagedResponse GetAlsoOn(int id)
+        {
+            return _pagingService.GetAlsoOn(new PagedCriteria() {Posts = BlogContextManager.PostSummaries, SearchCriteriaInt = id });
+        }
     }
 }

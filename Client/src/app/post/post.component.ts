@@ -6,6 +6,8 @@ import { Observable } from 'rxjs/Observable';
 import { SeoService } from '../seo.service';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { MetaService } from '@nglibs/meta';
+import { SharedEmitterService } from '../shared-emitter.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -19,13 +21,23 @@ export class PostComponent implements OnInit {
     url: string;
     path: string;
     busy: boolean = true;
+    alsoOn: Observable<Post>;
+    alsoOnTotal: number;
 
     constructor(private httpService: HttpService,
         private route: ActivatedRoute,
         private seoService: SeoService,
         private location: Location,
-        private readonly metaService: MetaService) {
+        private readonly metaService: MetaService,
+        private sharedEmitterService: SharedEmitterService,
+        private router: Router) {
         this.path = location.prepareExternalUrl(location.path(true));
+
+        this.sharedEmitterService.alsoOnChanged.subscribe(title => {
+            this.parameter = title;
+            this.getPost(this.parameter);
+            this.getHtml(this.parameter);
+        });
     }
 
 
@@ -42,6 +54,7 @@ export class PostComponent implements OnInit {
                 this.item = data;
                 this.url = `${window.location.protocol}//${window.location.host}/${this.item.staticHtml}`;
                 this.setSEO();
+                this.getAlsoOn(this.item.id);
             });
     }
 
@@ -50,6 +63,15 @@ export class PostComponent implements OnInit {
           .subscribe(data => {
               this.html = data;
               this.busy = false;
+          });
+  }
+
+  getAlsoOn(id: number) {
+      this.httpService.getAlsoOn(id)
+          .subscribe(data => {
+              this.alsoOnTotal = data.total;
+              this.alsoOn = data.posts;
+              //this.busy = false;
           });
   }
 
@@ -70,6 +92,12 @@ export class PostComponent implements OnInit {
       for (let category of this.item.categories) {
           this.metaService.setTag('article:section', category.name);
       }
+  }
+
+  gotoPost(title: string): void {
+      this.sharedEmitterService.alsoOnChangedEvent(title);
+      let link = ['/post', title];
+      this.router.navigate(link);
   }
 
 }

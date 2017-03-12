@@ -20,5 +20,6 @@ namespace Blog.GrenitausConsulting.Domain
         public bool IsActive  { get; set; }
         public int MonthCriteria { get; set; }
         public int YearCriteria { get; set; }
+        public int SearchCriteriaInt { get; set; }
     }
 }

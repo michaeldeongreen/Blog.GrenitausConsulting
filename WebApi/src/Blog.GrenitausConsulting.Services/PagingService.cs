@@ -120,6 +120,26 @@ namespace Blog.GrenitausConsulting.Services
             }
         }
 
+        public PagedResponse GetAlsoOn(PagedCriteria criteria)
+        {
+            var posts = criteria.Posts.Where(p => p.IsActive == criteria.IsActive).OrderBy(p => p.PostDate);
+
+            var post = posts.Where(p => p.Id == criteria.SearchCriteriaInt).SingleOrDefault();
+
+            if (post != null)
+            {
+                var query = posts.Where(p => p.PostDate > post.PostDate && p.Id != criteria.SearchCriteriaInt).Take(2);
+                if (query.ToList().Count >= 2)
+                    return new PagedResponse() { Total = query.ToList().Count(), Posts = query.ToList() };
+                else
+                    return new PagedResponse() { Total = 0, Posts = null };
+            }
+            else
+            {
+                return new PagedResponse() { Total = 0, Posts = null };
+            }
+        }
+
         private void ApplyCriteriaLogic(PagedCriteria criteria)
         {
             ApplyPageNumberLogic(criteria);

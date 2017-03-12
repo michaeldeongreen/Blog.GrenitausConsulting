@@ -9,6 +9,8 @@ export class SharedEmitterService {
 
     archiveChanged = new EventEmitter();
 
+    alsoOnChanged = new EventEmitter();
+
     constructor() { }
 
     searchCriteriaChangedEvent(value) {
@@ -21,5 +23,9 @@ export class SharedEmitterService {
 
     archiveChangedEvent(archive) {
         this.archiveChanged.emit(archive);
+    }
+
+    alsoOnChangedEvent(value) {
+        this.alsoOnChanged.emit(value);
     }
 }

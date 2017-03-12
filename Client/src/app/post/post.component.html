@@ -52,5 +52,20 @@
                 </a>
             </span>
         </div>
+        <hr *ngIf="alsoOnTotal > 0">
+        <div class="row" *ngIf="alsoOnTotal > 0">
+                <h4>Also on Blog.GrenitausConsulting.com...</h4>
+        </div>
+        <br />
+        <div class="row" *ngIf="alsoOnTotal > 0">
+            <div class="col-md-4" *ngFor="let post of alsoOn">
+                <h4>
+                    <a class="anchor-pointer" (click)="gotoPost(post.link)">{{post.title}}</a>
+                </h4>
+                by <a [routerLink]="['/about']">{{post.author}}</a>
+                <p><span class="glyphicon glyphicon-time"></span> {{post.postDate | date: 'MM/dd/yyyy'}}</p>
+                <p>{{post.snippet}}</p>
+            </div>
+        </div>
     </div>
 </div>
