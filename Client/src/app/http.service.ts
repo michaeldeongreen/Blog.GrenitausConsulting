@@ -28,7 +28,8 @@ export class HttpService {
     }
 
     public getSearchResults(page: Number, criteria: string): any {
-        return this.http.get(`${this.baseUrl}/search/${criteria}/page/${page}`)
+        let url = this.getEncodedUri(`${this.baseUrl}/search/${criteria}/page/${page}`);
+        return this.http.get(url)
             .map((response: Response) => response.json())
             .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
     }
@@ -97,5 +98,10 @@ export class HttpService {
         return this.http.get(`${this.baseUrl}/post/${id}/alsoon`)
             .map((response: Response) => response.json())
             .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+    }
+
+    private getEncodedUri(url: string): string {
+        let t = encodeURIComponent(url);
+        return encodeURI(url);
     }
 }

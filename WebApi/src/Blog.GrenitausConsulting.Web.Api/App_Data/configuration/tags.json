@@ -290,5 +290,13 @@
   {
     "id": 73,
     "name": "prismjs"
+  },
+  {
+    "id": 74,
+    "name": "Azure WebJob"
+  },
+  {
+    "id": 75,
+    "name": "Fluent NHibernate"
   }
 ]

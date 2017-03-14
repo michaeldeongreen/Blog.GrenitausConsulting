@@ -1663,5 +1663,138 @@
     ],
     "canPreview": true,
     "previewExpirationDate": "2017-03-15"
+  },
+  {
+    "id": 38,
+    "title": "How to Create, Configure, Deploy and Stop a Azure WebJob",
+    "author": "Michael D. Green",
+    "postDate": "2017-03-28",
+    "snippet": "Azure WebJobs are great but not very intuitive to work with.  In this blog post, Michael D. Green talks about how to create, configure and deploy a Azure WebJob.",
+    "link": "how-to-create-configure-deploy-and-stop-a-azure-webjob",
+    "isActive": false,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 30,
+        "name": "Azure"
+      },
+      {
+        "id": 74,
+        "name": "Azure WebJob"
+      },
+      {
+        "id": 60,
+        "name": "SQL Azure"
+      },
+      {
+        "id": 27,
+        "name": "Visual Studio 2015"
+      },
+      {
+        "id": 75,
+        "name": "Fluent NHibernate"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "assets/images/grenitaus-consulting-logo.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-002.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-002.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-003.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-003.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-004.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-004.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-005.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-005.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-006.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-006.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-007.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-007.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-008.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-008.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-009.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-009.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-010.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-010.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-011.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-011.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-012.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-012.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-013.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-013.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-014.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-014.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-015.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-015.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-016.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-016.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-017.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-017.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-018.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-018.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-019.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-019.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-020.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-020.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-021.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-021.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-022.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-022.png"
+      },
+      {
+        "name": "how-to-create-configure-deploy-and-stop-a-azure-webjob-023.png",
+        "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-023.png"
+      }
+    ],
+    "canPreview": true,
+    "previewExpirationDate": "2017-03-28"
   }
 ]  

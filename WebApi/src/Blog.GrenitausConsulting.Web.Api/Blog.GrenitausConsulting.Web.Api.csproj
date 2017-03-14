@@ -208,6 +208,7 @@
     <Content Include="App_Data\html\dont-rage-quit-your-job-make-a-proco-list.html" />
     <Content Include="App_Data\html\going-extreme-with-extreme-programming.html" />
     <Content Include="App_Data\html\how-to-convert-an-svn-repository-to-stash-using-tortoisegit.html" />
+    <Content Include="App_Data\html\how-to-create-configure-deploy-and-stop-a-azure-webjob.html" />
     <Content Include="App_Data\html\how-to-pass-the-pmp-exam-on-your-first-attempt.html" />
     <Content Include="App_Data\html\how-to-set-sql-login-user-permissions-in-sql-azure.html" />
     <Content Include="App_Data\html\how-to-setup-continuous-deployment-for-a-sql-server-database-using-git-powershell-ssdt-and-teamcity.html" />
