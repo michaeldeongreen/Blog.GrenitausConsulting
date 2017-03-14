@@ -1164,10 +1164,10 @@
     "id": 30,
     "title": "How to Set SQL Login User Permissions in SQL Azure",
     "author": "Michael D. Green",
-    "postDate": "2017-02-11T20:07:29.9375939-06:00",
-    "snippet": "In this blog post I wanted to take some time to demonstrate how to control SQL Login permissions in SQL Azure.  When you create a SQL Azure Database, an admin user will be created in the SQL Azure Database.  In most cases, you will not want to give normal users access to this account and you probably don’t want applications accessing your SQL Azure Database using this account.",
+    "postDate": "2017-03-14",
+    "snippet": "In this blog post I wanted to take some time to demonstrate how to control SQL Login permissions in SQL Azure.  When you create a SQL Azure Database, an admin user will be created in the SQL Azure Database.  In most cases, you will not want to give normal users access to this account and you probably don't want applications accessing your SQL Azure Database using this account.",
     "link": "how-to-set-sql-login-user-permissions-in-sql-azure",
-    "isActive": false,
+    "isActive": true,
     "categories": [
       {
         "id": 3,
@@ -1186,11 +1186,11 @@
     ],
     "images": [
       {
-        "name": "grenitaus-consulting-logo.png",
-        "url": "assets/images/grenitaus-consulting-logo.png"
+        "name": "sql-azure.png",
+        "url": "assets/images/sql-azure.png"
       }
     ],
-    "canPreview": true,
+    "canPreview": false,
     "previewExpirationDate": "2017-03-07"
   },
   {
