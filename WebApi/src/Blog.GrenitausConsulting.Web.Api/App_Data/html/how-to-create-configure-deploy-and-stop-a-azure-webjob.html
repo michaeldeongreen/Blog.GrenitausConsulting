@@ -1,4 +1,4 @@
-<a href="assets/images/grenitaus-consulting-logo.png"><img class="img-responsive" src="assets/images/grenitaus-consulting-logo.png" alt="Grenitaus Consulting"></a>
+<a href="assets/images/azure-webjobs.png"><img class="img-responsive" src="assets/images/azure-webjobs.png" alt="Grenitaus Consulting"></a>
 <br /><br />
 On one of my projects, I recently had to schedule a task to run in specific intervals.  My current client was an early adopter of Azure and all of their applications are in the Azure Cloud.  After finding out that a SQL Server Agent was not available for SQL Azure, I eventually turned to an Azure WebJob.  I wanted to take a moment to write a blog about how to create, configure, deploy and stop an Azure WebJob because I felt these tasks were not intuitive.  When I am unfamiliar with a technology, I like to "test it out" by creating a sample application that does a very basic job but one that is similar to what I will need it to do in Production.
 <br /><br />
@@ -282,14 +282,11 @@ Once I had observed the changes were working locally, I repeated the same proces
 <br /><br />
 
 
-<strong>Gotchas or problems</strong>
-Link to code
+<strong>Possible Gotchas and Issues</strong>
+<br /><br />
+If you are going to use TimerTrigger Functions to schedule tasks, you probably want to have a Storage Account per environment, including local.  If you use the same Storage Account for multiple environments ie Local, Development, Test or Prod, the instance of the WebJob running in those environments will compete with each other for access to the Storage Account.  You can find out more about TimmerTriggers <a href="https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/TimerTrigger" target="_blank">here</a>.
+<br /><br />
+Also, another issue I faced when my Local and Test Environment shared the same Storage Account was that when I didn't know how to stop a WebJob and opted to just delete it in Azure, for some reason, my Local instance in Visual Studio would no longer run.  I suspect that some type of Lock was placed on the Storage Account and because I deleted the WebJob, it was never released and therefore, my local instance could no longer access the Storage Account.  It was only when I created a new Storage Account for my Local environment that my Local instance would start to work again.  
+<br /><br />
 
-Create N number of Storage Account and make sure they are classic because they compete with each other
-
-Deployment
-9) When you deploy for the first time, put the connection strings in the application settings of the web app, I noticed it complained if it wasn't in there
-10) Make sure you select Always On
-
-1)The WebJobber stopped working locally, when I deleted the Storage Account and made a new one it started working again
-2)I suspect that when I deleted the WebJob in Test, it had put a lock on the Storage Account and it was never released
+Finally, as I mentioned earlier, when I deployed my WebJob to Azure, I had to set the Storage Account connection strings in the Web App Application Settings connection string section to get the WebJob to run.  In my experience, as long as you have the correct values set in the web.config or app.config that is deployed to the server, the application would run fine.  WebJobs are the first Azure Apps where I had to explicitly set values in the Web App's Application settings connection string section.
