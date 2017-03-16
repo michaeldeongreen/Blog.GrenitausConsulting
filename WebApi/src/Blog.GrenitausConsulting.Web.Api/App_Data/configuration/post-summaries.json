@@ -841,7 +841,7 @@
     "tags": [
       {
         "id": 36,
-        "name": "async/await"
+        "name": "async-await"
       },
       {
         "id": 37,
@@ -1000,7 +1000,7 @@
       },
       {
         "id": 36,
-        "name": "async/await"
+        "name": "async-await"
       }
     ],
     "images": [
