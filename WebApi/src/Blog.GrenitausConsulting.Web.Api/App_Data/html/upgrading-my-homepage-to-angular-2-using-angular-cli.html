@@ -19,11 +19,11 @@ A few weeks ago I decided to upgrade <a href="http://grenitausconsulting.com" ta
 I created <a href="http://grenitausconsulting.com" target="_blank">Grenitausconsulting.com</a> a few months ago and it is nothing more than static HTML pages.  I used Visual Studio 2015 to create and the deploy the code to my web server.  It contains a few static HTML pages, images, style sheets and some JavaScript files.  I figured this would be a perfect project to continue to sharpen my Angular 2 skills.
 <br><br>
 Here is a picture of the folder structure of the static HTML solution in Visual Studio 2015:
-<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-009.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-009.png" alt="" width="343" height="331" class="alignnone size-full wp-image-286" /></a>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-009.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-009.png" alt="" width="343" height="331" /></a>
 <br><br>
 
 The HTML pages are very simple and have repeating header and footer HTML in every page.  In Angular 2, you break everything down into "components" to make them easier to test and to make the entire project less monolithic.  After giving it some thought, here is a diagram of the components I wanted in my Angular 2 project:
-<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-010.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-010.png" alt="" width="960" height="720" class="alignnone size-full wp-image-291" /></a>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-010.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-010.png" alt="" /></a>
 <br><br>
 
 <strong>Angular CLI</strong>
@@ -37,7 +37,7 @@ ng new GrenitausConsulting
 <br><br>
 This command can take some time but after it finishes completing, it would make a base Angular 2 folder structure for me to start using.  The –skip-git parameter is used to tell angular-cli not to run the “git init” command since I will be copying the project files to an existing GitHub repository hat has the existing Grenitaus Consulting codebase.  Here is a picture of the folder structure that angular-cli creates:
 <br><br>
-<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-001-2.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-001-2.png" alt="" width="254" height="265" class="alignnone size-full wp-image-303" /></a>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-001-2.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-001-2.png" alt="" width="254" height="265" /></a>
 <br><br>
 
 <strong>Visual Studio 2015</strong>
@@ -50,7 +50,7 @@ git checkout -b angular-2
 <br><br>
 The Grenitaus Consulting codebase is an ASP.Net MVC 5 empty project and the start up page for the project is set to index.html.  I then opened up my Grenitaus Consulting project in Visual Studio 2015.  I then copied my entire repository to a temporary location so I would have access to all the existing HTML, images, JavaScript and style sheets.  Here is what my static HTML folder structure looked like:
 <br><br>
-<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-002-1.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-002-1.png" alt="" width="261" height="417" class="alignnone size-full wp-image-289" /></a>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-002-1.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-002-1.png" alt="" width="261" height="417"  /></a>
 <br><br>
 Now that I had a backup of my existing site, in my Visual Studio solution, I choose to show all files in the Solution Explorer and I deleted all the contents except for the following:
 <br><br>
@@ -70,7 +70,7 @@ After I did this, I went back to the temporary GrenitausConsulting folder that a
 </ul>
 <br><br>
 Here is what my project in Visual Studio 2015 looked like after I was finished:
-<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-003.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-003.png" alt="" width="294" height="259" class="alignnone size-full wp-image-271" /></a>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-003.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-003.png" alt="" width="294" height="259" /></a>
 <br><br>
 Next, I wanted to ensure that angular-cli could build a distribution folder without errors.  One of the great things about angular-cli is not only does it build you a base Angular 2 Project structure, you can view your changes in the browser (which I will talk about later) and it will build a distribution folder that you can then use to deploy to a Test or Production Web Server.  If angular-cli cannot create this folder, it will display in red letters some of the problems it encountered.
 <br><br>
@@ -80,9 +80,9 @@ ng build -prod
 </code></pre>
 <br><br>
 By default, if the command is able to complete without errors, it will create a folder called "dist" and you can then literally copy the contents of this folder to any Web Server and your application will be up and running.  Here is the output from the command and what my dist folder looks like:
-<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-004.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-004.png" alt="" width="606" height="190" class="alignnone size-full wp-image-276" /></a>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-004.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-004.png" alt="" width="606" height="190" /></a>
 <br><br>
-<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-005.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-005.png" alt="" width="318" height="232" class="alignnone size-full wp-image-277" /></a>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-005.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-005.png" alt="" width="318" height="232" /></a>
 <br><br>
  Now that I know that angular-cli can build my distribution artifacts, I wanted to ensure that the Angular 2 base application could run in the browser with no issues.  So I typed the following command in Git Bash:
 <pre><code class="language-javascript">
@@ -90,7 +90,7 @@ ng serve
 </code></pre>
 <br><br>
 This command starts a lightweight Web Server on your machine and will host the application at http://localhost:4200.  According to the Interwebz, it is supposed to launch a browser window for you but I had to open up a browser and navigate to the location manually.  Here is what angular-cli displays when it is running the Web Server:
-<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-006.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-006.png" alt="" width="714" height="139" class="alignnone size-full wp-image-280" /></a>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-006.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-006.png" alt="" width="714" height="139" /></a>
 <br><br>
 When you navigate to http:/localhost:4200, you should see a default message "app works!".
 <br><br>
@@ -260,9 +260,9 @@ After this was done, underneath "apps", there is a section called "scripts".  I 
 <br><br>
 After I completed all of the clean up tasks, I was able to build the distribution folder and compile and run the application locally.  Below is the final structure in Solution Explorer and the output of the "dist" folder after running "ng build -prod":
 <br><br>
-<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-007.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-007.png" alt="" width="342" height="471" class="alignnone size-full wp-image-283" /></a>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-007.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-007.png" alt="" width="342" height="471"/></a>
 <br><br>
-<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-008.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-008.png" alt="" width="374" height="349" class="alignnone size-full wp-image-284" /></a>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-008.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-converting-grenitausconsulting-com-to-angular-2-008.png" alt="" width="374" height="349"/></a>
 <br><br>
 After building the "dist" artifacts for the last time, I literally FTP'ed all of the contents of this folder to my Web Server and I am proud to say that I have deployed my first Angular 2 project to Production.
 
