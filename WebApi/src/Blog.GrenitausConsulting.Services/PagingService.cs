@@ -140,6 +140,21 @@ namespace Blog.GrenitausConsulting.Services
             }
         }
 
+        public PagedResponse GetPreviews()
+        {
+            var query = BlogContextManager.PostSummaries.Where(p => p.CanPreview && p.PreviewExpirationDate.Value.Date >= DateTime.Now.Date).OrderByDescending(p => p.PostDate);
+
+            if (query.ToList().Count > 0)
+            {
+
+                return new PagedResponse() { Total = query.ToList().Count(), Posts = query.ToList() };
+            }
+            else
+            {
+                return new PagedResponse() { Total = 0, Posts = null };
+            }
+        }
+
         private void ApplyCriteriaLogic(PagedCriteria criteria)
         {
             ApplyPageNumberLogic(criteria);

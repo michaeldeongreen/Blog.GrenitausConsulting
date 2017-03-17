@@ -20,5 +20,7 @@ namespace Blog.GrenitausConsulting.Services.Interfaces
         PagedResponse GetByMonthAndYear(PagedCriteria criteria);
 
         PagedResponse GetAlsoOn(PagedCriteria criteria);
+
+        PagedResponse GetPreviews();
     }
 }

@@ -70,5 +70,11 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
         {
             return _pagingService.GetAlsoOn(new PagedCriteria() {Posts = BlogContextManager.PostSummaries, SearchCriteriaInt = id });
         }
+
+        [Route("api/post/previews")]
+        public PagedResponse GetPreviews()
+        {
+            return _pagingService.GetPreviews();
+        }
     }
 }
