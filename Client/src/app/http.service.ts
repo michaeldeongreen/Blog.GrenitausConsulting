@@ -99,4 +99,10 @@ export class HttpService {
             .map((response: Response) => response.json())
             .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
     }
+
+    public getPreviews(): any {
+        return this.http.get(`${this.baseUrl}/post/previews`)
+            .map((response: Response) => response.json())
+            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+    }
 }

@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div id="my-loader" *ngIf="busy" class="loader"></div>
+    </div>
+    <div *ngIf="busy == false">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="page-header">
+                    <small>Queued Posts</small>
+                </h1>
+
+                <div *ngFor="let item of pagedItems">
+                    <h2>
+                        <a [routerLink]="['/preview', item.link]">{{item.title}}</a>
+                    </h2>
+                    <p class="lead">
+                        by <a [routerLink]="['/about']">{{item.author}}</a>
+                    </p>
+                    <p><span class="glyphicon glyphicon-time"></span> {{item.postDate | date: 'MM/dd/yyyy'}}</p>
+                    <hr>
+                    <img class="img-responsive" src="assets/images/grenitaus-consulting-logo.png" alt="Grenitaus Consulting">
+                    <hr>
+                    <p>{{item.snippet}}</p>
+                    <a class="btn btn-primary" [routerLink]="['/preview', item.link]">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

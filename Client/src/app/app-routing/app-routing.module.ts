@@ -9,6 +9,7 @@ import { CategoryComponent } from '../category/category.component'
 import { TagComponent } from '../tag/tag.component'
 import { ArchiveComponent } from '../archive/archive.component'
 import { PreviewComponent } from '../preview/preview.component'
+import { PreviewsComponent } from '../previews/previews.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home/1', pathMatch: 'full' },
@@ -19,7 +20,8 @@ const routes: Routes = [
     { path: 'category/:category', component: CategoryComponent },
     { path: 'tag/:tag', component: TagComponent },
     { path: 'archive/:month/:year', component: ArchiveComponent },
-    { path: 'preview/:title', component: PreviewComponent }
+    { path: 'preview/:title', component: PreviewComponent },
+    { path: 'previews', component: PreviewsComponent }
 ];
 
 @NgModule({

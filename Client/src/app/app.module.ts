@@ -25,6 +25,7 @@ import { SeoService } from './seo.service';
 import { ArchivesComponent } from './archives/archives.component';
 import { ArchiveComponent } from './archive/archive.component';
 import { PreviewComponent } from './preview/preview.component';
+import { PreviewsComponent } from './previews/previews.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { PreviewComponent } from './preview/preview.component';
       TagComponent,
       ArchivesComponent,
       ArchiveComponent,
-      PreviewComponent
+      PreviewComponent,
+      PreviewsComponent
   ],
   imports: [
     BrowserModule,

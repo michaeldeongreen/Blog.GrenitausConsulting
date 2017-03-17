@@ -142,7 +142,7 @@ namespace Blog.GrenitausConsulting.Services
 
         public PagedResponse GetPreviews()
         {
-            var query = BlogContextManager.PostSummaries.Where(p => p.CanPreview && p.PreviewExpirationDate.Value.Date >= DateTime.Now.Date).OrderByDescending(p => p.PostDate);
+            var query = BlogContextManager.PostSummaries.Where(p => p.CanPreview && p.PreviewExpirationDate.Value.Date >= DateTime.Now.Date).OrderBy(p => p.Id);
 
             if (query.ToList().Count > 0)
             {
