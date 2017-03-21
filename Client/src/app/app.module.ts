@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { Ng2PaginationModule } from 'ng2-pagination';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { MetaModule } from '@nglibs/meta';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';
@@ -26,6 +25,7 @@ import { ArchivesComponent } from './archives/archives.component';
 import { ArchiveComponent } from './archive/archive.component';
 import { PreviewComponent } from './preview/preview.component';
 import { PreviewsComponent } from './previews/previews.component';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [

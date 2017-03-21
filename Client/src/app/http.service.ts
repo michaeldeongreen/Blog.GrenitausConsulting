@@ -1,25 +1,24 @@
 import { Injectable } from '@angular/core';
-
 import { Post } from './post';
-
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-
 import { Observable } from 'rxjs/Rx';
-
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import { environment } from '../environments/environment';
+
 
 @Injectable()
 export class HttpService {
-    private baseUrl = 'http://localhost:49529/api';
-    //private baseUrl = 'http://api.grenitausconsulting.com/api';
+    private baseUrl: string;
     
     private headers = new Headers({
         'Content-Type': 'application/json',
         'Accept': 'application/json'
     });
 
-    constructor(private http: Http) { }
+    constructor(private http: Http) {
+        this.baseUrl = environment.apiUrl;
+    }
 
     public getPosts(page: Number): any {
         return this.http.get(`${this.baseUrl}/posts/page/${page}`)
