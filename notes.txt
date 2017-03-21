@@ -25,14 +25,14 @@ https://ciphertrick.com/2016/10/19/simple-pagination-for-angular2-applications/
 http://jasonwatmore.com/post/2016/08/23/angular-2-pagination-example-with-logic-like-google
 
 TODO Now:
-create previews page that shows all of the links to all the preview blogs to make things easy to find
 
 1) Validate Blog Search (see ngif that the pager is using)
 https://scotch.io/tutorials/angular-2-form-validation
 
 maybe create a static html about me page on both home and blog
 
-
+Login
+https://medium.com/@blacksonic86/angular-2-authentication-revisited-611bf7373bf9#.nejuv0sn8
 
 TODO Later:
 *Can you put things in .json and pull out and set to variables like api url
