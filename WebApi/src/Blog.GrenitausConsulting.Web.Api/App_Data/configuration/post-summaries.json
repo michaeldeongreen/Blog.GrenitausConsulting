@@ -1270,10 +1270,10 @@
     "id": 32,
     "title": "Upgading My Homepage to Angular 2 using angular-cli",
     "author": "Michael D. Green",
-    "postDate": "2017-02-19T20:07:29.9375939-06:00",
+    "postDate": "2017-03-21",
     "snippet": "Michael D. Green talks about upgrading Grenitausconsulting.com to Angular 2 using angular-cli and his thoughts about angular-cli.",
     "link": "upgrading-my-homepage-to-angular-2-using-angular-cli",
-    "isActive": false,
+    "isActive": true,
     "categories": [
       {
         "id": 3,
@@ -1320,11 +1320,11 @@
     ],
     "images": [
       {
-        "name": "grenitaus-consulting-logo.png",
-        "url": "assets/images/grenitaus-consulting-logo.png"
+        "name": "angular-cli.jpg",
+        "url": "assets/images/angular-cli.jpg"
       }
     ],
-    "canPreview": true,
+    "canPreview": false,
     "previewExpirationDate": "2017-03-28"
   },
   {
