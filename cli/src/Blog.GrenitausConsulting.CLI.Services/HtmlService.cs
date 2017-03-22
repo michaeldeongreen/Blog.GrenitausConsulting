@@ -299,7 +299,7 @@ namespace Blog.GrenitausConsulting.CLI.Services
 
         private void CopyAssets()
         {
-            string[] assetFolders = new string[] {"css","images","js", "fonts"};
+            string[] assetFolders = new string[] {"css","images","js", "fonts", "attachments" };
             File.Copy(string.Format(@"{0}\styles.css", _angularCliSrcPath), string.Format(@"{0}\styles.css",_htmlOutputPath),true);
             foreach (var assetFolder in assetFolders)
             {
