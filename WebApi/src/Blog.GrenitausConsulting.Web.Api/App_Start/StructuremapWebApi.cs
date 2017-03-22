@@ -18,8 +18,6 @@
 using System.Web.Http;
 using Blog.GrenitausConsulting.Web.Api.DependencyResolution;
 
-[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(Blog.GrenitausConsulting.Web.Api.App_Start.StructuremapWebApi), "Start")]
-
 namespace Blog.GrenitausConsulting.Web.Api.App_Start {
     public static class StructuremapWebApi {
         public static void Start() {
