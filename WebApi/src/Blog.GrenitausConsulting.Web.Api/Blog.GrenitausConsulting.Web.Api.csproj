@@ -212,6 +212,7 @@
     <Content Include="App_Data\html\how-to-pass-the-pmp-exam-on-your-first-attempt.html" />
     <Content Include="App_Data\html\how-to-set-sql-login-user-permissions-in-sql-azure.html" />
     <Content Include="App_Data\html\how-to-setup-continuous-deployment-for-a-sql-server-database-using-git-powershell-ssdt-and-teamcity.html" />
+    <Content Include="App_Data\html\i-have-finally-embraced-working-from-home.html" />
     <Content Include="App_Data\html\implement-async-wait-in-the-angular-2-tour-of-heroes-web-api.html" />
     <Content Include="App_Data\html\installing-plex-media-server-on-my-ubuntu-14-04-server.html" />
     <Content Include="App_Data\html\lessons-i-learned-after-being-laid-off-for-the-first-time.html" />

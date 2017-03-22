@@ -298,5 +298,13 @@
   {
     "id": 75,
     "name": "Fluent NHibernate"
+  },
+  {
+    "id": 76,
+    "name": "Remote Work"
+  },
+  {
+    "id": 77,
+    "name": "Working From Home"
   }
 ]
