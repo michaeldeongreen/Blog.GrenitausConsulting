@@ -2,9 +2,7 @@
 
 2) gc-cli build -prod
 
-3) Make sure http-service api url points to http://api.grenitausconsulting.com
-
-4) ng build -prod
+3) ng build -prod
 
 
 
