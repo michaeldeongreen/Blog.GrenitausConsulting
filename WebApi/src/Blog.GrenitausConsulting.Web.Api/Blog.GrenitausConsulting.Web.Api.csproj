@@ -256,7 +256,7 @@
     <Content Include="App_Data\configuration\categories.json" />
     <Content Include="App_Data\configuration\tags.json" />
     <Content Include="App_Data\configuration\quotes.json" />
-    <None Include="Properties\PublishProfiles\Test.pubxml" />
+    <None Include="Properties\PublishProfiles\Prod.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
