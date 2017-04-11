@@ -1,4 +1,4 @@
-<a href="assets/images/replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api.png"><img class="img-responsive" src="assets/replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api.png" alt="Grenitaus Consulting"></a>
+<a href="assets/images/replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api.png"><img class="img-responsive" src="assets/images/replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api.png" alt="Grenitaus Consulting"></a>
 <br /><br />
 In part 3 and final blog post of this series, I want to go into more detail about the ASP.Net Web API and the Windows Console Application that I wrote to help me complete the project of replacing my Wordpress blog with a custom Angular 2 application.  In you have not read part 2 of this series, you can find it <a href="post/replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-3" target="_blank">here</a>.
 <br /><br />
@@ -122,16 +122,12 @@ If I need to add a new blog entry, I just update the categories, tags and post-s
 <br /><br />
 As with all Software Development projects, there are always features that you can add or enhance.
 <br /><br />
-<b>http-service url</b>
-<br /><br />
-I have an Angular 2 service that is responsible for making REST calls to my Web API called http-service.  In side of the http-service, I have a variable called "url", that let's the service know where the Web API is located.  During development, this variable is set to "http://localhost:4200" but when I deploy, I have to manually change this variable to point to the Production Web API.  I did some research on how to configure this in (.json) file but wasn't able to get any of the solutions to work.
-<br /><br />
 <b>Blog Monitor</b>
 <br /><br />
 In a previous post, I alluded to the fact that I use a shared hosting service with GoDaddy.  I believe Godaddy has set the IIS <a href="https://technet.microsoft.com/en-us/library/cc733120(v=ws.10).aspx" target="_blank">Regular time intervals (in minutes)</a> setting to single digits, forcing the App Pool to recycle frequently and causing the Web API to reload the data into memory several times.  I created an object that I called the "BlogMonitor" that is configured to call the Web API in specified intervals to prevent the App Pool from shutting down. I may completely remove this feature or I might configured it to call the Angular 2 client as well.
 <br /><br />
 <b>Re-load Data Per Request in Development</b>
-
+<br /><br />
 Because the Web API loads the blog data on start up, if I am making changes to the blog and I want to see the changes, I have to stop the Web API and re-run it to load the changes.  I may configure the Web API to load data per request in Development, so I don't have to stop/start the Web API during Development.  If I do implement this functionality, it will use an HttpModule.
 <br /><br />
 <b>Comments Section</b>
