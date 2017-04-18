@@ -1668,10 +1668,10 @@
     "id": 38,
     "title": "How to Create, Configure, Deploy and Stop a Azure WebJob",
     "author": "Michael D. Green",
-    "postDate": "2017-03-28",
+    "postDate": "2017-04-18",
     "snippet": "Azure WebJobs are great but not very intuitive to work with.  In this blog post, Michael D. Green talks about how to create, configure and deploy a Azure WebJob.",
     "link": "how-to-create-configure-deploy-and-stop-a-azure-webjob",
-    "isActive": false,
+    "isActive": true,
     "categories": [
       {
         "id": 3,
@@ -1794,7 +1794,7 @@
         "url": "assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-023.png"
       }
     ],
-    "canPreview": true,
+    "canPreview": false,
     "previewExpirationDate": "2017-03-28"
   },
   {

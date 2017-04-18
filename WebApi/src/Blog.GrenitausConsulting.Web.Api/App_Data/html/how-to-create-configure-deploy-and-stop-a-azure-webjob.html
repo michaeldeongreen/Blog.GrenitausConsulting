@@ -254,13 +254,15 @@ After I did this, I observed that my SomeJob Table was indeed being populated wi
 <br /><br />
 <strong>Stopping the WebJob</strong>
 <br /><br />
+<b>Edit:</b>After this blog was created, Microsoft implemented a stop button in the Azure WebJob GUI.  The section below is still relevant if you want to know how to use the Azure WebJob Process Explorer.
+<br /><br />
 Once I had deployed my first WebJob, my next question was how do I stop it.  There didn't seem to be any GUI that would allow me to just stop the WebJob.  I made a small code change to make the output print a certain message, re-deployed and the changes were not reflected on the Log screens.  More troubling is that when I stopped the Web App, the WebJob continued to run.  Not knowing any better, I decided to go with the nuclear option and just delete the WebJob.  When I did this, I faced a few issues, one being, I had trouble re-starting the WebJob, once I had made changes and another issue, which I will talk about later, caused another major issue.
 <br /><br />
 Eventually, I found a wonderful post on the MSDN Forums about the "Process Explorer", which shows you all the process running for a particular Web App and more importantly, the ability to kill a process.  You can get to your Web App's Process Explorer by typing in the following:
 <br /><br />
 https://{sitename}.scm.azurewebsites.net/ProcessExplorer
 <br /><br />
-The screen should like like the below:
+The screen should look like the below:
 <br /><br />
 <a href="assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-020.png"><img class="img-responsive" src="assets/images/how-to-create-configure-deploy-and-stop-a-azure-webjob-020.png"></a>
 <br /><br />
@@ -288,5 +290,10 @@ If you are going to use TimerTrigger Functions to schedule tasks, you probably w
 <br /><br />
 Also, another issue I faced when my Local and Test Environment shared the same Storage Account was that when I didn't know how to stop a WebJob and opted to just delete it in Azure, for some reason, my Local instance in Visual Studio would no longer run.  I suspect that some type of Lock was placed on the Storage Account and because I deleted the WebJob, it was never released and therefore, my local instance could no longer access the Storage Account.  It was only when I created a new Storage Account for my Local environment that my Local instance would start to work again.  
 <br /><br />
-
+Another issue that I faced is that I couldn't get App.Config Transformations to work using <a href="https://marketplace.visualstudio.com/items?itemName=WillBuikMSFT.SlowCheetah-XMLTransforms" target="_blank">SlowCheetah</a>.  
+<br /><br />
+I recently created and deployed an Azure WebJob to multiple environments for one of my clients.  When I deployed to new environments, my WebJob would reference the wrong Database and Storage Accounts.  I eventually discovered that the App.Config files were not being transformed by FTP'ing into the VM that hosted the WebJob and inspecting the deployed App.Config file.  I tried to place the connection string values in the Azure Portal Application Settings Blade for the WebJob but this did not work either.  
+<br /><br />
+I ended up just creating multiple sections in my App.Config file and just manually commenting/uncommenting out the relevant values when deploying to a new environment.
+<br /><br />
 Finally, as I mentioned earlier, when I deployed my WebJob to Azure, I had to set the Storage Account connection strings in the Web App Application Settings connection string section to get the WebJob to run.  In my experience, as long as you have the correct values set in the web.config or app.config that is deployed to the server, the application would run fine.  WebJobs are the first Azure Apps where I had to explicitly set values in the Web App's Application settings connection string section.
