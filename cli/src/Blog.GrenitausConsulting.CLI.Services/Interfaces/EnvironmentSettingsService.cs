@@ -15,7 +15,7 @@ namespace Blog.GrenitausConsulting.CLI.Services.Interfaces
         IConfigurationManagerWrapper _configurationManagerWrapper;
         public EnvironmentSettings Get(string environment)
         {
-            _configurationManagerWrapper = new ConfigurationManagerWrapper(ConfigurationManager.AppSettings);
+            _configurationManagerWrapper = new ConfigurationManagerWrapper(ConfigurationManager.AppSettings, ConfigurationManager.ConnectionStrings);
 
             if (environment == "-dev")
                 return GetDevSettings();
@@ -26,19 +26,19 @@ namespace Blog.GrenitausConsulting.CLI.Services.Interfaces
 
         private EnvironmentSettings GetDevSettings()
         {
-            string domain = _configurationManagerWrapper.Convert("DevDomain").ToAString();
-            string jsonConfigDirectory = _configurationManagerWrapper.Convert("DevJsonConfigDirectory").ToAString();
-            string outputDirectory = _configurationManagerWrapper.Convert("DevOutputDirectory").ToAString();
-            string angularCliSrcDirtory = _configurationManagerWrapper.Convert("DevAngularCLISrctDirectory").ToAString();
+            string domain = _configurationManagerWrapper.AppSetting("DevDomain").ToAString();
+            string jsonConfigDirectory = _configurationManagerWrapper.AppSetting("DevJsonConfigDirectory").ToAString();
+            string outputDirectory = _configurationManagerWrapper.AppSetting("DevOutputDirectory").ToAString();
+            string angularCliSrcDirtory = _configurationManagerWrapper.AppSetting("DevAngularCLISrctDirectory").ToAString();
             return new EnvironmentSettings() { Domain = domain, JsonConfigDirectory = jsonConfigDirectory, OutputDirectory = outputDirectory, AngularCLISrcDirectory = angularCliSrcDirtory  };
         }
 
         private EnvironmentSettings GetProdSettings()
         {
-            string domain = _configurationManagerWrapper.Convert("ProdDomain").ToAString();
-            string jsonConfigDirectory = _configurationManagerWrapper.Convert("ProdJsonConfigDirectory").ToAString();
-            string outputDirectory = _configurationManagerWrapper.Convert("ProdOutputDirectory").ToAString();
-            string angularCliSrcDirtory = _configurationManagerWrapper.Convert("ProdAngularCLISrctDirectory").ToAString();
+            string domain = _configurationManagerWrapper.AppSetting("ProdDomain").ToAString();
+            string jsonConfigDirectory = _configurationManagerWrapper.AppSetting("ProdJsonConfigDirectory").ToAString();
+            string outputDirectory = _configurationManagerWrapper.AppSetting("ProdOutputDirectory").ToAString();
+            string angularCliSrcDirtory = _configurationManagerWrapper.AppSetting("ProdAngularCLISrctDirectory").ToAString();
             return new EnvironmentSettings() { Domain = domain, JsonConfigDirectory = jsonConfigDirectory, OutputDirectory = outputDirectory, AngularCLISrcDirectory = angularCliSrcDirtory };
         }
     }

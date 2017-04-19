@@ -8,7 +8,9 @@ namespace Blog.GrenitausConsulting.Common.Interfaces
 {
     public interface IConfigurationManagerWrapper
     {
-        IConfigurationManagerWrapper Convert(string key);
+        IConfigurationManagerWrapper AppSetting(string key);
+
+        string ConnectionString(string key);
 
         int ToAInt();
 

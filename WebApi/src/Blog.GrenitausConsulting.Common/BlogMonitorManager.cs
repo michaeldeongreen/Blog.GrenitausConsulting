@@ -13,20 +13,20 @@ namespace Blog.GrenitausConsulting.Common
     public sealed class BlogMonitorManager
     {
         private static readonly BlogMonitor _blogMonitor = new BlogMonitor();
-        private static IConfigurationManagerWrapper _configurationManagerWrapper = new ConfigurationManagerWrapper(ConfigurationManager.AppSettings);
+        private static IConfigurationManagerWrapper _configurationManagerWrapper = new ConfigurationManagerWrapper(ConfigurationManager.AppSettings, ConfigurationManager.ConnectionStrings);
 
         public static void Start()
         {
-            if (_configurationManagerWrapper.Convert("BlogMonitorEnabled").ToABool())
+            if (_configurationManagerWrapper.AppSetting("BlogMonitorEnabled").ToABool())
             {
-                int monitorInterval = _configurationManagerWrapper.Convert("BlogMonitorInterval").ToAInt();
+                int monitorInterval = _configurationManagerWrapper.AppSetting("BlogMonitorInterval").ToAInt();
                 _blogMonitor.Start(monitorInterval, HandleBlogMonitorElapsedEvent);
             }
         }
 
         public static void HandleBlogMonitorElapsedEvent(Object source, ElapsedEventArgs e)
         {
-            string url = _configurationManagerWrapper.Convert("BlogMonitorApiUrl").ToAString();
+            string url = _configurationManagerWrapper.AppSetting("BlogMonitorApiUrl").ToAString();
             var client = new WebClient();
             var content = client.DownloadString(url);
         }

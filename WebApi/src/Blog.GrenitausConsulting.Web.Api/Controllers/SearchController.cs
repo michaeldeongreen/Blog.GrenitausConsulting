@@ -22,7 +22,7 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
         {
             _pagingService = pagingService;
             _configurationManagerWrapper = configurationManagerWrapper;
-            _pageSize = _configurationManagerWrapper.Convert("PageSize").ToAInt();
+            _pageSize = _configurationManagerWrapper.AppSetting("PageSize").ToAInt();
         }
 
         [Route("api/search/{criteria}/page/{pagenumber}")]

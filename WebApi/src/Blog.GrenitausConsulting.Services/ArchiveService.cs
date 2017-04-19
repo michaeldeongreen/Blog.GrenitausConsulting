@@ -17,7 +17,7 @@ namespace Blog.GrenitausConsulting.Services
         public ArchiveService(IConfigurationManagerWrapper configurationManagerWrapper)
         {
             _configurationManagerWrapper = configurationManagerWrapper;
-            _archiveMonths = _configurationManagerWrapper.Convert("ArchiveMonths").ToAInt();
+            _archiveMonths = _configurationManagerWrapper.AppSetting("ArchiveMonths").ToAInt();
         }
         public IList<Archive> Get(IEnumerable<PostSummary> posts)
         {

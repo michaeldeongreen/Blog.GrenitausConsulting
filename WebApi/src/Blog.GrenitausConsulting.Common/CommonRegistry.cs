@@ -20,7 +20,9 @@ namespace Blog.GrenitausConsulting.Common
                 scan.WithDefaultConventions();
             });
 
-            For<IConfigurationManagerWrapper>().Use<ConfigurationManagerWrapper>().Ctor<NameValueCollection>().Is(ConfigurationManager.AppSettings);
+            For<IConfigurationManagerWrapper>().Use<ConfigurationManagerWrapper>()
+                .Ctor<NameValueCollection>().Is(ConfigurationManager.AppSettings)
+                .Ctor<ConnectionStringSettingsCollection>().Is(ConfigurationManager.ConnectionStrings);
         }
     }
 }
