@@ -119,6 +119,8 @@ according to github first checkin was 12 days until prod release
 
 * Try to see if this allows api/web to be hosted together
 	<add input="{REQUEST_URI}" matchType="Pattern" pattern="^/api/.*$" ignoreCase="true" negate="true" />
+Try this too:
+http://stackoverflow.com/questions/32062924/url-rewriting-breaks-web-api-calls
 
 improvements
 reload data per request on dev

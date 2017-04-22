@@ -20,7 +20,6 @@ import { PostComponent } from './post/post.component';
 import { AboutComponent } from './about/about.component';
 import { CategoryComponent } from './category/category.component';
 import { TagComponent } from './tag/tag.component';
-import { SeoService } from './seo.service';
 import { ArchivesComponent } from './archives/archives.component';
 import { ArchiveComponent } from './archive/archive.component';
 import { PreviewComponent } from './preview/preview.component';
@@ -54,7 +53,7 @@ import { environment } from '../environments/environment';
       AppRoutingModule,
       MetaModule.forRoot()
   ],
-  providers: [HttpService, PagerService, SharedEmitterService, SeoService],
+  providers: [HttpService, PagerService, SharedEmitterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

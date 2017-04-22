@@ -3,7 +3,6 @@ import { HttpService } from '../http.service';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from '../post';
 import { Observable } from 'rxjs/Observable';
-import { SeoService } from '../seo.service';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { MetaService } from '@nglibs/meta';
 import { SharedEmitterService } from '../shared-emitter.service';
@@ -26,7 +25,6 @@ export class PostComponent implements OnInit {
 
     constructor(private httpService: HttpService,
         private route: ActivatedRoute,
-        private seoService: SeoService,
         private location: Location,
         private readonly metaService: MetaService,
         private sharedEmitterService: SharedEmitterService,
@@ -71,7 +69,6 @@ export class PostComponent implements OnInit {
           .subscribe(data => {
               this.alsoOnTotal = data.total;
               this.alsoOn = data.posts;
-              //this.busy = false;
           });
   }
 

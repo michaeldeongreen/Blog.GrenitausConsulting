@@ -1,0 +1,13 @@
+4/21/2017
+1) Upgraded to Typescript 2.2.2
+2) Upgraded to angular-cli 1.0.0
+3) Upgraded from Angular 2 to Angular 4
+
+Issues:
+	@nglibs/meta had issues.  I had to remove the below services that used them and excluded SeoService from the project:
+	1) SeoService
+	2) MetaService
+	
+	To be able to use the MetaService, I had to:
+	1) Upgrade @nglibs/meta to the version that uses angular 4
+	2) Upgrade zone.js
