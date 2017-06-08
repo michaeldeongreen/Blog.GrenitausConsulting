@@ -1,8 +1,16 @@
-1) Public Web Api
+New PC:
+1) Add gc-cli executable to Environment System Variables
 
-2) gc-cli build -prod
+2) in the gc-cli app.config, ensure that the directory paths are correct
 
-3) ng build -prod
+Existing PC:
+3) Publish Web Api
+
+4) For the new blog, ensure that the post-summaries.json entry for isActive is true and canPreview is false
+
+5) In bash, type: gc-cli build -prod
+
+6) In bash, navigate to the client folder nad type: ng build -prod
 
 
 
