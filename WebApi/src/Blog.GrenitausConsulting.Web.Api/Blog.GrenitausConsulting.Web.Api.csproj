@@ -225,6 +225,7 @@
     <Content Include="App_Data\html\what-are-the-pros-and-cons-of-agile-scrum-part-1.html" />
     <Content Include="App_Data\html\what-are-the-pros-and-cons-of-agile-scrum-part-2.html" />
     <Content Include="App_Data\html\why-i-started-blogging.html" />
+    <Content Include="App_Data\html\why-you-need-to-shed-the-new-guy-title-as-fast-as-possible.html" />
     <Content Include="App_Data\html\why-you-should-never-accept-a-counteroffer.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -272,7 +273,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49529</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
