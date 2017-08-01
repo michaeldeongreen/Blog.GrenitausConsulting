@@ -1834,10 +1834,10 @@
     "id": 40,
     "title": "Why You Need to Shed the New Guy Title as Fast as Possible",
     "author": "Michael D. Green",
-    "postDate": "2017-08-10",
+    "postDate": "2017-08-02",
     "snippet": "I wanted to write a quick blog on why I think it is extremely important for every consultant to shed the new guy title as fast as possible when they join a new project.",
     "link": "why-you-need-to-shed-the-new-guy-title-as-fast-as-possible",
-    "isActive": false,
+    "isActive": true,
     "categories": [
       {
         "id": 1,
@@ -1861,7 +1861,7 @@
     "images": [
       {
         "name": "Blogs-By-Grenitaus.png",
-        "url": "assets/images/Blogs-By-Grenitaus.png"
+        "url": "assets/images/why-you-need-to-shed-the-new-guy-title-as-fast-as-possible-001.png"
       }
     ],
     "canPreview": true,
