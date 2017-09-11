@@ -1,0 +1,462 @@
+<a href="assets/images/grenitaus-consulting-logo.png"><img class="img-responsive" src="assets/images/grenitaus-consulting-logo.png" alt="Grenitaus Consulting"></a>
+<br><br>
+
+In this blog, I wanted to take some time to walkthrough how to implement a generic [link]Repository Pattern[/link] and the [link]Unit of Work Pattern[/url] using Entity Framework 6.
+
+<h3>Assumptions</h3>
+... KNow EF, csharp, have vs2015+
+....
+
+<h3>Tech Stack</h3>
+...
+....
+
+<h3>Background!</h3>
+<br><br>
+My main motivation for writing this blog post is that in one of my projects, which I took over, the Unit of Work and Repository Pattern have been implemented.  I came across a few issues with how the developer implemented these patterns and so I thought it would be a good idea to create a project and demonstrate an alternative way on how to implement these two very common Software Design Patterns.
+
+<br><br>
+The previous developer implemented what I call a "reverse" Unit of Work Pattern.  What I mean by this is that usually when the Unit of Work and Repository Pattern are implemented, the development team will work with a Unit of Work Object, which isolates and centralizes the Database Context.  In this particular project, the developer [link]injects[/link] the Unit of Work Object to each Domain Repository and the developers interact with Domain Repositories.  Here is some sample pseudo code:
+
+<pre><code class="language-csharp">
+	//unit of work
+	public class UnitOfWork : IUnitOfWork
+	{
+		//implementation
+	}
+	
+	//
+	pubic class Repository<T> : IRepository<T>
+	{
+		public Repository(IUnitOfWork uow)
+		{
+			//implementation
+		}
+	}
+
+	//domain repository
+	public class LoginRepository : Repository<Login>, ILoginRepository
+	{
+		public LoginRepository(IUnitOfWork uow) : base(uow) {
+		}
+	}
+	
+	//some api controller
+	public class LoginController
+	{
+		public LoginController(ILoginRepository loginRepository)
+		{
+			_loginRepository = loginRepository;
+			//implementation
+		}
+		
+		public IEnumerable<Login> Get(int Id)
+		{
+			return _loginRepository.Get(Id);
+		}
+	}
+</code></pre>
+
+<br><br>
+
+The implementation is fairly well done, I have just ran into a few issues, namely:
+<ul>
+	<li>You have to inject each Domain Repository that you want to use into each class</li>
+	<li>If you have Domains that are not related ie child, grandchild etc etc, you cannot save them in the same transaction because each Domain has their own Repository.</li>
+	<li>When testing, you could end up mocking several Domain Repositories, if the class you are testing uses several Domain Repositories</li>
+</ul>
+
+With my implementation, I seek to provide the following:
+<ul>
+	<li>1 object, ie a Unit of Work object that developers use to interact with the Database and inject into classes</li>
+	<li>A Unit of Work object, that can be mocked for testing</li>
+	<li>Domain Repositories share common interfaces but can also implement different interfaces as Domain Objects may need extra functionality</li>
+	<li></li>
+</ul>
+
+
+<h3>Domains</h3>
+<br><br>
+Below is a basic Entity Relationship Diagram of the entities that I will work with in this blog post:
+<br><br>
+<a href="assets/images/implementing-a-mockable-generic-repository-and-unit-of-work pattern-using-entity-framework-6-and-c-sharp-001.png"><img class="img-responsive" src="assets/images/implementing-a-mockable-generic-repository-and-unit-of-work pattern-using-entity-framework-6-and-c-sharp-001.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+First, I will make a Base Entity interface for all domains to implement:
+
+<pre><code class="language-csharp">
+namespace FromScratch.Domain.Interfaces
+{
+    public interface IEntity
+    {
+        int Id { get; set; }
+    }
+}
+</code></pre>
+
+<br><br>
+
+Below, I have created each Domain Object:
+
+<pre><code class="language-csharp">
+namespace FromScratch.Domain.Entities
+{
+    public class Employee : IEntity
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("EmployeeId")]
+        public int Id { get; set; }
+        [Required]
+        [StringLength(100)]
+        public virtual string FirstName { get; set; }
+        [Required]
+        [StringLength(100)]
+        public virtual string LastName { get; set; }
+        public virtual Company Company { get; set; }
+        [ForeignKey("Company")]
+        public virtual int CompanyId { get; set; }
+    }
+}
+
+namespace FromScratch.Domain.Entities
+{
+    public class Company : IEntity
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("CompanyId")]
+        public int Id { get; set; }
+        [StringLength(300)]
+        public virtual string Name { get; set; }
+        public virtual ICollection<Employee> Employees { get; set; }
+    }
+}
+
+namespace FromScratch.Domain.Entities
+{
+    public class Log : IEntity
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("LogId")]
+        public int Id { get; set; }
+        [StringLength(4000)]
+        public virtual string Description { get; set; }
+    }
+}
+</code></pre>
+
+<h3>Unit of Work Implementation</h3>
+
+<br><br>
+
+Next, I will create an interface that the Entity Framework Database Context will implement and create the DbContext.  Creating this interface will allow us to mock the DbContext when performing Unit Tests:
+
+<pre><code class="language-csharp">
+
+namespace FromScratch.Domain.Interfaces
+{
+    public interface IDbContext : IDisposable
+    {
+        DbSet<TEntity> Set<TEntity>() where TEntity : class;
+        DbEntityEntry Entry(object entity);
+        int SaveChanges();
+    }
+}
+</code></pre>
+
+<br><br>
+
+I have created a external mapping class to map Entity Framework entities.  This class will be called by the DbContext OnModelCreating method:
+
+<br><br>
+
+<pre><code class="language-csharp">
+namespace FromScratch.Domain.Infrastructure
+{
+    internal class DomainMap
+    {
+        private readonly DbModelBuilder _modelBuilder;
+        public DomainMap(DbModelBuilder modelBuilder)
+        {
+            _modelBuilder = modelBuilder;
+        }
+        public void MapEntities()
+        {
+            MapCompany();
+            MapEmployee();
+            MapLog();
+        }
+
+        private void MapCompany()
+        {
+            _modelBuilder.Entity<Company>().ToTable("Company");
+        }
+        private void MapEmployee()
+        {
+            
+            _modelBuilder.Entity<Employee>().ToTable("Employee")
+                .HasRequired(e => e.Company)
+                .WithMany(e => e.Employees)
+                .HasForeignKey(e => e.CompanyId);
+        }
+        private void MapLog()
+        {
+            _modelBuilder.Entity<Log>().ToTable("Log");
+        }
+    }
+}
+</code></pre>
+
+<br><br>
+
+<pre><code class="language-csharp">
+namespace FromScratch.Domain.Infrastructure
+{
+    public class DomainDbContext : DbContext, IDbContext
+    {
+        public DomainDbContext(string connectionString) : base(connectionString) {
+        }
+
+        public override int SaveChanges() 
+        {
+            return base.SaveChanges();
+        }
+        public override DbSet<TEntity> Set<TEntity>() 
+        {
+            return base.Set<TEntity>();
+        }
+
+        public new DbEntityEntry Entry(object entity)
+        {
+            return base.Entry(entity);
+        }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer<DomainDbContext>(new CreateDatabaseIfNotExists<DomainDbContext>());
+            DomainMap map = new DomainMap(modelBuilder);
+            map.MapEntities();
+        }
+    }
+}
+</code></pre>
+
+<br><br>
+
+<h3>Generic Repository</h3>
+
+<br><br>
+
+Next, I will create the generic repository interface using generics.  I am specifiying that any class that implements this interface must be a reference type and of type IEntity, the interface we created earlier:
+
+<br><br>
+
+<pre><code class="language-csharp">
+namespace FromScratch.Domain.Interfaces
+{
+    public interface IRepository<TEntity> where TEntity : class, IEntity
+    {
+        IQueryable<TEntity> GetAll();
+        TEntity Get(object id);
+        IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> filter);
+        TEntity Add(TEntity entity);
+        void Delete(TEntity entity);
+        void Update(TEntity entity);
+    }
+}
+</code></pre>
+
+<br><br>
+
+Next, I will implement the IRepository interface.  Notice that I am injecting the IDbContext into the contructor.  I will use [link]StructureMap[/link] to perform [link]Dependency Injection[/link].  I have made the IDbContext protected so all Repository classes who implement this class will have access to the IDbContext implementation.  Also, in this particular version, I didn't implemented async methods but those are fairly straight forwoard to add:
+
+<h3>Repositories</h3>
+
+<br><br>
+
+<pre><code class="language-csharp">
+namespace FromScratch.Domain.Infrastructure
+{
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity
+    {
+        protected readonly IDbContext _dbContext;
+        private readonly DbSet<TEntity> _dbSet;
+        public Repository(IDbContext dbContext)
+        {
+            _dbContext = dbContext;
+            _dbSet = _dbContext.Set<TEntity>();
+        }
+        public TEntity Add(TEntity entity)
+        {
+            return _dbSet.Add(entity);
+        }
+
+        public void Delete(TEntity entity)
+        {
+            if (_dbContext.Entry(entity).State == EntityState.Detached)
+            {
+                _dbSet.Attach(entity);
+            }
+            _dbSet.Remove(entity);
+        }
+
+        public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> filter)
+        {
+            IQueryable<TEntity> query = _dbSet;
+
+            if (filter != null)
+            {
+                query = _dbSet.Where(filter);
+            }
+
+            return query.ToList();
+        }
+
+        public TEntity Get(object id)
+        {
+            return _dbSet.Find(id);
+        }
+
+        public IQueryable<TEntity> GetAll()
+        {
+            return _dbSet;
+        }
+
+        public void Update(TEntity entity)
+        {
+            _dbSet.Attach(entity);
+            _dbContext.Entry(entity).State = EntityState.Modified;
+        }
+    }
+}
+</code></pre>
+
+<br><br>
+
+Now let's create each entity's repository interface and implement the repository classe.  The reason why I have designed the repository in this manner ie each entity implements its own repository is because inevitably, some entities will need custom queries that do not match IRepository.  So what I have done is use IRepository to share common functionality but given each entity their own repository interface so it may implement custom functionality, without having to touch IRepository.  I have demonstrated this with the ICompanyRepository.
+<br><br>
+Finally, notice that I am injecting the IDbContext into each repository implementation so that any custom implementation will have access to the Database Context.
+<br><br>
+
+<pre><code class="language-csharp">
+namespace FromScratch.Domain.Repositories
+{
+    public class LogRepository : Repository<Log>, ILogRepository
+    {
+        public LogRepository(IDbContext dbContext) : base(dbContext)
+        {
+
+        }
+    }
+}
+
+namespace FromScratch.Domain.Repositories
+{
+    public class LogRepository : Repository<Log>, ILogRepository
+    {
+        public LogRepository(IDbContext dbContext) : base(dbContext)
+        {
+
+        }
+    }
+}
+
+namespace FromScratch.Domain.Repositories
+{
+    public interface IEmployeeRepository : IRepository<Employee>
+    {
+    }
+}
+
+namespace FromScratch.Domain.Repositories
+{
+    public class EmployeeRepository : Repository<Employee>, IEmployeeRepository
+    {
+        public EmployeeRepository(IDbContext dbContext) : base(dbContext)
+        {
+        }
+    }
+}
+
+
+namespace FromScratch.Domain.Repositories
+{
+    public interface ICompanyRepository : IRepository<Company>
+    {
+        IEnumerable<Company> GetByName(string name);
+    }
+}
+
+namespace FromScratch.Domain.Repositories
+{
+    public class CompanyRepository : Repository<Company>, ICompanyRepository
+    {
+        public CompanyRepository(IDbContext dbContext) : base(dbContext)
+        {
+        }
+
+        public IEnumerable<Company> GetByName(string name)
+        {
+            var companies = _dbContext.Set<Company>()
+                .Where(c => c.Name.Contains(name));
+            return companies;
+        }
+    }
+}
+</code></pre>
+
+<br><br>
+
+<h3>Unit of Work</h3>
+<br><br>
+Now, let's create the Unit of Work interface and the class that implements this interface.  As you will see below, I am injecting the IDbContext into the UnitOfWork class.  Also, each Domain Repository will have an exposed public property in the UnitOfWork class.  In this version, I have only created a Save method, which calls the DbContext to save changes to the Database.
+
+<br><br>
+
+<pre><code class="language-csharp">
+namespace FromScratch.Domain.Interfaces
+{
+    public interface IUnitOfWork
+    {
+        ICompanyRepository CompanyRepository{ get; }
+        IEmployeeRepository EmployeeRepository { get; }
+        ILogRepository LogRepository { get; }
+        int Save();
+    }
+}
+
+namespace FromScratch.Domain.Infrastructure
+{
+    public class UnitOfWork : IUnitOfWork
+    {
+        private readonly IDbContext _dbContext;
+        private ICompanyRepository _companyRepository;
+        private IEmployeeRepository _employeeRepository;
+        private ILogRepository _logRepository;
+        public ICompanyRepository CompanyRepository { get { return _companyRepository = _companyRepository ?? new CompanyRepository(_dbContext); } }
+        public IEmployeeRepository EmployeeRepository { get { return _employeeRepository = _employeeRepository ?? new EmployeeRepository(_dbContext); } }
+        public ILogRepository LogRepository { get { return _logRepository = _logRepository ?? new LogRepository(_dbContext); } }
+        public UnitOfWork(IDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
+        public int Save()
+        {
+            return _dbContext.SaveChanges();
+        }
+    }
+}
+</code></pre>
+
+<br><br>
+
+<h3>Usage</h3>
+
+<h3>Unit Test</h3>
+
+
+Show StructureMap Code for IDbContext
+Provide link to code on Github

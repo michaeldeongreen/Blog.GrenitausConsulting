@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -202,6 +203,7 @@
     <Content Include="App_Data\html\how-to-setup-continuous-deployment-for-a-sql-server-database-using-git-powershell-ssdt-and-teamcity.html" />
     <Content Include="App_Data\html\i-have-finally-embraced-working-from-home.html" />
     <Content Include="App_Data\html\implement-async-wait-in-the-angular-2-tour-of-heroes-web-api.html" />
+    <Content Include="App_Data\html\implementing-a-mockable-generic-repository-and-unit-of-work pattern-using-entity-framework-6-and-c-sharp.html" />
     <Content Include="App_Data\html\installing-plex-media-server-on-my-ubuntu-14-04-server.html" />
     <Content Include="App_Data\html\lessons-i-learned-after-being-laid-off-for-the-first-time.html" />
     <Content Include="App_Data\html\my-decision-to-trade-in-my-git-gui-client-for-git-bash.html" />

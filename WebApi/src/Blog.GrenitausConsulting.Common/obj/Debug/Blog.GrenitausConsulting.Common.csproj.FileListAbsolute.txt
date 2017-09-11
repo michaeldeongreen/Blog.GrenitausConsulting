@@ -11,3 +11,4 @@ C:\Git\Blog.GrenitausConsulting\WebApi\src\Blog.GrenitausConsulting.Common\obj\D
 C:\Git\Blog.GrenitausConsulting\WebApi\src\Blog.GrenitausConsulting.Common\bin\Debug\StructureMap.dll
 C:\Git\Blog.GrenitausConsulting\WebApi\src\Blog.GrenitausConsulting.Common\bin\Debug\StructureMap.Net4.dll
 C:\Git\Blog.GrenitausConsulting\WebApi\src\Blog.GrenitausConsulting.Common\bin\Debug\Newtonsoft.Json.xml
+C:\Git\Blog.GrenitausConsulting\WebApi\src\Blog.GrenitausConsulting.Common\obj\Debug\Blog.GrenitausConsulting.Common.csproj.CoreCompileInputs.cache

@@ -306,5 +306,17 @@
   {
     "id": 77,
     "name": "Working From Home"
+  },
+  {
+    "id": 78,
+    "name": "Visual Studio"
+  },
+  {
+    "id": 79,
+    "name": "Entity Framework"
+  },
+  {
+    "id": 80,
+    "name": "Design Patterns"
   }
 ]
