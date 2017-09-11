@@ -4,15 +4,16 @@
 In this blog, I wanted to take some time to walkthrough how to implement a generic [link]Repository Pattern[/link] and the [link]Unit of Work Pattern[/url] using Entity Framework 6.
 
 <h3>Assumptions</h3>
-... KNow EF, csharp, have vs2015+
-....
+In this blog entry, I make the following assumptions:
+<ul>
+	<li>You have a solid understanding of Entity Framework</li>
+	<li>You have a solid understanding of C#</li>
+	<li>You have a solid understanding of the Repository and Unit of Work Pattern</li>
+</ul>
 
-<h3>Tech Stack</h3>
-...
-....
+<br><br>
 
 <h3>Background!</h3>
-<br><br>
 My main motivation for writing this blog post is that in one of my projects, which I took over, the Unit of Work and Repository Pattern have been implemented.  I came across a few issues with how the developer implemented these patterns and so I thought it would be a good idea to create a project and demonstrate an alternative way on how to implement these two very common Software Design Patterns.
 
 <br><br>
@@ -76,7 +77,6 @@ With my implementation, I seek to provide the following:
 
 
 <h3>Domains</h3>
-<br><br>
 Below is a basic Entity Relationship Diagram of the entities that I will work with in this blog post:
 <br><br>
 <a href="assets/images/implementing-a-mockable-generic-repository-and-unit-of-work pattern-using-entity-framework-6-and-c-sharp-001.png"><img class="img-responsive" src="assets/images/implementing-a-mockable-generic-repository-and-unit-of-work pattern-using-entity-framework-6-and-c-sharp-001.png" alt="Grenitaus Consulting"></a>
@@ -149,8 +149,6 @@ namespace FromScratch.Domain.Entities
 </code></pre>
 
 <h3>Unit of Work Implementation</h3>
-
-<br><br>
 
 Next, I will create an interface that the Entity Framework Database Context will implement and create the DbContext.  Creating this interface will allow us to mock the DbContext when performing Unit Tests:
 
@@ -246,9 +244,6 @@ namespace FromScratch.Domain.Infrastructure
 <br><br>
 
 <h3>Generic Repository</h3>
-
-<br><br>
-
 Next, I will create the generic repository interface using generics.  I am specifiying that any class that implements this interface must be a reference type and of type IEntity, the interface we created earlier:
 
 <br><br>
@@ -273,8 +268,6 @@ namespace FromScratch.Domain.Interfaces
 Next, I will implement the IRepository interface.  Notice that I am injecting the IDbContext into the contructor.  I will use [link]StructureMap[/link] to perform [link]Dependency Injection[/link].  I have made the IDbContext protected so all Repository classes who implement this class will have access to the IDbContext implementation.  Also, in this particular version, I didn't implemented async methods but those are fairly straight forwoard to add:
 
 <h3>Repositories</h3>
-
-<br><br>
 
 <pre><code class="language-csharp">
 namespace FromScratch.Domain.Infrastructure
@@ -410,7 +403,6 @@ namespace FromScratch.Domain.Repositories
 <br><br>
 
 <h3>Unit of Work</h3>
-<br><br>
 Now, let's create the Unit of Work interface and the class that implements this interface.  As you will see below, I am injecting the IDbContext into the UnitOfWork class.  Also, each Domain Repository will have an exposed public property in the UnitOfWork class.  In this version, I have only created a Save method, which calls the DbContext to save changes to the Database.
 
 <br><br>
@@ -454,8 +446,65 @@ namespace FromScratch.Domain.Infrastructure
 <br><br>
 
 <h3>Usage</h3>
+Below are some of the ways how you would use the Unit of Work object in a Web Api controller:
 
-<h3>Unit Test</h3>
+<br><br>
+
+<pre><code class="language-csharp">
+namespace FromScratch.Web.Api.Controllers
+{
+    public class EmployeeController : ApiController
+    {
+		private readonly IUnitOfWork _uow;
+		
+        public EmployeeController(IUnitOfWork uow)
+		{
+			_uow = uow;
+        }
+
+        [HttpGet]
+        public IEnumerable<Employee> Get()
+        {
+            return _uow.EmployeeRepository.GetAll();
+        }
+		
+		[HttpPost]
+		public Hero Post([FromBody]Employee employee)
+		{
+			return _uow.EmployeeRepository.Add(hero);
+		}			
+    }
+}
+</code></pre>
+
+<br><br>
+
+<h3>Unit Test Example</h3>
+
+Given some log service that uses the Unit of Work object to save a log entry, below is how you could use [link]moq[/link] to mock the Unit of Work object:
+<br><br>
+<pre><code class="language-csharp">
+namespace FromScratch.Unit.Tests
+{
+    [TestFixture]
+    public class LogServiceTests
+    {
+        [Test]
+        public void Can_Log_An_Entry_Test()
+        {
+            //given
+            string logEntry = "some log entry";
+            var uowMock = new Mock<IUnitOfWork>();
+            uowMock.Setup(u => u.LogRepository.Add(It.IsAny<Log>()));
+            ILogService service = new LogService(uowMock.Object);
+            //when
+            bool result = service.Log(logEntry);
+            //then
+            value.Should().BeTrue();
+        }
+    }
+}
+</code></pre>
 
 
 Show StructureMap Code for IDbContext
