@@ -1872,8 +1872,8 @@
     "title": "Implementing a Mockable Generic Repository and Unit of Work Pattern Using Entity Framework 6 and C#",
     "author": "Michael D. Green",
     "postDate": "2017-09-12",
-    "snippet": "In this blog, I wanted to take some time to walkthrough how to implement a generic [link]Repository Pattern[/link] and the [link]Unit of Work Pattern[/url] using Entity Framework 6.",
-    "link": "implementing-a-mockable-generic-repository-and-unit-of-work pattern-using-entity-framework-6-and-c-sharp",
+    "snippet": "In this blog, I wanted to take some time to walkthrough how to implement a generic Repository Pattern and the Unit of Work Pattern using Entity Framework 6.",
+    "link": "implementing-a-mockable-generic-repository-and-unit-of-work-pattern-using-entity-framework-6-and-c-sharp",
     "isActive": true,
     "categories": [
       {
@@ -1905,7 +1905,7 @@
         "url": "assets/images/grenitaus-consulting-logo.png"
       },
       {
-        "name": "implementing-a-mockable-generic-repository-and-unit-of-work pattern-using-entity-framework-6-and-c-sharp-001.png",
+        "name": "implementing-a-mockable-generic-repository-and-unit-of-work-pattern-using-entity-framework-6-and-c-sharp-001.png",
         "url": "assets/images/implementing-a-mockable-generic-repository-and-unit-of-work pattern-using-entity-framework-6-and-c-sharp-001.png"
       }
     ],

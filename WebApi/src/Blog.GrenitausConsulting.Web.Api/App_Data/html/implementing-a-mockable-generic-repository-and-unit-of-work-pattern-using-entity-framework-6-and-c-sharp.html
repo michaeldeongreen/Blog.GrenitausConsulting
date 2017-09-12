@@ -17,7 +17,7 @@ In this blog entry, I make the following assumptions:
 My main motivation for writing this blog post is that in one of my projects, which I took over, the Unit of Work and Repository Pattern have been implemented.  I came across a few issues with how the developer implemented these patterns and so I thought it would be a good idea to create a project and demonstrate an alternative way on how to implement these two very common Software Design Patterns.
 
 <br><br>
-The previous developer implemented what I call a "reverse" Unit of Work Pattern.  What I mean by this is that usually when the Unit of Work and Repository Pattern are implemented, the development team will work with a Unit of Work object, which isolates and centralizes the Database Context.  In this particular project, the developer <a href="https://en.wikipedia.org/wiki/Dependency_injection" target="_blank">injects</a> the Unit of Work object to each domain Repository and the developers interact with domain repositories.  Here is some sample pseudo code:
+The previous developer implemented what I call a "reverse" Unit of Work Pattern.  What I mean by this is that usually when the Unit of Work and Repository Pattern are implemented, the development team will work with a Unit of Work object, which isolates and centralizes the Database Context.  In this particular project, the developer <a href="https://en.wikipedia.org/wiki/Dependency_injection" target="_blank">injects</a> the Unit of Work object into each domain Repository and the developers interact with domain repositories.  Here is some sample pseudo code:
 
 <pre><code class="language-csharp">
 	//unit of work
@@ -39,6 +39,7 @@ The previous developer implemented what I call a "reverse" Unit of Work Pattern.
 	public class LoginRepository : Repository<Login>, ILoginRepository
 	{
 		public LoginRepository(IUnitOfWork uow) : base(uow) {
+			//implementation
 		}
 	}
 	
@@ -63,7 +64,7 @@ The previous developer implemented what I call a "reverse" Unit of Work Pattern.
 <b>The implementation is fairly well done, I have just ran into a few issues, namely:</b>
 <ul>
 	<li>You have to inject each domain repository that you want to use into each class</li>
-	<li>If you have domains that are not related ie child, grandchild etc etc, you cannot save them in the same transaction because each domain has their own repository.</li>
+	<li>If you have domains that are not related ie child, grandchild etc etc, you cannot save them in the same transaction because each domain has its own repository.</li>
 	<li>When testing, you could end up mocking several domain repositories, if the class you are testing uses several domain repositories</li>
 </ul>
 
@@ -71,7 +72,7 @@ The previous developer implemented what I call a "reverse" Unit of Work Pattern.
 <ul>
 	<li>1 object, ie a Unit of Work object that developers use to interact with the Database and inject into classes</li>
 	<li>A Unit of Work object, that can be mocked for testing</li>
-	<li>Domain Repositories share common interfaces but can also implement different interfaces as some domain objects may need extra functionality</li>
+	<li>Domain repositories share common interfaces but can also implement different interfaces as some domain objects may need extra functionality</li>
 	<li></li>
 </ul>
 
@@ -94,7 +95,7 @@ public interface IEntity
 
 <br><br>
 
-Below, I have created each Domain object:
+Below, I have created each domain object:
 
 <pre><code class="language-csharp">
 public class Employee : IEntity
@@ -262,7 +263,7 @@ public interface IRepository<TEntity> where TEntity : class, IEntity
 
 <br><br>
 
-Next, I will implement the IRepository interface.  Notice that I am injecting the IDbContext into the contructor.  I will use <a href="http://structuremap.github.io/" target="_blank">StructureMap</a> to perform <a href="https://en.wikipedia.org/wiki/Dependency_injection" target="_blank">Dependency Injection</a>.  I have made the IDbContext protected so all Repository classes who implement this class will have access to the IDbContext implementation.  Also, in this particular version, I didn't implemented async methods but those are fairly straight forwoard to add:
+Next, I will implement the IRepository interface.  Notice that I am injecting the IDbContext into the contructor.  I will use <a href="http://structuremap.github.io/" target="_blank">StructureMap</a> to perform <a href="https://en.wikipedia.org/wiki/Dependency_injection" target="_blank">Dependency Injection</a>.  I have made the IDbContext protected so all classes who implement the Repository class will have access to the IDbContext implementation.  Also, in this particular version, I didn't implement any async methods but those are fairly straight forwoard to add:
 
 <h3>The Repositories!</h3>
 
@@ -325,9 +326,11 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, I
 
 <br><br>
 
-Now let's create each entity's repository interface and implement the repository classe.  The reason why I have designed the repository in this manner ie each entity implements its own repository is because inevitably, some entities will need custom queries that do not match IRepository.  So what I have done is use IRepository to share common functionality but given each entity their own repository interface so it may implement custom functionality, without having to touch IRepository.  I have demonstrated this with the ICompanyRepository.
+Now let's create each entity's repository interface and implement the repository class.  The reason why I have designed the repository in this manner ie each entity implements its own repository is because inevitably, some entities will need custom queries that do not match the IRepository interface.  
 <br><br>
-Finally, notice that I am injecting the IDbContext into each repository implementation so that any custom implementation will have access to the Database Context.
+So what I have done is use IRepository to share common functionality but I have also given each entity their own repository interface so they may implement custom functionality, without having to touch IRepository.  I have demonstrated this with the ICompanyRepository.
+<br><br>
+Finally, notice that I am injecting the IDbContext into each repository implementation so that any custom implementation will have access to the Database Context wrapper class.
 <br><br>
 
 <pre><code class="language-csharp">
@@ -437,7 +440,7 @@ public class UnitOfWork : IUnitOfWork
 
 <br><br>
 
-<h3>How to use?</h3>
+<h3>How to use the Unit of Work object?</h3>
 Below are some examples of how you would use the Unit of Work object in a Web Api controller:
 
 <br><br>
@@ -498,7 +501,7 @@ public class LogServiceTests
 
 <h3>Design Weaknesses!</h3>
 Every design has pros and cons and what I have implemented in this blog is no exception.  I think the main weakness of this design is that there are 4 steps one has to take to add a new repository:
-<br>
+<br><br>
 <ol>
 	<li>Create a new IDomainRepository</li>
 	<li>Implement create a new DomainRepository and implement the new IDomainRepository</li>
@@ -509,4 +512,4 @@ Every design has pros and cons and what I have implemented in this blog is no ex
 <br><br>
 
 <h3>Conclusion!</h3>
-This concludes another blog entry for me and I hope that this post was beneficial to you in some way.  You can find the completed code on Github <a href="https://github.com/michaeldeongreen/FromScratch" target="_blank">here</a>.
+This concludes another blog entry for me and I hope that this post was beneficial to you in some way.  You can find the complete code on Github <a href="https://github.com/michaeldeongreen/FromScratch" target="_blank">here</a>.
