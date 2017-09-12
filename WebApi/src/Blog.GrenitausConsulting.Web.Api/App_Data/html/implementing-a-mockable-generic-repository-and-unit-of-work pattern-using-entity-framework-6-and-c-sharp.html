@@ -1,7 +1,7 @@
 <a href="assets/images/grenitaus-consulting-logo.png"><img class="img-responsive" src="assets/images/grenitaus-consulting-logo.png" alt="Grenitaus Consulting"></a>
 <br><br>
 
-In this blog, I wanted to take some time to walkthrough how to implement a generic [link]Repository Pattern[/link] and the [link]Unit of Work Pattern[/url] using Entity Framework 6.
+In this blog, I wanted to take some time to walkthrough how to implement a generic <a href="https://msdn.microsoft.com/en-us/library/ff649690.aspx" target="_blank">Repository Pattern</a> and the <a href="http://wiki.c2.com/?UnitOfWork" target="_blank">Unit of Work Pattern</a> using Entity Framework 6.
 
 <h3>Assumptions</h3>
 In this blog entry, I make the following assumptions:
@@ -17,7 +17,7 @@ In this blog entry, I make the following assumptions:
 My main motivation for writing this blog post is that in one of my projects, which I took over, the Unit of Work and Repository Pattern have been implemented.  I came across a few issues with how the developer implemented these patterns and so I thought it would be a good idea to create a project and demonstrate an alternative way on how to implement these two very common Software Design Patterns.
 
 <br><br>
-The previous developer implemented what I call a "reverse" Unit of Work Pattern.  What I mean by this is that usually when the Unit of Work and Repository Pattern are implemented, the development team will work with a Unit of Work Object, which isolates and centralizes the Database Context.  In this particular project, the developer [link]injects[/link] the Unit of Work Object to each Domain Repository and the developers interact with Domain Repositories.  Here is some sample pseudo code:
+The previous developer implemented what I call a "reverse" Unit of Work Pattern.  What I mean by this is that usually when the Unit of Work and Repository Pattern are implemented, the development team will work with a Unit of Work object, which isolates and centralizes the Database Context.  In this particular project, the developer <a href="https://en.wikipedia.org/wiki/Dependency_injection" target="_blank">injects</a> the Unit of Work object to each domain Repository and the developers interact with domain repositories.  Here is some sample pseudo code:
 
 <pre><code class="language-csharp">
 	//unit of work
@@ -60,23 +60,23 @@ The previous developer implemented what I call a "reverse" Unit of Work Pattern.
 
 <br><br>
 
-The implementation is fairly well done, I have just ran into a few issues, namely:
+<b>The implementation is fairly well done, I have just ran into a few issues, namely:</b>
 <ul>
-	<li>You have to inject each Domain Repository that you want to use into each class</li>
-	<li>If you have Domains that are not related ie child, grandchild etc etc, you cannot save them in the same transaction because each Domain has their own Repository.</li>
-	<li>When testing, you could end up mocking several Domain Repositories, if the class you are testing uses several Domain Repositories</li>
+	<li>You have to inject each domain repository that you want to use into each class</li>
+	<li>If you have domains that are not related ie child, grandchild etc etc, you cannot save them in the same transaction because each domain has their own repository.</li>
+	<li>When testing, you could end up mocking several domain repositories, if the class you are testing uses several domain repositories</li>
 </ul>
 
-With my implementation, I seek to provide the following:
+<b>With my implementation, I seek to provide the following:</b>
 <ul>
 	<li>1 object, ie a Unit of Work object that developers use to interact with the Database and inject into classes</li>
 	<li>A Unit of Work object, that can be mocked for testing</li>
-	<li>Domain Repositories share common interfaces but can also implement different interfaces as Domain Objects may need extra functionality</li>
+	<li>Domain Repositories share common interfaces but can also implement different interfaces as some domain objects may need extra functionality</li>
 	<li></li>
 </ul>
 
 
-<h3>Domains</h3>
+<h3>The Domains!</h3>
 Below is a basic Entity Relationship Diagram of the entities that I will work with in this blog post:
 <br><br>
 <a href="assets/images/implementing-a-mockable-generic-repository-and-unit-of-work pattern-using-entity-framework-6-and-c-sharp-001.png"><img class="img-responsive" src="assets/images/implementing-a-mockable-generic-repository-and-unit-of-work pattern-using-entity-framework-6-and-c-sharp-001.png" alt="Grenitaus Consulting"></a>
@@ -86,82 +86,77 @@ Below is a basic Entity Relationship Diagram of the entities that I will work wi
 First, I will make a Base Entity interface for all domains to implement:
 
 <pre><code class="language-csharp">
-namespace FromScratch.Domain.Interfaces
+public interface IEntity
 {
-    public interface IEntity
-    {
-        int Id { get; set; }
-    }
+	int Id { get; set; }
 }
 </code></pre>
 
 <br><br>
 
-Below, I have created each Domain Object:
+Below, I have created each Domain object:
 
 <pre><code class="language-csharp">
-namespace FromScratch.Domain.Entities
+public class Employee : IEntity
 {
-    public class Employee : IEntity
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("EmployeeId")]
-        public int Id { get; set; }
-        [Required]
-        [StringLength(100)]
-        public virtual string FirstName { get; set; }
-        [Required]
-        [StringLength(100)]
-        public virtual string LastName { get; set; }
-        public virtual Company Company { get; set; }
-        [ForeignKey("Company")]
-        public virtual int CompanyId { get; set; }
-    }
+	[Key]
+	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+	[Column("EmployeeId")]
+	public int Id { get; set; }
+	
+	[Required]
+	[StringLength(100)]
+	public virtual string FirstName { get; set; }
+	
+	[Required]
+	[StringLength(100)]
+	public virtual string LastName { get; set; }
+	
+	public virtual Company Company { get; set; }
+	
+	[ForeignKey("Company")]
+	public virtual int CompanyId { get; set; }
 }
 
-namespace FromScratch.Domain.Entities
+public class Company : IEntity
 {
-    public class Company : IEntity
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("CompanyId")]
-        public int Id { get; set; }
-        [StringLength(300)]
-        public virtual string Name { get; set; }
-        public virtual ICollection<Employee> Employees { get; set; }
-    }
+	[Key]
+	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+	[Column("CompanyId")]
+	public int Id { get; set; }
+	
+	[StringLength(300)]
+	public virtual string Name { get; set; }
+	
+	public virtual ICollection<Employee> Employees { get; set; }
 }
 
-namespace FromScratch.Domain.Entities
+public class Log : IEntity
 {
-    public class Log : IEntity
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("LogId")]
-        public int Id { get; set; }
-        [StringLength(4000)]
-        public virtual string Description { get; set; }
-    }
+	[Key]
+	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+	[Column("LogId")]
+	public int Id { get; set; }
+	
+	[StringLength(4000)]
+	public virtual string Description { get; set; }
 }
 </code></pre>
 
-<h3>Unit of Work Implementation</h3>
+<br><br>
+
+<h3>DbContext Implementation!</h3>
 
 Next, I will create an interface that the Entity Framework Database Context will implement and create the DbContext.  Creating this interface will allow us to mock the DbContext when performing Unit Tests:
 
 <pre><code class="language-csharp">
-
-namespace FromScratch.Domain.Interfaces
+public interface IDbContext : IDisposable
 {
-    public interface IDbContext : IDisposable
-    {
-        DbSet<TEntity> Set<TEntity>() where TEntity : class;
-        DbEntityEntry Entry(object entity);
-        int SaveChanges();
-    }
+	DbSet<TEntity> Set<TEntity>() where TEntity : class;
+	
+	DbEntityEntry Entry(object entity);
+	
+	int SaveChanges();
 }
 </code></pre>
 
@@ -172,157 +167,159 @@ I have created a external mapping class to map Entity Framework entities.  This 
 <br><br>
 
 <pre><code class="language-csharp">
-namespace FromScratch.Domain.Infrastructure
+internal class DomainMap
 {
-    internal class DomainMap
-    {
-        private readonly DbModelBuilder _modelBuilder;
-        public DomainMap(DbModelBuilder modelBuilder)
-        {
-            _modelBuilder = modelBuilder;
-        }
-        public void MapEntities()
-        {
-            MapCompany();
-            MapEmployee();
-            MapLog();
-        }
+	private readonly DbModelBuilder _modelBuilder;
+	
+	public DomainMap(DbModelBuilder modelBuilder)
+	{
+		_modelBuilder = modelBuilder;
+	}
+	
+	public void MapEntities()
+	{
+		MapCompany();
+		MapEmployee();
+		MapLog();
+	}
 
-        private void MapCompany()
-        {
-            _modelBuilder.Entity<Company>().ToTable("Company");
-        }
-        private void MapEmployee()
-        {
-            
-            _modelBuilder.Entity<Employee>().ToTable("Employee")
-                .HasRequired(e => e.Company)
-                .WithMany(e => e.Employees)
-                .HasForeignKey(e => e.CompanyId);
-        }
-        private void MapLog()
-        {
-            _modelBuilder.Entity<Log>().ToTable("Log");
-        }
-    }
+	private void MapCompany()
+	{
+		_modelBuilder.Entity<Company>().ToTable("Company");
+	}
+	private void MapEmployee()
+	{
+		
+		_modelBuilder.Entity<Employee>().ToTable("Employee")
+			.HasRequired(e => e.Company)
+			.WithMany(e => e.Employees)
+			.HasForeignKey(e => e.CompanyId);
+	}
+	private void MapLog()
+	{
+		_modelBuilder.Entity<Log>().ToTable("Log");
+	}
 }
 </code></pre>
 
+<br><br>
+Please not that I am using "new" on the DbEntityEntry method because the DbEntityEntry method on the parent class cannot be overridden and therefore, we have to hide the parent implementation.
 <br><br>
 
 <pre><code class="language-csharp">
-namespace FromScratch.Domain.Infrastructure
+public class DomainDbContext : DbContext, IDbContext
 {
-    public class DomainDbContext : DbContext, IDbContext
-    {
-        public DomainDbContext(string connectionString) : base(connectionString) {
-        }
+	public DomainDbContext(string connectionString) : base(connectionString) {
+	}
 
-        public override int SaveChanges() 
-        {
-            return base.SaveChanges();
-        }
-        public override DbSet<TEntity> Set<TEntity>() 
-        {
-            return base.Set<TEntity>();
-        }
+	public override int SaveChanges() 
+	{
+		return base.SaveChanges();
+	}
+	
+	public override DbSet<TEntity> Set<TEntity>() 
+	{
+		return base.Set<TEntity>();
+	}
 
-        public new DbEntityEntry Entry(object entity)
-        {
-            return base.Entry(entity);
-        }
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            Database.SetInitializer<DomainDbContext>(new CreateDatabaseIfNotExists<DomainDbContext>());
-            DomainMap map = new DomainMap(modelBuilder);
-            map.MapEntities();
-        }
-    }
+	public new DbEntityEntry Entry(object entity)
+	{
+		return base.Entry(entity);
+	}
+	
+	protected override void OnModelCreating(DbModelBuilder modelBuilder)
+	{
+		Database.SetInitializer<DomainDbContext>(new CreateDatabaseIfNotExists<DomainDbContext>());
+		DomainMap map = new DomainMap(modelBuilder);
+		map.MapEntities();
+	}
 }
 </code></pre>
 
 <br><br>
 
-<h3>Generic Repository</h3>
+<h3>Generic Repository Implementation!</h3>
 Next, I will create the generic repository interface using generics.  I am specifiying that any class that implements this interface must be a reference type and of type IEntity, the interface we created earlier:
 
 <br><br>
 
 <pre><code class="language-csharp">
-namespace FromScratch.Domain.Interfaces
+public interface IRepository<TEntity> where TEntity : class, IEntity
 {
-    public interface IRepository<TEntity> where TEntity : class, IEntity
-    {
-        IQueryable<TEntity> GetAll();
-        TEntity Get(object id);
-        IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> filter);
-        TEntity Add(TEntity entity);
-        void Delete(TEntity entity);
-        void Update(TEntity entity);
-    }
+	IQueryable<TEntity> GetAll();
+	
+	TEntity Get(object id);
+	
+	IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> filter);
+	
+	TEntity Add(TEntity entity);
+	
+	void Delete(TEntity entity);
+	
+	void Update(TEntity entity);
 }
 </code></pre>
 
 <br><br>
 
-Next, I will implement the IRepository interface.  Notice that I am injecting the IDbContext into the contructor.  I will use [link]StructureMap[/link] to perform [link]Dependency Injection[/link].  I have made the IDbContext protected so all Repository classes who implement this class will have access to the IDbContext implementation.  Also, in this particular version, I didn't implemented async methods but those are fairly straight forwoard to add:
+Next, I will implement the IRepository interface.  Notice that I am injecting the IDbContext into the contructor.  I will use <a href="http://structuremap.github.io/" target="_blank">StructureMap</a> to perform <a href="https://en.wikipedia.org/wiki/Dependency_injection" target="_blank">Dependency Injection</a>.  I have made the IDbContext protected so all Repository classes who implement this class will have access to the IDbContext implementation.  Also, in this particular version, I didn't implemented async methods but those are fairly straight forwoard to add:
 
-<h3>Repositories</h3>
+<h3>The Repositories!</h3>
 
 <pre><code class="language-csharp">
-namespace FromScratch.Domain.Infrastructure
+public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity
-    {
-        protected readonly IDbContext _dbContext;
-        private readonly DbSet<TEntity> _dbSet;
-        public Repository(IDbContext dbContext)
-        {
-            _dbContext = dbContext;
-            _dbSet = _dbContext.Set<TEntity>();
-        }
-        public TEntity Add(TEntity entity)
-        {
-            return _dbSet.Add(entity);
-        }
+	protected readonly IDbContext _dbContext;
+	
+	private readonly DbSet<TEntity> _dbSet;
+	
+	public Repository(IDbContext dbContext)
+	{
+		_dbContext = dbContext;
+		_dbSet = _dbContext.Set<TEntity>();
+	}
+	
+	public TEntity Add(TEntity entity)
+	{
+		return _dbSet.Add(entity);
+	}
 
-        public void Delete(TEntity entity)
-        {
-            if (_dbContext.Entry(entity).State == EntityState.Detached)
-            {
-                _dbSet.Attach(entity);
-            }
-            _dbSet.Remove(entity);
-        }
+	public void Delete(TEntity entity)
+	{
+		if (_dbContext.Entry(entity).State == EntityState.Detached)
+		{
+			_dbSet.Attach(entity);
+		}
+		_dbSet.Remove(entity);
+	}
 
-        public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> filter)
-        {
-            IQueryable<TEntity> query = _dbSet;
+	public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> filter)
+	{
+		IQueryable<TEntity> query = _dbSet;
 
-            if (filter != null)
-            {
-                query = _dbSet.Where(filter);
-            }
+		if (filter != null)
+		{
+			query = _dbSet.Where(filter);
+		}
 
-            return query.ToList();
-        }
+		return query.ToList();
+	}
 
-        public TEntity Get(object id)
-        {
-            return _dbSet.Find(id);
-        }
+	public TEntity Get(object id)
+	{
+		return _dbSet.Find(id);
+	}
 
-        public IQueryable<TEntity> GetAll()
-        {
-            return _dbSet;
-        }
+	public IQueryable<TEntity> GetAll()
+	{
+		return _dbSet;
+	}
 
-        public void Update(TEntity entity)
-        {
-            _dbSet.Attach(entity);
-            _dbContext.Entry(entity).State = EntityState.Modified;
-        }
-    }
+	public void Update(TEntity entity)
+	{
+		_dbSet.Attach(entity);
+		_dbContext.Entry(entity).State = EntityState.Modified;
+	}
 }
 </code></pre>
 
@@ -334,178 +331,182 @@ Finally, notice that I am injecting the IDbContext into each repository implemen
 <br><br>
 
 <pre><code class="language-csharp">
-namespace FromScratch.Domain.Repositories
+public class LogRepository : Repository<Log>, ILogRepository
 {
-    public class LogRepository : Repository<Log>, ILogRepository
-    {
-        public LogRepository(IDbContext dbContext) : base(dbContext)
-        {
+	public LogRepository(IDbContext dbContext) : base(dbContext)
+	{
 
-        }
-    }
+	}
 }
 
-namespace FromScratch.Domain.Repositories
+public class LogRepository : Repository<Log>, ILogRepository
 {
-    public class LogRepository : Repository<Log>, ILogRepository
-    {
-        public LogRepository(IDbContext dbContext) : base(dbContext)
-        {
+	public LogRepository(IDbContext dbContext) : base(dbContext)
+	{
 
-        }
-    }
-}
-
-namespace FromScratch.Domain.Repositories
-{
-    public interface IEmployeeRepository : IRepository<Employee>
-    {
-    }
-}
-
-namespace FromScratch.Domain.Repositories
-{
-    public class EmployeeRepository : Repository<Employee>, IEmployeeRepository
-    {
-        public EmployeeRepository(IDbContext dbContext) : base(dbContext)
-        {
-        }
-    }
+	}
 }
 
 
-namespace FromScratch.Domain.Repositories
+
+public interface IEmployeeRepository : IRepository<Employee>
 {
-    public interface ICompanyRepository : IRepository<Company>
-    {
-        IEnumerable<Company> GetByName(string name);
-    }
 }
 
-namespace FromScratch.Domain.Repositories
-{
-    public class CompanyRepository : Repository<Company>, ICompanyRepository
-    {
-        public CompanyRepository(IDbContext dbContext) : base(dbContext)
-        {
-        }
 
-        public IEnumerable<Company> GetByName(string name)
-        {
-            var companies = _dbContext.Set<Company>()
-                .Where(c => c.Name.Contains(name));
-            return companies;
-        }
-    }
+
+public class EmployeeRepository : Repository<Employee>, IEmployeeRepository
+{
+	public EmployeeRepository(IDbContext dbContext) : base(dbContext)
+	{
+	}
+}
+
+
+
+
+public interface ICompanyRepository : IRepository<Company>
+{
+	IEnumerable<Company> GetByName(string name);
+}
+
+
+public class CompanyRepository : Repository<Company>, ICompanyRepository
+{
+	public CompanyRepository(IDbContext dbContext) : base(dbContext)
+	{
+	}
+
+	public IEnumerable<Company> GetByName(string name)
+	{
+		var companies = _dbContext.Set<Company>()
+			.Where(c => c.Name.Contains(name));
+		return companies;
+	}
 }
 </code></pre>
 
 <br><br>
 
-<h3>Unit of Work</h3>
-Now, let's create the Unit of Work interface and the class that implements this interface.  As you will see below, I am injecting the IDbContext into the UnitOfWork class.  Also, each Domain Repository will have an exposed public property in the UnitOfWork class.  In this version, I have only created a Save method, which calls the DbContext to save changes to the Database.
+<h3>Unit of Work Implementation!</h3>
+Now, let's create the Unit of Work interface and the class that implements this interface.  As you will see below, I am injecting the IDbContext into the UnitOfWork class.  Also, each domain repository will have an exposed public property in the UnitOfWork class.  In this version, I have only created a Save method, which calls the DbContext to save changes to the Database.
 
 <br><br>
 
 <pre><code class="language-csharp">
-namespace FromScratch.Domain.Interfaces
+
+public interface IUnitOfWork
 {
-    public interface IUnitOfWork
-    {
-        ICompanyRepository CompanyRepository{ get; }
-        IEmployeeRepository EmployeeRepository { get; }
-        ILogRepository LogRepository { get; }
-        int Save();
-    }
+	ICompanyRepository CompanyRepository{ get; }
+	
+	IEmployeeRepository EmployeeRepository { get; }
+	
+	ILogRepository LogRepository { get; }
+	
+	int Save();
 }
 
-namespace FromScratch.Domain.Infrastructure
-{
-    public class UnitOfWork : IUnitOfWork
-    {
-        private readonly IDbContext _dbContext;
-        private ICompanyRepository _companyRepository;
-        private IEmployeeRepository _employeeRepository;
-        private ILogRepository _logRepository;
-        public ICompanyRepository CompanyRepository { get { return _companyRepository = _companyRepository ?? new CompanyRepository(_dbContext); } }
-        public IEmployeeRepository EmployeeRepository { get { return _employeeRepository = _employeeRepository ?? new EmployeeRepository(_dbContext); } }
-        public ILogRepository LogRepository { get { return _logRepository = _logRepository ?? new LogRepository(_dbContext); } }
-        public UnitOfWork(IDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
 
-        public int Save()
-        {
-            return _dbContext.SaveChanges();
-        }
-    }
+public class UnitOfWork : IUnitOfWork
+{
+	private readonly IDbContext _dbContext;
+	
+	private ICompanyRepository _companyRepository;
+	
+	private IEmployeeRepository _employeeRepository;
+	
+	private ILogRepository _logRepository;
+	
+	public ICompanyRepository CompanyRepository { get { return _companyRepository = _companyRepository ?? new CompanyRepository(_dbContext); } }
+	
+	public IEmployeeRepository EmployeeRepository { get { return _employeeRepository = _employeeRepository ?? new EmployeeRepository(_dbContext); } }
+	
+	public ILogRepository LogRepository { get { return _logRepository = _logRepository ?? new LogRepository(_dbContext); } }
+	
+	public UnitOfWork(IDbContext dbContext)
+	{
+		_dbContext = dbContext;
+	}
+
+	public int Save()
+	{
+		return _dbContext.SaveChanges();
+	}
 }
 </code></pre>
 
 <br><br>
 
-<h3>Usage</h3>
-Below are some of the ways how you would use the Unit of Work object in a Web Api controller:
+<h3>How to use?</h3>
+Below are some examples of how you would use the Unit of Work object in a Web Api controller:
 
 <br><br>
 
 <pre><code class="language-csharp">
-namespace FromScratch.Web.Api.Controllers
+public class EmployeeController : ApiController
 {
-    public class EmployeeController : ApiController
-    {
-		private readonly IUnitOfWork _uow;
+	private readonly IUnitOfWork _uow;
+	
+	public EmployeeController(IUnitOfWork uow)
+	{
+		_uow = uow;
+	}
+
+	[HttpGet]
+	public IEnumerable<Employee> Get()
+	{
+		return _uow.EmployeeRepository.GetAll();
+	}
+	
+	[HttpPost]
+	public Employee Post([FromBody]Employee employee)
+	{
+		return _uow.EmployeeRepository.Add(employee);
+	}			
+}
+</code></pre>
+
+<br><br>
+
+<h3>Unit Test Example!</h3>
+
+Given some log service that uses the Unit of Work object to save a log entry, below is how you could use <a href="https://github.com/Moq/moq4/wiki/Quickstart" target="_blank">moq</a> to mock the Unit of Work object:
+<br><br>
+<pre><code class="language-csharp">
+[TestFixture]
+public class LogServiceTests
+{
+	[Test]
+	public void Can_Add_A_New_Log_Entry_Test()
+	{
+		//given
+		string logEntry = "some log entry";
+		var uowMock = new Mock<IUnitOfWork>();
+		uowMock.Setup(u => u.LogRepository.Add(It.IsAny<Log>()));
+		ILogService service = new LogService(uowMock.Object);
 		
-        public EmployeeController(IUnitOfWork uow)
-		{
-			_uow = uow;
-        }
-
-        [HttpGet]
-        public IEnumerable<Employee> Get()
-        {
-            return _uow.EmployeeRepository.GetAll();
-        }
+		//when
+		bool result = service.Log(logEntry);
 		
-		[HttpPost]
-		public Hero Post([FromBody]Employee employee)
-		{
-			return _uow.EmployeeRepository.Add(hero);
-		}			
-    }
+		//then
+		value.Should().BeTrue();
+	}
 }
 </code></pre>
 
 <br><br>
 
-<h3>Unit Test Example</h3>
+<h3>Design Weaknesses!</h3>
+Every design has pros and cons and what I have implemented in this blog is no exception.  I think the main weakness of this design is that there are 4 steps one has to take to add a new repository:
+<br>
+<ol>
+	<li>Create a new IDomainRepository</li>
+	<li>Implement create a new DomainRepository and implement the new IDomainRepository</li>
+	<li>Add the new domain repository property to the IUnitOfWork interace</li>
+	<li>Implement the new domain propery in the UnitOfWork class</li>
+</ol>
 
-Given some log service that uses the Unit of Work object to save a log entry, below is how you could use [link]moq[/link] to mock the Unit of Work object:
 <br><br>
-<pre><code class="language-csharp">
-namespace FromScratch.Unit.Tests
-{
-    [TestFixture]
-    public class LogServiceTests
-    {
-        [Test]
-        public void Can_Log_An_Entry_Test()
-        {
-            //given
-            string logEntry = "some log entry";
-            var uowMock = new Mock<IUnitOfWork>();
-            uowMock.Setup(u => u.LogRepository.Add(It.IsAny<Log>()));
-            ILogService service = new LogService(uowMock.Object);
-            //when
-            bool result = service.Log(logEntry);
-            //then
-            value.Should().BeTrue();
-        }
-    }
-}
-</code></pre>
 
-
-Show StructureMap Code for IDbContext
-Provide link to code on Github
+<h3>Conclusion!</h3>
+This concludes another blog entry for me and I hope that this post was beneficial to you in some way.  You can find the completed code on Github <a href="https://github.com/michaeldeongreen/FromScratch" target="_blank">here</a>.
