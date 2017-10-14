@@ -23,7 +23,7 @@
     "@angular/platform-browser-dynamic": "^4.0.3",
     "@angular/platform-server": "^4.0.3",
     "@angular/router": "^4.0.3",
-    "@nglibs/meta": "^0.4.0-rc.1",
+    "@ngx-meta/core": "^4.0.1",
     "@types/underscore": "^1.7.36",
     "core-js": "^2.4.1",
     "ng2-pagination": "^2.0.0",

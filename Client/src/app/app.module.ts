@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Ng2PaginationModule } from 'ng2-pagination';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { MetaModule } from '@nglibs/meta';
+import { MetaModule } from '@ngx-meta/core';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';

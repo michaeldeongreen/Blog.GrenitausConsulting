@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Post } from '../post';
 import { Observable } from 'rxjs/Observable';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { MetaService } from '@nglibs/meta';
+import { MetaService } from '@ngx-meta/core';
 import { SharedEmitterService } from '../shared-emitter.service';
 import { Router } from '@angular/router';
 
