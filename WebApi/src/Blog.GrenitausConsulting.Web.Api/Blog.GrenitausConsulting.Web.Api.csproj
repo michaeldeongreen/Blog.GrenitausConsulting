@@ -206,6 +206,7 @@
     <Content Include="App_Data\html\implementing-a-mockable-generic-repository-and-unit-of-work-pattern-using-entity-framework-6-and-c-sharp.html" />
     <Content Include="App_Data\html\installing-plex-media-server-on-my-ubuntu-14-04-server.html" />
     <Content Include="App_Data\html\lessons-i-learned-after-being-laid-off-for-the-first-time.html" />
+    <Content Include="App_Data\html\mistakes-companies-continue-to-make-when-implementing-agile-scrum-part-1.html" />
     <Content Include="App_Data\html\my-decision-to-trade-in-my-git-gui-client-for-git-bash.html" />
     <Content Include="App_Data\html\my-first-impressions-of-angular-2.html" />
     <Content Include="App_Data\html\my-interview-with-thoughtworks.html" />

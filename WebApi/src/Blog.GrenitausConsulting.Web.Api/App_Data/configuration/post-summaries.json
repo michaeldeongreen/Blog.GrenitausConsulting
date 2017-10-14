@@ -1911,5 +1911,46 @@
     ],
     "canPreview": false,
     "previewExpirationDate": "2017-09-30"
+  },
+  {
+    "id": 42,
+    "title": "Mistakes Companies Continue to make when Implementing Agile SCRUM Part 1",
+    "author": "Michael D. Green",
+    "postDate": "2017-10-17",
+    "snippet": "I have been Agile for about 7 years.  I am SCRUM Master, PMP holder but have spent most of my career as a Software Developer and Architect.  I have been on several Agile SCRUM teams throughout many organizations.  Throughout the years, I have had the opportunity to observe how companies implement Agile SCRUM.  In Part one of this blog series, I wanted to talk about what I believe are some of the critical mistakes companies continue to make when implementing Agile SCRUM.",
+    "link": "mistakes-companies-continue-to-make-when-implementing-agile-scrum-part-1",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 6,
+        "name": "Agile"
+      },
+      {
+        "id": 7,
+        "name": "Project Management"
+      },
+      {
+        "id": 8,
+        "name": "SCRUM"
+      },
+      {
+        "id": 81,
+        "name": "Process Improvement"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "assets/images/grenitaus-consulting-logo.png"
+      }
+    ],
+    "canPreview": true,
+    "previewExpirationDate": "2017-10-17"
   }
 ]  
