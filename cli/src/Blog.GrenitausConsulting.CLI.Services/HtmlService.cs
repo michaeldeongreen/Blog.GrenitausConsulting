@@ -95,7 +95,7 @@ namespace Blog.GrenitausConsulting.CLI.Services
 
             foreach (var tag in post.Tags)
             {
-                sb.AppendLine(string.Format("<meta name=\"article:tage\" content=\"{0}\">", tag.Name));
+                sb.AppendLine(string.Format("<meta name=\"article:tag\" content=\"{0}\">", tag.Name));
             }
 
             foreach (var category in post.Categories)
