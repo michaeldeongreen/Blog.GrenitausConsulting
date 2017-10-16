@@ -1919,7 +1919,7 @@
     "postDate": "2017-10-17",
     "snippet": "I have been Agile for about 7 years.  I am SCRUM Master, PMP holder but have spent most of my career as a Software Developer and Architect.  I have been on several Agile SCRUM teams throughout many organizations.  Throughout the years, I have had the opportunity to observe how companies implement Agile SCRUM.  In Part one of this blog series, I wanted to talk about what I believe are some of the critical mistakes companies continue to make when implementing Agile SCRUM.",
     "link": "mistakes-companies-continue-to-make-when-implementing-agile-scrum-part-1",
-    "isActive": false,
+    "isActive": true,
     "categories": [
       {
         "id": 3,
@@ -1946,7 +1946,7 @@
     ],
     "images": [
       {
-        "name": "grenitaus-consulting-logo.png",
+        "name": "mistakes-companies-continue-to-make-when-implementing-agile-scrum-part.png",
         "url": "assets/images/grenitaus-consulting-logo.png"
       }
     ],
