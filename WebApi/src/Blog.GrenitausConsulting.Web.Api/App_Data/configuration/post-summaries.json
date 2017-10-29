@@ -1952,5 +1952,34 @@
     ],
     "canPreview": true,
     "previewExpirationDate": "2017-10-17"
+  },
+  {
+    "id": 43,
+    "title": "Be a Consultant Not a Bag Holder",
+    "author": "Michael D. Green",
+    "postDate": "2017-10-30",
+    "snippet": "For my next blog post, I wanted to talk about an issue that I have had to deal with since I made the decision to get into consulting.  The issue I want to discuss is the concept of being a \"bag holder\" and how it pertains to the consulting industry.  I will talk about what being a consultant bag holder is, why you never want to become one and ways to spot when someone is trying to turn you into one.",
+    "link": "be-a-consultant-not-a-bag-holder",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      }
+    ],
+    "tags": [
+      {
+        "id": 4,
+        "name": "Career"
+      }
+    ],
+    "images": [
+      {
+        "name": "be-a-consultant-not-a-bag-holder-001.jpgg",
+        "url": "assets/images/be-a-consultant-not-a-bag-holder-001.jpg"
+      }
+    ],
+    "canPreview": false,
+    "previewExpirationDate": "2017-10-30"
   }
 ]  
