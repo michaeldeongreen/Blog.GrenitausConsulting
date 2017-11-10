@@ -23,7 +23,8 @@ namespace Blog.GrenitausConsulting.Unit.Tests
             //when
             PagedResponse response = service.Get(new PagedCriteria() { PageNumber = 1, PageSize = 10, Posts = Data.Get()});
             //then
-            response.Total.Should().Be(100);
+            //response.Total.Should().Be(100);
+            response.Total.Should().Be(2);
         }
 
         [Test]
