@@ -1981,5 +1981,46 @@
     ],
     "canPreview": false,
     "previewExpirationDate": "2017-10-30"
+  },
+  {
+    "id": 44,
+    "title": "Do You Really Need a Full Time SCRUM Master?",
+    "author": "Michael D. Green",
+    "postDate": "2017-12-13",
+    "snippet": "In the last couple of weeks, I have really been thinking (or rather re-thinking) about the SCRUM Master role and I have started to question if an organization really needs to employee a full time SCRUM Master.  In this blog post, I want to talk about why I have started to question the full time SCRUM Master position, my experience with SCRUM Masters and last, how I would handle the position if I were in charge of an organization or an IT Department.",
+    "link": "do-you-really-need-a-full-time-scrum-master",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      }
+    ],
+    "tags": [
+      {
+        "id": 4,
+        "name": "Career"
+      },
+      {
+        "id": 6,
+        "name": "Agile"
+      },
+      {
+        "id": 7,
+        "name": "Project Management"
+      },
+      {
+        "id": 8,
+        "name": "SCRUM"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "assets/images/grenitaus-consulting-logo.png"
+      }
+    ],
+    "canPreview": true,
+    "previewExpirationDate": "2017-12-20"
   }
 ]  

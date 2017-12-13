@@ -195,6 +195,7 @@
     <Content Include="App_Data\html\another-reason-why-i-love-unit-tests.html" />
     <Content Include="App_Data\html\be-a-consultant-not-a-bag-holder.html" />
     <Content Include="App_Data\html\bored-take-the-tic-tac-toe-challenge.html" />
+    <Content Include="App_Data\html\do-you-really-need-a-full-time-scrum-master.html" />
     <Content Include="App_Data\html\dont-rage-quit-your-job-make-a-proco-list.html" />
     <Content Include="App_Data\html\going-extreme-with-extreme-programming.html" />
     <Content Include="App_Data\html\how-to-convert-an-svn-repository-to-stash-using-tortoisegit.html" />

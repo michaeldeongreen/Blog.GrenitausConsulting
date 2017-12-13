@@ -61,5 +61,12 @@
     "quote": "I've missed more than 9000 shots in my career. I've lost almost 300 games. 26 times I've been trusted to take the game winning shot and missed. I've failed over and over and over again in my life. And that is why I succeed.",
     "url": "https://en.wikipedia.org/wiki/Michael_Jordan",
     "addedDate": "2017-10-30"
+  },
+  {
+    "id": 10,
+    "author": "Warren Buffett",
+    "quote": "The most important investment you can make is in yourself.",
+    "url": "https://en.wikipedia.org/wiki/Warren_Buffett",
+    "addedDate": "2017-12-13"
   }
 ]
