@@ -60,6 +60,11 @@
 /cli/src/Blog.GrenitausConsulting.CLI.Common/obj
 
 
+/Core.WebApi/src/.vs
+/Core.WebApi/src/Blog.GrenitausConsulting.Core.Web.Api/bin
+/Core.WebApi/src/Blog.GrenitausConsulting.Core.Web.Api/obj
+
+
 /Client/.vs
 /Client/bin
 /Client/obj
