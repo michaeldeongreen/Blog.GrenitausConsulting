@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Blog.GrenitausConsulting.Common.Interfaces;
 
 namespace Blog.GrenitausConsulting.Core.Web.Api.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private readonly ITestService _testService;
+        public ValuesController(ITestService testService)
+        {
+            _testService = testService;
+        }
+
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
