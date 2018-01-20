@@ -15,7 +15,7 @@ namespace Blog.GrenitausConsulting.Common
                 scan.TheCallingAssembly();
                 scan.WithDefaultConventions();
             });
-            For<ITestService>().Use<TestService>();
+            //For<ITestService>().Use<TestService>();
         }
     }
 }
