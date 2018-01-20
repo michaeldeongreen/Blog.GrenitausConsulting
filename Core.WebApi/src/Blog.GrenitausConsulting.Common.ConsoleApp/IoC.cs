@@ -1,16 +1,13 @@
-﻿using Blog.GrenitausConsulting.Common;
-using Microsoft.Extensions.DependencyInjection;
-using StructureMap;
+﻿using StructureMap;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace Blog.GrenitausConsulting.Core.Web.Api
+namespace Blog.GrenitausConsulting.Common.ConsoleApp
 {
     internal static class IoC
     {
-       internal static Container Configure(IServiceCollection services)
+        internal static Container Configure()
         {
             var container = new Container(config =>
             {
@@ -22,8 +19,8 @@ namespace Blog.GrenitausConsulting.Core.Web.Api
 
                 config.IncludeRegistry<CommonRegistry>();
                 config.IncludeRegistry<DefaultRegistry>();
-                config.Populate(services);
             });
+
             return container;
         }
     }
