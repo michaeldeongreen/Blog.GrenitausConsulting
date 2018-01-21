@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Blog.GrenitausConsulting.Common.Interfaces;
+using Blog.GrenitausConsulting.Core.Common.Interfaces;
 using StructureMap;
 using Microsoft.Extensions.Configuration;
 

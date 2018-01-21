@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.GrenitausConsulting.Core.Web.Api", "Blog.GrenitausConsulting.Core.Web.Api\Blog.GrenitausConsulting.Core.Web.Api.csproj", "{E5A70D96-5905-4157-8691-ABFA629702B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.GrenitausConsulting.Common", "Blog.GrenitausConsulting.Common\Blog.GrenitausConsulting.Common.csproj", "{2BDBD6C9-BC50-4230-A7D2-607695FF2C91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.GrenitausConsulting.Core.Common", "Blog.GrenitausConsulting.Core.Common\Blog.GrenitausConsulting.Core.Common.csproj", "{2BDBD6C9-BC50-4230-A7D2-607695FF2C91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

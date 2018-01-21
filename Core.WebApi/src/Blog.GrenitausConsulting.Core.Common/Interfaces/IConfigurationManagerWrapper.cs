@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Blog.GrenitausConsulting.Common.Interfaces
+namespace Blog.GrenitausConsulting.Core.Common.Interfaces
 {
     public interface IConfigurationManagerWrapper
     {

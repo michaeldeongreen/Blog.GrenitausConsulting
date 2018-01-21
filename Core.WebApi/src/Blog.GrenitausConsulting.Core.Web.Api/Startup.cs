@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using StructureMap;
-using Blog.GrenitausConsulting.Common;
+using Blog.GrenitausConsulting.Core.Common;
 
 namespace Blog.GrenitausConsulting.Core.Web.Api
 {

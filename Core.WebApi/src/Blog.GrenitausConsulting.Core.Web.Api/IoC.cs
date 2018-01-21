@@ -1,4 +1,4 @@
-﻿using Blog.GrenitausConsulting.Common;
+﻿using Blog.GrenitausConsulting.Core.Common;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StructureMap;

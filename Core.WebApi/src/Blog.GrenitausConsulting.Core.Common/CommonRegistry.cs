@@ -1,10 +1,10 @@
-﻿using Blog.GrenitausConsulting.Common.Interfaces;
+﻿using Blog.GrenitausConsulting.Core.Common.Interfaces;
 using StructureMap;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Blog.GrenitausConsulting.Common
+namespace Blog.GrenitausConsulting.Core.Common
 {
     public class CommonRegistry : Registry
     {

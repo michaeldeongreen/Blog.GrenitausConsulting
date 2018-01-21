@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Blog.GrenitausConsulting.Common
+namespace Blog.GrenitausConsulting.Core.Common
 {
     public class AppSettings
     {
