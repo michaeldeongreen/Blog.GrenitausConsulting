@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Blog.GrenitausConsulting.Common.Interfaces;
+using StructureMap;
 
 namespace Blog.GrenitausConsulting.Core.Web.Api.Controllers
 {
