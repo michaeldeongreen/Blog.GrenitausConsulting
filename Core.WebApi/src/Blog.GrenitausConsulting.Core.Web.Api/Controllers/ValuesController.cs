@@ -17,8 +17,8 @@ namespace Blog.GrenitausConsulting.Core.Web.Api.Controllers
         {
             _configurationManagerWrapper = configurationManagerWrapper;
 
-            var t = _configurationManagerWrapper.Setting("AppSettings", "BlogMonitorApiUrl").ToAString();
-            var s = t;
+            var j = _configurationManagerWrapper.AppSettings.Value.BlogMonitorApiUrl;
+            var s = j;
         }
 
         // GET api/values

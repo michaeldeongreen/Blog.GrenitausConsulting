@@ -26,7 +26,7 @@ namespace Blog.GrenitausConsulting.Core.Web.Api
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            var container = IoC.Configure(services);
+            var container = IoC.Configure(Configuration, services);
             return container.GetInstance<IServiceProvider>();
         }
 
