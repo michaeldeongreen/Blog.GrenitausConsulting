@@ -20,6 +20,14 @@ namespace Blog.GrenitausConsulting.Core.Web.Api
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration((context, builder) => 
+                {
+                    var env = context.HostingEnvironment;
+                    builder
+                    .SetBasePath(env.ContentRootPath)
+                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                    .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+                })
                 .UseStartup<Startup>()
                 .Build();
     }

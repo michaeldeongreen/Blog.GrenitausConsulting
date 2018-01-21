@@ -5,16 +5,20 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Blog.GrenitausConsulting.Common.Interfaces;
 using StructureMap;
+using Microsoft.Extensions.Configuration;
 
 namespace Blog.GrenitausConsulting.Core.Web.Api.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
-        private readonly ITestService _testService;
-        public ValuesController(ITestService testService)
+        private readonly IConfigurationManagerWrapper _configurationManagerWrapper;
+        public ValuesController(IConfigurationManagerWrapper configurationManagerWrapper)
         {
-            _testService = testService;
+            _configurationManagerWrapper = configurationManagerWrapper;
+
+            var t = _configurationManagerWrapper.Setting("AppSettings", "BlogMonitorApiUrl").ToAString();
+            var s = t;
         }
 
         // GET api/values
