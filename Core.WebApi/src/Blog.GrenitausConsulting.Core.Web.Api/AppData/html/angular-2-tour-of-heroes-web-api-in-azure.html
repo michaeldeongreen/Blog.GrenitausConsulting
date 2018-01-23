@@ -1,0 +1,107 @@
+<a href="assets/images/azure-angular-web-api.png"><img src="assets/images/azure-angular-web-api.png" alt="Michael D. Green - Angular 2 Tour of Heroes Web API in Azure" width="700" height="300" class="img-responsive" /></a>
+<br><br>
+The Angular 2 Tour of Heroes guide created by the Angular Team is a wonderful introduction to Angular 2.  For those who have completed the guide, you already know that the last step, HTTP, creates an angular-in-memory-web-api to demonstrate how Angular 2 works with REST services.
+<br><br>
+After I completed the Angular 2 Tour of Heroes guide, I decided to create a Heroes ASP.Net Web API and host it in the Azure cloud for others to use.  I wanted to see how easy it would be to swap out the angular-in-memory-web-api and to see how Angular 2 works with a real REST API.
+<br><br>
+<strong>Angular 2 Tour of Heroes Web API Technology Stack</strong>
+<br><br>
+<ul>
+<li>ASP.Net Web API 2</li>
+<li>Azure Web App</li>
+<li>CORS enabled for all schemes, domains and ports</li>
+<li>C# 6</li>
+<li>Entity Framework 6</li>
+<li>SQL Server 2014 (local)/SQL Azure (deployed)</li>
+<li>StructureMap 3</li>
+<li>Swashbuckle/Swagger</li>
+<li>IoC, Repository, Service Locator and Unit of Work Pattern</li>
+</ul>
+<br><br>
+<strong>Resources</strong>
+<br><br>
+<ul>
+<li><b>Angular 2 Tour of Heroes Guide</b> - You can find the official guide on the Angular 2 website <a href="https://angular.io/docs/ts/latest/tutorial/" target="_blank">Here</a></li>
+<li><b>My Angular 2 Tour of Heroes Application</b> - I created a GitHub repository for my version of the Tour of Heroes guide and it has been deployed to Azure.  This version of the Tour of Heroes guide has been modified to connect to the ASP.Net Web API I created.  You can find the application <a href="http://angulariotourofheroesweb.azurewebsites.net/" target="_blank">here</a> and the GitHub repository <a href="https://github.com/michaeldeongreen/Angular.io.QuickStart.Web" target="_blank">here</a></li>
+<li><b>My Angular 2 Tour of Heroes REST API</b> - You can find the Angular 2 Tour of Heroes REST API I created and deployed to Azure <a href="http://angulariotourofheroeswebapi.azurewebsites.net/" target="_blank">here</a> and the GitHub repository <a href="https://github.com/michaeldeongreen/Angular.io.QuickStart.Web.Api" target="_blank">here</a></li>
+</ul>
+<br><br>
+<strong>Step By Step Changes</strong>
+<br><br>
+This portion of the blog is for those who completed the Angular 2 Tour of Heroes guide and would like a walk through of the changes that need to be made to allow the application to connect to the ASP.Net Web API I have created and is hosted in Azure.
+<br><br>
+<b>Step 1 - app.module.ts</b>
+<br><br>
+First, we need to remove the import statements for the angular-in-memory-web-api and InMemoryDataService.  Open app.module.ts and remove the following lines:
+<br><br>
+<pre><code class="language-typescript">
+// Imports for loading & configuring the in-memory web api
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
+</code></pre>
+<br><br>
+<pre><code class="language-typescript">
+InMemoryWebApiModule.forRoot(InMemoryDataService),
+</code></pre>
+<br><br>
+<b>Step 2 - hero.service.ts</b>
+<br><br>
+Next, we need to modify the base url and modify the json response notation in hero.service.ts
+<br><br>
+Find the line below:
+<br><br>
+<pre><code class="language-typescript">
+private heroesUrl = 'app/heroes';  // URL to web api
+</code></pre>
+<br><br>
+And modify it to:
+<br><br>
+<pre><code class="language-typescript">
+private heroesUrl = 'http://angulariotourofheroeswebapi.azurewebsites.net/api/heroes';
+</code></pre>
+<br><br>
+In the getHeroes method, find the line:
+<br><br>
+<pre><code class="language-typescript">
+.then(response => response.json().data as Hero[])
+</code></pre>
+<br><br>
+And modify it to:
+<br><br>
+<pre><code class="language-typescript">
+.then(response => response.json() as Hero[])
+</code></pre>
+<br><br>
+In the create method, find the line:
+<pre><code class="language-typescript">
+.then(res => res.json().data)
+</code></pre>
+<br><br>
+And modify it to:
+<br><br>
+<pre><code class="language-typescript">
+.then(res => res.json())
+</code></pre>
+<br><br>
+<b>Step 3 - hero-search.service.ts</b>
+<br><br>
+Next, we need to make a small changes in hero-search.service.ts.  
+<br><br>
+Change the entire HeroSearchService class to:
+<pre><code class="language-typescript">
+export class HeroSearchService {
+    constructor(private http: Http) { }
+    search(term: string): Observable<Hero[]> {
+        return this.http
+            .get(`http://angulariotourofheroeswebapi.azurewebsites.net/api/heroessearch?name=${term}`)
+            .map((r: Response) => r.json() as Hero[]);
+    }
+}
+</code></pre>
+<br><br>
+<strong>Notes</strong> 
+<br><br>
+<ul>
+<li>I created a separate Web API controller for HeroesSearch because currently Swagger seems to have issues with multiple overloaded action methods ie Get(int id), Get(string name) etc etc</li>
+<li>The Angular 2 Web API uses SQL Server 2014 locally.  So if you decide to clone the repository, ensure that you have SQL Server installed or change the connection string to match the datastore in your environment</li>
+</ul>

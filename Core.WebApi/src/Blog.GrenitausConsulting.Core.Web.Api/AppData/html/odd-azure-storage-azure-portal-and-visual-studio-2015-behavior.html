@@ -1,0 +1,41 @@
+<a href="assets/images/grenitaus-consulting-logo.png"><img class="img-responsive" src="assets/images/grenitaus-consulting-logo.png" alt="Grenitaus Consulting"></a>
+<br><br>
+
+This week I decided to devote some time to learn a little more about Azure Cloud Services. To begin educating myself, I decided to try my hand at implementing the outstanding <a href="https://docs.microsoft.com/en-us/azure/cloud-services/cloud-services-dotnet-get-started" target="_blank">Contoso Ads Demo Application</a>. You can find my completed solution on GitHub <a href="https://github.com/michaeldeongreen/ContosoAds" target="_blank">here</a>.	
+<br><br>
+I recreated the entire Contoso Ads Application from scratch, but when I was ready to deploy the Cloud Service to Azure, I observed some very odd behavior. I think this behavior is based upon whether you create the Azure Storage Account in Azure Classic vs Azure Resource Manager mode.
+<br><br>
+The first odd behavior that I found was that when I tried to set the Web and Worker Role Azure Storage and Diagnostic Cloud Connection Strings in the Visual Studio 2015 Settings window under each role's property page; the Azure Storage Account Name would not display in the drop down box. 
+<br><br>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-odd-azure-storage-azure-portal-and-visual-studio-2015-behavior-001.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-odd-azure-storage-azure-portal-and-visual-studio-2015-behavior-001.png" alt="" width="640" height="274" class="img-responsive" /></a>
+<br><br>
+After I observed this behavior, I immediately went to the Azure Portal to ensure that I had created the Azure Storage Account correctly and everything was in order. I then navigated to the Cloud Explorer in Visual Studio 2015 to see if the Azure Storage Account appeared there, and it did.
+<br><br>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-odd-azure-storage-azure-portal-and-visual-studio-2015-behavior-003.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-odd-azure-storage-azure-portal-and-visual-studio-2015-behavior-003.png" alt="" width="269" height="318" class="img-responsive" /></a>
+<br><br>
+Next I tried to enter the Azure Storage Account information manually in the Create Storage Connection String screen in the Web and Worker Role properties settings. 
+<br><br>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-odd-azure-storage-azure-portal-and-visual-studio-2015-behavior-004.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-odd-azure-storage-azure-portal-and-visual-studio-2015-behavior-004.png" alt="" width="640" height="321" class="img-responsive" /></a>
+<br><br>
+Unfortunately, when I tried to publish the Cloud Service to Azure in the Visual Studio 2015 Publish Wizard, I was prompted to create an Azure Cloud Service. This was because Visual Studio 2015 was not able to see the Azure Storage Account I created in the Azure Portal… I was basically back to my original problem.
+<br><br>
+After doing some research and pondering why I was having this issue, I remembered that when I created the Azure Storage Account, there was an option to use either Resource manager or Classic for the Deployment model. So I decided to delete the Azure Storage Account and re-create it using the Classic deployment model option.
+<a href="assets/images/michael-d-green-grenitausconsulting-com-odd-azure-storage-azure-portal-and-visual-studio-2015-behavior-002.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-odd-azure-storage-azure-portal-and-visual-studio-2015-behavior-002.png" alt="" width="291" height="649" class="img-responsive" /></a>
+<br><br>
+After I re-created the Azure Storage Account, much to my surprise, Visual Studio 2015 was able to find the Azure Storage Account in the Create Storage Connection String screen.
+<br><br>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-odd-azure-storage-azure-portal-and-visual-studio-2015-behavior-005.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-odd-azure-storage-azure-portal-and-visual-studio-2015-behavior-005.png" alt="" width="640" height="336" class="img-responsive" /></a>
+<br><br>
+I was finally able to deploy the Contoso Ad Cloud Service to Azure without any issues using Visual Studio. After deploying my service, I created another Azure Storage Account using the Resource manager deployment option to see if Visual Studio 2015 would see it, and of course it did not. However, I noticed another odd set of behaviors in the Azure Portal: both Azure Storage Accounts displayed properly in the Azure Portal under the All Resources tab. 
+<br><br>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-odd-azure-storage-azure-portal-and-visual-studio-2015-behavior-006.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-odd-azure-storage-azure-portal-and-visual-studio-2015-behavior-006.png" alt="" width="913" height="479" class="img-responsive" /></a>
+<br><br>
+However, when I navigated to the Storage accounts tab in the Azure Portal, only the Azure Storage Account created with the Resource manager deployment option would display.
+<br><br>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-odd-azure-storage-azure-portal-and-visual-studio-2015-behavior-007.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-odd-azure-storage-azure-portal-and-visual-studio-2015-behavior-007.png" alt="" width="893" height="314" class="img-responsive" /></a>
+<br><br>
+<strong>Conclusion!</strong>
+<br><br>
+I am sure that the behavior that I describe as "odd" is a known issue by Microsoft, and most likely it is behavior that was implemented (or not implemented) by design. It is my understanding that the Azure Portal was completely re-done over the last few years, and as a result, the Azure Team probably had to make some compromises to retrofit some of the Azure Resources that were created in the Azure Classic Portal into the new Azure Portal. I just wanted to write a quick blog talking about the issues I faced, in case others run into the same problems and to point out that right now, there is some confusion around Azure Classic and the current Azure Portal.
+<br><br>
+<i>This blog post originally appeared on February 21, 2017 at <a href="http://blog.architectinginnovation.com/navigating-odd-behaviors-azure/" target="_blank">blog.architectinginnovation.com</a></i>

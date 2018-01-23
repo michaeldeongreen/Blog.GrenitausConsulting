@@ -1,0 +1,112 @@
+Outside of calling a Web API, I have rarely used the async/wait functionality in the .Net Framework explicitly.  I spent some time this week really digging into the concepts of <a href="https://msdn.microsoft.com/en-us/library/mt674882.aspx" target="_blank">async/wait</a> because I would like to take advantage of asynchronous programming in the future.  I decided to implement async/wait in the Heroes Search Endpoint in the Angular 2 Tour of Heroes Web API I have hosted in Azure.  I wanted to create a very brief blog outlining the changes I made.  
+<br><br>
+You can find the Angular 2 Tour of Heroes Web API and a link to the GitHub repository<a href="http://angularioquickstartwebapi.azurewebsites.net/" target="_blank"> here</a>.
+<br><br>
+Here is an overview of my project structure:
+<br><br>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-making-the-angular-2-tour-of-heroes-Web-api-heroes-search-in-azure-asynchronous-001.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-making-the-angular-2-tour-of-heroes-Web-api-heroes-search-in-azure-asynchronous-001.png" alt="michael-d-green-grenitausconsulting-com-making-the-angular-2-tour-of-heroes-web-api-heroes-search-in-azure-asynchronous-001" width="318" height="106" class="alignnone size-full wp-image-651" /></a>
+<br><br>
+
+<h2>Web API Logical Architecture</h2>
+<br><br>
+<ul>
+<li><b>Angular.io.QuickStart.Web.Api</b> - Web Service layer that contains the ASP.Net MVC Controllers that clients will call.</li>
+<li><b>Angular.io.QuickStart.Web.Api.Models</b> - Business Domain layer that contains all the domain objects used in the Web API.</li>
+<li><b>Angular.io.QuickStart.Web.Api.Repository</b> - Data Access layer that uses Entity Framework, the repository and unit of work patterns to access data stored in SQL Azure.</li>
+<li><b>Angular.io.QuickStart.Web.Api.Services</b> - Business layer that sits in between the Web Service and Data Access layers.  It is primarily responsible for validation and returning data from the Data Access layer to the Web Service layer.</li>
+</ul>
+<br><br>
+<h2>Synchronous Code Snippet</h2>
+Here is a brief code snippet of the code before I made the Hero Search Asynchronous:
+<br><br>
+<b>In the HeroesSearchController <i>(Angular.io.QuickStart.Web.Api)</i>:</b>
+<pre><code class="language-csharp">
+        /// <summary>
+        /// Endpoint is used to get all heroes whose name contains the name parameter
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns>List of heroes whose name contains the name parameter</returns>
+        public IEnumerable<Hero> Get(string name)
+        {
+            return  _heroService.Find(name);
+        }
+</code></pre>
+<br><br>
+
+<b>In the HeroService<i>(Angular.io.QuickStart.Web.Api.Services)</i>:</b>
+<br><br>
+<pre><code class="language-csharp">
+        /// <summary>
+        /// Endpoint is used to get all heroes whose name contains the name parameter
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns>List of heroes whose name contains the name parameter</returns>
+        public IEnumerable<Hero> Get(string name)
+        {
+            return  _heroService.Find(name);
+        }
+</code></pre>
+<br><br>
+<b>In the Generic Repository<i>(Angular.io.QuickStart.Web.Api.Repository)</i>:</b>
+<pre><code class="language-csharp">
+        public Repository(TourOfHeroesContext dbContext)
+        {
+            _dbContext = dbContext;
+            _dbSet = dbContext.Set<TEntity>();
+        }
+
+        public virtual IEnumerable<TEntity> Find(Expression<Func<TEntity,bool>> filter)
+        {
+            IQueryable<TEntity> query = _dbSet;
+
+            if (filter != null)
+            {
+                query = _dbSet.Where(filter);
+            }
+
+            return query.ToList();
+        }
+</code></pre>
+<br><br>
+<h2>Asynchronous Code Snippet</h2>
+<br><br>
+To implement async/wait on the Heroes Search Endpoint, I started with the Data Access later and worked upwards.  Below are the small changes I made:
+<br><br>
+<b>Added new async method called FindAsync to the Generic Repository<i>(Angular.io.QuickStart.Web.Api.Repository)</i>:</b>
+<br><br>
+<pre><code class="language-csharp">
+        public virtual async Task<IEnumerable<TEntity>> FindAsync(Expression<Func<TEntity, bool>> filter)
+        {
+            IQueryable<TEntity> query = _dbSet;
+
+            if (filter != null)
+            {
+                query = _dbSet.Where(filter);
+            }
+
+            return await query.ToListAsync();
+        }
+</code></pre>
+<br><br>
+<b>Added a new async method called FindAsync to the HeroService<i>(Angular.io.QuickStart.Web.Api.Services)</i>:</b>
+<pre><code class="language-csharp">
+        public async Task<IEnumerable<Hero>> FindAsync(string name)
+        {
+            _heroValidationService.SearchValidation(new HeroDTO() { Name = name });
+
+            return await _uow.HeroRepository.FindAsync((x) => x.Name.ToLower().Contains(name.ToLower()));
+        }
+</code></pre>
+<br><br>
+<b>Modified the existing Get Endpoint on the HeroesSearchController to be async<i>(Angular.io.QuickStart.Web.Api.)</i>:</b>
+<pre><code class="language-csharp">
+        /// <summary>
+        /// Endpoint is used to get all heroes whose name contains the name parameter
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns>List of heroes whose name contains the name parameter</returns>
+        public async Task<IEnumerable<Hero>> Get(string name)
+        {
+            return await _heroService.FindAsync(name);
+        }
+</code></pre>

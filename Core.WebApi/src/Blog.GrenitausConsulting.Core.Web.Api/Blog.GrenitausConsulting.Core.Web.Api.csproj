@@ -27,4 +27,8 @@
     <ProjectReference Include="..\Blog.GrenitausConsulting.Core.Common\Blog.GrenitausConsulting.Core.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="AppData\*" CopyToPublishDirectory="PreserveNewest"></None>
+  </ItemGroup>
+
 </Project>

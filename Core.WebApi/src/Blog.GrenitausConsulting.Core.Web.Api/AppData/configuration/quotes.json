@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "author": "Les Brown",
+    "quote": "Shoot for the moon, because even if you miss, you'll land among the stars",
+    "url": "https://en.wikipedia.org/wiki/Les_Brown_(speaker)",
+    "addedDate": "2017-03-01"
+  },
+  {
+    "id": 2,
+    "author": "Zig Ziglar",
+    "quote": "I have always said that everyone is in sales. Maybe you don't hold the title of salesperson, but if the business you are in requires you to deal with people, you, my friend, are in sales.",
+    "url": "https://en.wikipedia.org/wiki/Zig_Ziglar",
+    "addedDate": "2017-03-11"
+  },
+  {
+    "id": 3,
+    "author": "Les Brown",
+    "quote": "When life knocks you down, try to land on your back. Because if you can look up, you can get up. Let your reason get you back up.",
+    "url": "https://en.wikipedia.org/wiki/Les_Brown_(speaker)",
+    "addedDate": "2017-03-22"
+  },
+  {
+    "id": 4,
+    "author": "Les Brown",
+    "quote": "Too many of us are not living our dreams because we are living our fears.",
+    "url": "https://en.wikipedia.org/wiki/Les_Brown_(speaker)",
+    "addedDate": "2017-04-04"
+  },
+  {
+    "id": 5,
+    "author": "Eleanor Roosevelt",
+    "quote": "No one can make you feel inferior without your consent.",
+    "url": "https://en.wikipedia.org/wiki/Eleanor_Roosevelt",
+    "addedDate": "2017-04-18"
+  },
+  {
+    "id": 6,
+    "author": "Earl Nightingale",
+    "quote": "The biggest mistake that you can make is to believe that you are working for somebody else.  Job security is gone.  The driving force of a career must come from the individual.  Remember: Jobs are owned by the company, you own your career!",
+    "url": "https://en.wikipedia.org/wiki/Earl_Nightingale",
+    "addedDate": "2017-06-12"
+  },
+  {
+    "id": 7,
+    "author": "Steve Jobs",
+    "quote": "Your time is limited, so don't waste it living someone else's life.",
+    "url": "https://en.wikipedia.org/wiki/Steve_Jobs",
+    "addedDate": "2017-08-02"
+  },
+  {
+    "id": 8,
+    "author": "Les Brown",
+    "quote": "The graveyard is the richest place on earth, because it is here that you will find all the hopes and dreams that were never fulfilled, the books that were never written, the songs that were never sung, the inventions that were never shared, the cures that were never discovered, all because someone was too afraid to take that first step, keep with the problem, or determined to carry out their dream.",
+    "url": "https://en.wikipedia.org/wiki/Les_Brown_(speaker)",
+    "addedDate": "2017-10-14"
+  },
+  {
+    "id": 9,
+    "author": "Michael Jordan",
+    "quote": "I've missed more than 9000 shots in my career. I've lost almost 300 games. 26 times I've been trusted to take the game winning shot and missed. I've failed over and over and over again in my life. And that is why I succeed.",
+    "url": "https://en.wikipedia.org/wiki/Michael_Jordan",
+    "addedDate": "2017-10-30"
+  },
+  {
+    "id": 10,
+    "author": "Warren Buffett",
+    "quote": "The most important investment you can make is in yourself.",
+    "url": "https://en.wikipedia.org/wiki/Warren_Buffett",
+    "addedDate": "2017-12-13"
+  }
+]

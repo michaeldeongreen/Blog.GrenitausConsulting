@@ -1,0 +1,139 @@
+<a href="assets/images/replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api.png"><img class="img-responsive" src="assets/images/replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api.png" alt="Grenitaus Consulting"></a>
+<br /><br />
+In part 3 and final blog post of this series, I want to go into more detail about the ASP.Net Web API and the Windows Console Application that I wrote to help me complete the project of replacing my Wordpress blog with a custom Angular 2 application.  In you have not read part 2 of this series, you can find it <a href="post/replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-3" target="_blank">here</a>.
+<br /><br />
+<strong>The Back-End</strong>
+<br /><br />
+The ASP.Net Web API that I created to serve as the back-end for this project is pretty straightforward.  Its main function is to:
+<br /><br />
+<ul>
+<li>Provide Post, Category, Archive and Inspirational Quote data</li>
+<li>Provide server side pagination functionality</li>
+<li>Provide search functionality</li>
+</ul>
+<br /><br />
+When the Web API loads on Application Start it does the following:
+<br /><br />
+<ol>
+<li>Creates a singleton object called BlogContext via a static class called BlogContextManager</li>
+<li>The BlogContext then loads categories, post-summaries, quotes and tags json files into memory</li>
+<li>The BlogContext will also pull in the full blog posts, located in (.html) files into memory as well</li>
+</ol>
+<br /><br />
+<strong>Json Files</strong>
+<br /><br />
+<b>categories.json</b> - The categories json file contains all of the categories I have used for my blog.
+<br /><br />
+<b>quotes.json</b> - The quotes json file contains a list of inspirational quotes and the date I added the quote.  The Web API will will only serve 1 quote and it will be the most recent date.
+<br /><br />
+<b>tags.json</b> - The tags json file contains all of the tags that I have used for my blog entries.
+<br /><br />
+<b>post-summaries</b> - The post-summaries json file is the main json file that consist of the following fields:
+<pre><code class="language-json">
+  {
+    "id": int,
+    "title": string,
+    "author": string,
+    "postDate": string,
+    "snippet": string,
+    "link": string,
+    "isActive": boolean,
+    "categories": [],
+    "tags": [],
+    "images": [],
+    "canPreview": boolean,
+    "previewExpirationDate": date
+  }
+</code></pre>
+<br /><br />
+Most of the fields are self-explanatory.  The snippet field contains a small snippet of what the post is about.  As I type this, I think a better name for this field would have been "description".  The link field contains the name fo the physical (.html) file that contains the full post.  I didn't put the full html in this json file because I didn't want to bring all of the data down when it was the full post was only going to be seen on the Post page.  Also, I didn't particular good about putting html in json.
+<br /><br />
+The canPreview and previewExpirationDate controls if a blog post can be previewed if it is not active and when the preview expires.
+<br /><br />
+I want to also note that for every back-end object, I had matching TypeScript classes on the client side and used strongly-typed <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html" target="_blank">RxJS Observables</a> when retrieving data from the Web API.
+<br /><br />
+<strong>gc-cli</strong>
+<br /><br />
+The gc-cli Windows Console Application originally started off as a WinForms Application.  I needed a tool to generate Sitemap xml files.  The tool started to grow when I put functionality in it to generate a RSS xml file and static html pages.  I am a huge fan of the command line, in particular Bash, so I decided to move all of this functionality to a Windows Console Application.  The Windows Console Application used the same C# libraries that the Web API uses to load data, so a lot of work was saved.
+<br /><br />
+gc-cli has an app.config file with these configurable values:
+<br /><br />
+<pre><code><xmp>
+  <appSettings>
+    <!--DEV-->
+    <add key="DevDomain" value=""/>
+    <add key="DevJsonConfigDirectory" value=""/>
+    <add key="DevOutputDirectory" value=""/>
+    <add key="DevAngularCLISrctDirectory" value=""/>
+    <!--PROD-->
+    <add key="ProdDomain" value=""/>
+    <add key="ProdJsonConfigDirectory" value=""/>
+    <add key="ProdOutputDirectory" value=""/>
+    <add key="ProdAngularCLISrctDirectory" value=""/>
+  </appSettings>
+</xmp></code></pre>
+<br /><br />
+<b>[Dev/Prod]Domain</b> - value is used to specify the url that will be used for image and the static html paths in the Sitemaps, RSS xml and static html files.
+<br /><br />
+<b>[Dev/Prod]JsonConfigDirectory</b> - value is used to specify the directory of the json files
+<br /><br />
+<b>[Dev/Prod]OutputDirectory</b> - value is used to specify where gc-cli should output the Sitemaps, RSS and static html files
+<br /><br />
+<b>[Dev/Prod]AngularCLISrcDirectory</b> - value used to specify the angular-cli default src directory.  This directory is needed so the static html files can be placed in a sub directory and the .angular-cli.json config file can include them in the "dist" folder, which contains your deployable front-end artifacts.
+<br /><br />
+Basically, how gc-cli works is that I first added an entry to my Windows Path to the gc-cli executable, so I could type commands in Bash.  Next, I type:
+<br /><br />
+<pre><code class="language-bash">
+gc-cli build -dev
+</code></pre>
+<br /><br />
+Or
+<br /><br />
+<pre><code class="language-bash">
+gc-cli build -prod
+</code></pre>
+<br /><br />
+gc-cli will then pull the appropriate values in the app.config and generate the Sitemaps, RSS xml and static html files.  The output in Bash looks like the below:
+<br /><br />
+<a href="assets/images/replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-3-001.png" target="_blank"><img src="assets/images/replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-3-001.png" class="img-responsive" /></a>
+<br /><br />
+<strong>The "Shadow" Blog</strong>
+<br /><br />
+I am not an expert on SEO and really never gave much thought to it because the Yoast SEO Wordpress plugin handled all of this.  Now that I was removing Wordpress from the equation, I have to give a lot more thought to Search Engine Optimization.  What I quickly found out is that Single Page Applications don't work very well with Social Media Share Buttons.  I was dynamically setting the meta tags using the Angular 2 Library <a href="https://www.npmjs.com/package/@nglibs/meta" target="_blank">@nglibs/meta</a> but the share buttons would only use the tags that were hardcoded into the index.html.
+<br /><br />
+Ultimately, after discussing this issue with a friend and doing some research on the web, I elected to generate a slimmed down, static html file for every post.  The static html files would have their meta tags set with data from the BlogContext, have the Social Media Share Buttons and on the Angular 2 pages, the url that the Social Media Share Buttons used in the querystring were the static html pages, so the Social Media sites could grab the correct meta tags.
+<br /><br />
+The static html files use the same header and footer as their Angular 2 equivalents, but I elected to not put the search, categories, inspirational quotes and archives on it.  I believe if people like my content, they will just click on the header links to navigate to the full Angular 2 site.
+<br /><br />
+<strong>The Deployment Process</strong>
+<br /><br />
+My deployment process is pretty simple.  
+<br /><br />
+<ol>
+<li>In Visual Studio 2015, right-click on the Web API project and Publish to a local directory</li>
+<li>In Bash, type in "gc-cli build -prod" to generate the Sitemap, RSS xml and static html files</li>
+<li>In Bash, type "ng serve" to get angular-cli to produce the front-end deployable artifacts</li>
+<li>Upload these files to the application server</li>
+</ol>
+<br /><br />
+If I need to add a new blog entry, I just update the categories, tags and post-summaries json files.  I then run gc-cli and then upload the updated json, Sitemap, RSS and static html files to the application server.
+<br /><br />
+<b>Enhancements!</b>
+<br /><br />
+As with all Software Development projects, there are always features that you can add or enhance.
+<br /><br />
+<b>Blog Monitor</b>
+<br /><br />
+In a previous post, I alluded to the fact that I use a shared hosting service with GoDaddy.  I believe Godaddy has set the IIS <a href="https://technet.microsoft.com/en-us/library/cc733120(v=ws.10).aspx" target="_blank">Regular time intervals (in minutes)</a> setting to single digits, forcing the App Pool to recycle frequently and causing the Web API to reload the data into memory several times.  I created an object that I called the "BlogMonitor" that is configured to call the Web API in specified intervals to prevent the App Pool from shutting down. I may completely remove this feature or I might configured it to call the Angular 2 client as well.
+<br /><br />
+<b>Re-load Data Per Request in Development</b>
+<br /><br />
+Because the Web API loads the blog data on start up, if I am making changes to the blog and I want to see the changes, I have to stop the Web API and re-run it to load the changes.  I may configure the Web API to load data per request in Development, so I don't have to stop/start the Web API during Development.  If I do implement this functionality, it will use an HttpModule.
+<br /><br />
+<b>Comments Section</b>
+<br /><br />
+When I was using Wordpress, I was using <a href="https://disqus.com/" target="_blank">Disqus</a> to manage my comments section.  I have not decided if I am going to have a comments section on my Angular 2 blog.  If I do decide to have a comments section, I will probably just use <a href="https://developers.facebook.com/docs/plugins/comments/" target="_blank">Facebook's Comment Plugin</a>.
+<br /><br />
+<strong>Conclusion</strong>
+<br /><br />
+This concludes my 3 part series on replacing my Wordpress blog with Angular 2 and ASP.Net Web API.  I really enjoyed the "struggle" of learning more about Angular 2 and I am very satisfied with the end results.  You can find the code on GitHub <a href="https://github.com/michaeldeongreen/Blog.GrenitausConsulting" target="_blank">here</a>

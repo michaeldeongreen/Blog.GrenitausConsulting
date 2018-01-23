@@ -1,0 +1,43 @@
+<a href="assets/images/michael-d-green-grenitausconsulting-com-bored-take-the-tic-tac-toe-challenge-001.jpg"><img src="assets/images/michael-d-green-grenitausconsulting-com-bored-take-the-tic-tac-toe-challenge-001.jpg" alt="michael-d-green-grenitausconsulting-com-bored-take-the-tic-tac-toe-challenge-001" width="600" height="150" class="img-responsive" /></a>
+<br><br>
+After eating Thanksgiving dinner with my family and returning to my house, I got a little bored.  
+<br><br>
+A friend of mine just started a IT Consulting Company a few months ago.  I was browsing his public GitHub Page the day before Thanksgiving and I noticed that one of his repositories was a coding challenge for interviews.  There were 2 coding challenges and one of them was to determine a winner of a Tic Tac Toe game. 
+<br><br>
+I had never attempted to do this, so I decided to spend a little time and take the Tic Tac Toe challenge.  
+
+<b>Completed Solution on GitHub</b> <a href="https://github.com/michaeldeongreen/TicTacToe" target="_blank">here</a>
+<br><br>
+<strong>Tech Stack</strong>
+<br><br>
+<ul>
+<li>C# 6</li>
+<li>FluentAssertions</li>
+<li>NUnit 3.5</li>
+<li>TestDriven.Net</li>
+<li>Visual Studio 2015</li>
+</ul>
+<br><br>
+<strong>Insight into how I approach problems</strong>
+<br><br>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-bored-take-the-tic-tac-toe-challenge-002.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-bored-take-the-tic-tac-toe-challenge-002.png" alt="michael-d-green-grenitausconsulting-com-bored-take-the-tic-tac-toe-challenge-002" width="640" height="465" class="img-responsive" /></a>
+<br><br>
+<strong>Thoughts</strong>
+<br><br>
+<ul>
+<li>For the GameResultService, I probably should remove the constructor and pass the board into the GetResults Method.  The coding challenge description seemed to indicated that you would just be given a board at a given point in time.  I would need to make the change I have suggested, if it was interactive and I wanted to use the same service throughout the course of the game.</li>
+<li>I suspect that a lot of people would have come up with a nice algorithm that was more efficient and required less code.</li>
+<li>I thought about slapping a WinForms or even an AngularJS Front-End on it but I guess laziness is greater than boredom.</li>
+</ul>
+ <br><br>
+<strong>Edit:</strong>
+<br><br>
+<ul>
+<li>Forgot to mention, this solution assumes a 3x3 Game Board, if I have the ambition, I may attempt to make it N x N <b>(2016-11-25)</b></li>
+<li>Looks like I forgot to code for "Deadlock" <b>(2016-11-25)</b></li>
+<li>Added Deadlock logic to the application<b> (2016-11-25)</b></li>
+<li>Passing the board into GameResultService.GameStatus method, so you don't have to create a new service instance to continually check the board <b>(2016-11-25)</b></li>
+<li>Created a new property on TicTacToeResult call Status that called overrided ToString that prints out the status of the game, so you don't have to have IF statements to check <b>(2016-11-25)
+</b></li>
+<li>IsWinner boolean removed in place of a enum value Winner, NoWinner and Deadlock.  Went back and forth on enum vs add a new boolean called IsDeadlock.  Went with enum even though I believe enums should be mutually exclusive.  Technically, the results can be NoWinner and Deadlock. <b>(2016-11-25)</b></li>
+</ul>

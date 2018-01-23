@@ -1,0 +1,289 @@
+In my last <a href="post/implement-async-wait-in-the-angular-2-tour-of-heroes-web-api/" target="_blank">blog</a> I talked about using the async/await asynchronous features in the .Net Framework.  I modified one of the Tour of Heroes REST Endpoints to use async/await.  In this blog, I will be refactoring code in my open source project to use async/wait instead of the <a href="https://msdn.microsoft.com/en-us/library/system.componentmodel.backgroundworker(v=vs.110).aspx" target="_blank">Backgroundworker</a>.
+<br><br>
+<h2>Background</h2>
+<br><br>
+The open source project that I created roughly 1 year ago is a Windows Form application that allows users to work with Blu-ray discs.  Many of the forms use the Backgroundworker to perform long running tasks asynchronous.  The part of the application that I wanted to refactor first is the code that makes a call to GitHub to see if a new version of the application has been released and notifying the user.
+<br><br>
+<b>Here is what happens:</b>
+<br><br>
+<ol>
+<li>The user starts the application</li>
+<li>The main form (MainForm) is displayed</li>
+<li>The MainForm Form Load event calls a method called CheckForNewVersion</li>
+<li>The CheckForNewVersion method uses the Backgroundworker to call the AppNotificationService asynchronously</li>
+<li>The AppNotificationService service contacts GitHub's API to get the latest version of the application</li>
+<li>After the call completes, if there is a new version of the application, the user is notified via a "new" icon displayed on MainForm</li>
+</ol>
+<br><br>
+<h2>Here is the code before refactoring:</h2>
+<br><br>
+<b>Backgroundworker Component:</b>
+<br><br>
+<a href="assets/images/michael-d-green-grenitausconsulting-com-refactoring-code-in-my-open-source-project-to-use-async-await-001.png"><img src="assets/images/michael-d-green-grenitausconsulting-com-refactoring-code-in-my-open-source-project-to-use-async-await-001.png" alt="michael-d-green-grenitausconsulting-com-refactoring-code-in-my-open-source-project-to-use-async-await-001" width="295" height="65" class="alignnone size-full wp-image-765" /></a>
+
+<br><br>
+<b>MainForm_Load:</b>
+<br><br>
+<pre><code class="language-csharp">
+private void MainForm_Load(object sender, EventArgs e)
+{
+	if (!Program.ErrorLoadingApplicationSettings)
+	{
+		this.LoadLoggingService();
+		this.CheckForNewVersion();
+	}
+	else
+	{
+		menuStrip1.SetEnabled(false);
+	}
+}
+</code></pre>
+<br><br>
+<b>MainForm.CheckForNewVersion:</b>
+<br><br>
+<pre><code class="language-csharp">
+private void CheckForNewVersion()
+{
+	try
+	{
+		if (Program.ApplicationSettings.CheckForNewVersion)
+		{
+			IAppNotificationService appNotificationservice = new AppNotificationService(Program.GetApplicationTag());
+			bgwCheckForNewVersion.RunWorkerAsync(appNotificationservice);
+		}
+	}
+	catch (Exception ex)
+	{
+		_loggingService.LogErrorFormat(ex, MethodBase.GetCurrentMethod().Name);
+	}
+}
+</code></pre>
+<br><br>
+<b>MainForm.Backgroundworker Events:</b>
+<br><br>
+<pre><code class="language-csharp">
+private void bgwCheckForNewVersion_DoWork(object sender, DoWorkEventArgs e)
+{
+	try
+	{
+		IAppNotificationService appNotificationservice = e.Argument as AppNotificationService;
+		AppLatestVersionInfo appLatestVersionInfo = appNotificationservice.GetLatestVersionInfo();
+		e.Result = appLatestVersionInfo;
+	}
+	catch (Exception ex)
+	{
+		_loggingService.LogErrorFormat(ex, MethodBase.GetCurrentMethod().Name);
+	}
+}
+</code></pre>
+<br><br>
+<pre><code class="language-csharp">
+private void bgwCheckForNewVersion_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+{
+	_appLatestVersionInfo = e.Result as AppLatestVersionInfo;
+	if (_appLatestVersionInfo != null && _appLatestVersionInfo.IsNewVersion)
+	{
+		pbNewVersion.Visible = true;
+		this.ConfigurepbNewVersion();
+	}
+}
+</code></pre>
+<br><br>
+<b>AppNotificationService:</b>
+<br><br>
+<pre><code class="language-csharp">
+public AppLatestVersionInfo GetLatestVersionInfo()
+{
+	this.ContactGithubLatestReleaseApi().Wait();
+	return _appLatestVersionSettings;
+}
+</code></pre>
+<br><br>
+<pre><code class="language-csharp">
+private async Task ContactGithubLatestReleaseApi()
+{
+	string latestTag = string.Empty;
+	using (HttpClient client = new HttpClient())
+	{
+		client.DefaultRequestHeaders.Clear();
+		client.DefaultRequestHeaders.Add("User-Agent","App");
+		client.DefaultRequestHeaders.Accept.Clear();
+		client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+		HttpResponseMessage response = await client.GetAsync("githuburl");
+		if (response.IsSuccessStatusCode)
+		{
+			var json = await response.Content.ReadAsStringAsync();
+			JObject token = JObject.Parse(json);
+			var tagName = token.SelectToken("tag_name");
+			var htmlUrl = token.SelectToken("html_url");
+			var name = token.SelectToken("name");
+
+			_appLatestVersionSettings = new AppLatestVersionInfo() { LatestGithubUrl = htmlUrl == null ? string.Empty : htmlUrl.ToString(),
+			 TagName = tagName == null ? string.Empty : tagName.ToString(), Name = name == null ? string.Empty : name.ToString()};
+
+			if (tagName != null && string.IsNullOrEmpty(tagName.ToString()) == false)
+			{
+				if (tagName.ToString() != _currentTagName)
+					_appLatestVersionSettings.IsNewVersion = true;
+				else
+					_appLatestVersionSettings.IsNewVersion = false;
+			}
+			else
+				_appLatestVersionSettings.IsNewVersion = false;
+		}
+	}
+}
+</code></pre>
+<br><br>
+<b>Notes about the code above:</b>
+<br><br>
+<ul>
+<li>MainForm.cs uses the Backgroundworker component to run long running processes asychronously</li>
+<li>In the AppNotificationService, there is no error handling.  It is up to the calling process to capture the error</li>
+<li>In the AppNotificationService.GetLatestVersionInfo method, it doesn't have the async keyword in the method signature and I am just calling <i>Wait</i> on the ContactGithubLatestReleaseApi Method</li>
+<li>To check for a new application version, I have a Backgroundworker control and 2 Backgroundworker Events </li>
+</ul>
+
+<br><br>
+<h2>Here is the code after refactoring:</h2>
+<br><br>
+
+<h3>AppNotificationService:</h3>
+<br><br>
+
+<b>AppNotificationService.GetLatestVersionInfo:</b>
+<br><br>
+<pre><code class="language-csharp">
+public async Task1<AppLatestVersionInfo> GetLatestVersionInfo()
+{
+	var task = await this.ContactGithubLatestReleaseApi();
+	
+
+	return task;
+}
+</code></pre>
+
+<br><br>
+<b>Notes:</b>
+<br><br>
+<ul>
+<li>The method now has an async keyword in the method declaration</li>
+<li>The method returns a Strongly-Typed Task</li>
+<li>The method uses the <i>await</i> keyword</li>
+</ul>
+
+<b>AppNotificationService.ContactGithubLatestReleaseApi:</b>
+<br><br>
+<pre><code class="language-csharp">
+private async Task<AppLatestVersionInfo> ContactGithubLatestReleaseApi()
+{
+	AppLatestVersionInfo appLatestVersionSettings = null;
+	string latestTag = string.Empty;
+
+	try
+	{
+		using (HttpClient client = new HttpClient())
+		{
+			client.DefaultRequestHeaders.Clear();
+			client.DefaultRequestHeaders.Add("User-Agent", "App");
+			client.DefaultRequestHeaders.Accept.Clear();
+			client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+			HttpResponseMessage response = await client.GetAsync("githuburl");
+			if (response.IsSuccessStatusCode)
+			{
+				var json = await response.Content.ReadAsStringAsync();
+				JObject token = JObject.Parse(json);
+				var tagName = token.SelectToken("tag_name");
+				var htmlUrl = token.SelectToken("html_url");
+				var name = token.SelectToken("name");
+
+				appLatestVersionSettings = new AppLatestVersionInfo()
+				{
+					LatestGithubUrl = htmlUrl == null ? string.Empty : htmlUrl.ToString(),
+					TagName = tagName == null ? string.Empty : tagName.ToString(),
+					Name = name == null ? string.Empty : name.ToString()
+				};
+
+				if (tagName != null && string.IsNullOrEmpty(tagName.ToString()) == false)
+				{
+					if (tagName.ToString() != _currentTagName)
+						appLatestVersionSettings.IsNewVersion = true;
+					else
+						appLatestVersionSettings.IsNewVersion = false;
+				}
+				else
+					appLatestVersionSettings.IsNewVersion = false;
+			}
+		}
+	}
+	catch (Exception ex)
+	{
+		_loggingService.LogErrorFormat(ex, MethodBase.GetCurrentMethod().Name);
+	}
+	return appLatestVersionSettings;
+}
+</code></pre>
+<br><br>
+<b>Notes:</b>
+<br><br>
+<ul>
+<li>The method return type has been changed from Task to a Strongly-Typed Task</li>
+<li>The method returns a value.  Before the refactor, the method only initialized a class-scoped variable</li>
+<li>The method now has a try/catch block and therefore can report more accurate exception information ie MethodBase.GetCurrentMethod().Name</li>
+<li>The method returns a null object if an exception is thrown</li>
+</ul>
+<br><br>
+<h3>MainForm.cs:</h3>
+<br><br>
+
+<pre><code class="language-csharp">
+private async Task CheckForNewVersion()
+{
+	IAppNotificationService appNotificationservice = new AppNotificationService(Program.GetApplicationTag(), _loggingService);
+
+	var task = await appNotificationservice.GetLatestVersionInfo();
+
+	if (task != null)
+		this.CheckForNewVersionCompleted(task);
+	else
+		_displayErrorMessageService.DisplayError(new ErrorMessage() { DisplayMessage = "An error occurred while trying to check for a new verison", DisplayTitle = "Error Occurred." });
+}
+</code></pre>
+<br><br>
+<b>Notes:</b>
+<br><br>
+<ul>
+<li>The method now has an async keyword in the method declaration</li>
+<li>The method specifies a Task return type</li>
+<li>The method uses the <i>await</i> keyword</li>
+<li>The method checks to see if the returned AppNotificationService task is null</li>
+<li>If the AppNotificationService task is null, the service that displays errors to the user is called</li>
+<li>If the AppNotificationService task is not null, the task is passed to a new function that has the code that was in the Backgroundworker RunWorkerCompleted Event</li>
+<li>After <i>await</i>, the method continues running on the UI thread.  The CheckForNewVersionCompleted method updates UI controls and you don't receive cross-thread exceptions.</li>
+<li>The Backgroundworker component has been removed completely</li>
+</ul>
+<br><br>
+<pre><code class="language-csharp">
+private void CheckForNewVersionCompleted(AppLatestVersionInfo result)
+{
+	_appLatestVersionInfo = result;
+	if (_appLatestVersionInfo != null && _appLatestVersionInfo.IsNewVersion)
+	{
+		pbNewVersion.Visible = true;
+		this.ConfigurepbNewVersion();
+	}
+}
+</code></pre>
+<br><br>
+<b>Notes:</b>
+<br><br>
+<ul>
+<li>The new method has the code that was in the Backgroundworker RunWorkerCompleted Event</li>
+</ul>
+<br><br>
+<h2>Final Notes:</h2>
+After refactoring my open source software code to use async/await, I feel that the code is more intuitive, consistent and a lot easier to read for someone not familiar with the codebase.  The changes discussed in this blog post are in a feature branch and have not been released because the Backgroundworker is being used in several other places throughout the codebase.  
+<br><br>
+After writing this blog post, one item that I am thinking about modifying is the CheckForNewVersion method in MainForm.cs.  I am not sure that checking for a null task is the best way to determine if the asynchronous call threw an exception.  One idea might be to add a new custom exception property to the AppLatestVersionInfo object, hydrate it with any exceptions thrown in the AppNotificationService and then check this property in CheckForNewVersion.
+<br><br>
+One of the reasons I like to blog is because it forces me to take the time to try to really understand concepts and this helps me to become a much better technologist.  Also, I would like to give credit to <a href="http://blog.stephencleary.com/" target="_blank">Stephen Cleary</a>.  Stephen has a wonderful blog that has posts that goes into great detail about the inner workings of how async/await.
