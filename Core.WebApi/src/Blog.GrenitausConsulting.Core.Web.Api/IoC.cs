@@ -21,6 +21,7 @@ namespace Blog.GrenitausConsulting.Core.Web.Api
                 config.Scan(s => {
                     s.TheCallingAssembly();
                     s.AssemblyContainingType<CommonRegistry>();
+                    s.AssemblyContainingType<ServicesRegistry>();
                     s.WithDefaultConventions();
                 });
 

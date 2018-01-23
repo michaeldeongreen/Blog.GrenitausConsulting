@@ -38,6 +38,8 @@ namespace Blog.GrenitausConsulting.Core.Web.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            BlogConfig.Configure($"{env.ContentRootPath}\\AppData");
+
             app.UseMvc();
         }
     }
