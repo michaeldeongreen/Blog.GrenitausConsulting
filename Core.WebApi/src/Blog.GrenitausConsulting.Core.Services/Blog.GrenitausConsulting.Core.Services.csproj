@@ -11,4 +11,9 @@
     <PackageReference Include="StructureMap.Microsoft.DependencyInjection" Version="1.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.GrenitausConsulting.Core.Common\Blog.GrenitausConsulting.Core.Common.csproj" />
+    <ProjectReference Include="..\Blog.GrenitausConsulting.Core.Domain\Blog.GrenitausConsulting.Core.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
