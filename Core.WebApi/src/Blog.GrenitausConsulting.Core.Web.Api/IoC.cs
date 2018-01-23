@@ -1,4 +1,5 @@
 ﻿using Blog.GrenitausConsulting.Core.Common;
+using Blog.GrenitausConsulting.Core.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StructureMap;
@@ -24,6 +25,7 @@ namespace Blog.GrenitausConsulting.Core.Web.Api
                 });
 
                 config.IncludeRegistry<CommonRegistry>();
+                config.IncludeRegistry<ServicesRegistry>();
                 config.IncludeRegistry<DefaultRegistry>();
                 config.Populate(services);
             });

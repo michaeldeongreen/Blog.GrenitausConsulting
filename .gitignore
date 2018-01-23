@@ -69,6 +69,9 @@
 /Core.WebApi/src/Blog.GrenitausConsulting.Core.Common/obj
 
 
+/Core.WebApi/src/Blog.GrenitausConsulting.Core.Services/bin
+/Core.WebApi/src/Blog.GrenitausConsulting.Core.Services/obj
+
 
 /Client/.vs
 /Client/bin
