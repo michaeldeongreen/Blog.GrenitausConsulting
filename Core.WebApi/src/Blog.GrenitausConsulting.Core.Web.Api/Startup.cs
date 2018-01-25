@@ -26,6 +26,7 @@ namespace Blog.GrenitausConsulting.Core.Web.Api
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddCors();
             var container = IoC.Configure(Configuration, services);
             return container.GetInstance<IServiceProvider>();
         }
@@ -38,6 +39,7 @@ namespace Blog.GrenitausConsulting.Core.Web.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(c => c.AllowAnyOrigin());
             BlogConfig.Configure($"{env.ContentRootPath}\\AppData");
 
             app.UseMvc();

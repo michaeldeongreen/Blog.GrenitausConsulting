@@ -9,7 +9,6 @@ using Blog.GrenitausConsulting.Core.Common;
 
 namespace Blog.GrenitausConsulting.Core.Web.Api.Controllers
 {
-    [Produces("application/json")]
     public class CategoryController : Controller
     {
         [Route("api/categories")]
