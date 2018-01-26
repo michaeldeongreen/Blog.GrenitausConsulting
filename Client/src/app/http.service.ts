@@ -35,8 +35,8 @@ export class HttpService {
 
     public getPostHtml(title: string): any {
         return this.http.get(`${this.baseUrl}/html/${title}`)
-            .map((response: Response) => response.json())
-            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+            .map((response: Response) => response.text())
+            .catch((error: any) => Observable.throw(error.text().error) || 'Server Error');
     }
 
     public getPost(title: string): any {
@@ -76,15 +76,15 @@ export class HttpService {
     }
 
     public getQuote(): any {
-        return this.http.get(`${this.baseUrl}/quotes`)
+        return this.http.get(`${this.baseUrl}/quote`)
             .map((response: Response) => response.json())
             .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
     }
 
     public getPostPreviewHtml(title: string): any {
         return this.http.get(`${this.baseUrl}/html/${title}/preview`)
-            .map((response: Response) => response.json())
-            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+            .map((response: Response) => response.text())
+            .catch((error: any) => Observable.throw(error.text().error) || 'Server Error');
     }
 
     public getPostPreview(title: string): any {

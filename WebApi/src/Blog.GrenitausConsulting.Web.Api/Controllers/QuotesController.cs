@@ -11,6 +11,7 @@ namespace Blog.GrenitausConsulting.Web.Api.Controllers
 {
     public class QuotesController : ApiController
     {
+        [Route("api/quote")]
         public Quote Get()
         {
             return BlogContextManager.Quotes.OrderByDescending(q => q.AddedDate).Take(1).SingleOrDefault();
