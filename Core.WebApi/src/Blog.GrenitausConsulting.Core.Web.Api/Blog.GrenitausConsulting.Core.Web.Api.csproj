@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="AppData\*" CopyToPublishDirectory="PreserveNewest"></None>
+    <None Include="AppData\**\*" CopyToPublishDirectory="PreserveNewest"></None>
   </ItemGroup>
 
 </Project>
