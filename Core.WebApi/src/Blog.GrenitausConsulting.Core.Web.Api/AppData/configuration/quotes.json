@@ -68,5 +68,12 @@
     "quote": "The most important investment you can make is in yourself.",
     "url": "https://en.wikipedia.org/wiki/Warren_Buffett",
     "addedDate": "2017-12-13"
+  },
+  {
+    "id": 11,
+    "author": "Martin Luther King Jr.",
+    "quote": "If you can't fly then run, if you can't run then walk, if you can't walk then crawl, but whatever you do you have to keep moving forward.",
+    "url": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.",
+    "addedDate": "2018-02-10"
   }
 ]

@@ -2022,5 +2022,46 @@
     ],
     "canPreview": true,
     "previewExpirationDate": "2017-12-20"
+  },
+  {
+    "id": 45,
+    "title": "How to Implement StructureMap 4 in a WCF Service using Nested Containers",
+    "author": "Michael D. Green",
+    "postDate": "2018-02-10",
+    "snippet": "I recently created a proof of concept GitHub repository and GitHub Gist on how to implement StructureMap 4 in a WCF Service using Nested Containers for a client who deals with lots of legacy code.",
+    "link": "how-to-implement-structureMap-4-in-a-wcf-service-using-nested-containers",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 44,
+        "name": "StructureMap"
+      },
+      {
+        "id": 82,
+        "name": "WCF"
+      },
+      {
+        "id": 83,
+        "name": "Legacy Code"
+      },
+      {
+        "id": 84,
+        "name": "Dependency Injection"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "assets/images/grenitaus-consulting-logo.png"
+      }
+    ],
+    "canPreview": true,
+    "previewExpirationDate": "2018-02-20"
   }
 ]  
