@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core.WebApi\src\Blog.GrenitausConsulting.Core.Common\Blog.GrenitausConsulting.Core.Common.csproj" />
+    <ProjectReference Include="..\..\..\Core.WebApi\src\Blog.GrenitausConsulting.Core.Domain\Blog.GrenitausConsulting.Core.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Core.WebApi\src\Blog.GrenitausConsulting.Core.Services\Blog.GrenitausConsulting.Core.Services.csproj" />
+    <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Core.Common\Blog.GrenitausConsulting.CLI.Core.Common.csproj" />
+    <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Core.Domain\Blog.GrenitausConsulting.CLI.Core.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+
+</Project>

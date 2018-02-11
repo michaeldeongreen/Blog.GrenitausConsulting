@@ -63,6 +63,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Core.WebApi\src\Blog.GrenitausConsulting.Core.Common\Blog.GrenitausConsulting.Core.Common.csproj">
+      <Project>{46928142-77be-4143-bd0d-81ce83c273ee}</Project>
+      <Name>Blog.GrenitausConsulting.Core.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\WebApi\src\Blog.GrenitausConsulting.Common\Blog.GrenitausConsulting.Common.csproj">
       <Project>{e742fb9d-38fc-4f4d-a447-b704dd6fbcd7}</Project>
       <Name>Blog.GrenitausConsulting.Common</Name>
