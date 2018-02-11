@@ -4,6 +4,6 @@ namespace Blog.GrenitausConsulting.CLI.Core.Services.Interfaces
 {
     public interface IEnvironmentSettingsService
     {
-        EnvironmentSettings Get(string environment);
+        EnvironmentSettings Get(string environment, string path);
     }
 }

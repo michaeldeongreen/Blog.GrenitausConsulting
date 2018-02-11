@@ -5,4 +5,15 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Core.Common\Blog.GrenitausConsulting.CLI.Core.Common.csproj" />
+    <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Core.Domain\Blog.GrenitausConsulting.CLI.Core.Domain.csproj" />
+    <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Core.Services\Blog.GrenitausConsulting.CLI.Core.Services.csproj" />
+  </ItemGroup>
+
 </Project>

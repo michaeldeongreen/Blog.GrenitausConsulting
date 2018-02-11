@@ -1,4 +1,10 @@
-﻿using System;
+﻿using Blog.GrenitausConsulting.CLI.Core.Common;
+using Blog.GrenitausConsulting.CLI.Core.Domain;
+using Blog.GrenitausConsulting.CLI.Core.Services;
+using Blog.GrenitausConsulting.CLI.Core.Services.Interfaces;
+using Microsoft.Extensions.Configuration;
+using System;
+using System.IO;
 
 namespace gc_cli
 {
@@ -6,7 +12,26 @@ namespace gc_cli
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //args = new string[] {"build", "-prod" };
+            string path = Directory.GetCurrentDirectory();
+
+            IConfigurationBuilder builder = new ConfigurationBuilder()
+                .SetBasePath(path);
+            builder.Build();
+
+            try
+            {
+                new Startup().Configure(args, path);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        internal static void CLIProcessStatusChangedHandler(object sender, CLIProcessStatusChangedEventArgs e)
+        {
+            Console.WriteLine(e.Message);
         }
     }
 }
