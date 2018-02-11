@@ -20,19 +20,12 @@ namespace gc_cli
                 throw new Exception(argumentValidationService.Errors[0].Description);
             }
 
-            try
-            {
-                EnvironmentSettings settings = environmentSettingsService.Get(args[1], path);
-                ICLIService cliService = new CLIService(settings);
+            EnvironmentSettings settings = environmentSettingsService.Get(args[1], path);
+            ICLIService cliService = new CLIService(settings);
 
-                cliService.CLIProcessStatusChanged += Program.CLIProcessStatusChangedHandler;
-                cliService.Generate();
-                cliService.CLIProcessStatusChanged -= Program.CLIProcessStatusChangedHandler;
-            }
-            catch (Exception)
-            {
-                throw new Exception("There was an error processing your command.");
-            }
+            cliService.CLIProcessStatusChanged += Program.CLIProcessStatusChangedHandler;
+            cliService.Generate();
+            cliService.CLIProcessStatusChanged -= Program.CLIProcessStatusChangedHandler;
         }
     }
 }

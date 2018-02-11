@@ -1,16 +1,11 @@
 New PC:
-1) Add gc-cli executable to Environment System Variables
+1) In the gc-cli appsettings.{environment}.json, ensure that the directory paths are correct
 
-2) in the gc-cli app.config, ensure that the directory paths are correct
+2) Re-compile gc-cli with: dotnet publish -c Release -r win10-x64
 
-Existing PC:
-3) Publish Web Api
+3) Modify publish.sh directory paths
 
-4) For the new blog, ensure that the post-summaries.json entry for isActive is true and canPreview is false
-
-5) In bash, type: gc-cli build -prod
-
-6) In bash, navigate to the client folder nad type: ng build -prod
+4) Run ./publish.sh
 
 
 

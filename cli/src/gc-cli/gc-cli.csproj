@@ -49,20 +49,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Common\Blog.GrenitausConsulting.CLI.Common.csproj">
-      <Project>{7e45aac0-4447-44ac-a09b-a3873efd5510}</Project>
-      <Name>Blog.GrenitausConsulting.CLI.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Domain\Blog.GrenitausConsulting.CLI.Domain.csproj">
-      <Project>{ef64d87c-a88c-4369-90f4-c9ea48da1ae9}</Project>
-      <Name>Blog.GrenitausConsulting.CLI.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Services\Blog.GrenitausConsulting.CLI.Services.csproj">
-      <Project>{d46ee5a5-f83a-4874-b32d-e622a92e2660}</Project>
-      <Name>Blog.GrenitausConsulting.CLI.Services</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

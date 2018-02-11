@@ -63,10 +63,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Core.WebApi\src\Blog.GrenitausConsulting.Core.Common\Blog.GrenitausConsulting.Core.Common.csproj">
-      <Project>{46928142-77be-4143-bd0d-81ce83c273ee}</Project>
-      <Name>Blog.GrenitausConsulting.Core.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\WebApi\src\Blog.GrenitausConsulting.Common\Blog.GrenitausConsulting.Common.csproj">
       <Project>{e742fb9d-38fc-4f4d-a447-b704dd6fbcd7}</Project>
       <Name>Blog.GrenitausConsulting.Common</Name>
@@ -78,14 +74,6 @@
     <ProjectReference Include="..\..\..\WebApi\src\Blog.GrenitausConsulting.Services\Blog.GrenitausConsulting.Services.csproj">
       <Project>{ec459a19-4b45-4e0b-a367-fd216aadb12b}</Project>
       <Name>Blog.GrenitausConsulting.Services</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Common\Blog.GrenitausConsulting.CLI.Common.csproj">
-      <Project>{7e45aac0-4447-44ac-a09b-a3873efd5510}</Project>
-      <Name>Blog.GrenitausConsulting.CLI.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Domain\Blog.GrenitausConsulting.CLI.Domain.csproj">
-      <Project>{ef64d87c-a88c-4369-90f4-c9ea48da1ae9}</Project>
-      <Name>Blog.GrenitausConsulting.CLI.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
