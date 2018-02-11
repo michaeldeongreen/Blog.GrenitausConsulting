@@ -3,16 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{2BD2560E-BB22-41D7-AE28-C41008A800BD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.Domain", "..\WebApi\src\Blog.GrenitausConsulting.Domain\Blog.GrenitausConsulting.Domain.csproj", "{84EDB053-270D-4A4B-B266-94D3FDF0A654}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.Services", "..\WebApi\src\Blog.GrenitausConsulting.Services\Blog.GrenitausConsulting.Services.csproj", "{EC459A19-4B45-4E0B-A367-FD216AADB12B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.Unit.Tests", "..\WebApi\src\Blog.GrenitausConsulting.Unit.Tests\Blog.GrenitausConsulting.Unit.Tests.csproj", "{F897A5C8-14AA-497E-86E5-4D8AE53E51B3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.Common", "..\WebApi\src\Blog.GrenitausConsulting.Common\Blog.GrenitausConsulting.Common.csproj", "{E742FB9D-38FC-4F4D-A447-B704DD6FBCD7}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{E7F6DECE-ACDC-480F-A036-C9FDC0605D12}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.Client", "..\Client\Blog.GrenitausConsulting.Client.csproj", "{799C980D-7D97-4B87-A1A6-F14B5C4ABC53}"
@@ -45,22 +35,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{84EDB053-270D-4A4B-B266-94D3FDF0A654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84EDB053-270D-4A4B-B266-94D3FDF0A654}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84EDB053-270D-4A4B-B266-94D3FDF0A654}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84EDB053-270D-4A4B-B266-94D3FDF0A654}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EC459A19-4B45-4E0B-A367-FD216AADB12B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC459A19-4B45-4E0B-A367-FD216AADB12B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC459A19-4B45-4E0B-A367-FD216AADB12B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC459A19-4B45-4E0B-A367-FD216AADB12B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F897A5C8-14AA-497E-86E5-4D8AE53E51B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F897A5C8-14AA-497E-86E5-4D8AE53E51B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F897A5C8-14AA-497E-86E5-4D8AE53E51B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F897A5C8-14AA-497E-86E5-4D8AE53E51B3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E742FB9D-38FC-4F4D-A447-B704DD6FBCD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E742FB9D-38FC-4F4D-A447-B704DD6FBCD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E742FB9D-38FC-4F4D-A447-B704DD6FBCD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E742FB9D-38FC-4F4D-A447-B704DD6FBCD7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{799C980D-7D97-4B87-A1A6-F14B5C4ABC53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{799C980D-7D97-4B87-A1A6-F14B5C4ABC53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{799C980D-7D97-4B87-A1A6-F14B5C4ABC53}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -106,10 +80,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{84EDB053-270D-4A4B-B266-94D3FDF0A654} = {2BD2560E-BB22-41D7-AE28-C41008A800BD}
-		{EC459A19-4B45-4E0B-A367-FD216AADB12B} = {2BD2560E-BB22-41D7-AE28-C41008A800BD}
-		{F897A5C8-14AA-497E-86E5-4D8AE53E51B3} = {2BD2560E-BB22-41D7-AE28-C41008A800BD}
-		{E742FB9D-38FC-4F4D-A447-B704DD6FBCD7} = {2BD2560E-BB22-41D7-AE28-C41008A800BD}
 		{799C980D-7D97-4B87-A1A6-F14B5C4ABC53} = {E7F6DECE-ACDC-480F-A036-C9FDC0605D12}
 		{46928142-77BE-4143-BD0D-81CE83C273EE} = {FA8E9B36-2907-4052-91EC-C7B0D7D200CA}
 		{9AA115F6-B649-46FC-86CC-3EC17DE1636C} = {FA8E9B36-2907-4052-91EC-C7B0D7D200CA}
