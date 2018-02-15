@@ -1,0 +1,50 @@
+<a href="assets/images/grenitaus-consulting-logo.png"><img class="img-responsive" src="assets/images/grenitaus-consulting-logo.png" alt="Grenitaus Consulting"></a>
+<br><br>
+
+Lately, I have been working with a lot of legacy code.  One of the hallmarks of legacy code is that it often times contains mission critical code, it isn't Unit Testable and because of the aforementioned reasons, developers don't enjoy making changes to it.
+
+<br><br>
+
+One type of legacy code that I have come across quite frequently is the so called "God" class.  A God class is a class that literally does everything.  The God class that I recently performed some slight re-factoring on was responsible for loading its data from the database, encrypting and decrypting its data, performing tons of business logic, contained very generic code like converting a int to string and saving its own data.  Below is a general example of the God class: 
+
+<br><br>
+
+<pre><code class="language-csharp">
+	//unit of work
+	public class UnitOfWork : IUnitOfWork
+	{
+		//implementation
+	}
+	
+	//
+	pubic class Repository<T> : IRepository<T>
+	{
+		public Repository(IUnitOfWork uow)
+		{
+			//implementation
+		}
+	}
+
+	//domain repository
+	public class LoginRepository : Repository<Login>, ILoginRepository
+	{
+		public LoginRepository(IUnitOfWork uow) : base(uow) {
+			//implementation
+		}
+	}
+	
+	//some api controller
+	public class LoginController
+	{
+		public LoginController(ILoginRepository loginRepository)
+		{
+			_loginRepository = loginRepository;
+			//implementation
+		}
+		
+		public IEnumerable<Login> Get(int Id)
+		{
+			return _loginRepository.Get(Id);
+		}
+	}
+</code></pre>

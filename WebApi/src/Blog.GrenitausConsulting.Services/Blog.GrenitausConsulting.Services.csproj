@@ -58,6 +58,16 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.GrenitausConsulting.Common\Blog.GrenitausConsulting.Common.csproj">
+      <Project>{e742fb9d-38fc-4f4d-a447-b704dd6fbcd7}</Project>
+      <Name>Blog.GrenitausConsulting.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blog.GrenitausConsulting.Domain\Blog.GrenitausConsulting.Domain.csproj">
+      <Project>{84edb053-270d-4a4b-b266-94d3fdf0a654}</Project>
+      <Name>Blog.GrenitausConsulting.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

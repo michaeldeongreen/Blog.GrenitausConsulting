@@ -62,6 +62,20 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.GrenitausConsulting.Common\Blog.GrenitausConsulting.Common.csproj">
+      <Project>{e742fb9d-38fc-4f4d-a447-b704dd6fbcd7}</Project>
+      <Name>Blog.GrenitausConsulting.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blog.GrenitausConsulting.Domain\Blog.GrenitausConsulting.Domain.csproj">
+      <Project>{84edb053-270d-4a4b-b266-94d3fdf0a654}</Project>
+      <Name>Blog.GrenitausConsulting.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blog.GrenitausConsulting.Services\Blog.GrenitausConsulting.Services.csproj">
+      <Project>{ec459a19-4b45-4e0b-a367-fd216aadb12b}</Project>
+      <Name>Blog.GrenitausConsulting.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -163,7 +163,20 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Blog.GrenitausConsulting.Common\Blog.GrenitausConsulting.Common.csproj">
+      <Project>{e742fb9d-38fc-4f4d-a447-b704dd6fbcd7}</Project>
+      <Name>Blog.GrenitausConsulting.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blog.GrenitausConsulting.Domain\Blog.GrenitausConsulting.Domain.csproj">
+      <Project>{84edb053-270d-4a4b-b266-94d3fdf0a654}</Project>
+      <Name>Blog.GrenitausConsulting.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blog.GrenitausConsulting.Services\Blog.GrenitausConsulting.Services.csproj">
+      <Project>{ec459a19-4b45-4e0b-a367-fd216aadb12b}</Project>
+      <Name>Blog.GrenitausConsulting.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BlogConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -239,20 +252,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Blog.GrenitausConsulting.Common\Blog.GrenitausConsulting.Common.csproj">
-      <Project>{e742fb9d-38fc-4f4d-a447-b704dd6fbcd7}</Project>
-      <Name>Blog.GrenitausConsulting.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Blog.GrenitausConsulting.Domain\Blog.GrenitausConsulting.Domain.csproj">
-      <Project>{84edb053-270d-4a4b-b266-94d3fdf0a654}</Project>
-      <Name>Blog.GrenitausConsulting.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Blog.GrenitausConsulting.Services\Blog.GrenitausConsulting.Services.csproj">
-      <Project>{ec459a19-4b45-4e0b-a367-fd216aadb12b}</Project>
-      <Name>Blog.GrenitausConsulting.Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
