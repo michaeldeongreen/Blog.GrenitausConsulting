@@ -153,7 +153,7 @@
   },
   {
     "id": 39,
-    "name": "refactoring"
+    "name": "Refactoring"
   },
   {
     "id": 40,
@@ -334,5 +334,9 @@
   {
     "id": 84,
     "name": "Dependency Injection"
+  },
+  {
+    "id": 85,
+    "name": "Octopus Deploy"
   }
 ]

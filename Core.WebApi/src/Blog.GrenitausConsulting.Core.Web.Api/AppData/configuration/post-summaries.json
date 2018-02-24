@@ -2063,5 +2063,131 @@
     ],
     "canPreview": true,
     "previewExpirationDate": "2018-02-20"
+  },
+  {
+    "id": 46,
+    "title": "Working With Legacy Code - Breaking Down God Classes",
+    "author": "Michael D. Green",
+    "postDate": "2018-02-10",
+    "snippet": "Lately, I have been working with a lot of legacy code.  One of the hallmarks of legacy code is that it often times contains mission critical code, it isn't Unit Testable and because of the aforementioned reasons, developers don't enjoy making changes to it.",
+    "link": "working-with-legacy-code-breaking-down-god-classes",
+    "isActive": false,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 39,
+        "name": "Refactoring"
+      },
+      {
+        "id": 83,
+        "name": "Legacy Code"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "assets/images/grenitaus-consulting-logo.png"
+      }
+    ],
+    "canPreview": true,
+    "previewExpirationDate": "2018-04-15"
+  },
+  {
+    "id": 47,
+    "title": "How to Deploy a Console Application Using TeamCity, PowerShell and Octopus Deploy",
+    "author": "Michael D. Green",
+    "postDate": "2018-02-26",
+    "snippet": "At one of my clients, I recently had to learn how to deploy a .Net Console Application using TeamCity and Octopus Deploy.  After doing some research, I noticed that there was not a lot of documentation on how what Octopus Deploy Step Templates to use to deploy (execute) the Console Application.  After figuring out how to do this task, I thought I would write a short blog about it.",
+    "link": "how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 22,
+        "name": "PowerShell"
+      },
+      {
+        "id": 25,
+        "name": "TeamCity"
+      },
+      {
+        "id": 85,
+        "name": "Octopus Deploy"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "assets/images/grenitaus-consulting-logo.png"
+      },
+      {
+        "name": "how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-001.png",
+        "url": "assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-001.png"
+      },
+      {
+        "name": "how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-002.png",
+        "url": "assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-002.png"
+      },
+      {
+        "name": "how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-003.png",
+        "url": "assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-003.png"
+      },
+      {
+        "name": "how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-004.png",
+        "url": "assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-004.png"
+      },
+      {
+        "name": "how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-005.png",
+        "url": "assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-005.png"
+      },
+      {
+        "name": "how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-006.png",
+        "url": "assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-006.png"
+      },
+      {
+        "name": "how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-007.png",
+        "url": "assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-007.png"
+      },
+      {
+        "name": "how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-008.png",
+        "url": "assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-008.png"
+      },
+      {
+        "name": "how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-009.png",
+        "url": "assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-009.png"
+      },
+      {
+        "name": "how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-010.png",
+        "url": "assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-010.png"
+      },
+      {
+        "name": "how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-011.png",
+        "url": "assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-011.png"
+      },
+      {
+        "name": "how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-012.png",
+        "url": "assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-012.png"
+      },
+      {
+        "name": "how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-013.png",
+        "url": "assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-013.png"
+      },
+      {
+        "name": "how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-014.png",
+        "url": "assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-014.png"
+      }
+    ],
+    "canPreview": true,
+    "previewExpirationDate": "2018-02-27"
   }
 ]  

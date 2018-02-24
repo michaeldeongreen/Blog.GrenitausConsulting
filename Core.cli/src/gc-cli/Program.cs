@@ -12,7 +12,7 @@ namespace gc_cli
     {
         static void Main(string[] args)
         {
-            //args = new string[] {"build", "-prod" };
+            //args = new string[] {"build", "-dev" };
             string path = Directory.GetCurrentDirectory();
 
             IConfigurationBuilder builder = new ConfigurationBuilder()

@@ -1,0 +1,151 @@
+<a href="assets/images/grenitaus-consulting-logo.png"><img class="img-responsive" src="assets/images/grenitaus-consulting-logo.png" alt="Grenitaus Consulting"></a>
+<br><br>
+
+At one of my clients, I recently had to learn how to deploy a .Net Console Application using TeamCity and Octopus Deploy.  My experience with Octopus Deploy is fairly limited and I have only used the built in Step Templates.  After doing some research, I noticed that there was not a lot of documentation on how what Octopus Deploy Step Templates to use to deploy (execute) the Console Application.  After figuring out how to do this task, I thought I would write a short blog about it.
+
+<br /><br />
+
+<strong>Caveat!</strong>
+<br />
+This blog entry assumes that you have a TeamCity and Octopus Deploy Server.  Furthermore, I assume that you are familiar with GitHub, already know how to setup your project in <URL>TeamCity</URL> and how to use <URL>Octopack</URL> to push your project to your Octopus Deploy's internal NuGet Feed.
+
+<br /><br />
+<strong>Background!</strong>
+<br />
+At one of my clients, we started to collect data from a new source into our ecosystem.  After a few Sprints of working on this effort, the Security Team stated that a portion of this data needed to be encrypted.  The issue is that unencrypted data already exists in DEV, QA and UAT (the new features had not made it to Production yet) and once you implement encryption/decryption in the ecosystem, the ecosystem will assume that the data in the database is already encrypted, so it when it tries to decrypt the data, you will get errors.
+
+<br><br>
+My client stated that they have handled this issue before by just creating a .Net Console Application that uses their custom encryption library to encrypt unencrypted data in the database prior to implementing encryption on the columns in the ecosystem.  However, I was told that the Support Team no longer wanted to run these types of applications themselves and just wanted to use Octopus Deploy to execute the Console Application.
+
+<br><br>
+<b>My main issues were:</b>
+<ul>
+	<li>I had never deployed a Console Application using Octopus Deploy</li>
+	<li>I didn't know how to apply <URL>Octopus Deploy Variables</URL> and run the Console Application in a Octopus Deploy Step Template</li>
+</ul>
+
+<br><br>
+
+<strong>Sample Code!</strong>
+<br />
+Before I discovered <URL>dotnetfiddle</URL>, I use to practice concepts using a Console Application.  I added another entry to this existing Console Application that when it is executed, it will create a list of Movies, convert the list to json, using Json.Net, grab a directory location from the app.config and save the json files.  
+
+<br /><br />
+When I run the Console Application locally, it will save the json files to "C:\Temp\Local" and of course, when I deploy to Octopus Deploy, the directory location in the app.config will be replaced by a Octopus Deploy variable, the Console Application will be executed and json file will be written to a different location.  You can find the GitHub Repository <a href="https://github.com/michaeldeongreen/ConsoleApplication1" target="_blank">here</a>
+
+<br><br>
+
+<strong>Brief TeamCity Project Overview!</strong>
+
+<br><br>
+<b>Project Setup:</b>
+<br>
+<a href="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-001.png" target="_blank"><img src="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-001.png" alt="How to Deploy a Console Application Using TeamCity, PowerShell and Octopus Deploy" class="img-responsive" /></a>
+
+<br><br>
+<b>Project Build Configuration:</b>
+<br>
+<a href="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-002.png" target="_blank"><img src="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-002.png" alt="How to Deploy a Console Application Using TeamCity, PowerShell and Octopus Deploy" class="img-responsive" /></a>
+
+<br><br>
+<b>Project Build Configuration Steps:</b>
+<br>
+<a href="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-003.png" target="_blank"><img src="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-003.png" alt="How to Deploy a Console Application Using TeamCity, PowerShell and Octopus Deploy" class="img-responsive" /></a>
+
+<br><br>
+<b>Project Build Configuration Step to Create Octopus Deploy Package:</b>
+<br>
+<a href="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-004.png" target="_blank"><img src="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-004.png" alt="How to Deploy a Console Application Using TeamCity, PowerShell and Octopus Deploy" class="img-responsive" /></a>
+
+<br><br>
+<b>Package Path:</b>
+<br>
+<pre><code class="language-javascript">
+ConsoleApplication1/**/* => ConsoleApplication1.%build.number%.zip
+</code></pre>
+
+<br><br>
+<b>Project Build Configuration Step to Create Octopus Deploy Release:</b>
+<br>
+<a href="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-005.png" target="_blank"><img src="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-005.png" alt="How to Deploy a Console Application Using TeamCity, PowerShell and Octopus Deploy" class="img-responsive" /></a>
+
+
+<br><br>
+
+<strong>Simple PowerShell Script!</strong>
+
+<br><br>
+
+To execute the Console Application in Octopus Deploy, I decided to write a very simple PowerShell script.  The PowerShell script is called "deploy.ps1" and I had to place it in the "ConsoleApplication1" directory that contains the ".csproj" file.  When I tried to place the PowerShell script in any of the sub folders, Octopus Deploy would complain about the script being placed in a sub folder.
+
+<br><br>
+<b>Here is the script:</b>
+<br>
+<pre><code class="language-powershell">
+Start-Process -Wait bin\Release\ConsoleApplication1.exe
+</code></pre>
+
+<br><br>
+
+<strong>Octopus Deploy Overview!</strong>
+
+<br><br>
+<strong>Step 1 - Create a New Octopus Deploy Project:</strong>
+<br>
+I added a new Project in Octopus Deploy called ConsoleApplication1.
+
+<br><br>
+<strong>Step 2 - Add a Deploy a Package Step:</strong>
+<br>
+Under the Process option for the new Project, I chose "Add Step" and choose "Deploy a package".
+<br><br>
+<b>Below is how I configured the "Deploy a package" step:</b>
+<br>
+<a href="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-006.png" target="_blank"><img src="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-006.png" alt="How to Deploy a Console Application Using TeamCity, PowerShell and Octopus Deploy" class="img-responsive" /></a>
+<br>
+<a href="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-007.png" target="_blank"><img src="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-007.png" alt="How to Deploy a Console Application Using TeamCity, PowerShell and Octopus Deploy" class="img-responsive" /></a>
+
+<br><br>
+<strong>Step 3 - Add a Run a Script Step:</strong>
+<br>
+Next, under the Process option for the new Project, I again choose "Add Step" and choose "Run a Script".
+<br><br>
+<b>Below is how I configured the "Run a Script" step:</b>
+<br>
+<a href="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-008.png" target="_blank"><img src="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-008.png" alt="How to Deploy a Console Application Using TeamCity, PowerShell and Octopus Deploy" class="img-responsive" /></a>
+<br>
+<a href="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-009.png" target="_blank"><img src="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-009.png" alt="How to Deploy a Console Application Using TeamCity, PowerShell and Octopus Deploy" class="img-responsive" /></a>
+
+<br><br>
+<b>Here is how my Deployment Process looked like when I completed adding all of the steps:</b>
+<br>
+<a href="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-010.png" target="_blank"><img src="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-010.png" alt="How to Deploy a Console Application Using TeamCity, PowerShell and Octopus Deploy" class="img-responsive" /></a>
+
+
+<br><br>
+<strong>Step 4 - Run the Project in TeamCity:</strong>
+<br>
+Now that we have setup TeamCity, Octopus Deploy and written our PowerShell script, it is time to run the ConsoleApplication1 project in TeamCity and see if all of this stuff works.  To verify that everything works the following should occur:
+<br>
+<ul>
+	<li>TeamCity Project should build, package and deploy the project to Octopus Deploy</li>
+	<li>Octopus Deploy should receive the project and run it</li>
+	<li>On "C:\Temp\Dev", we should see json files</li>
+</ul>
+
+<br><br>
+<b>TeamCity Build, Package and Deploy:</b>
+<br>
+<a href="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-012.png" target="_blank"><img src="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-012.png" alt="How to Deploy a Console Application Using TeamCity, PowerShell and Octopus Deploy" class="img-responsive" /></a>
+
+<br><br>
+<b>Octopus Package Received and Executed:</b>
+<br>
+<a href="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-013.png" target="_blank"><img src="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-013.png" alt="How to Deploy a Console Application Using TeamCity, PowerShell and Octopus Deploy" class="img-responsive" /></a>
+
+<br><br>
+<b>Json Files Created in the Dev Directory:</b>
+<br>
+<a href="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-014.png" target="_blank"><img src="assets/images/how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy-014.png" alt="How to Deploy a Console Application Using TeamCity, PowerShell and Octopus Deploy" class="img-responsive" /></a>
+
+ 
