@@ -1,0 +1,20 @@
+New PC Setup:
+1) In the gc-cli appsettings.{environment}.json, ensure that the directory paths are correct
+
+2) Re-compile gc-cli with: dotnet publish -c Release -r win10-x64
+
+3) In gc-cli.sh, Modify the directory path
+
+4) In publish.sh, Modify the directory paths
+
+5) Place the "SOMEPATH\gc-cli\bin\Release\netcoreapp2.0\win10-x64\publish" in the PATH Environment Variable
+
+6) Place the path to gc-cli.sh in the PATH Environment Variable
+
+For DEV:
+1) Open a Bash Prompt and type in "gc-cli build -dev"
+
+2) Open a Bash Prompt and navigate to "SOMEPATH/Blog.GrenitausConsulting/Client" and run "ng serve"
+
+For PROD:
+1) Run ./publish.sh
