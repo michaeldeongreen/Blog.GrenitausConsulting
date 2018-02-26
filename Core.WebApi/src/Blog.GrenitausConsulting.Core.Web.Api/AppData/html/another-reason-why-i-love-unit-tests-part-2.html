@@ -1,0 +1,48 @@
+<a href="assets/images/grenitaus-consulting-logo.png"><img class="img-responsive" src="assets/images/grenitaus-consulting-logo.png" alt="Grenitaus Consulting"></a>
+<br><br>
+
+A few years ago, I wrote a blog entry about <a href="http://blog.grenitausconsulting.com/post/another-reason-why-i-love-unit-tests" target="_blank">why I love Unit Tests</a>.  Recently, I discovered another reason why I love Unit Tests and I just wanted to write a short blog entry about the joys of Unit Testing
+
+<br><br>
+
+<strong>The Project!</strong>
+
+<br><br>
+
+My client's application is a legacy appliacation that consists of pulling, parsing and storing Credit Report Information.  Like many legacy applications, when it was written years ago, Unit Testing was not taken into consideration and as a result, as the application grew, it made it increasingly harder to test.  Since I joined the project, I have really preached the need to re-factor the codebase to make the application more Unit Testable and we, as a team have started to take this advice to heart.
+
+<br><br>
+
+Prior to our re-factoring effort, to test certain pieces of code, you would need to run several different instances of Visual Studio locally, just so you could put a breakpoint in our application to test any changes.  In certain situations, you could also use a Test Harness that the team built out years ago to make testing easier.  
+<br /><br />
+
+Regardless, to test the application required considerable effort.  Also, you had to pray that at the time you were doing the testing that the other Web Services you needed to run locally, that had nothing to do with the changes you wanted to test were working properly because they themselves were being changed by other developers.
+
+
+<br><br>
+
+<strong>What Happened!</strong>
+
+<br><br>
+
+Recently, some really crucial business logic was changed in this application.  Due to our efforts to make the codebase more Unit Testable, the person who made the change really took the <a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule" target="_blank">The Boy Scout Rule</a> to heart, re-factored this area and wrote about 124 brand spanking new Unit Tests.
+
+
+<br><br>
+
+<strong>The Epiphany!</strong>
+
+<br><br>
+
+I happened to draw the short straw and had to do the Code Review for this change.  As I mentioned earlier, testing this part of the application would take some effort and would normally take a signficant amount of time.  However, because this person took the time to re-factor the codebase, isolate the business logic and make it more Unit Testable, I was able to do a few things to make life easer:
+
+<br><br />
+
+<ul>
+	<li>Review her 124 Unit Tests to better understand the business logic</li>
+	<li>Create temporary Unit Tests with my own mock data to target certain scenarios</li>
+	<li>Avoid having to basically do Integration Tests, just to test the logic in Real Time</li>
+	<li>Literally cut the Test portion of the Code Review by maybe 60%-70%</li>
+	<li>Last but not least, I could now target the exact code that was changed and only that code</li>
+</ul>
+

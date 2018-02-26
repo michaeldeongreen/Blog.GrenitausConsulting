@@ -2101,7 +2101,7 @@
     "id": 47,
     "title": "How to Deploy a Console Application Using TeamCity, PowerShell and Octopus Deploy",
     "author": "Michael D. Green",
-    "postDate": "2018-02-26",
+    "postDate": "2018-02-25",
     "snippet": "At one of my clients, I recently had to learn how to deploy a .Net Console Application using TeamCity and Octopus Deploy.  After doing some research, I noticed that there was not a lot of documentation on how what Octopus Deploy Step Templates to use to deploy (execute) the Console Application.  After figuring out how to do this task, I thought I would write a short blog about it.",
     "link": "how-to-deploy-a-console-application-using-teamcity-powershell-and-octopus-deploy",
     "isActive": true,
@@ -2189,5 +2189,38 @@
     ],
     "canPreview": true,
     "previewExpirationDate": "2018-02-27"
+  },
+  {
+    "id": 48,
+    "title": "Another Reason Why I Love Unit Tests Part 2!",
+    "author": "Michael D. Green",
+    "postDate": "2018-02-26",
+    "snippet": "Michael D. Green shares more reasons why he loves Unit Testing.",
+    "link": "another-reason-why-i-love-unit-tests-part-2",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 12,
+        "name": "Test Driven Development"
+      },
+      {
+        "id": 13,
+        "name": "Unit Testing"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "assets/images/grenitaus-consulting-logo.png"
+      }
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   }
 ]  
