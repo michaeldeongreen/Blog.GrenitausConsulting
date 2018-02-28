@@ -1,12 +1,4 @@
-﻿Cloud FTP Account (Client)
-grenitausdeploy2
-WzVhZq2pw8SrN3Aw
-
-Cloud FTP Account (API)
-grenitausdeploy2
-WzVhZq2pw8SrN3Aw
-
-Azure gtmetrix
+﻿Azure gtmetrix
 https://gtmetrix.com/reports/grenitausconsulting.azurewebsites.net/l33RPqsC
 
 Temp. on grenitausconsulting.com
