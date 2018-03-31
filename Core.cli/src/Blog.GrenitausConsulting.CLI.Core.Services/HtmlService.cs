@@ -153,6 +153,7 @@ namespace Blog.GrenitausConsulting.CLI.Core.Services
             sb.AppendLine("<ul class=\"nav navbar-nav\">");
             sb.AppendLine(string.Format("<li><a class=\"social-media-header\" href=\"{0}/About\">About</a></li>",_domain));
             sb.AppendLine("<li><a href =\"http://grenitausconsulting.com\" target=\"_blank\">Services</a></li>");
+            sb.AppendLine(string.Format("<li><a class=\"social-media-header\" href=\"{0}/static-pages/assets/attachments/Michael-Green-Resume.doc\">Resum&#233;</a></li>", _domain));
             sb.AppendLine("</ul>");
             sb.AppendLine("<ul class=\"nav navbar-nav pull-right\">");
             sb.AppendLine(string.Format("<li><a style =\"padding-right:2px;\" href=\"https://www.facebook.com/profile.php?id=100014250101566\" target=\"_blank\"><img src=\"{0}/assets/images/facebook_vecteezy.png\" width=\"28\" height=\"28\"/></a></li>",_domain));

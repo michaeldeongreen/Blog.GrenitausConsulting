@@ -10,41 +10,47 @@ One type of legacy code that I have come across quite frequently is the so calle
 <br><br>
 
 <pre><code class="language-csharp">
-	//unit of work
-	public class UnitOfWork : IUnitOfWork
-	{
-		//implementation
-	}
-	
-	//
-	pubic class Repository<T> : IRepository<T>
-	{
-		public Repository(IUnitOfWork uow)
+    public class LoanApplication
+    {
+		public SomeObject1 SomeObject1 { get; set; }
+		public SomeObject2 SomeObject2 { get; set; }
+		public int ApplicationId { get; set; }
+		//....
+		
+		public void BusinessLogicMethod1()
 		{
-			//implementation
-		}
-	}
-
-	//domain repository
-	public class LoginRepository : Repository<Login>, ILoginRepository
-	{
-		public LoginRepository(IUnitOfWork uow) : base(uow) {
-			//implementation
-		}
-	}
-	
-	//some api controller
-	public class LoginController
-	{
-		public LoginController(ILoginRepository loginRepository)
-		{
-			_loginRepository = loginRepository;
-			//implementation
+			//....
 		}
 		
-		public IEnumerable<Login> Get(int Id)
+		public void BusinessLogicMethod2()
 		{
-			return _loginRepository.Get(Id);
+			//....
+		}		
+		
+		public void BusinessLogicMethod2()
+		{
+			//....
+		}		
+		
+		public void Encrypt()
+		{
+			//....
+		}		
+
+		public void Decrypt()
+		{
+			//....
+		}				
+		
+		public LoanApplication Load()
+		{
+            var dataSet = Database.LoanApplication_Select.ExecDS(ApplicationID);
+
+            if (dataSet.Tables.Count == 0 || dataSet.Tables[0].Rows.Count == 0) return this;
+
+            _loanApplicationLoadService.Load(this, dataSet);
+
+            return this;		
 		}
 	}
 </code></pre>
