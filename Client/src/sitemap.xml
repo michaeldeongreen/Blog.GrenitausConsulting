@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <sitemapindex xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>http://localhost:4200/category-sitemap.xml</loc>
-    <lastmod>2018-03-31T17:54:44.0376345-05:00</lastmod>
+    <loc>http://blog.grenitausconsulting.com/category-sitemap.xml</loc>
+    <lastmod>2018-03-31T19:03:17.986809-05:00</lastmod>
   </sitemap>
   <sitemap>
-    <loc>http://localhost:4200/page-sitemap.xml</loc>
-    <lastmod>2018-03-31T17:54:44.0376373-05:00</lastmod>
+    <loc>http://blog.grenitausconsulting.com/page-sitemap.xml</loc>
+    <lastmod>2018-03-31T19:03:17.9868116-05:00</lastmod>
   </sitemap>
   <sitemap>
-    <loc>http://localhost:4200/post_tag-sitemap.xml</loc>
-    <lastmod>2018-03-31T17:54:44.0376378-05:00</lastmod>
+    <loc>http://blog.grenitausconsulting.com/post_tag-sitemap.xml</loc>
+    <lastmod>2018-03-31T19:03:17.9868118-05:00</lastmod>
   </sitemap>
   <sitemap>
-    <loc>http://localhost:4200/post-sitemap.xml</loc>
-    <lastmod>2018-03-31T17:54:44.0376378-05:00</lastmod>
+    <loc>http://blog.grenitausconsulting.com/post-sitemap.xml</loc>
+    <lastmod>2018-03-31T19:03:17.9868118-05:00</lastmod>
   </sitemap>
 </sitemapindex>
