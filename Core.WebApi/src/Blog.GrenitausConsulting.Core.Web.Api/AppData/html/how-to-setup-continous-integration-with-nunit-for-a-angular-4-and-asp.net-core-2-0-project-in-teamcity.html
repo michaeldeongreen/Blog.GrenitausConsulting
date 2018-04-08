@@ -1,0 +1,128 @@
+<a href="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-010.png"><img class="img-responsive" src="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-010.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+I recently converted my custom written blogging software from ASP.Net WebAPI to ASP.Net Core 2.0.  I also converted the gc-cli tool from the .NetFramework to .Net Core 2.0.  In a <a href="http://blog.grenitausconsulting.com/post/replacing-my-wordpress-blog-with-angular-2-and-asp-net-web-api-part-1" target="_blank">3 part series</a>, I wrote about how I wrote my blog in Angular 4 and ASP.Net WebAPI.  When I first wrote my blog, I only set up the ASP.Net WebAPI solution (.sln) for Continuous Integration in TeamCity, as opposed to the combined solution (.sln), which contains the gc-cli, ASP.Net WebAPI and Angular 4 client components.
+
+<br><br>
+
+Once I converted the backend and gc-cli to .Net Core 2.0, I noticed that my TeamCity project failed.  I obviously needed to fix this issue but also, I wanted to use the combined solution (.sln) so that the gc-cli and Angular 4 client components would build, along with the ASP.Net Core 2.0 backend.  I decided to write a very short guide on how I accomplished this task.
+
+<br><br>
+
+<strong>Caveat!</strong>
+
+<br><br>
+
+This blog entry assumes:
+
+<br><br>
+
+<ul>
+	<li>You are already familiar with <a href="https://www.jetbrains.com/teamcity/" target="_blank">TeamCity</a></li>
+	<li>You already have a TeamCity Server version 2017.1+ up and running</li>
+	<li>You are familiar with Angular 2+</li>	
+	<li>You are familiar with ASP.Net Core 2.0</li>
+	<li>You are familiar with dotnet-cli</li>
+	<li>You are familiar with GitHub</li>
+</ul>
+
+<br><br>
+
+<strong>My Project Structure!</strong>
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-001.png"><img class="img-responsive" src="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-001.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-002.png"><img class="img-responsive" src="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-002.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<strong>Install Test Packages!</strong>
+
+<br><br>
+
+Using a command line tool such as git bash or cmd.exe, navigate to the directory that contains your .Net Core 2.0 Unit Tests and install the following packages using the dotnet-cli "add package" parameter:
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-003.png"><img class="img-responsive" src="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-003.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<strong>Install TeamCity Plugins</strong>
+
+<br><br>
+
+First, you will need to install the Node.js Build Runner, written by Eugene Petrenko.  The GitHub location, the plugin and installation guide can be found <a href="https://github.com/jonnyzzz/TeamCity.Node" target="_blank">here</a>
+
+<br><br>
+
+Next, if you are using TeamCity 2017.1 or below, you will need to install the dotnet cli plugin.  TeamCity versions 2017.2+ are bundled with this plugin.  The GitHub location, the plugin and installation guide can be found <a href="https://github.com/JetBrains/teamcity-dotnet-plugin" target="_blank">here</a>
+
+<br><br>
+
+<strong>Creating the TeamCity Project!</strong>
+
+<br><br>
+
+First, you will want to create a new TeamCity Project by going into Adminstration / Projects and pressing the "Create project" button.
+
+<br><br>
+
+You will then want to go to the new Project's settings and setup the VCS Root, I am using GitHub.
+
+<br><br>
+
+After this, you will add a new Build Configuration for your Project and under Version Control Settings, press the "Attach VCS root" button and select the VCS you created under your new Project.
+
+<br><br>
+
+Next, you will want to start creating your Build Steps.
+
+<br><br>
+
+<b>Step 1.</b> - Restore NuGet Packages
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-004.png"><img class="img-responsive" src="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-004.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<b>Step 2.</b> - Run NPM (Node Package Manager). You will need this step to install the node modules your Angular 2+ application uses.
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-005.png"><img class="img-responsive" src="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-005.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<b>Step 3.</b> - Build Solution
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-006.png"><img class="img-responsive" src="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-006.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<b>Step 4.</b> - Run Unit Tests.  In the "Projects" box, you will want to denote the location of the .Net Core 2.0 Unit Test project.  Please note that I have a Step 4 and 5 to run .Net Framework Unit Tests, which is fairly straightforward and this is why the image states that it is Step 6 out of 6.
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-007.png"><img class="img-responsive" src="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-007.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+Last, you will either want to trigger a build by checking in a code change or just press the "run" button to do a manual build.  The build and Unit Tests should run successfully.
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-008.png"><img class="img-responsive" src="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-008.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-009.png"><img class="img-responsive" src="assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-009.png" alt="Grenitaus Consulting"></a>

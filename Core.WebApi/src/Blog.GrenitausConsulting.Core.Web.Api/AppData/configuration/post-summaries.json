@@ -2222,5 +2222,90 @@
     ],
     "canPreview": false,
     "previewExpirationDate": null
+  },
+  {
+    "id": 49,
+    "title": "How to Setup Continous Integration with NUnit for a Angular 4 and ASP.Net Core 2.0 Project in TeamCity",
+    "author": "Michael D. Green",
+    "postDate": "2018-04-08",
+    "snippet": "In this blog post, Michael D. Green demonstrates how to setup Continuous Integration with NUnit for a Angular 4 and ASP.Net Core 2.0 Project in TeamCity.",
+    "link": "how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 25,
+        "name": "TeamCity"
+      },
+      {
+        "id": 28,
+        "name": "Angular 2"
+      },
+      {
+        "id": 51,
+        "name": "Node.js"
+      },
+      {
+        "id": 58,
+        "name": "NUnit"
+      },
+      {
+        "id": 86,
+        "name": ".Net Core"
+      },
+      {
+        "id": 87,
+        "name": ".Net Core CLI"
+      }
+    ],
+    "images": [
+      {
+        "name": "how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-010.png",
+        "url": "assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-010.png"
+      },
+      {
+        "name": "how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-001.png",
+        "url": "assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-001.png"
+      },
+      {
+        "name": "how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-002.png",
+        "url": "assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-002.png"
+      },
+      {
+        "name": "how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-003.png",
+        "url": "assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-003.png"
+      },
+      {
+        "name": "how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-004.png",
+        "url": "assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-004.png"
+      },
+      {
+        "name": "how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-005.png",
+        "url": "assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-005.png"
+      },
+      {
+        "name": "how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-006.png",
+        "url": "assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-006.png"
+      },
+      {
+        "name": "how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-007.png",
+        "url": "assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-007.png"
+      },
+      {
+        "name": "how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-008.png",
+        "url": "assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-008.png"
+      },
+      {
+        "name": "how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-009.png",
+        "url": "assets/images/how-to-setup-continous-integration-with-nunit-for-a-angular-4-and-asp.net-core-2-0-project-in-teamcity-009.png"
+      }
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   }
 ]  

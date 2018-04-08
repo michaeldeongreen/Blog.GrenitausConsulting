@@ -338,5 +338,13 @@
   {
     "id": 85,
     "name": "Octopus Deploy"
+  },
+  {
+    "id": 86,
+    "name": ".Net Core"
+  },
+  {
+    "id": 87,
+    "name": ".Net Core CLI"
   }
 ]
