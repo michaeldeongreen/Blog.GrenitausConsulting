@@ -346,5 +346,9 @@
   {
     "id": 87,
     "name": ".Net Core CLI"
+  },
+  {
+    "id": 88,
+    "name": "Windows Service"
   }
 ]

@@ -12,7 +12,7 @@ New PC Setup:
 6) Place the path to gc-cli.sh in the PATH Environment Variable
 
 For DEV:
-1) Open a Bash Prompt and type in "gc-cli build -dev"
+1) Open a Bash Prompt and type in "gc-cli.sh build -dev"
 
 2) Open a Bash Prompt and navigate to "SOMEPATH/Blog.GrenitausConsulting/Client" and run "ng serve"
 

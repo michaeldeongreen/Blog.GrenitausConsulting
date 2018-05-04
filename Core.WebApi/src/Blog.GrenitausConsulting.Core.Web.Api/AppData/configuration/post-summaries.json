@@ -2307,5 +2307,122 @@
     ],
     "canPreview": false,
     "previewExpirationDate": null
+  },
+  {
+    "id": 50,
+    "title": "How to Deploy a Windows Service Created with Topshelf using TeamCity and Octopus Deploy",
+    "author": "Michael D. Green",
+    "postDate": "2018-05-03",
+    "snippet": "In this blog post, Michael D. Green demonstrates how to deploy a windows service created with Topshelf using TeamCity and Octopus Deploy.",
+    "link": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 25,
+        "name": "TeamCity"
+      },
+      {
+        "id": 85,
+        "name": "Octopus Deploy"
+      },
+      {
+        "id": 88,
+        "name": "Windows Service"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "assets/images/grenitaus-consulting-logo.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-001.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-001.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-003.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-003.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-004.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-004.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-005.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-005.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-006.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-006.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-007.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-007.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-008.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-008.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-009.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-009.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-010.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-010.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-011.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-011.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-012.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-012.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-013.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-013.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-014.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-014.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-015.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-015.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-016.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-016.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-017.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-017.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-018.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-018.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-019.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-019.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-020.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-020.png"
+      },
+      {
+        "name": "how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-021.png",
+        "url": "assets/images/how-to-deploy-a-windows-service-created-with-topshelf-using-teamcity-and-octopus-deploy-021.png"
+      }
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   }
 ]  
