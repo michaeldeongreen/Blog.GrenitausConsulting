@@ -17,4 +17,4 @@ For DEV:
 2) Open a Bash Prompt and navigate to "SOMEPATH/Blog.GrenitausConsulting/Client" and run "ng serve"
 
 For PROD:
-1) Run ./publish.sh
+1) Run ./publish.sh or publish.sh [Both seem to work]
