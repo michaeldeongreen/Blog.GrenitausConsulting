@@ -27,10 +27,11 @@ GO
 CREATE USER [SomeReadOnlyLoginUser] FOR LOGIN [SomeReadOnlyLogin] WITH DEFAULT_SCHEMA=[dbo]
 GO
 </code></pre>
-
+<br><br>
 In SQL Azure, SQL Users access the Server though Logins and Logins are Server-wide.
-
+<br><br>
 Step 3) Next, since the Using command does not work in SQL Azure, you will want to navigate to each Database on the server that you wish to give the Read Only User access to and execute the following script:
+<br><br>
 <pre><code class="language-sql">
 /*
 Run on each database the user will have access too
