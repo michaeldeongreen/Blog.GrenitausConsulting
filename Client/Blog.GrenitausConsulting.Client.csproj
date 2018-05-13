@@ -106,6 +106,7 @@
     <Content Include="src\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="src\assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="src\Web.config" />
+    <Content Include="angular.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
