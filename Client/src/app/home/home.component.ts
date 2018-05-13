@@ -3,8 +3,9 @@ import { Observable } from 'rxjs/Observable';
 import { Post } from '../post';
 import { HttpService } from '../http.service';
 import { PagerService } from '../pager.service';
-import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { IPagedResponse } from '../ipaged-response.pagedresponse';
 
 @Component({
     moduleId: module.id,
@@ -15,7 +16,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-    constructor(private http: Http,
+    constructor(private http: HttpClient,
         private httpService: HttpService,
         private pagerService: PagerService,
         private route: ActivatedRoute) {
