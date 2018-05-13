@@ -2424,5 +2424,118 @@
     ],
     "canPreview": false,
     "previewExpirationDate": null
+  },
+  {
+    "id": 51,
+    "title": "How to Automate the Deployment of a Angular 5 Application to Azure using angular-cli, GitHub, Octopus Deploy and TeamCity",
+    "author": "Michael D. Green",
+    "postDate": "2018-05-13",
+    "snippet": "In this blog, Michael D. Green talks about how to automate the deployment of a Angular 5 Application to Azure using angular-cli, GitHub, Octopus Deploy and TeamCity.",
+    "link": "how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 30,
+        "name": "Azure"
+      },
+      {
+        "id": 31,
+        "name": "Azure Web App"
+      },
+      {
+        "id": 32,
+        "name": "azure-cli"
+      },
+      {
+        "id": 28,
+        "name": "Angular 2"
+      },
+      {
+        "id": 33,
+        "name": "Git Bash"
+      },
+      {
+        "id": 34,
+        "name": "GitHub"
+      },
+      {
+        "id": 85,
+        "name": "Octopus Deploy"
+      },
+      {
+        "id": 25,
+        "name": "TeamCity"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "assets/images/grenitaus-consulting-logo.png"
+      },
+      {
+        "name": "how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-001.png",
+        "url": "assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-001.png"
+      },
+      {
+        "name": "how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-002.png",
+        "url": "assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-002.png"
+      },
+      {
+        "name": "how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-003.png",
+        "url": "assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-003.png"
+      },
+      {
+        "name": "how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-004.png",
+        "url": "assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-004.png"
+      },
+      {
+        "name": "how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-005.png",
+        "url": "assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-005.png"
+      },
+      {
+        "name": "how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-006.png",
+        "url": "assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-006.png"
+      },
+      {
+        "name": "how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-006.png",
+        "url": "assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-006.png"
+      },
+      {
+        "name": "how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-007.png",
+        "url": "assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-007.png"
+      },
+      {
+        "name": "how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-008.png",
+        "url": "assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-008.png"
+      },
+      {
+        "name": "how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-009.png",
+        "url": "assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-009.png"
+      },
+      {
+        "name": "how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-010.png",
+        "url": "assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-010.png"
+      },
+      {
+        "name": "how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-011.png",
+        "url": "assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-011.png"
+      },
+      {
+        "name": "how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-012.png",
+        "url": "assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-012.png"
+      },
+      {
+        "name": "how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-013.png",
+        "url": "assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-013.png"
+      }
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   }
 ]  
