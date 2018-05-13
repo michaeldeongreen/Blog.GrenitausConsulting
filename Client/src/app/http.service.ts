@@ -50,9 +50,7 @@ export class HttpService {
     }
 
     public getPostsByTag(tag: string, page: number): any {
-        return this.http.get(`${this.baseUrl}/posts/tag/${tag}/page/${page}`)
-            .map((response: Response) => response.json())
-            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+        return this.http.get<IPagedResponse>(`${this.baseUrl}/posts/tag/${tag}/page/${page}`)
     }
 
     public getArchives(): any {
@@ -68,15 +66,11 @@ export class HttpService {
     }
 
     public getPostPreviewHtml(title: string): any {
-        return this.http.get(`${this.baseUrl}/html/${title}/preview`)
-            .map((response: Response) => response.text())
-            .catch((error: any) => Observable.throw(error.text().error) || 'Server Error');
+        return this.http.get(`${this.baseUrl}/html/${title}/preview`, {responseType: "text"})
     }
 
     public getPostPreview(title: string): any {
-        return this.http.get(`${this.baseUrl}/post/${title}/preview`)
-            .map((response: Response) => response.json())
-            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+        return this.http.get<IPostSummary>(`${this.baseUrl}/post/${title}/preview`)
     }
 
     public getAlsoOn(id: number): any {
@@ -84,8 +78,6 @@ export class HttpService {
     }
 
     public getPreviews(): any {
-        return this.http.get(`${this.baseUrl}/post/previews`)
-            .map((response: Response) => response.json())
-            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+        return this.http.get<IPagedResponse>(`${this.baseUrl}/post/previews`)
     }
 }

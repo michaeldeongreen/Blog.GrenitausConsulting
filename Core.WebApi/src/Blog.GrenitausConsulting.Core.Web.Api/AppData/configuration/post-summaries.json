@@ -2535,7 +2535,7 @@
         "url": "assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-013.png"
       }
     ],
-    "canPreview": false,
-    "previewExpirationDate": null
+    "canPreview": true,
+    "previewExpirationDate": "2018-05-15"
   }
 ]  

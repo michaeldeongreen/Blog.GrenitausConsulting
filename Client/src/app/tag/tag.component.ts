@@ -5,6 +5,7 @@ import { HttpService } from '../http.service';
 import { PagerService } from '../pager.service';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { IPagedResponse } from '../ipaged-response.pagedresponse';
 
 @Component({
   selector: 'app-tag-results',
@@ -59,7 +60,11 @@ export class TagComponent implements OnInit {
                 // get current page of items
                 this.pagedItems = data.posts;
                 this.busy = false;
-            });
+            },
+            err => {
+                console.log("Error while retrieving posts by tag");
+            }
+        );
     }
 
 
