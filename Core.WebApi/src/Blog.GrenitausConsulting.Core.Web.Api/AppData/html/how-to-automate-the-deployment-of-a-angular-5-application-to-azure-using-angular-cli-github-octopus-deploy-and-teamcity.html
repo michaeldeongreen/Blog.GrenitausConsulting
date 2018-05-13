@@ -2,7 +2,7 @@
 
 <br><br>
 
-In this blog, I wanted to do a quick write-up on how to how to automate the deployment of a <a href="https://angular.io/" target="_blank">Angular 5</a> application to <a href="https://azure.microsoft.com/" target="_blank">Azure</a> using <a href="https://cli.angular.io/" target="_blank">angular-cli</a>, <a href="https://github.com/" target="_blank">GitHub</a>, <a href="https://octopus.com/" target="_blank">Octopus Deploy</a> and <a href="https://www.jetbrains.com/teamcity/" target="_blank">TeamCity</a>.
+In this blog, I wanted to do a quick write-up on how to automate the deployment of a <a href="https://angular.io/" target="_blank">Angular 5</a> application to <a href="https://azure.microsoft.com/" target="_blank">Azure</a> using <a href="https://cli.angular.io/" target="_blank">angular-cli</a>, <a href="https://github.com/" target="_blank">GitHub</a>, <a href="https://octopus.com/" target="_blank">Octopus Deploy</a> and <a href="https://www.jetbrains.com/teamcity/" target="_blank">TeamCity</a>.
 
 
 <br><br>
@@ -14,6 +14,7 @@ In this blog, I assume that you are familiar with:
 <br><br>
 
 <ul>
+    <li>Angular 5+</li>
 	<li>angular-cli</li>
 	<li>Azure</li>
 	<li>GitHub</li>
@@ -33,7 +34,7 @@ I also assume that you have the proper Teamcity plugins for <a href="https://git
 
 <br><br>
 
-To get started, you will need to allow Octopus Deploy to access your Azure Subscription and you do this by creating a Azure Active Directory Application and Azure Service Principal Account.  To avoid redundancy, Octopus Deploy has easy to follow instructions on how to do this and it can be found <a href="https://octopus.com/docs/infrastructure/azure/creating-an-azure-account/creating-an-azure-service-principal-account" target="_blank">here</a>.  Once you have done this, move on to the next portion of this blog.
+To get started, you will need to allow Octopus Deploy to access your Azure Subscription and you do this by creating a Azure Active Directory Application and an Azure Service Principal Account.  To avoid redundancy, Octopus Deploy has a very easy to follow guide on how to do this and it can be found <a href="https://octopus.com/docs/infrastructure/azure/creating-an-azure-account/creating-an-azure-service-principal-account" target="_blank">here</a>.  Once you have done this, move on to the next portion of this blog.
 
 <br><br>
 
@@ -41,17 +42,17 @@ To get started, you will need to allow Octopus Deploy to access your Azure Subsc
 
 <br><br>
 
-Next, we will want to create a basic Angular 5 application so that we can deploy it to Azure.
+Next, we will want to create a basic Angular 5 application using angular-cli so that we can deploy it to Azure.
 
 <br><br>
 
 <ol>
-	<li>Open up <a href="http://blog.grenitausconsulting.com/post/my-decision-to-trade-in-my-git-gui-client-for-git-bash" target="_blank">Git Bash</a> and navigate to an empty directory and type:</li> 
+	<li>Open up <a href="http://blog.grenitausconsulting.com/post/my-decision-to-trade-in-my-git-gui-client-for-git-bash" target="_blank">Git Bash</a> and navigate to a directory of your choosing and type:</li> 
         <pre><code class="language-node">
         ng new NEWPROJECT
         </code></pre>	
-    <li>Open Visual Studio and in the new directory that angular-cli created, make a new blank solution project.  Inside of the new solution, add a Class Library (.NET Framework).  <b>Note:</b> I did this more for organization and to take advantage of <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a> compile time checking.</li>
-    <li>Next, you will want to select the Class Library, choose <i>Show All Files</i> in Solution Explorer and add the files and directory that I have in the picture below:</li><br />
+    <li>Open Visual Studio and in the new directory that angular-cli created, make a new blank solution project.  Inside of the new solution, add a Class Library (.NET Framework).  <br /><b>Note:</b> I did this more for organization and to take advantage of <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a> compile time checking.</li>
+    <li>Next, you will want to select the Class Library, choose <i>Show All Files</i> in Solution Explorer and add the files and directories that I have in the picture below:</li><br />
     <a href="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-001.png"><img class="img-responsive" src="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-001.png" alt="Grenitaus Consulting"></a>
     <li>Next, you will want to add a Web.config to the solution and place it in the <i>src</i> root directory.  You can use the Web.Config that I created, which you can find on <a href="https://github.com/michaeldeongreen/GreenOneAzureOctopusDeploy/blob/master/src/Web.config" target="_blank">GitHub</a>:</li><br />
     <li>Next, open up the angular.json file, find the <i>assets</i> property under <i>build</i> and an entry for the Web.config.  This will place the Web.config in the dist folder when you build the Angular 5 application using angular-cli</li>
@@ -64,7 +65,7 @@ Next, we will want to create a basic Angular 5 application so that we can deploy
 
 <br /><br />
 
-If the Angular 5 application compiles, you should be able to navigate to <i>http://localhost:4200</i> and see the default Angular 5 application.  You will now want to create a GitHub repository for the new project and commit all changes.
+If the Angular 5 application compiles, you should be able to navigate to <i>http://localhost:4200</i> and see the default Angular 5 application.  You will now want to create a GitHub repository for the new project and commit all changes.  The GitHub repository I created for this blog can be found <a href="https://github.com/michaeldeongreen/GreenOneAzureOctopusDeploy" target="_blank">here</a>.
 
 <br><br>
 
@@ -76,7 +77,7 @@ As stated, I assume you are familiar with TeamCity.  You will want to create a n
 
 <br><br>
 
-Now, it is time to create the Build Configuration Steps.
+Now, it is time to create the Build Configuration Steps:
 
 <br /><br />
 
@@ -84,7 +85,7 @@ Now, it is time to create the Build Configuration Steps.
     <li>Restore NuGet Packages: <br /><a href="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-002.png"><img class="img-responsive" src="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-002.png" alt="Grenitaus Consulting"></a></li>
     <li>Run NPM: <br /><a href="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-003.png"><img class="img-responsive" src="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-003.png" alt="Grenitaus Consulting"></a></li>
     <li>Build Solution: <bf></bf><a href="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-004.png"><img class="img-responsive" src="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-004.png" alt="Grenitaus Consulting"></a></li>
-    <li>Build and Create Angular Dist. <b>Note:</b> This step will create the <i>dist</i> folder, which is the compiled release assets that you will deploy to Azure.  The Node.js command <i>run-script build</i> will trigger the angular-cli <i>ng build</i> command.  See <a href="https://stackoverflow.com/questions/40920471/angular-cli-build-ng-build-on-teamcity/43444190#43444190" target="_blank">Stackoverflow</a> for more details:<br /><a href="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-005.png"><img class="img-responsive" src="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-005.png" alt="Grenitaus Consulting"></a></li>
+    <li>Build and Create Angular Dist. <br /><b>Note:</b> This step will create the <i>dist</i> folder, which is the compiled release assets that you will deploy to Azure.  The Node.js command <i>run-script build</i> will trigger the angular-cli <i>ng build</i> command.  See <a href="https://stackoverflow.com/questions/40920471/angular-cli-build-ng-build-on-teamcity/43444190#43444190" target="_blank">Stackoverflow</a> for more details:<br /><a href="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-005.png"><img class="img-responsive" src="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-005.png" alt="Grenitaus Consulting"></a></li>
     <li><a href="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-006.png"><img class="img-responsive" src="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-006.png" alt="Grenitaus Consulting"></a></li>
     <li><a href="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-007.png"><img class="img-responsive" src="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-007.png" alt="Grenitaus Consulting"></a></li>
 </ol>
@@ -99,7 +100,7 @@ That is pretty much it for TeamCity.
 
 <br /><br />
 
-Next, you will want navigate to the Azure Portal and create an Azure Web App.  Once you create the Azure Web App, you will want to navigate to the Azure Web App's Diagnostics logs blade and get the FTP information, so you can use an FTP client suchas <a href="https://filezilla-project.org/" target="_blank">FileZilla</a>verify that Octopus Deploy deployed your Angular 5 application correctly.
+Next, you will want navigate to the Azure Portal and create an Azure Web App.  Once you create the Azure Web App, you will want to navigate to the Azure Web App's Diagnostics logs blade and get the FTP information, so you can use an FTP client such as <a href="https://filezilla-project.org/" target="_blank">FileZilla</a> to verify that Octopus Deploy deployed your Angular 5 application correctly.
 
 <br /><br />
 
@@ -116,7 +117,7 @@ The final step is to create a new Octopus Deploy Project that will deploy your A
     <li>Once the new project is created, choose <i>Process</i>, choose <i>Add Step and choose the <i>Deploy an Azure Web App</i> template</i></li>
     <li>Fill in the Step Name</li>
     <li>Under Package, the Package ID will be the name of your new Octopus Deploy Project</li>
-    <li>Under Azure, choose the Account that you created when you created the Service Principal using Octopus Deploy's documentation I mentioned earlier in this blog entry.  In the Web App dropdown, you should see the Azure Web App you created.</li>
+    <li>Under Azure, choose the Account that you created when you created the Azure Active Directory Application and the Service Principal using Octopus Deploy's documentation I mentioned earlier in this blog entry.  In the Web App dropdown, you should see the Azure Web App you created.</li>
 </ol>
 
 <br /><br />
@@ -142,7 +143,7 @@ Before we deploy, let's recap what we have done:
 
 <ul>
     <li>Created a Azure Active Directory Application and Service Principal to allow Octopus Deploy to communicate with Azure</li>
-    <li>Created a sample Angular 5 Application and commited the changes to GitHub</li>
+    <li>Created a sample Angular 5 Application and pushed the changes to GitHub</li>
     <li>Created a new TeamCity Project to Build and Push the Angular 5 Application to Octopus Deploy</li>
     <li>Created a new Azure Web App, which is where the Angular 5 Application will be deployed</li>
     <li>Created a new Octopus Deploy Project, using one of the built in Azure Templates to deploy the Angular 5 Application to Azure</li>
@@ -150,26 +151,26 @@ Before we deploy, let's recap what we have done:
 
 <br /><br />
 
-Let's head back to TeamCity and deploy the Project (alternatively, you could just make a change to the Angular 5 application and commit the changes to GitHub).  If everythting works out you should see:
+Let's head back to TeamCity and deploy the Project (alternatively, you could just make a change to the Angular 5 application and push the changes to GitHub).  If everythting works out you should see:
 
 <br /><br />
 
-In TeamCity<br />
+In TeamCity:<br />
 <a href="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-010.png"><img class="img-responsive" src="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-010.png" alt="Grenitaus Consulting"></a>
 
 <br /><br />
 
-In Octopus Deplpoy<br />
+In Octopus Deplpoy:<br />
 <a href="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-011.png"><img class="img-responsive" src="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-011.png" alt="Grenitaus Consulting"></a>
 
 <br /><br />
 
-In FileZilla (FTP to Azure Web App Site)<br />
+In FileZilla (FTP to Azure Web App Site):<br />
 <a href="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-012.png"><img class="img-responsive" src="assets/images/how-to-automate-the-deployment-of-a-angular-5-application-to-azure-using-angular-cli-github-octopus-deploy-and-teamcity-012.png" alt="Grenitaus Consulting"></a>
 
 <br /><br />
 
-Last but not least, you should be able to view your Angular 5 Application via your Azure Web App url.
+Last but not least, you should be able to view your Angular 5 Application via your Azure Web App url:
 
 <br /><br />
 
