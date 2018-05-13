@@ -7,7 +7,7 @@ New PC Setup:
 
 4) In publish.sh, Modify the directory paths
 
-5) Place the "SOMEPATH\gc-cli\bin\Release\netcoreapp2.0\win10-x64\publish" in the PATH Environment Variable
+5) Place the "SOMEPATH\gc-cli\bin\Release\netcoreapp2.0\win10-x64\publish" in the PATH Environment Variable [OBSOLETE]
 
 6) Place the path to gc-cli.sh in the PATH Environment Variable
 
