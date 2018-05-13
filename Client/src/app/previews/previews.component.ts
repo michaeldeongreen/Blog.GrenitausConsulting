@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Post } from '../post';
 import { HttpService } from '../http.service';
+import { IPagedResponse } from '../ipaged-response.pagedresponse';
 
 @Component({
   selector: 'app-previews',
@@ -27,6 +28,10 @@ export class PreviewsComponent implements OnInit {
               // get current page of items
               this.pagedItems = data.posts;
               this.busy = false;
-          });
+          },
+          err => {
+              console.log("Error while retrieving previews");
+          }
+      );
   }
 }

@@ -3,6 +3,7 @@ import { HttpService } from '../http.service';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from '../post';
 import { Observable } from 'rxjs/Observable';
+import { IPostSummary } from '../ipost-summary.postsummary';
 
 @Component({
   selector: 'app-preview',
@@ -29,7 +30,11 @@ export class PreviewComponent implements OnInit {
             .subscribe(data => {
                 // get pager object from service
                 this.item = data;
-            });
+            },
+            err => {
+                console.log("Error while retrieving post preview");
+            }
+        );
     }
 
     getHtml(title: string) {
@@ -38,7 +43,11 @@ export class PreviewComponent implements OnInit {
                 // get pager object from service
                 this.html = data;
                 this.busy = false;
-            });
+            },
+            err => {
+                console.log("Error while retrieving post preview html");
+            }
+        );
     }
 
 }
