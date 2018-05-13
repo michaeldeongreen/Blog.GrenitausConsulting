@@ -34,7 +34,7 @@ export class HttpService {
     }
 
     public getPostHtml(title: string): any {
-        return this.http.get(`${this.baseUrl}/html/${title}`)
+        return this.http.get(`${this.baseUrl}/html/${title}`, {responseType: 'text'})
     }
 
     public getPost(title: string): any {
