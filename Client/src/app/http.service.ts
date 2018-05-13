@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Post } from './post';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { environment } from '../environments/environment';
+import { IPagedResponse } from './ipaged-response.pagedresponse';
 
 
 @Injectable()
@@ -16,14 +17,12 @@ export class HttpService {
         'Accept': 'application/json'
     });
 
-    constructor(private http: Http) {
+    constructor(private http: HttpClient) {
         this.baseUrl = environment.apiUrl;
     }
 
     public getPosts(page: Number): any {
-        return this.http.get(`${this.baseUrl}/posts/page/${page}`)
-            .map((response: Response) => response.json())
-            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+        return this.http.get<IPagedResponse>(`${this.baseUrl}/posts/page/${page}`);
     }
 
     public getSearchResults(page: Number, criteria: string): any {
