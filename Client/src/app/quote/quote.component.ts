@@ -23,7 +23,11 @@ export class QuoteComponent implements OnInit {
           .subscribe(data => {
               this.item = data;
               this.busy = false;
-          });
+          },
+          err => {
+              console.log("Error occured while trying to retrieve quote");
+          }
+      );
   }
 
 }

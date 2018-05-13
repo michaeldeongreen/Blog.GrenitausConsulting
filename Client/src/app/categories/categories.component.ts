@@ -25,7 +25,11 @@ export class CategoriesComponent implements OnInit {
       this.httpService.getCategories()
           .subscribe(data => {
               this.categories = data;
-          });
+          },
+          err => {
+              console.log("Error occurred while trying to retrieve categories");
+          }
+      );
   }
 
   gotoCategory(category: string): void {

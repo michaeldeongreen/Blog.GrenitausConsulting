@@ -7,6 +7,7 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 import { MetaService } from '@ngx-meta/core';
 import { SharedEmitterService } from '../shared-emitter.service';
 import { Router } from '@angular/router';
+import { IPostSummary } from '../ipost-summary.postsummary';
 
 @Component({
   selector: 'app-post',
@@ -53,7 +54,11 @@ export class PostComponent implements OnInit {
                 this.url = `${window.location.protocol}//${window.location.host}/${this.item.staticHtml}`;
                 this.setSEO();
                 this.getAlsoOn(this.item.id);
-            });
+            },
+            err => {
+                console.log("Error while retrieving post");
+            }
+        );
     }
 
   getHtml(title: string) {
@@ -61,7 +66,11 @@ export class PostComponent implements OnInit {
           .subscribe(data => {
               this.html = data;
               this.busy = false;
-          });
+          },
+          err => {
+              console.log("Error while retrieving the post html");
+          }
+      );
   }
 
   getAlsoOn(id: number) {
@@ -69,7 +78,11 @@ export class PostComponent implements OnInit {
           .subscribe(data => {
               this.alsoOnTotal = data.total;
               this.alsoOn = data.posts;
-          });
+          },
+          err => {
+              console.log("Error while retrieving also on");
+          }
+      );
   }
 
   setSEO() {

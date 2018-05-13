@@ -65,6 +65,10 @@ export class ArchiveComponent implements OnInit {
               this.pagedItems = data.posts;
               this.monthYear = `${data.archiveMonth} ${data.archiveYear}`;
               this.busy = false;
-          });
+          },
+          err => {
+              console.log("Error occurred while trying to retrieve posts by month and year");
+          }
+      );
   }
 }

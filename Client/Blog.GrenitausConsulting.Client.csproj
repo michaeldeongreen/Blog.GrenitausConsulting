@@ -150,6 +150,7 @@
     <TypeScriptCompile Include="src\app\home\home.component.ts" />
     <TypeScriptCompile Include="src\app\image.ts" />
     <TypeScriptCompile Include="src\app\ipaged-response.pagedresponse.ts" />
+    <TypeScriptCompile Include="src\app\ipost-summary.postsummary.ts" />
     <TypeScriptCompile Include="src\app\pager.service.spec.ts" />
     <TypeScriptCompile Include="src\app\pager.service.ts" />
     <TypeScriptCompile Include="src\app\http.service.spec.ts" />
