@@ -50,7 +50,11 @@ export class HomeComponent implements OnInit {
                 // get current page of items
                 this.pagedItems = data.posts;
                 this.busy = false;
-            });
+            },
+            err => {
+                console.log("Error occured while trying to retrieve posts.");
+            }
+        );
     }
 }
 

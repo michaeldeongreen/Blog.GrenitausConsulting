@@ -6,7 +6,10 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { environment } from '../environments/environment';
 import { IPagedResponse } from './ipaged-response.pagedresponse';
-
+import { Quote } from './quote';
+import { Category } from './category';
+import { Archive } from './archive';
+import { IPostSummary } from './ipost-summary.postsummary';
 
 @Injectable()
 export class HttpService {
@@ -27,33 +30,23 @@ export class HttpService {
 
     public getSearchResults(page: Number, criteria: string): any {
         let url = `${this.baseUrl}/search/${encodeURIComponent(criteria)}/page/${page}`;
-        return this.http.get(url)
-            .map((response: Response) => response.json())
-            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+        return this.http.get<IPagedResponse>(url)
     }
 
     public getPostHtml(title: string): any {
         return this.http.get(`${this.baseUrl}/html/${title}`)
-            .map((response: Response) => response.text())
-            .catch((error: any) => Observable.throw(error.text().error) || 'Server Error');
     }
 
     public getPost(title: string): any {
-        return this.http.get(`${this.baseUrl}/post/${title}`)
-            .map((response: Response) => response.json())
-            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+        return this.http.get<IPostSummary>(`${this.baseUrl}/post/${title}`)
     }
 
     public getCategories(): any {
-        return this.http.get(`${this.baseUrl}/categories`)
-            .map((response: Response) => response.json())
-            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+        return this.http.get<Observable<Category>>(`${this.baseUrl}/categories`)
     }
 
     public getPostsByCategory(category: string, page: number): any {
-        return this.http.get(`${this.baseUrl}/posts/category/${category}/page/${page}`)
-            .map((response: Response) => response.json())
-            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+        return this.http.get<IPagedResponse>(`${this.baseUrl}/posts/category/${category}/page/${page}`)
     }
 
     public getPostsByTag(tag: string, page: number): any {
@@ -63,21 +56,15 @@ export class HttpService {
     }
 
     public getArchives(): any {
-        return this.http.get(`${this.baseUrl}/archives`)
-            .map((response: Response) => response.json())
-            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+        return this.http.get<Observable<Archive>>(`${this.baseUrl}/archives`)
     }
 
     public getPostsByMonthAndYear(month: number, year: number, page: number): any {
-        return this.http.get(`${this.baseUrl}/posts/month/${month}/year/${year}/page/${page}`)
-            .map((response: Response) => response.json())
-            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+        return this.http.get<IPagedResponse>(`${this.baseUrl}/posts/month/${month}/year/${year}/page/${page}`)
     }
 
     public getQuote(): any {
-        return this.http.get(`${this.baseUrl}/quote`)
-            .map((response: Response) => response.json())
-            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+        return this.http.get<Quote>(`${this.baseUrl}/quote`);
     }
 
     public getPostPreviewHtml(title: string): any {
@@ -93,9 +80,7 @@ export class HttpService {
     }
 
     public getAlsoOn(id: number): any {
-        return this.http.get(`${this.baseUrl}/post/${id}/alsoon`)
-            .map((response: Response) => response.json())
-            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+        return this.http.get<IPagedResponse>(`${this.baseUrl}/post/${id}/alsoon`)
     }
 
     public getPreviews(): any {

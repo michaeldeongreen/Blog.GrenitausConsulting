@@ -68,6 +68,10 @@ export class CategoryComponent implements OnInit {
                 // get current page of items
                 this.pagedItems = data.posts;
                 this.busy = false;
-            });
+            },
+            err => {
+                console.log("Error occurred while trying to retrieve posts by category");
+            }
+        );
     }
 }
