@@ -24,7 +24,11 @@ export class ArchivesComponent implements OnInit {
       this.httpService.getArchives()
           .subscribe(data => {
               this.archives = data;
-          });
+          },
+          err => {
+              console.log("Error occurred while retrieving the archives");
+          }
+      );
   }
 
   gotoArchive(month: number, year: number): void {

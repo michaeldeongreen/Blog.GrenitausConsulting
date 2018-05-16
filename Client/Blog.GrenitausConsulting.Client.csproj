@@ -23,7 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.6</TypeScriptToolsVersion>
     <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -100,13 +100,13 @@
     <Content Include="src\assets\js\bootstrap.min.js" />
     <Content Include="src\assets\js\jquery.js" />
     <Content Include="src\tsconfig.json" />
-    <Content Include=".angular-cli.json" />
     <Content Include="package.json" />
     <Content Include="src\assets\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="src\assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="src\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="src\assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="src\Web.config" />
+    <Content Include="angular.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -150,6 +150,8 @@
     <TypeScriptCompile Include="src\app\home\home.component.spec.ts" />
     <TypeScriptCompile Include="src\app\home\home.component.ts" />
     <TypeScriptCompile Include="src\app\image.ts" />
+    <TypeScriptCompile Include="src\app\ipaged-response.pagedresponse.ts" />
+    <TypeScriptCompile Include="src\app\ipost-summary.postsummary.ts" />
     <TypeScriptCompile Include="src\app\pager.service.spec.ts" />
     <TypeScriptCompile Include="src\app\pager.service.ts" />
     <TypeScriptCompile Include="src\app\http.service.spec.ts" />

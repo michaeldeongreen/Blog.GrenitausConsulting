@@ -3,8 +3,9 @@ import { Observable } from 'rxjs/Observable';
 import { Post } from '../post';
 import { HttpService } from '../http.service';
 import { PagerService } from '../pager.service';
-import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { IPagedResponse } from '../ipaged-response.pagedresponse';
 
 @Component({
   selector: 'app-tag-results',
@@ -15,7 +16,7 @@ export class TagComponent implements OnInit {
     tag: string;
     busy: boolean = true;
 
-    constructor(private http: Http,
+    constructor(private http: HttpClient,
         private httpService: HttpService,
         private pagerService: PagerService,
         private route: ActivatedRoute) { }
@@ -59,7 +60,11 @@ export class TagComponent implements OnInit {
                 // get current page of items
                 this.pagedItems = data.posts;
                 this.busy = false;
-            });
+            },
+            err => {
+                console.log("Error while retrieving posts by tag");
+            }
+        );
     }
 
 

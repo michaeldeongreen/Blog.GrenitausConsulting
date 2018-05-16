@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { Ng2PaginationModule } from 'ng2-pagination';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { MetaModule } from '@ngx-meta/core';
@@ -25,6 +24,8 @@ import { ArchiveComponent } from './archive/archive.component';
 import { PreviewComponent } from './preview/preview.component';
 import { PreviewsComponent } from './previews/previews.component';
 import { environment } from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     FormsModule,
-      HttpModule,
+      HttpClientModule,
       Ng2PaginationModule,
       AppRoutingModule,
       MetaModule.forRoot()
