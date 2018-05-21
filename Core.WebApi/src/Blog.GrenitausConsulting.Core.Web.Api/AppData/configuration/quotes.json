@@ -110,5 +110,12 @@
     "quote": "It's Not Whether You Get Knocked Down, It's Whether You Get Up.",
     "url": "https://en.wikipedia.org/wiki/Vince_Lombardi",
     "addedDate": "2018-05-12"
+  },
+  {
+    "id": 17,
+    "author": "Albert Einstein",
+    "quote": "If you can't explain it simply, you don't understand it well enough.",
+    "url": "https://en.wikipedia.org/wiki/Albert_Einstein",
+    "addedDate": "2018-05-21"
   }
 ]

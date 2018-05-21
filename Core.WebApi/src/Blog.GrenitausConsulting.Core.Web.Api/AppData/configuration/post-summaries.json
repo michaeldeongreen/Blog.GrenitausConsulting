@@ -2537,5 +2537,46 @@
     ],
     "canPreview": true,
     "previewExpirationDate": "2018-05-15"
+  },
+  {
+    "id": 52,
+    "title": "Upgrading My Angular 4 Application to Angular 5",
+    "author": "Michael D. Green",
+    "postDate": "2018-05-21",
+    "snippet": "In this blog, Michael D. Green talks about upgrading an Angular 4 application to Angular 5.",
+    "link": "upgrading-my-angular-4-application-to-angular-5",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 28,
+        "name": "Angular 2"
+      },
+      {
+        "id": 35,
+        "name": "TypeScript"
+      },
+      {
+        "id": 52,
+        "name": "NPM"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "assets/images/grenitaus-consulting-logo.png"
+      },
+      {
+        "name": "grenitausconsulting-upgrading-my-angular-4-application-to-angular-5-001.png",
+        "url": "assets/images/grenitausconsulting-upgrading-my-angular-4-application-to-angular-5-001.png"
+      }
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   }
 ]  

@@ -1,0 +1,105 @@
+<a href="assets/images/grenitaus-consulting-logo.png"><img class="img-responsive" src="assets/images/grenitaus-consulting-logo.png" alt="Grenitaus Consulting"></a>
+<br><br>
+
+I just wanted to write a very short blog entry on the steps I took to upgrade my blog from Angular 4 to Angular 5.
+
+<br><br>
+
+<strong>Package Updates</strong>
+
+<br><br>
+
+The very first steps I took were to create a new branch in GitHub and also, I used a Virtual Machine to perform the upgrade before performing all the steps on my main PC.
+
+<br><br>
+
+<ul>
+	<li>I upgraded Node.js and Node Package Manager (npm) to the latest version</li>
+	<li>I used npm to upgrade angular-cli to the latest version</li>
+	<li>I used npm to upgrade Typescript to the latest version</li>
+	<li>I downloaded and installed the latest Typescript SDK for Visual Studio 2017</li>
+	<li>I configured Visual Studio 2017 to use the latest version of Typescript by selecting the Class Library project where the Angular files reside, right-clicking and selecting <i>properties</i> and navigating to the <i>TypeScript Build</i> tab:</li><br>
+	
+	<a href="assets/images/grenitausconsulting-upgrading-my-angular-4-application-to-angular-5-001.png"><img src="assets/images/grenitausconsulting-upgrading-my-angular-4-application-to-angular-5-001.png" alt="angular 2 continuous deployment to azure" width="253" height="133" class="img-responsive" /></a>
+	
+	<li>I used <a href="https://update.angular.io/" target="_blank">https://update.angular.io/</a> to help me identify which node modules needed to be upgraded, the exact versions and generate the npm commands.  <b>Note:</b> Make sure to delete the <i>node_modules</i> folder before running the npm install command</li>
+	<li>I then used the command <i>ng update @angular/cli</i> to create the new angular.json configuration file</li>
+	<li>I had to replace the now deprecated http service with the new httpclient.  I will talk about this in more detail later but <a href="https://medium.com/codingthesmartway-com-blog/angular-4-3-httpclient-accessing-rest-web-services-with-angular-2305b8fd654b">here</a> is a great blog I read to help me convert the http service to the new http client.</li>
+</ul>
+
+
+
+
+<br><br>
+
+<strong>Observations</strong>
+
+<br><br>
+
+<b><a href="https://github.com/michaeldeongreen/Blog.GrenitausConsulting/blob/6413886cda1f2d0d9646a90e9fe3907b853e34c8/Client/.angular-cli.json" target="_blank">.angular-cli.json</a></b> - This file has been deprecated and a new file called <a href="https://github.com/michaeldeongreen/Blog.GrenitausConsulting/blob/master/Client/angular.json" target="_blank">angular.json</a> is now used.
+
+<br><br>
+
+<b>http service</b> - The http service has been deprecated in place of the new HttpClient.
+
+<br><br>
+
+Server Side:
+
+<br><br>
+
+<pre><code class="language-csharp">
+[Route("api/search/{criteria}/page/{pagenumber}")]
+public PagedResponse Get(string criteria, int pageNumber)
+{
+	return _pagingService.Search(new PagedCriteria() { PageNumber = pageNumber, PageSize = _pageSize, Posts = BlogContextManager.PostSummaries, SearchCriteria = criteria, IsActive = true });
+}
+</code></pre>
+
+<br><br>
+
+Using the http service:
+
+<br><br>
+
+<pre><code class="language-typescript">
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+
+    //...
+    constructor(private http: Http) {
+        //...
+    }
+
+    public getSearchResults(page: Number, criteria: string): any {
+        let url = `${this.baseUrl}/search/${encodeURIComponent(criteria)}/page/${page}`;
+        return this.http.get(url)
+            .map((response: Response) => response.json())
+            .catch((error: any) => Observable.throw(error.json().error) || 'Server Error');
+    }
+</code></pre>
+
+Using the new http client:
+
+<br><br>
+
+<pre><code class="language-typescript">
+import { HttpClient } from '@angular/common/http';
+import { IPagedResponse } from './ipaged-response.pagedresponse';
+
+	//....
+     constructor(private http: HttpClient) {
+         //...
+    }
+
+    public getSearchResults(page: Number, criteria: string): any {
+        let url = `${this.baseUrl}/search/${encodeURIComponent(criteria)}/page/${page}`;
+        return this.http.get<IPagedResponse>(url)
+    }
+</code></pre>
+
+<br /><br />
+
+That's pretty much it.  In a few days, I will probably upgrade from Angular 5 to Angular 6.
