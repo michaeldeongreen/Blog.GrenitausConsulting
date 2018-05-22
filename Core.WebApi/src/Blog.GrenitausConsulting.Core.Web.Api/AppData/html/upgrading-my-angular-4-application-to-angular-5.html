@@ -86,18 +86,20 @@ Using the new http client:
 <br><br>
 
 <pre><code class="language-typescript">
+<script>
 import { HttpClient } from '@angular/common/http';
 import { IPagedResponse } from './ipaged-response.pagedresponse';
 
-	//....
-     constructor(private http: HttpClient) {
-         //...
+    //....
+    constructor(private http: HttpClient) {
+        //...
     }
 
     public getSearchResults(page: Number, criteria: string): any {
         let url = `${this.baseUrl}/search/${encodeURIComponent(criteria)}/page/${page}`;
-        return this.http.get<IPagedResponse>(url)
+        this.http.get<IPagedResponse>(url)
     }
+    </script>
 </code></pre>
 
 <br /><br />
