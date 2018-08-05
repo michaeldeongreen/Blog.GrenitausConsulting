@@ -2578,5 +2578,38 @@
     ],
     "canPreview": false,
     "previewExpirationDate": null
+  },
+  {
+    "id": 53,
+    "title": "It's All in the Name!",
+    "author": "Michael D. Green",
+    "postDate": "2018-08-05",
+    "snippet": "In this blog, Michael D. Green talks about the importance of making your code human readable.",
+    "link": "its-all-in-the-name",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 8,
+        "name": "SCRUM"
+      },
+      {
+        "id": 13,
+        "name": "Unit Testing"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "assets/images/grenitaus-consulting-logo.png"
+      }
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   }
 ]  

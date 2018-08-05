@@ -1,0 +1,42 @@
+<a href="assets/images/grenitaus-consulting-logo.png"><img class="img-responsive" src="assets/images/grenitaus-consulting-logo.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+I wanted to take some time to write a very short blog entry about an experience I recently had that further strengthened my belief that code readability is extremely important.
+
+<br><br>
+
+Recently, one of my clients has started to really focus on the importance on writing Unit Tests.  This client has gone as far as to mandate that even members of QA write a certain amount of Unit Test per quarter.
+
+<br><br>
+
+For the last few Sprints, our team has had to focus on implementing features to become <a href="https://www.swordshield.com/experian-ei3pa-compliance" target="_blank">EI3PA</a> compliant.  In particular, I recently heavily re-factored their existing audit logging framework as it was extremely inflexible and not extensible.
+
+<br><br>
+
+<a href="https://en.wikiquote.org/wiki/Martin_Fowler" target="_blank">Martin Fowler</a> once stated, "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.".  I am a huge believer in this basic concept and in the last few years, I have gotten a lot better at writing code that is easier for a human to follow.
+
+<br><br>
+
+As I re-factored my client's existing audit logging framework, I took care in how I named "things" such as constants, variables, methods, abstracts and sub classes.  In fact, I could make the argument that I paid as much attention to how I named "things" as I did making the heavily re-factored audit logging framework adhere to <a href="https://en.wikipedia.org/wiki/SOLID" target="_blank">SOLID</a> Principles.
+
+<br><br>
+
+During one of our <a href="https://en.wikipedia.org/wiki/Scrum_(software_development)" target="_blank">SCRUM</a> stand ups, our QA Team Member mentioned that she is required to write Unit Tests when the opportunity presents itself.  She asked me if I could help her write Unit Tests for the re-factored audit logging framework, since she was going to be testing my changes.
+
+<br><br>
+
+Since I work remote, I shared my screen with her and guided her on how to write new Unit Tests (me and another team member had already written a lot Unit Tests) for my changes.  She begin to ask me about the changes that I made and why I needed to make these changes.  So since I already had my screen shared, I actually went into the code and started showing her my changes.  
+
+<br><br>
+
+As I continued to explain to her how the code worked, I noticed something interesting, within a few minutes, I really didn't need to continue to explain anything to her because since I took great care in how I named "things" in my code, a human being, who had never laid eyes on my code before could easily follow the code.
+
+<br><br>
+
+As a member of QA, she has a ton of domain knowledge and a very strong understanding of how the components that our team is responsible for works.  Because of this fact, it was very interesting to hear her say things like, "Oh okay, I can understand this code or now I know where the code is that performs this business logic or this is the code that determines what gets audited when I press a button on a screen!".
+
+<br><br>
+
+I am a big proponent of writing human readable code.  When you take care in how you write your code, it makes it easier for future you and the person that comes after you to make changes because the code will be more easier to understand.  Also, in the future, you never know who is going to open up the hood and see what you have done!
+
