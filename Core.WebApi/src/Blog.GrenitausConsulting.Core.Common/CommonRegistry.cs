@@ -1,8 +1,8 @@
-﻿using StructureMap;
+﻿using Lamar;
 
 namespace Blog.GrenitausConsulting.Core.Common
 {
-    public class CommonRegistry : Registry
+    public class CommonRegistry : ServiceRegistry
     {
         public CommonRegistry()
         {

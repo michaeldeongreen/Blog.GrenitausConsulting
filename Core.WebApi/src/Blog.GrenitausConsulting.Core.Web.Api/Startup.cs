@@ -20,6 +20,7 @@ namespace Blog.GrenitausConsulting.Core.Web.Api
         {
             services.AddMvc();
             services.AddCors();
+            services.AddLogging();
             var container = IoC.Configure(Configuration, services);
             return container.GetInstance<IServiceProvider>();
         }

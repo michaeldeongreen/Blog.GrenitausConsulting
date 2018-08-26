@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Lamar.Microsoft.DependencyInjection;
 
 namespace Blog.GrenitausConsulting.Core.Web.Api
 {
@@ -21,6 +22,7 @@ namespace Blog.GrenitausConsulting.Core.Web.Api
                     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
                 })
+                .UseLamar()
                 .UseStartup<Startup>()
                 .Build();
     }

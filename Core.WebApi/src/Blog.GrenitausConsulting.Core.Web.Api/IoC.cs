@@ -2,8 +2,7 @@
 using Blog.GrenitausConsulting.Core.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using StructureMap;
-
+using Lamar;
 namespace Blog.GrenitausConsulting.Core.Web.Api
 {
     internal static class IoC
@@ -24,7 +23,7 @@ namespace Blog.GrenitausConsulting.Core.Web.Api
                 config.IncludeRegistry<CommonRegistry>();
                 config.IncludeRegistry<ServicesRegistry>();
                 config.IncludeRegistry<DefaultRegistry>();
-                config.Populate(services);
+                //config.Populate(services);
             });
             return container;
         }
