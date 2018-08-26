@@ -2,8 +2,6 @@
 using Blog.GrenitausConsulting.Core.Domain;
 using Blog.GrenitausConsulting.Core.Services.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 using System.Globalization;
 

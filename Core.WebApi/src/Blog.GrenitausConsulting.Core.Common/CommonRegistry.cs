@@ -1,8 +1,4 @@
-﻿using Blog.GrenitausConsulting.Core.Common.Interfaces;
-using StructureMap;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using StructureMap;
 
 namespace Blog.GrenitausConsulting.Core.Common
 {

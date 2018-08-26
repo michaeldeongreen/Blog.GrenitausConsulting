@@ -3,10 +3,6 @@ using Blog.GrenitausConsulting.Core.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StructureMap;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Blog.GrenitausConsulting.Core.Web.Api
 {
