@@ -1,11 +1,8 @@
-﻿using StructureMap;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Lamar;
 
 namespace Blog.GrenitausConsulting.Core.Services
 {
-    public class ServicesRegistry : Registry
+    public class ServicesRegistry : ServiceRegistry
     {
         public ServicesRegistry()
         {

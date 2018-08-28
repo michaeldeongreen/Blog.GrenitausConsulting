@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.IO;
-using System.Web;
 using Blog.GrenitausConsulting.Core.Domain;
 
 namespace Blog.GrenitausConsulting.Core.Common

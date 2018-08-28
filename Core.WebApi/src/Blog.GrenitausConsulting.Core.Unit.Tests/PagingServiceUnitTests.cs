@@ -3,7 +3,6 @@ using Blog.GrenitausConsulting.Core.Services;
 using Blog.GrenitausConsulting.Core.Services.Interfaces;
 using FluentAssertions;
 using NUnit.Framework;
-using System;
 using System.Linq;
 
 namespace Blog.GrenitausConsulting.Core.Unit.Tests

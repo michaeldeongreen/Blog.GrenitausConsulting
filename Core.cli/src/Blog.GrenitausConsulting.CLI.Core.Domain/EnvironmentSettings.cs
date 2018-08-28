@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Blog.GrenitausConsulting.CLI.Core.Domain
+﻿namespace Blog.GrenitausConsulting.CLI.Core.Domain
 {
     public class EnvironmentSettings
     {

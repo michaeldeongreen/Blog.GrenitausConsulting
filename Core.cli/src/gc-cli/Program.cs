@@ -1,7 +1,4 @@
 ﻿using Blog.GrenitausConsulting.CLI.Core.Common;
-using Blog.GrenitausConsulting.CLI.Core.Domain;
-using Blog.GrenitausConsulting.CLI.Core.Services;
-using Blog.GrenitausConsulting.CLI.Core.Services.Interfaces;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;

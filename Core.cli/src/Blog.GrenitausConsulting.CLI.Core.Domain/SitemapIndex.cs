@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.IO;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace Blog.GrenitausConsulting.CLI.Core.Domain

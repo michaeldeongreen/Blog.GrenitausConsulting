@@ -1,12 +1,8 @@
-﻿using StructureMap;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Lamar;
 
 namespace Blog.GrenitausConsulting.Core.Web.Api
 {
-    public class DefaultRegistry : Registry
+    public class DefaultRegistry : ServiceRegistry
     {
         public DefaultRegistry()
         {

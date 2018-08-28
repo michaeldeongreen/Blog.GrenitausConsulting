@@ -1,7 +1,4 @@
 ﻿using Blog.GrenitausConsulting.Core.Domain;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Blog.GrenitausConsulting.Core.Services.Interfaces
 {
