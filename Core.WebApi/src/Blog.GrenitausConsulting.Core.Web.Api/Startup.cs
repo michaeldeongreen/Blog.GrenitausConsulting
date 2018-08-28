@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Lamar;
+using Blog.GrenitausConsulting.Core.Common;
+using Blog.GrenitausConsulting.Core.Services;
 
 namespace Blog.GrenitausConsulting.Core.Web.Api
 {
@@ -15,17 +18,23 @@ namespace Blog.GrenitausConsulting.Core.Web.Api
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public IServiceProvider ConfigureServices(IServiceCollection services)
+        public void ConfigureContainer(ServiceRegistry services)
         {
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             services.AddMvc();
             services.AddCors();
             services.AddLogging();
-            var container = IoC.Configure(Configuration, services);
-            return container.GetInstance<IServiceProvider>();
+
+            services.Scan(s =>
+            {
+                s.TheCallingAssembly();
+                s.WithDefaultConventions();
+                s.AssemblyContainingType<CommonRegistry>();
+                s.AssemblyContainingType<ServicesRegistry>();
+                s.AssemblyContainingType<DefaultRegistry>();
+            });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
