@@ -350,5 +350,13 @@
   {
     "id": 88,
     "name": "Windows Service"
+  },
+  {
+    "id": 89,
+    "name": "Angular 5"
+  },
+  {
+    "id": 90,
+    "name": "Azure DevOps"
   }
 ]
