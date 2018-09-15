@@ -2614,7 +2614,7 @@
   },
   {
     "id": 54,
-    "title": "How to Setup Continuous Intergration and Continuous Deployment for a Angular-5 Application using Azure Devops",
+    "title": "How to Setup Continuous Intergration and Continuous Deployment for a Angular 5 Application using Azure Devops",
     "author": "Michael D. Green",
     "postDate": "2018-09-15",
     "snippet": "In this blog, I want to demonstrate how to setup continuous integration and continuous deployment for a Angular 5 application using Azure DevOps.",
