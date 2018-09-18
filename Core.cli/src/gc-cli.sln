@@ -11,13 +11,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.GrenitausConsulting.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.GrenitausConsulting.Core.Domain", "..\..\Core.WebApi\src\Blog.GrenitausConsulting.Core.Domain\Blog.GrenitausConsulting.Core.Domain.csproj", "{50D96613-239E-45E7-A1BB-80333542A364}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.CLI.Core.Common", "Blog.GrenitausConsulting.CLI.Core.Common\Blog.GrenitausConsulting.CLI.Core.Common.csproj", "{43EDCCD5-201C-4922-B1FE-AEF284DACD10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.GrenitausConsulting.CLI.Core.Common", "Blog.GrenitausConsulting.CLI.Core.Common\Blog.GrenitausConsulting.CLI.Core.Common.csproj", "{43EDCCD5-201C-4922-B1FE-AEF284DACD10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.CLI.Core.Domain", "Blog.GrenitausConsulting.CLI.Core.Domain\Blog.GrenitausConsulting.CLI.Core.Domain.csproj", "{BD5C50CD-D3AF-4065-AFF2-92E517EB88BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.GrenitausConsulting.CLI.Core.Domain", "Blog.GrenitausConsulting.CLI.Core.Domain\Blog.GrenitausConsulting.CLI.Core.Domain.csproj", "{BD5C50CD-D3AF-4065-AFF2-92E517EB88BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.CLI.Core.Services", "Blog.GrenitausConsulting.CLI.Core.Services\Blog.GrenitausConsulting.CLI.Core.Services.csproj", "{B83164A2-7DD5-40AC-90BA-12BB80D3AAE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.GrenitausConsulting.CLI.Core.Services", "Blog.GrenitausConsulting.CLI.Core.Services\Blog.GrenitausConsulting.CLI.Core.Services.csproj", "{B83164A2-7DD5-40AC-90BA-12BB80D3AAE5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blog.GrenitausConsulting.Core.Services", "..\..\Core.WebApi\src\Blog.GrenitausConsulting.Core.Services\Blog.GrenitausConsulting.Core.Services.csproj", "{0FCFA2CD-8020-4B7E-B8B7-D55855D8F848}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.CLI.Core.Unit.Tests", "Blog.GrenitausConsulting.CLI.Core.Unit.Tests\Blog.GrenitausConsulting.CLI.Core.Unit.Tests.csproj", "{A1771240-EA49-4BD3-9EB7-9A7E34A78DA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{0FCFA2CD-8020-4B7E-B8B7-D55855D8F848}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FCFA2CD-8020-4B7E-B8B7-D55855D8F848}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FCFA2CD-8020-4B7E-B8B7-D55855D8F848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1771240-EA49-4BD3-9EB7-9A7E34A78DA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1771240-EA49-4BD3-9EB7-9A7E34A78DA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1771240-EA49-4BD3-9EB7-9A7E34A78DA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1771240-EA49-4BD3-9EB7-9A7E34A78DA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
