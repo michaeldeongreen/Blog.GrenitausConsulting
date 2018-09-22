@@ -1,0 +1,163 @@
+<a href="assets/images/grenitaus-consulting-logo.png"><img class="img-responsive" src="assets/images/grenitaus-consulting-logo.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+In this blog, I want to demonstrate how to setup Continuous Integration (CI) and Continuous Deployment (CD) for a Angular 5 application using <a href="https://azure.microsoft.com/en-us/blog/introducing-azure-devops/" target="_blank">Azure DevOps</a>.  I will do this by using <a href="http://grenitausconsulting.com/" target="_blank">GrenitausConsulting.com</a>, which is my custom built web application that uses Angular 5 and is already deployed to Azure, however, at this time, it is deployed manually via FTP.  The Github Repository can be found <a href="https://github.com/michaeldeongreen/GrenitausConsulting" target="_blank">here</a>
+
+<br><br>
+
+<strong>Caveats!</strong>
+
+<br><br>
+
+Also, I assume that you are familiar with:
+
+<br><br>
+
+<ul>
+    <li>Angular 5+</li>
+	<li>angular-cli</li>
+	<li>Azure Portal</li>
+	<li>GitHub</li>
+	<li>Node Package Manager</li>	
+</ul>
+
+<br><br>
+
+<a href="http://grenitausconsulting.com/" target="_blank">GrenitausConsulting.com</a> is already hosted in the Azure Cloud via a Azure Web App, so I just needed to setup Continuous Integration and Continuous Deployment in VSTS, which is now called <a href="https://docs.microsoft.com/en-us/azure/devops/user-guide/what-happened-vsts?view=vsts" target="_blank">Azure DevOps</a>.
+
+<br><br>
+
+<strong>Azure DevOps CI & CD Project Setup!</strong>
+
+<br><br>
+
+First, I navigated to my VisualStudio.com url <i>(Ex: [yourdomain].visualstudio.com)</i> to start creating a Azure DevOps Project for <a href="http://grenitausconsulting.com/" target="_blank">GrenitausConsulting.com</a>.
+
+<br><br>
+
+Now that I am in the VisualStudio.com portal, I created a new project:
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-01.png"><img class="img-responsive" src="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-01.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+Once the project is created, on the left navigation menu, I chose "Builds" and created a new Pipeline and I used a <a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/" target="_blank">GitHub personal access token</a>
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-02.png"><img class="img-responsive" src="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-02.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-03.png"><img class="img-responsive" src="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-03.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+Once this is done, I pressed "continue" and chose "Empty Pipeline".  On the main Pipeline screen, I selected the "Triggers" tab and under Continuous Integration, I chose "Enable continuous integration":
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-04.png"><img class="img-responsive" src="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-04.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+Next, under the "Tasks" tab, I chose "Agent Job 1" and re-named it to something more descriptive <i>(I chose Build & Deploy)</i>
+
+<br><br>
+
+After I made this change, in the tab section, I chose "Save" <i>(Something you will want to do periodically)</i> and when the popup appeared, I just pushed the "Save" button:
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-05.png"><img class="img-responsive" src="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-05.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+Next, on the "Agent Job", I selected the "+" sign, which will allow you to create tasks for your job.
+
+<br><br>
+
+For my first task, I needed to install node package dependencies.  So I did a search for "npm" and selected the "npm" task.  Inside of the "npm" task, I set the "Working folder with package.json":
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-06.png"><img class="img-responsive" src="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-06.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-07.png"><img class="img-responsive" src="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-07.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+Next, I needed to create a "Command Line" task to run <a href="https://cli.angular.io/" target="_blank">angular-cli</a>.  Once again, I pressed the "+" sign next to the Agent Job, did a search for "Command Line" and added the "Command Line" task.  Once inside the task, I typed "npx ng build" in the script window.  For more inforamtion on "npx" see <a href="https://medium.com/@starikovs/how-to-use-angular-cli-locally-729dbb6707dd" target="_blank">How to use angular-cli locally</a>.
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-08.png"><img class="img-responsive" src="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-08.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-09.png"><img class="img-responsive" src="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-09.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+After I added this task, I added the "Azure App Service Deploy" task, which will be responsible for deploying my changes to Azure.  Inside of this task, I chose my Azure Subscription, my App Type and set the "dist" directory that angular-cli should have created during the "Command Line" task:
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-10.png"><img class="img-responsive" src="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-10.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-11.png"><img class="img-responsive" src="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-11.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+After I created all of my tasks, I wanted to test the CI & CD Process.  I did this by selecting the "Queue" option on the Pipeline screen.
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-12.png"><img class="img-responsive" src="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-12.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+On the left navigation menu, I chose "Builds".  Once there, I chose the latest build and this allowed me to observe the output from each Agent Job Step I had just configured.  Once the Agent Job completes, all of the task steps should have a status of "succeeded":
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-13.png"><img class="img-responsive" src="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-13.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-14.png"><img class="img-responsive" src="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-14.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+After this, I navigated to <a href="http://grenitausconsulting.com/" target="_blank">GrenitausConsulting.com</a> to ensure that it was up and running:
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-15.png"><img class="img-responsive" src="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-15.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+After this, I wanted to make sure that when I checked a change into the "master" branch that the "Build & Deploy" Agent Job would be triggered.  So I made a trivial change and pushed the changes to GitHub.  Once I had done this, I verified that there was a new build and that all the tasks completed successfully.
+
+<br><br>
+
+<a href="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-16.png"><img class="img-responsive" src="assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-16.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<strong>Conclusion!</strong>
+
+<br><br>
+
+I have always wanted to automate the build and deployment for some of my open source projects.  When I learned about Azure DevOps and that it was basically <a href="https://azure.microsoft.com/en-us/blog/announcing-azure-pipelines-with-unlimited-ci-cd-minutes-for-open-source/" target="_blank">free</a> for Open Source Projects</a>, I jumped at the opportunity.  I felt that Azure DevOps was fairly straightforward, intuitive and I will definitely be using it in the future.
+
+<br><br>
+
+Next, I will start the process of automating CI and CD for <a href="http://blog.grenitausconsulting.com/" target="_blank">Blog.GrenitausConsulting.com</a>, which is going to be far more complicated and of course, I will share my experience in a blog entry.

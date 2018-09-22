@@ -2611,5 +2611,118 @@
     ],
     "canPreview": false,
     "previewExpirationDate": null
+  },
+  {
+    "id": 54,
+    "title": "How to Setup Continuous Intergration and Continuous Deployment for a Angular 5 Application using Azure Devops",
+    "author": "Michael D. Green",
+    "postDate": "2018-09-15",
+    "snippet": "In this blog, I want to demonstrate how to setup continuous integration and continuous deployment for a Angular 5 application using Azure DevOps.",
+    "link": "how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 89,
+        "name": "Angular 5"
+      },
+      {
+        "id": 72,
+        "name": "angular-cli"
+      },
+      {
+        "id": 30,
+        "name": "Azure"
+      },
+      {
+        "id": 90,
+        "name": "Azure DevOps"
+      },
+      {
+        "id": 34,
+        "name": "GitHub"
+      },
+      {
+        "id": 52,
+        "name": "NPM"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "assets/images/grenitaus-consulting-logo.png"
+      },
+      {
+        "name": "how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-01.png",
+        "url": "assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-01.png"
+      },
+      {
+        "name": "how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-02.png",
+        "url": "assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-02.png"
+      },
+      {
+        "name": "how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-03.png",
+        "url": "assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-03.png"
+      },
+      {
+        "name": "how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-04.png",
+        "url": "assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-04.png"
+      },
+      {
+        "name": "how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-05.png",
+        "url": "assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-05.png"
+      },
+      {
+        "name": "how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-06.png",
+        "url": "assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-06.png"
+      },
+      {
+        "name": "how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-07.png",
+        "url": "assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-07.png"
+      },
+      {
+        "name": "how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-08.png",
+        "url": "assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-08.png"
+      },
+      {
+        "name": "how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-09.png",
+        "url": "assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-09.png"
+      },
+      {
+        "name": "how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-10.png",
+        "url": "assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-10.png"
+      },
+      {
+        "name": "how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-11.png",
+        "url": "assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-11.png"
+      },
+      {
+        "name": "how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-12.png",
+        "url": "assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-12.png"
+      },
+      {
+        "name": "how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-13.png",
+        "url": "assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-13.png"
+      },
+      {
+        "name": "how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-14.png",
+        "url": "assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-14.png"
+      },
+      {
+        "name": "how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-15.png",
+        "url": "assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-15.png"
+      },
+      {
+        "name": "how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-16.png",
+        "url": "assets/images/how-to-setup-continuous-intergration-and-continuous-deployment-for-a-angular-5-application-using-azure-devops-16.png"
+      }
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   }
 ]  
