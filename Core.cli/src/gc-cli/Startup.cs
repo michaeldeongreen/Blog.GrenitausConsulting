@@ -12,24 +12,19 @@ namespace gc_cli
         private ICommandLineArgumentParseService _commandLineArgumentParseService;
         private ICommandLineArgumentValidationService _commandLineArgumentValidationService;
 
-        public void Configure(string[] args, ICommandLineArgumentParseService commandLineArgumentParseService, ICommandLineArgumentValidationService commandLineArgumentValidationService,
-            string path)
+        public void Configure(string[] args, ICommandLineArgumentParseService commandLineArgumentParseService, ICommandLineArgumentValidationService commandLineArgumentValidationService)
         {
             _commandLineArgumentParseService = commandLineArgumentParseService;
             _commandLineArgumentValidationService = commandLineArgumentValidationService;
 
-            ICommandLineArgumentValidationService argumentValidationService = new CommandLineArgumentValidationService();
-            IEnvironmentSettingsService environmentSettingsService = new EnvironmentSettingsService();
-
             var commandLineArguments = BuildCommandLineArguments(args);
 
-            if (!argumentValidationService.IsValid(commandLineArguments))
+            if (!_commandLineArgumentValidationService.IsValid(commandLineArguments))
             {
-                throw new Exception(argumentValidationService.Errors[0].Description);
+                throw new Exception(_commandLineArgumentValidationService.Errors[0].Description);
             }
 
-            EnvironmentSettings settings = environmentSettingsService.Get(args[1], path);
-            ICLIService cliService = new CLIService(settings);
+            ICLIService cliService = new CLIService(commandLineArguments);
 
             cliService.CLILogMessageProcessStatusChanged += Program.CLILogMessageHandler;
             cliService.Generate();

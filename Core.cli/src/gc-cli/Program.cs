@@ -16,7 +16,8 @@ namespace gc_cli
         private static ICommandLineArgumentValidationService _commandLineArgumentValidationService;
         static void Main(string[] args)
         {
-            args = new string[] {"-configdir", @"C:\temp\gc-cli\config", "-outputdir", @"C:\temp\gc-cli\output", "-apiurl", "http://localhost:4200" };
+            args = new string[] {"-configdir", @"C:\\Git\\Blog.GrenitausConsulting\\Core.WebApi\\src\\Blog.GrenitausConsulting.Core.Web.Api\\AppData",
+                "-outputdir", @"C:\\Git\\Blog.GrenitausConsulting\\Client\\src", "-apiurl", "http://localhost:4200" };
             string path = Directory.GetCurrentDirectory();
 
             IConfigurationBuilder builder = new ConfigurationBuilder()
@@ -30,7 +31,7 @@ namespace gc_cli
                 _logger = serviceCollection.BuildServiceProvider().GetService<ILogger<Program>>();
                 _commandLineArgumentParseService = serviceCollection.BuildServiceProvider().GetService<ICommandLineArgumentParseService>();
                 _commandLineArgumentValidationService = serviceCollection.BuildServiceProvider().GetService<ICommandLineArgumentValidationService>();
-                new Startup().Configure(args, _commandLineArgumentParseService, _commandLineArgumentValidationService, path);
+                new Startup().Configure(args, _commandLineArgumentParseService, _commandLineArgumentValidationService);
             }
             catch (Exception ex)
             {
@@ -42,6 +43,7 @@ namespace gc_cli
         {
             services.AddLogging(configure => configure.AddConsole());
             services.AddScoped<ICommandLineArgumentParseService, CommandLineArgumentParseService>();
+            services.AddScoped<ICommandLineArgumentValidationService, CommandLineArgumentValidationService>();
         }
 
         internal static void CLILogMessageHandler(object sender, CLILogMessageEventArgs e)
