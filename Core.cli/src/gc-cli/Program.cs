@@ -16,8 +16,8 @@ namespace gc_cli
         private static ICommandLineArgumentValidationService _commandLineArgumentValidationService;
         static void Main(string[] args)
         {
-            args = new string[] {"-configdir", @"C:\\Git\\Blog.GrenitausConsulting\\Core.WebApi\\src\\Blog.GrenitausConsulting.Core.Web.Api\\AppData",
-                "-outputdir", @"C:\\Git\\Blog.GrenitausConsulting\\Client\\src", "-apiurl", "http://localhost:4200" };
+            /*args = new string[] {"-configdir", @"C:\\Git\\Blog.GrenitausConsulting\\Core.WebApi\\src\\Blog.GrenitausConsulting.Core.Web.Api\\AppData",
+                "-outputdir", @"C:\\Git\\Blog.GrenitausConsulting\\Client\\src", "-apiurl", "http://localhost:4200" };*/
             string path = Directory.GetCurrentDirectory();
 
             IConfigurationBuilder builder = new ConfigurationBuilder()
