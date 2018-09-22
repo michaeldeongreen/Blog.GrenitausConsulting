@@ -11,11 +11,11 @@ namespace Blog.GrenitausConsulting.CLI.Core.Unit.Tests
     public class ExtensionsTests
     {
         [Test]
-        public void CommandLineArgumentType_ToArgument_When_Config_Argument_ReturnsArgument()
+        public void CommandLineArgumentType_ToArgument_When_ConfigDir_Argument_ReturnsArgument_Test()
         {
-            const string arg = "-config";
+            const string arg = "-configdir";
             //given
-            CommandLineArgumentType type = CommandLineArgumentType.Config;
+            CommandLineArgumentType type = CommandLineArgumentType.ConfigDir;
             //when
             string value = type.ToArgument();
             //then
@@ -23,11 +23,11 @@ namespace Blog.GrenitausConsulting.CLI.Core.Unit.Tests
         }
 
         [Test]
-        public void CommandLineArgumentType_ToArgument_When_Output_Argument_ReturnsArgument()
+        public void CommandLineArgumentType_ToArgument_When_OutputDir_Argument_ReturnsArgument_Test()
         {
-            const string arg = "-output";
+            const string arg = "-outputdir";
             //given
-            CommandLineArgumentType type = CommandLineArgumentType.Output;
+            CommandLineArgumentType type = CommandLineArgumentType.OutputDir;
             //when
             string value = type.ToArgument();
             //then
@@ -35,11 +35,11 @@ namespace Blog.GrenitausConsulting.CLI.Core.Unit.Tests
         }
 
         [Test]
-        public void CommandLineArgumentType_ToArgument_When_URL_Argument_ReturnsArgument()
+        public void CommandLineArgumentType_ToArgument_When_ApiUrl_Argument_ReturnsArgument_Test()
         {
-            const string arg = "-url";
+            const string arg = "-apiurl";
             //given
-            CommandLineArgumentType type = CommandLineArgumentType.Url;
+            CommandLineArgumentType type = CommandLineArgumentType.ApiUrl;
             //when
             string value = type.ToArgument();
             //then

@@ -2,7 +2,7 @@
 
 namespace Blog.GrenitausConsulting.CLI.Core.Common
 {
-    public class CLIProcessStatusChangedEventArgs : EventArgs
+    public class CLILogMessageEventArgs : EventArgs
     {
         public string Message { get; set; }
     }

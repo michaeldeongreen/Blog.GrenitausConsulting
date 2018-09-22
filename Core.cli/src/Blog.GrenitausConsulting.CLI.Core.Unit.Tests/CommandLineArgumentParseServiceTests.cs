@@ -11,49 +11,49 @@ namespace Blog.GrenitausConsulting.CLI.Core.Unit.Tests
     public class CommandLineArgumentParseServiceTests
     {
         [Test]
-        public void Parse_When_No_Config_Argment_ReturnsNull()
+        public void Parse_When_No_Config_Argment_ReturnsNull_Test()
         {
             //given
-            string[] args = new string[] {"-output", "c:\\output" };
+            string[] args = new string[] {"-outputdir", "c:\\output" };
             ICommandLineArgumentParseService service = new CommandLineArgumentParseService();
             //when
-            CommandLineArgument argument = service.Parse(args, CommandLineArgumentType.Config);
+            CommandLineArgument argument = service.Parse(args, CommandLineArgumentType.ConfigDir);
             //then
             argument.Should().BeNull();
         }
 
         [Test]
-        public void Parse_When_Config_Argment_But_Value_Outside_Of_ArgumentArrayRange_ReturnsNull()
+        public void Parse_When_Config_Argment_But_Value_Outside_Of_ArgumentArrayRange_ReturnsNull_Test()
         {
             //given
-            string[] args = new string[] { "-config" };
+            string[] args = new string[] { "-configdir" };
             ICommandLineArgumentParseService service = new CommandLineArgumentParseService();
             //when
-            CommandLineArgument argument = service.Parse(args, CommandLineArgumentType.Config);
+            CommandLineArgument argument = service.Parse(args, CommandLineArgumentType.ConfigDir);
             //then
             argument.Should().BeNull();
         }
 
         [Test]
-        public void Parse_When_Config_Argment_And_Value_ReturnsCommandLineArgument()
+        public void Parse_When_Config_Argment_And_Value_ReturnsCommandLineArgument_Test()
         {
             //given
-            string[] args = new string[] { "-config", "c:\\configdirectory" };
+            string[] args = new string[] { "-configdir", "c:\\configdirectory" };
             ICommandLineArgumentParseService service = new CommandLineArgumentParseService();
             //when
-            CommandLineArgument argument = service.Parse(args, CommandLineArgumentType.Config);
+            CommandLineArgument argument = service.Parse(args, CommandLineArgumentType.ConfigDir);
             //then
             argument.Should().NotBeNull();
         }
 
         [Test]
-        public void Parse_When_Config_Argment_And_Value_ReturnsCorrectCommandLineArgumentValue()
+        public void Parse_When_Config_Argment_And_Value_ReturnsCorrectCommandLineArgumentValue_Test()
         {
             //given
-            string[] args = new string[] { "-config", "c:\\configdirectory" };
+            string[] args = new string[] { "-configdir", "c:\\configdirectory" };
             ICommandLineArgumentParseService service = new CommandLineArgumentParseService();
             //when
-            CommandLineArgument argument = service.Parse(args, CommandLineArgumentType.Config);
+            CommandLineArgument argument = service.Parse(args, CommandLineArgumentType.ConfigDir);
             //then
             argument.Value.Should().Be(args[1]);
         }

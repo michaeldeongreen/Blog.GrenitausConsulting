@@ -9,7 +9,7 @@ namespace Blog.GrenitausConsulting.CLI.Core.Services
     public class CLIService : ICLIService
     {
         private EnvironmentSettings _settings;
-        public event EventHandler<CLIProcessStatusChangedEventArgs> CLIProcessStatusChanged;
+        public event EventHandler<CLILogMessageEventArgs> CLILogMessageProcessStatusChanged;
 
         public CLIService(EnvironmentSettings settings)
         {
@@ -50,12 +50,12 @@ namespace Blog.GrenitausConsulting.CLI.Core.Services
 
         private void AnnounceEvent(string message)
         {
-            OnCLIProcessStatusChanged(this, new CLIProcessStatusChangedEventArgs() { Message = message });
+            OnCLILogMessageProcessStatusChanged(this, new CLILogMessageEventArgs() { Message = message });
         }
 
-        protected virtual void OnCLIProcessStatusChanged(object sender, CLIProcessStatusChangedEventArgs e)
+        protected virtual void OnCLILogMessageProcessStatusChanged(object sender, CLILogMessageEventArgs e)
         {
-            EventHandler<CLIProcessStatusChangedEventArgs> handler = CLIProcessStatusChanged;
+            EventHandler<CLILogMessageEventArgs> handler = CLILogMessageProcessStatusChanged;
             if (handler != null)
             {
                 handler(this, e);

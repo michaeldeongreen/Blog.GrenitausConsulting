@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Blog.GrenitausConsulting.CLI.Core.Services
 {
-    public class ArgumentValidationService : IArgumentValidationService
+    public class ArgumentValidationService : ICommandLineArgumentValidationService
     {
         private string[] _args;
         private IList<ArgumentError> _errors;

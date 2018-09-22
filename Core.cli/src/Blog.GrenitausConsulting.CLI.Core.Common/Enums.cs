@@ -2,8 +2,8 @@
 {
     public enum CommandLineArgumentType : byte
     {
-        Config = 1,
-        Output = 2,
-        Url = 3
+        ConfigDir = 1,
+        OutputDir = 2,
+        ApiUrl = 3
     }
 }

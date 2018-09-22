@@ -5,6 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Core.Common\Blog.GrenitausConsulting.CLI.Core.Common.csproj" />
     <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Core.Domain\Blog.GrenitausConsulting.CLI.Core.Domain.csproj" />
     <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Core.Services\Blog.GrenitausConsulting.CLI.Core.Services.csproj" />
