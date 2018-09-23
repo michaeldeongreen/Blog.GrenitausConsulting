@@ -10,6 +10,14 @@ obj
 packages
 static-pages
 
+/Client/src/category-sitemap.xml
+/Client/src/page-sitemap.xml
+/Client/src/post_tag-sitemap.xml
+/Client/src/post-sitemap.xml
+/Client/src/rss.xml
+/Client/src/sitemap.xml
+
+
 /Client/.vs
 /Client/bin
 /Client/obj
