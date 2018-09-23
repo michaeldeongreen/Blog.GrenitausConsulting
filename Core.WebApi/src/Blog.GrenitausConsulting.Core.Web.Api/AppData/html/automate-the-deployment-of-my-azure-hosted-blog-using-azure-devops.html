@@ -50,7 +50,9 @@ Also, I assume that you are familiar with:
 
 <br><br>
 
-When I created the blogging software, I was in a bit of a hurry and since I don't have an SSL Certificate, I never made an Admin Page.  So to add a new blog, tag, quote etc etc, the steps are:
+When I created my blogging software, I was in a bit of a hurry and since I don't have an SSL Certificate (<i>currently researching letsencrypt</i>), I never made an Admin Page.  So to add a new blog, tag, quote etc etc, the steps are:
+
+<br><br>
 
 <ul>
 	<li>1 - Update JSON Config Files in the Visual Studio Project with new Blog, Tags, Quotes</li>
@@ -62,7 +64,7 @@ When I created the blogging software, I was in a bit of a hurry and since I don'
 
 <br><br>
 
-Steps 1-4 are automated via Bash Script but Step 5, I do manually.
+Steps 1-4 are automated via Bash Scripts but Step 5, I do manually.
 
 <br><br>
 
@@ -76,7 +78,7 @@ Config files are located and where to output static pages, sitemap and rss infor
 
 <br><br>
 
-Also, I when gc-cli wants to display information to the console, I used the Console object but decided to swap it out for ILogger and write to the Console in Azure DevOps.  You can view my gc-cli code <a href="https://github.com/michaeldeongreen/Blog.GrenitausConsulting/tree/master/Core.cli/src" target="_blank">here</a>.
+Also, when gc-cli wants to display information to the console, I used the Console object but decided to swap it out for ILogger and write to the Console in Azure DevOps.  You can view my gc-cli code <a href="https://github.com/michaeldeongreen/Blog.GrenitausConsulting/tree/master/Core.cli/src" target="_blank">here</a>.
 
 <br><br>
 
@@ -112,7 +114,7 @@ After this was done, I needed to run my Unit Tests.  So, I chose a .NET Core Tas
 
 <br><br>
 
-Once this has been done, I needed to created a gc-cli executable as by default a .NET Core Console application creates a DLL.  So again, I created a .NET Core Task:
+Once this has been done, I needed to create a gc-cli executable as by default a .NET Core Console application creates a DLL.  So again, I created a .NET Core Task:
 
 <br><br>
 
@@ -120,7 +122,7 @@ Once this has been done, I needed to created a gc-cli executable as by default a
 
 <br><br>
 
-Once the gc-cli Executable had been created, I needed to create Variables for Command Line Arguments.  I did this by going to the Variables tab:
+Once the gc-cli Executable had been created, I needed to create Variables to pass to gc-cli as Command Line Arguments parameters.  I did this by going to the Variables tab:
 
 <br><br>
 
@@ -128,7 +130,7 @@ Once the gc-cli Executable had been created, I needed to create Variables for Co
 
 <br><br>
 
-Next, I created a Command Line Task so I can call gc-cli and pass the Variables as parameters:
+Next, I created a Command Line Task so I can call the gc-cli executable and pass the Variables as parameters:
 
 <br><br>
 
@@ -152,7 +154,7 @@ After this is done, it is time to build the Angular 5 Client and create the publ
 
 <br><br>
 
-Now it is time to publish the REST API files.  I use a .NET Core Task to accomplish this:
+Now it is time to publish the REST API files.  I used a .NET Core Task to accomplish this:
 
 <br><br>
 
@@ -211,3 +213,11 @@ Last, I need to Trigger CI & CD on check-in to the master branch and enable cont
 <br><br>
 
 <a href="assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-017.png"><img class="img-responsive" src="assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-017.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+Here is an overview of all of my steps:
+
+<br><br>
+
+<a href="assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-018.png"><img class="img-responsive" src="assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-018.png" alt="Grenitaus Consulting"></a>
