@@ -5,7 +5,7 @@ namespace Blog.GrenitausConsulting.CLI.Core.Services.Interfaces
 {
     public interface ICLIService
     {
-        event EventHandler<CLIProcessStatusChangedEventArgs> CLIProcessStatusChanged;
+        event EventHandler<CLILogMessageEventArgs> CLILogMessageProcessStatusChanged;
         void Generate();
     }
 }

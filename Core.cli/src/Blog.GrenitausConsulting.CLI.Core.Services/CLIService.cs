@@ -3,21 +3,23 @@ using Blog.GrenitausConsulting.CLI.Core.Domain;
 using Blog.GrenitausConsulting.CLI.Core.Services.Interfaces;
 using Blog.GrenitausConsulting.Core.Common;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Blog.GrenitausConsulting.CLI.Core.Services
 {
     public class CLIService : ICLIService
     {
-        private EnvironmentSettings _settings;
-        public event EventHandler<CLIProcessStatusChangedEventArgs> CLIProcessStatusChanged;
+        private readonly EnvironmentSettings _settings;
+        public event EventHandler<CLILogMessageEventArgs> CLILogMessageProcessStatusChanged;
 
-        public CLIService(EnvironmentSettings settings)
+        public CLIService(IList<CommandLineArgument> commandLineArguments)
         {
-            _settings = settings;
+            _settings = new EnvironmentSettings(commandLineArguments);
         }
         public void Generate()
         {
-            BlogContextManager.Init(_settings.JsonConfigDirectory);
+            BlogContextManager.Init(_settings.ConfigDir.Value);
             GenerateSitemaps();
             GenerateRSSFeed();
             GenerateStaticHtml();
@@ -28,7 +30,7 @@ namespace Blog.GrenitausConsulting.CLI.Core.Services
         {
             AnnounceEvent("Sitemap generation has started....");
             ISitemapService sitemapService = new SitemapService();
-            sitemapService.Generate(_settings.Domain, _settings.JsonConfigDirectory, _settings.OutputDirectory);
+            sitemapService.Generate(_settings.ApiUrl.Value, _settings.ConfigDir.Value, _settings.OutputDir.Value);
             AnnounceEvent("Sitemap generation has completed....");
         }
 
@@ -36,7 +38,7 @@ namespace Blog.GrenitausConsulting.CLI.Core.Services
         {
             AnnounceEvent("RSS Feed generation has started....");
             IRSSService rssService = new RSSService();
-            rssService.Generate(_settings.Domain, _settings.OutputDirectory);
+            rssService.Generate(_settings.ApiUrl.Value, _settings.OutputDir.Value);
             AnnounceEvent("RSS Feed generation has completed....");
         }
 
@@ -44,18 +46,18 @@ namespace Blog.GrenitausConsulting.CLI.Core.Services
         {
             AnnounceEvent("Static HTML generation has started....");
             IHtmlService htmlService = new HtmlService();
-            htmlService.Generate(_settings.Domain, _settings.OutputDirectory, _settings.AngularCLISrcDirectory);
+            htmlService.Generate(_settings.ApiUrl.Value, _settings.OutputDir.Value, _settings.OutputDir.Value);
             AnnounceEvent("Static HTML generation has completed....");
         }
 
         private void AnnounceEvent(string message)
         {
-            OnCLIProcessStatusChanged(this, new CLIProcessStatusChangedEventArgs() { Message = message });
+            OnCLILogMessageProcessStatusChanged(this, new CLILogMessageEventArgs() { Message = message });
         }
 
-        protected virtual void OnCLIProcessStatusChanged(object sender, CLIProcessStatusChangedEventArgs e)
+        protected virtual void OnCLILogMessageProcessStatusChanged(object sender, CLILogMessageEventArgs e)
         {
-            EventHandler<CLIProcessStatusChangedEventArgs> handler = CLIProcessStatusChanged;
+            EventHandler<CLILogMessageEventArgs> handler = CLILogMessageProcessStatusChanged;
             if (handler != null)
             {
                 handler(this, e);

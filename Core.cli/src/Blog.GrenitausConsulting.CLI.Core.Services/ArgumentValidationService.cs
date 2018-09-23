@@ -1,10 +1,11 @@
 ﻿using Blog.GrenitausConsulting.CLI.Core.Domain;
 using Blog.GrenitausConsulting.CLI.Core.Services.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace Blog.GrenitausConsulting.CLI.Core.Services
 {
-    public class ArgumentValidationService : IArgumentValidationService
+    public class ArgumentValidationService : ICommandLineArgumentValidationService
     {
         private string[] _args;
         private IList<ArgumentError> _errors;
@@ -18,11 +19,22 @@ namespace Blog.GrenitausConsulting.CLI.Core.Services
         public bool IsValid(string[] args)
         {
             _args = args;
-            if (!IsThereArguments())
-                return false;
-            if (!IsThereABuildArgument())
-                return false;
-            if (!IsThereAEnvironmentArgument())
+            if (!IsThereAHelpArgument())
+            {
+                if (!IsThereArguments())
+                    return false;
+                if (!IsThereABuildArgument())
+                    return false;
+                if (!IsThereAEnvironmentArgument())
+                    return false;
+            }
+
+            return true;
+        }
+
+        private bool IsThereAHelpArgument()
+        {
+            if (!_args[0].Trim().Equals("-help", StringComparison.OrdinalIgnoreCase))
                 return false;
 
             return true;

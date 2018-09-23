@@ -118,3 +118,15 @@ improvements
 reload data per request on dev
 comments section
 add logging to core cli
+
+gc-cli changes
+-------
+* build ---Don't need
+* -prod <----You don't need this anymore because the parameters will be provided now
+* -url/u ---Url to use for the blog
+* -config/c ---Directory where json config files are located
+* -static/s ---Directory where static pages should be outputed
+* -output/o ---Directory where you will output files
+* Remove the AngularCLI location, it is a dupe of the output
+
+* You don't need EnvironmentSettingsService anymore, actually make the service responsible for setting the values

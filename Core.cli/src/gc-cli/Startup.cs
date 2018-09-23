@@ -1,28 +1,46 @@
-﻿using Blog.GrenitausConsulting.CLI.Core.Domain;
+﻿using Blog.GrenitausConsulting.CLI.Core.Common;
+using Blog.GrenitausConsulting.CLI.Core.Domain;
 using Blog.GrenitausConsulting.CLI.Core.Services;
 using Blog.GrenitausConsulting.CLI.Core.Services.Interfaces;
 using System;
+using System.Collections.Generic;
 
 namespace gc_cli
 {
     public class Startup
     {
-        public void Configure(string[] args, string path)
-        {
-            IArgumentValidationService argumentValidationService = new ArgumentValidationService();
-            IEnvironmentSettingsService environmentSettingsService = new EnvironmentSettingsService();
+        private ICommandLineArgumentParseService _commandLineArgumentParseService;
+        private ICommandLineArgumentValidationService _commandLineArgumentValidationService;
 
-            if (!argumentValidationService.IsValid(args))
+        public void Configure(string[] args, ICommandLineArgumentParseService commandLineArgumentParseService, ICommandLineArgumentValidationService commandLineArgumentValidationService)
+        {
+            _commandLineArgumentParseService = commandLineArgumentParseService;
+            _commandLineArgumentValidationService = commandLineArgumentValidationService;
+
+            var commandLineArguments = BuildCommandLineArguments(args);
+
+            if (!_commandLineArgumentValidationService.IsValid(commandLineArguments))
             {
-                throw new Exception(argumentValidationService.Errors[0].Description);
+                throw new Exception(_commandLineArgumentValidationService.Errors[0].Description);
             }
 
-            EnvironmentSettings settings = environmentSettingsService.Get(args[1], path);
-            ICLIService cliService = new CLIService(settings);
+            ICLIService cliService = new CLIService(commandLineArguments);
 
-            cliService.CLIProcessStatusChanged += Program.CLIProcessStatusChangedHandler;
+            cliService.CLILogMessageProcessStatusChanged += Program.CLILogMessageHandler;
             cliService.Generate();
-            cliService.CLIProcessStatusChanged -= Program.CLIProcessStatusChangedHandler;
+            cliService.CLILogMessageProcessStatusChanged -= Program.CLILogMessageHandler;
+        }
+
+        private IList<CommandLineArgument> BuildCommandLineArguments(string[] args)
+        {
+            IList<CommandLineArgument> commandLineArguments = new List<CommandLineArgument>();
+            foreach (CommandLineArgumentType type in Enum.GetValues(typeof(CommandLineArgumentType)))
+            {
+                var argument = _commandLineArgumentParseService.Parse(args, type);
+                if (argument != null)
+                    commandLineArguments.Add(argument);
+            }
+            return commandLineArguments;
         }
     }
 }

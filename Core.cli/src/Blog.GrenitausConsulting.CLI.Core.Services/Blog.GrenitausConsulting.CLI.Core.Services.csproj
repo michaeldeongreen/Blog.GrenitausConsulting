@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ArgumentValidationService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\Core.WebApi\src\Blog.GrenitausConsulting.Core.Common\Blog.GrenitausConsulting.Core.Common.csproj" />
     <ProjectReference Include="..\..\..\Core.WebApi\src\Blog.GrenitausConsulting.Core.Domain\Blog.GrenitausConsulting.Core.Domain.csproj" />
     <ProjectReference Include="..\..\..\Core.WebApi\src\Blog.GrenitausConsulting.Core.Services\Blog.GrenitausConsulting.Core.Services.csproj" />
