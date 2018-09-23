@@ -1,5 +1,3 @@
-cd "C:/Git/Blog.GrenitausConsulting/Core.cli/src/gc-cli/bin/Release/netcoreapp2.0/win10-x64/publish"
-
 if [ $2 == "-dev" ]
 then
 apiurl="http://localhost:4200"
