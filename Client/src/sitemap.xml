@@ -2,18 +2,18 @@
 <sitemapindex xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>http://localhost:4200/category-sitemap.xml</loc>
-    <lastmod>2018-09-23T04:29:52.4117204-05:00</lastmod>
+    <lastmod>2018-09-23T15:22:27.9584653-05:00</lastmod>
   </sitemap>
   <sitemap>
     <loc>http://localhost:4200/page-sitemap.xml</loc>
-    <lastmod>2018-09-23T04:29:52.411723-05:00</lastmod>
+    <lastmod>2018-09-23T15:22:27.9584724-05:00</lastmod>
   </sitemap>
   <sitemap>
     <loc>http://localhost:4200/post_tag-sitemap.xml</loc>
-    <lastmod>2018-09-23T04:29:52.4117232-05:00</lastmod>
+    <lastmod>2018-09-23T15:22:27.958473-05:00</lastmod>
   </sitemap>
   <sitemap>
     <loc>http://localhost:4200/post-sitemap.xml</loc>
-    <lastmod>2018-09-23T04:29:52.4117235-05:00</lastmod>
+    <lastmod>2018-09-23T15:22:27.9584736-05:00</lastmod>
   </sitemap>
 </sitemapindex>

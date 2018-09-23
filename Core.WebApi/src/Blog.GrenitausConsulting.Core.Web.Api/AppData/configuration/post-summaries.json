@@ -2724,5 +2724,122 @@
     ],
     "canPreview": false,
     "previewExpirationDate": null
+  },
+  {
+    "id": 55,
+    "title": "Automate the Deployment of my Azure Hosted Blog Using Azure DevOps",
+    "author": "Michael D. Green",
+    "postDate": "2018-09-23",
+    "snippet": "In this blog, I want to demonstrate how to setup continuous integration and continuous deployment for a .NET Core Console, ASP.Net Core and Angular 5 application using Azure DevOps.",
+    "link": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 89,
+        "name": "Angular 5"
+      },
+      {
+        "id": 72,
+        "name": "angular-cli"
+      },
+      {
+        "id": 30,
+        "name": "Azure"
+      },
+      {
+        "id": 90,
+        "name": "Azure DevOps"
+      },
+      {
+        "id": 34,
+        "name": "GitHub"
+      },
+      {
+        "id": 52,
+        "name": "NPM"
+      }
+    ],
+    "images": [
+      {
+        "name": "grenitaus-consulting-logo.png",
+        "url": "assets/images/grenitaus-consulting-logo.png"
+      },
+      {
+        "name": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-001.png",
+        "url": "assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-001.png"
+      },
+      {
+        "name": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-002.png",
+        "url": "assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-002.png"
+      },
+      {
+        "name": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-003.png",
+        "url": "assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-003.png"
+      },
+      {
+        "name": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-004.png",
+        "url": "assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-004.png"
+      },
+      {
+        "name": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-005.png",
+        "url": "assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-005.png"
+      },
+      {
+        "name": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-006.png",
+        "url": "assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-006.png"
+      },
+      {
+        "name": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-007.png",
+        "url": "assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-007.png"
+      },
+      {
+        "name": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-008.png",
+        "url": "assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-008.png"
+      },
+      {
+        "name": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-009.png",
+        "url": "assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-009.png"
+      },
+      {
+        "name": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-010.png",
+        "url": "assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-010.png"
+      },
+      {
+        "name": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-011.png",
+        "url": "assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-011.png"
+      },
+      {
+        "name": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-012.png",
+        "url": "assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-012.png"
+      },
+      {
+        "name": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-013.png",
+        "url": "assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-013.png"
+      },
+      {
+        "name": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-014.png",
+        "url": "assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-014.png"
+      },
+      {
+        "name": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-015.png",
+        "url": "assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-015.png"
+      },
+      {
+        "name": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-016.png",
+        "url": "assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-016.png"
+      },
+      {
+        "name": "automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-017.png",
+        "url": "assets/images/automate-the-deployment-of-my-azure-hosted-blog-using-azure-devops-017.png"
+      }
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   }
 ]  
