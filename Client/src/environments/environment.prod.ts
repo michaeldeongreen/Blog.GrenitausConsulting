@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: 'http://api.grenitausconsulting.com/api'
+    apiUrl: 'https://api.grenitausconsulting.com/api'
 };
