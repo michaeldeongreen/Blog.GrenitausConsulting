@@ -1,4 +1,4 @@
-if [ $2 == "-dev" ]
+if [ $1 == "-dev" ]
 then
 apiurl="http://localhost:4200"
 else
