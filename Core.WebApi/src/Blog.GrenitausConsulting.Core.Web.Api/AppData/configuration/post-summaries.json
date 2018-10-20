@@ -2845,5 +2845,38 @@
     ],
     "canPreview": false,
     "previewExpirationDate": null
+  },
+  {
+    "id": 56,
+    "title": "My Interview with Microsoft",
+    "author": "Michael D. Green",
+    "postDate": "2018-10-20",
+    "snippet": "Michael D. Green talks about his interview with Microsoft and provides simple advice for candidates.",
+    "link": "my-interview-with-microsoft",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 1,
+        "name": "Consulting"
+      },
+      {
+        "id": 3,
+        "name": "Interviewing"
+      }
+    ],
+    "images": [
+      {
+        "name": "microsoft-logo",
+        "url": "assets/images/microsoft-logo"
+      }
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   }
 ]  
