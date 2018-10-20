@@ -59,3 +59,10 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
+
+Client/src/category-sitemap.xml
+Client/src/page-sitemap.xml
+Client/src/post-sitemap.xml
+Client/src/post_tag-sitemap.xml
+Client/src/rss.xml
+Client/src/sitemap.xml
