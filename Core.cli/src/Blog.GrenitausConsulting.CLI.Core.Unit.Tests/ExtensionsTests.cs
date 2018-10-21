@@ -1,9 +1,6 @@
 ﻿using Blog.GrenitausConsulting.CLI.Core.Common;
 using FluentAssertions;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Blog.GrenitausConsulting.CLI.Core.Unit.Tests
 {
