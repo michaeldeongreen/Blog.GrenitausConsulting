@@ -1,18 +1,16 @@
 New PC Setup:
-1) In the gc-cli appsettings.{environment}.json, ensure that the directory paths are correct [OBSOLETE]
+1) Re-compile gc-cli with: dotnet publish -c Release -r win10-x64
 
-2) Re-compile gc-cli with: dotnet publish -c Release -r win10-x64
-
-3) In gc-cli.sh, Modify the directory path
+2) In gc-cli.sh, Modify the directory path
 	* configdir should point to the Web API AppData directory
 	* outputdir should point to the Client/src, which is the directory where angular-cli will build the deployable bits
 	* Point to publish where the gc-cli.exe executable is located
 	
-4) In publish.sh, Modify the directory paths
+3) In publish.sh, Modify the directory paths
 
-5) Place the "SOMEPATH\gc-cli\bin\Release\netcoreapp2.0\win10-x64\publish" in the PATH Environment Variable [OBSOLETE]
+4) Place the "SOMEPATH\gc-cli\bin\Release\netcoreapp2.0\win10-x64\publish" in the PATH Environment Variable [OBSOLETE]
 
-6) Place the path to gc-cli.sh in the PATH Environment Variable
+5) Place the path to gc-cli.sh in the PATH Environment Variable
 
 For DEV:
 1) Open a Bash Prompt and type in "gc-cli.sh build -dev"
