@@ -17,7 +17,7 @@ namespace gc_cli
         static void Main(string[] args)
         {
             /*args = new string[] {"-configdir", @"C:\\Git\\Blog.GrenitausConsulting\\Core.WebApi\\src\\Blog.GrenitausConsulting.Core.Web.Api\\AppData",
-                "-outputdir", @"C:\\Git\\Blog.GrenitausConsulting\\Client\\src", "-apiurl", "http://localhost:4200" };*/
+                "-outputdir", @"C:\\Git\\Blog.GrenitausConsulting\\Client\\src", "-blogurl", "http://localhost:4200" };*/
             string path = Directory.GetCurrentDirectory();
 
             IConfigurationBuilder builder = new ConfigurationBuilder()
@@ -35,7 +35,7 @@ namespace gc_cli
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message);
+                _logger.LogInformation(ex.Message);
             }
         }
 

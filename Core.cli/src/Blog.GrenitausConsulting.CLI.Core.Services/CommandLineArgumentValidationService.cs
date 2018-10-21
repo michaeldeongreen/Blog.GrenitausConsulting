@@ -26,7 +26,7 @@ namespace Blog.GrenitausConsulting.CLI.Core.Services
                 return false;
             if (!IsThereAOutputArgument())
                 return false;
-            if (!IsThereAApiUrlArgument())
+            if (!IsThereABlogUrlArgument())
                 return false;
 
             return true;
@@ -36,7 +36,7 @@ namespace Blog.GrenitausConsulting.CLI.Core.Services
         {
             if (_commandLineArguments == null || _commandLineArguments.Count == 0)
             {
-                this._errors.Add(new CommandLineArgumentError() { Id = 0, Description = "Invalid arguments provided.  Should be: gc-cli -config \"c:\\configdirectory\" -output \"c:\\outputdirectory\" -apiurl \"http://blog.grenitausconsulting.com\" " });
+                this._errors.Add(new CommandLineArgumentError() { Id = 0, Description = "Invalid arguments provided.  Should be: gc-cli -config \"c:\\configdirectory\" -output \"c:\\outputdirectory\" -blogurl \"http://blog.grenitausconsulting.com\" " });
                 return false;
             }
             return true;
@@ -64,12 +64,12 @@ namespace Blog.GrenitausConsulting.CLI.Core.Services
             return true;
         }
 
-        private bool IsThereAApiUrlArgument()
+        private bool IsThereABlogUrlArgument()
         {
-            var argument = _commandLineArguments.Where(a => a.Type == CommandLineArgumentType.ApiUrl).SingleOrDefault();
+            var argument = _commandLineArguments.Where(a => a.Type == CommandLineArgumentType.BlogUrl).SingleOrDefault();
             if (argument == null || string.IsNullOrEmpty(argument.Value))
             {
-                this._errors.Add(new CommandLineArgumentError() { Id = 0, Description = "-apiurl argument not provided.  Example: -apiurl \"http://blog.grenitausconsulting.com\"" });
+                this._errors.Add(new CommandLineArgumentError() { Id = 0, Description = "-apiurl argument not provided.  Example: -blogurl \"http://blog.grenitausconsulting.com\"" });
                 return false;
             }
             return true;

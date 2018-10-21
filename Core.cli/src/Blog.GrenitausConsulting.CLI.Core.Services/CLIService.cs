@@ -19,7 +19,12 @@ namespace Blog.GrenitausConsulting.CLI.Core.Services
         }
         public void Generate()
         {
+            AnnounceEvent("Process has started....");
+
+            AnnounceEvent("BlogContextManager init has started....");
             BlogContextManager.Init(_settings.ConfigDir.Value);
+            AnnounceEvent("BlogContextManager init has completed....");
+
             GenerateSitemaps();
             GenerateRSSFeed();
             GenerateStaticHtml();
