@@ -10,7 +10,7 @@ namespace Blog.GrenitausConsulting.CLI.Core.Domain
         public EnvironmentSettings(IList<CommandLineArgument> commandLineArguments)
         {
             _commandLineArguments = commandLineArguments;
-            ApiUrl = _commandLineArguments.Where(a => a.Type == CommandLineArgumentType.ApiUrl).SingleOrDefault();
+            ApiUrl = _commandLineArguments.Where(a => a.Type == CommandLineArgumentType.BlogUrl).SingleOrDefault();
             ConfigDir = _commandLineArguments.Where(a => a.Type == CommandLineArgumentType.ConfigDir).SingleOrDefault();
             OutputDir = _commandLineArguments.Where(a => a.Type == CommandLineArgumentType.OutputDir).SingleOrDefault();
         }

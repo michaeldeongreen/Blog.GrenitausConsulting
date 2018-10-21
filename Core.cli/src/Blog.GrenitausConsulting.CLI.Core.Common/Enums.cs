@@ -4,6 +4,6 @@
     {
         ConfigDir = 1,
         OutputDir = 2,
-        ApiUrl = 3
+        BlogUrl = 3
     }
 }

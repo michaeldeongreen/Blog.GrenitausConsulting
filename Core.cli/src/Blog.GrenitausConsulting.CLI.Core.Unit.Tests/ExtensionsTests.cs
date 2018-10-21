@@ -39,7 +39,7 @@ namespace Blog.GrenitausConsulting.CLI.Core.Unit.Tests
         {
             const string arg = "-apiurl";
             //given
-            CommandLineArgumentType type = CommandLineArgumentType.ApiUrl;
+            CommandLineArgumentType type = CommandLineArgumentType.BlogUrl;
             //when
             string value = type.ToArgument();
             //then
