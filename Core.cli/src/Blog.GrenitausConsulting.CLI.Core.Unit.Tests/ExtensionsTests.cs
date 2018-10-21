@@ -35,9 +35,9 @@ namespace Blog.GrenitausConsulting.CLI.Core.Unit.Tests
         }
 
         [Test]
-        public void CommandLineArgumentType_ToArgument_When_ApiUrl_Argument_ReturnsArgument_Test()
+        public void CommandLineArgumentType_ToArgument_When_BlogUrl_Argument_ReturnsArgument_Test()
         {
-            const string arg = "-apiurl";
+            const string arg = "-blogurl";
             //given
             CommandLineArgumentType type = CommandLineArgumentType.BlogUrl;
             //when
