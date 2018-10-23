@@ -137,7 +137,7 @@ namespace Blog.GrenitausConsulting.CLI.Core.Services
 
             sb.AppendLine("<nav class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\">");
             sb.AppendLine("<div class=\"pull-left\">");
-            sb.AppendLine(string.Format("<a href=\"{0}\"><img src=\"{0}/assets/images/grenitaus-consulting-logo-small.png\" alt=\"Grenitaus Consulting Blog\"/></a>",_domain));
+            sb.AppendLine(string.Format("<a href=\"{0}\"><img src=\"{0}/assets/images/michaeldeongreen-logo-small.png\" alt=\"Grenitaus Consulting Blog\"/></a>",_domain));
             sb.AppendLine("</div>  ");
             sb.AppendLine("<div class=\"container\">");
             sb.AppendLine("<div class=\"navbar-header\">");
