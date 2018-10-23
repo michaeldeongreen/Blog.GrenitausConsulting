@@ -1,3 +1,7 @@
+cd "C:\Git\Blog.GrenitausConsulting\Core.cli\src\gc-cli"
+
+dotnet publish -c Release -r win10-x64
+
 if [ $1 == "-dev" ]
 then
 blogurl="http://localhost:4200"
