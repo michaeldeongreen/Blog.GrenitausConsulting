@@ -2,7 +2,7 @@ if [ $1 == "-dev" ]
 then
 blogurl="http://localhost:4200"
 else
-blogurl="http://blog.grenitausconsulting.com"
+blogurl="https://blog.michaeldeongreen.com"
 fi
 
 configdir="C:\\Git\\Blog.GrenitausConsulting\\Core.WebApi\\src\\Blog.GrenitausConsulting.Core.Web.Api\\AppData"
