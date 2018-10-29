@@ -2878,5 +2878,34 @@
     ],
     "canPreview": false,
     "previewExpirationDate": null
+  },
+  {
+    "id": 57,
+    "title": "The Broken Technical Interview Process",
+    "author": "Michael D. Green",
+    "postDate": "2018-10-28",
+    "snippet": "Michael D. Green talks about why he thinks the technical interview process is broken and puts forth ideas on how to improve the process.",
+    "link": "the-broken-technical-interview-process",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 3,
+        "name": "Interviewing"
+      }
+    ],
+    "images": [
+      {
+        "name": "the-broken-technical-interview-process-001",
+        "url": "assets/images/the-broken-technical-interview-process-001"
+      }
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   }
 ]  
