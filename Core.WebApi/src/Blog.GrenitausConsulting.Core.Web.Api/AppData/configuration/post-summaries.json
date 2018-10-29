@@ -2872,8 +2872,8 @@
     ],
     "images": [
       {
-        "name": "microsoft-logo",
-        "url": "assets/images/microsoft-logo"
+        "name": "microsoft-logo.png",
+        "url": "assets/images/microsoft-logo.png"
       }
     ],
     "canPreview": false,
@@ -2901,8 +2901,8 @@
     ],
     "images": [
       {
-        "name": "the-broken-technical-interview-process-001",
-        "url": "assets/images/the-broken-technical-interview-process-001"
+        "name": "the-broken-technical-interview-process-001.png",
+        "url": "assets/images/the-broken-technical-interview-process-001.png"
       }
     ],
     "canPreview": false,
