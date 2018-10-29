@@ -82,7 +82,7 @@ namespace Blog.GrenitausConsulting.CLI.Core.Services
             sb.AppendLine("<meta property=\"og:type\" content=\"article\">");
             sb.AppendLine(string.Format("<meta property=\"og:title\" content=\"{0}\">", post.Title));
             sb.AppendLine(string.Format("<meta property=\"og:description\" content=\"{0}\">", post.Snippet));
-            sb.AppendLine(string.Format("<meta property=\"og:url\" content=\"{0}/{1}\">",_domain, post.Images[0].Url));
+            sb.AppendLine(string.Format("<meta property=\"og:url\" content=\"{0}/{1}/{2}.html\">",_domain, _staticPageHtmlPath, post.Link));
             sb.AppendLine("<meta property=\"og:site_name\" content=\"Grenitaus Consulting, LLC\">");
 
             foreach (var tag in post.Tags)
