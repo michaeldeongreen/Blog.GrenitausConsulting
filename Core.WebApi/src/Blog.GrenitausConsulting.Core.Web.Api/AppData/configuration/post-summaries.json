@@ -2907,5 +2907,34 @@
     ],
     "canPreview": false,
     "previewExpirationDate": null
+  },
+  {
+    "id": 58,
+    "title": "2018 Cisco IT Blog Awards Finalist - Best Analysis Category",
+    "author": "Michael D. Green",
+    "postDate": "2018-12-10",
+    "snippet": "Michael D. Green talks about his blog being a 2018 Cisco IT Blog Awards Finalist.",
+    "link": "2018-cisco-it-blog-awards-finalist-best-analysis-category",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      }
+    ],
+    "tags": [
+      {
+        "id": 91,
+        "name": "Awards"
+      }
+    ],
+    "images": [
+      {
+        "name": "CiscoBlogAwards_Finalist_Best Analysis.png",
+        "url": "assets/images/CiscoBlogAwards_Finalist_Best Analysis.png"
+      }
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   }
 ]  
