@@ -362,5 +362,13 @@
   {
     "id": 91,
     "name": "Awards"
+  },
+  {
+    "id": 92,
+    "name": "Hyper-V"
+  },
+  {
+    "id": 93,
+    "name": "gparted"
   }
 ]
