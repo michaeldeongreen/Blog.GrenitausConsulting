@@ -1,0 +1,131 @@
+<a href="assets/images/michaeldeongreen-logo.png"><img class="img-responsive" src="assets/images/michaeldeongreen-logo.png" alt="Grenitaus Consulting"></a>
+<br><br>
+
+By default, when you use Quick Create in Hyper-v to create a Ubuntu Desktop VM, you will only be given 12GB of hard drive space.  At this time there is no way to set the size of the hard drive before Quick Create provisions the Ubuntu Desktop VM.  Luckily, you can use software called <a href="https://gparted.org/download.php" target="_blank">gparted</a> to increase the size of the virtual hard drive.
+
+<br><br>
+
+<strong>Tools Needed!</strong>
+<br>
+<ul>
+    <li>gparted</li>
+    <li>Hyper-V</li>
+    <li>Windows 10</li>
+</ul>
+
+<br><br>
+
+<strong>Download gparted iso, which can be found <a href="https://gparted.org/download.php" target="_blank">here</a>:</strong>
+
+<br><br>
+
+<strong>In Hyper-V, on the top menu, choose Action then Quick Create and Choose Ubuntu 18.04 LTS.  Create Virtual Machine & wait for the image to download</strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-001.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-001.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<strong>Once the image has been downloaded, choose Edit Settings and disable Checkpoints</strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-002.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-002.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<strong>Go ahead and connect and start the Ubuntu Desktop installation</strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-003.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-003.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<strong>Once done, log into the new VM, open up a terminal and type in <pre><code class="language-bash">df -h</code></pre>.  You will notice that the main drive is at 44% capacity</strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-004.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-004.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+    <strong>Once the installation is complete, shutdown your new VM.  In Hyper-V, select your new VM and go to SCSI Controller and add a DVD Drive</strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-005.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-005.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<strong>In the DVD Drive settings, point the image file to the gparted iso you downloaded</strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-006.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-006.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<strong>Next, go into the Firmware settings and move the DVD Drive up in the boot order section</strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-007.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-007.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<strong>Next, we want to add more hard drive space, so go into Hard Drive setting under SCSI Controller and press Edit</strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-008.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-008.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<strong>In the menu wizard, you want to choose 'expand' and add more hard drive space.  I have chosen to make the drive 30GB.</strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-009.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-009.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<strong>Connect to the VM.  You will see the gparted menu and you can just push enter on everything</strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-010.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-010.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<strong>When you enter gparted, you will see the below and you will want to push <i>Fix</i></strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-011.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-011.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<strong>You will then be presented with disk information.  Noticed the unallocated space at the bottom, which is the space we just added using Hyper-V</strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-012.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-012.png" alt="Grenitaus Consulting"></a>
+
+
+<br><br>
+
+<strong>Next, you will want to choose your root drive (mine is <i>/dev/sda1</i>), right-click and choose <i>Resize</i></strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-013.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-013.png" alt="Grenitaus Consulting"></a>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-014.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-014.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<strong>You will want to use the mouse cursor and hover over the right arrow and drag it all the way over to give drive <b>/dev/sda1</b> 100% of the unallocated space and press <i>Resize/Move</i></strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-015.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-015.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+    <strong>After this is done, press the <b>Apply</b> button located in the top menu and select <b>Apply</b> when asked are you sure you want to perform the operation</strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-016.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-016.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+    <strong>Once the space has been allocated, exit gdeparted by going to the top menu, selecting <b>GParted</b> and then Quit.  Once you go to the main gparted screen, choose Exit and then <i>Shutdown</i></strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-017.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-017.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+    <strong>Note:  If you get the error in the screenshot below (happens on my laptop but not my desktop), you will want to go into the Windows Task Manager, got to Details, find the <b>vmwp.exe</b> and end the task</strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-018.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-018.png" alt="Grenitaus Consulting"></a>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-019.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-019.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+    <strong>Now, connect to your VM, go to terminal and type in <pre><code class="language-bash">df -h</code></pre> Ubuntu should recognize the new space you just gave the hard drive via gparted</strong>
+<br>
+<a href="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-020.png"><img class="img-responsive" src="assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-020.png" alt="Grenitaus Consulting"></a>

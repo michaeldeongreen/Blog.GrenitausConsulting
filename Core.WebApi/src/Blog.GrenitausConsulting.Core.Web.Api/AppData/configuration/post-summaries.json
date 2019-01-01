@@ -2936,5 +2936,118 @@
     ],
     "canPreview": false,
     "previewExpirationDate": null
+  },
+  {
+    "id": 59,
+    "title": "How to Increase the Hard Drive Size of a Ubuntu Desktop Virtual Machine Using Hyper-V and GParted",
+    "author": "Michael D. Green",
+    "postDate": "2019-01-01",
+    "snippet": "In this blog, I want to demonstrate how to increase the hard drive size of a Ubuntu Desktop Virtual Machine using Hyper-V and GParted.",
+    "link": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 92,
+        "name": "Hyper-V"
+      },
+      {
+        "id": 93,
+        "name": "gparted"
+      }
+    ],
+    "images": [
+      {
+        "name": "michaeldeongreen-logo.png",
+        "url": "assets/images/michaeldeongreen-logo.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-001.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-001.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-002.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-002.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-003.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-003.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-004.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-004.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-005.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-005.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-006.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-006.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-007.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-007.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-008.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-008.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-009.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-009.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-010.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-010.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-011.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-011.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-012.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-012.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-013.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-013.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-014.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-014.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-015.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-015.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-016.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-016.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-017.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-017.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-018.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-018.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-019.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-019.png"
+      },
+      {
+        "name": "how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-020.png",
+        "url": "assets/images/how-to-increase-the-hard-drive-size-of-a-ubuntu-desktop-virtual-machine-using-hyper-v-and-gparted-020.png"
+      }
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   }
 ]  
