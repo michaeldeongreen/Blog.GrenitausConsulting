@@ -2,32 +2,36 @@
 
 <br><br>
 
-I recently had to use the new <a href="https://github.com/Azure/azure-storage-js" target="_blank">Azure Storage SDK V10 for JavaSCript</a> library to upload files to Azure Storage for a partner here at Microsoft.  Due to the fact that this library is fairly new, when I implemented the functionality, there were not many examples of how to use the library with <a href="https://angular.io/" target="_blank">Angular 7</a>.  I wanted to take some time to write a blog entry that demonstrates how to use the <a href="https://github.com/Azure/azure-storage-js" target="_blank">Azure Storage SDK V10 for JavaSCript</a> library with Angular 7 to upload files to Azure Storage.
+I recently had to use the new <a href="https://github.com/Azure/azure-storage-js" target="_blank">Azure Storage SDK V10 for JavaScript</a> library to upload files to Azure Storage for a Microsoft partner here at Microsoft.  Due to the fact that this library is fairly new, when I implemented the functionality, there were not many examples of how to use the library with <a href="https://angular.io/" target="_blank">Angular 7</a>.
 
 <br><br>
 
-You can find the compplete source code <a href="https://github.com/michaeldeongreen/angular7-azure-storage-sdk-v10-demo" target="_blank">here</a> on github.
+I wanted to take some time to write a blog entry that demonstrates how to use the <a href="https://github.com/Azure/azure-storage-js" target="_blank">Azure Storage SDK V10 for JavaSCript</a> library with Angular 7 to upload files to Azure Storage.
+
+<br><br>
+
+You can find the complete source code <a href="https://github.com/michaeldeongreen/angular7-azure-storage-sdk-v10-demo" target="_blank">here</a> on github.
 
 <br><br>
 
 <strong>Prerequisites!</strong>
 <br><br>
-<ul>
-	<li>angular-cli</li>
-	<li>Basic knowledge of Angular</li>
-	<li>Basic knowledge of the Azure Portal</li>	
-	<li>Bash or Terminal</li>	
-	<li>Azure Account</li>
-	<li>Node Package Manager</li>
-</ul>
+    <ul>
+        <li>angular-cli</li>
+        <li>Azure Account</li>
+        <li>Basic knowledge of Angular</li>
+        <li>Basic knowledge of the Azure Portal</li>
+        <li>Bash or Terminal</li>
+        <li>Node Package Manager</li>
+    </ul>
 
 <br><br>
 
-<strong>Create Storage Account & SAS Token!</strong>
+<strong>Create an Azure Storage Account & SAS Token!</strong>
 
 <br><br>
 
-First, you will want to create a Azure Storage Account.  I will be using the Azure Portal to create the Storage Account.  Please note that we could use the [Azure Storage Emulator] but I felt for the purpose of brevity, it would be much easier to just create a real Azure Storage Account.
+First, you will want to create a Azure Storage Account.  I will be using the Azure Portal to create the Storage Account.  Please note that we could use the <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-use-emulator" target="_blank">Azure Storage Emulator</a> but I felt for the purpose of brevity, it would be much easier to just create a real Azure Storage Account.
 
 <br><br>
 
@@ -35,7 +39,7 @@ First, you will want to create a Azure Storage Account.  I will be using the Azu
 
 <br><br>
 
-After you have created the Azure Storage Account, you will now want to create the <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-dotnet-shared-access-signature-part-1" target="_blank">SAS Token</a> to allow your Angular 7 application to upload files to the Azure Blob Storage.  Select your newly created storage account in the Azure Portal.  You will then want to select <i>shared access signature</i> and for the purpose of this demo, leave all the default settings.  Also, once you generate the SAS Token, you will want to copy the <i>Blob service SAS URL</i>.
+After you have created the Azure Storage Account, you will now want to create the <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-dotnet-shared-access-signature-part-1" target="_blank">SAS Token</a> to allow your Angular 7 application to upload files to the Azure Storage Account.  Select your newly created storage account in the Azure Portal.  You will then want to select <i>shared access signature</i> and for the purpose of this demo, leave all the default settings.  Also, once you generate the SAS Token, you will want to copy the <i>Blob service SAS URL</i>.
 
 <br><br>
 
@@ -55,7 +59,7 @@ Next, you will want to configure the <a href="https://developer.mozilla.org/en-U
 
 <br><br>
 
-Last but not least, we will want to create a <i>container</i> inside of the Azure Storage to store our blob files.  Select <i>Blobs</i> and create a container:
+Last but not least, we will want to create a <i>container</i> inside of the Azure Storage Account to store our blob files.  Select <i>Blobs</i> and create a container:
 
 <br><br>
 
@@ -67,7 +71,7 @@ Last but not least, we will want to create a <i>container</i> inside of the Azur
 
 <br><br>
 
-First, you will want to open up a Bash/Terminal prompt and type the following to create a new angular project in:
+First, you will want to open up a Bash/Terminal prompt and type the following to create a new angular project:
 
 <br><br>
 
@@ -77,7 +81,7 @@ ng new angular7-azure-storage-sdk-v10-demo
 
 <br><br>
 
-After the new Angular project has been created, navigate to the new project's directory.  You will want to install the Azure Storage SDK V10 for JavaScript Library.  In the Bash/Terminal prompte, type the following:
+After the new Angular project has been created, navigate to the new project's directory.  You will want to install the Azure Storage SDK V10 for JavaScript Library.  In the Bash/Terminal prompt, type the following:
 
 <br><br>
 
@@ -88,7 +92,7 @@ npm install @azure/storage-blob --save
 
 <br><br>
 
-Next, I am going to create a Angular service that contains the code used to upload a file to Azure Storage.  
+Next, I am going to create a Angular service that contains the code used to upload a file to Azure Storage.
 
 
 <br><br>
@@ -149,7 +153,7 @@ Next, we will want to create a function that will determine the blocksize based 
 
 <br><br>
 
-Next, we need to create two variables, one that is private and one that is public. The private <i>_uploadProgressSource</i> variable is a BehaviorSubject that will be passed to the <i>onProgressChanged</i> method (the code that performs this will be shown later) and will be updated each time a block is uploaded.  
+Next, we need to create two variables, one that is private and one that is public. The private <i>_uploadProgressSource</i> variable is a BehaviorSubject that will be passed to the <i>onProgressChanged</i> method (the code that performs this will be shown later) and will be updated each time a block is uploaded.
 <br><br>
 
 The public <i>uploadProgress</i> is an observable used to observe the <i>_uploadProgressSource</i> variable and will be used to display this information to the user.
@@ -202,9 +206,12 @@ The <i>options</i> variable is of type <i>IUploadStreamToBlockBlobOptions</i> an
 
 <br><br>
 <ul>
-	<li>blockSize: Used to set the Block Size.  I am using the getBlockSize method.<li>
-	<li>parallelism: Used to set the number of concurrent block uploads.  I have hardcoded it to 10.<li>
-	<li>progress: Anonymous function that allows you to implement code that react whenever this is progress on an upload.  Here we are calling the onProgressChanged method.<li>
+    <li>blockSize: Used to set the Block Size.  I am using the getBlockSize method.
+    </li>
+    <li>parallelism: Used to set the number of concurrent block uploads.  I have hardcoded it to 10.
+    </li>
+    <li>progress: Anonymous function that allows you to implement code that fires whenever there is progress on an upload.  Here we are calling the onProgressChanged method.
+    </li>
 </ul>
 
 <br><br>
@@ -303,7 +310,7 @@ Now we need to create the public <i>onFileChange</i> method the UI will call whe
 
 <br><br>
 
-Also notice that we the public <i>UploadProgress</i> variable is being set to the <i>BlobStorageService</i> uploadProgress observable.
+Also notice that the public <i>UploadProgress</i> variable is being set to the <i>BlobStorageService</i> uploadProgress observable.
 
 <br><br>
 
@@ -351,7 +358,7 @@ ng serve
 
 <br><br>
 
-Once the app is running, navigate to <i>http://localhost:4200</i> and you should see: 
+Once the app is running, navigate to <i>http://localhost:4200</i> and you should see:
 
 <br><br>
 
@@ -390,9 +397,9 @@ This blog entry served as a introduction into how to use the <a href="https://gi
 <br><br>
 
 <ul>
-	<li>Instead of using a real Azure Storage Account, you could have used the <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-use-emulator" target="_blank">Azure Storage Emulator</a> </li>
-	<li>The Front-End would probably call a Middle-Tier Service that is responsible for creating Containers & SAS Tokens programmically and passing it back to the Front-End </li>
-	<li>The SAS Tokens would be short-lived and have dramatically less permissions then what was given in this blog entry</li>
-	<li>CORS configuration for the Azure Storage Account would be more restrictive then what was given in in this blog entry</li>
-	<li>Front-End would typically allow for multiple uploads and implement drag and drop functionality along with allowing the user to choose a file manually </li>
+    <li>Instead of using a real Azure Storage Account, you could have used the <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-use-emulator" target="_blank">Azure Storage Emulator</a> </li>
+    <li>The Front-End would probably call a Middle-Tier Service that is responsible for creating Containers & SAS Tokens programmically and passing it back to the Front-End </li>
+    <li>The SAS Tokens would be short-lived and have dramatically less permissions then what was given in this blog entry</li>
+    <li>CORS configuration for the Azure Storage Account would be more restrictive then what was given in in this blog entry</li>
+    <li>The Front-End would typically allow for multiple uploads and implement drag and drop functionality along with allowing the user to choose a file manually </li>
 </ul>
