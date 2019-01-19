@@ -3049,5 +3049,82 @@
     ],
     "canPreview": false,
     "previewExpirationDate": null
+  },
+  {
+    "id": 60,
+    "title": "How to Upload Files to Azure Storage Using Angular 7 and the Azure Storage SDK V10 for JavaScript Library",
+    "author": "Michael D. Green",
+    "postDate": "2019-01-19",
+    "snippet": "In this blog, I want to demonstrate how to use the Azure Storage SDK V10 for JavaScript Library with Angular 7 to upload files to Azure Storage.",
+    "link": "how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 72,
+        "name": "angular-cli"
+      },
+      {
+        "id": 95,
+        "name": "Angular 7"
+      },
+      {
+        "id": 94,
+        "name": "Azure Storage"
+      }
+    ],
+    "images": [
+      {
+        "name": "michaeldeongreen-logo.png",
+        "url": "assets/images/michaeldeongreen-logo.png"
+      },
+      {
+        "name": "how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-001.png",
+        "url": "assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-001.png"
+      },
+      {
+        "name": "how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-002.png",
+        "url": "assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-002.png"
+      },
+      {
+        "name": "how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-003.png",
+        "url": "assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-003.png"
+      },
+      {
+        "name": "how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-004.png",
+        "url": "assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-004.png"
+      },
+      {
+        "name": "how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-005.png",
+        "url": "assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-005.png"
+      },
+      {
+        "name": "how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-006.png",
+        "url": "assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-006.png"
+      },
+      {
+        "name": "how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-007.png",
+        "url": "assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-007.png"
+      },
+      {
+        "name": "how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-008.png",
+        "url": "assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-008.png"
+      },
+      {
+        "name": "how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-009.png",
+        "url": "assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-009.png"
+      },
+      {
+        "name": "how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-010.png",
+        "url": "assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-010.png"
+      }
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
   }
 ]  

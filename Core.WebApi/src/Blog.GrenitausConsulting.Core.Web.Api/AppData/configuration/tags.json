@@ -370,5 +370,13 @@
   {
     "id": 93,
     "name": "gparted"
+  },
+  {
+    "id": 94,
+    "name": "Azure Storage"
+  },
+  {
+    "id": 95,
+    "name": "Angular 7"
   }
 ]

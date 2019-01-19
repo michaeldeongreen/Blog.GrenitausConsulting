@@ -1,0 +1,398 @@
+<a href="assets/images/michaeldeongreen-logo.png"><img class="img-responsive" src="assets/images/michaeldeongreen-logo.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+I recently had to use the new <a href="https://github.com/Azure/azure-storage-js" target="_blank">Azure Storage SDK V10 for JavaSCript</a> library to upload files to Azure Storage for a partner here at Microsoft.  Due to the fact that this library is fairly new, when I implemented the functionality, there were not many examples of how to use the library with <a href="https://angular.io/" target="_blank">Angular 7</a>.  I wanted to take some time to write a blog entry that demonstrates how to use the <a href="https://github.com/Azure/azure-storage-js" target="_blank">Azure Storage SDK V10 for JavaSCript</a> library with Angular 7 to upload files to Azure Storage.
+
+<br><br>
+
+You can find the compplete source code <a href="https://github.com/michaeldeongreen/angular7-azure-storage-sdk-v10-demo" target="_blank">here</a> on github.
+
+<br><br>
+
+<strong>Prerequisites!</strong>
+<br><br>
+<ul>
+	<li>angular-cli</li>
+	<li>Basic knowledge of Angular</li>
+	<li>Basic knowledge of the Azure Portal</li>	
+	<li>Bash or Terminal</li>	
+	<li>Azure Account</li>
+	<li>Node Package Manager</li>
+</ul>
+
+<br><br>
+
+<strong>Create Storage Account & SAS Token!</strong>
+
+<br><br>
+
+First, you will want to create a Azure Storage Account.  I will be using the Azure Portal to create the Storage Account.  Please note that we could use the [Azure Storage Emulator] but I felt for the purpose of brevity, it would be much easier to just create a real Azure Storage Account.
+
+<br><br>
+
+<a href="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-001.png"><img class="img-responsive" src="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-001.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+After you have created the Azure Storage Account, you will now want to create the <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-dotnet-shared-access-signature-part-1" target="_blank">SAS Token</a> to allow your Angular 7 application to upload files to the Azure Blob Storage.  Select your newly created storage account in the Azure Portal.  You will then want to select <i>shared access signature</i> and for the purpose of this demo, leave all the default settings.  Also, once you generate the SAS Token, you will want to copy the <i>Blob service SAS URL</i>.
+
+<br><br>
+
+<a href="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-002.png"><img class="img-responsive" src="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-002.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<a href="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-003.png"><img class="img-responsive" src="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-003.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+Next, you will want to configure the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank">CORS</a> settings for the Azure Storage Account.  You will want to select <i>CORS</i> and enter the following:
+
+<br><br>
+
+<a href="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-004.png"><img class="img-responsive" src="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-004.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+Last but not least, we will want to create a <i>container</i> inside of the Azure Storage to store our blob files.  Select <i>Blobs</i> and create a container:
+
+<br><br>
+
+<a href="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-005.png"><img class="img-responsive" src="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-005.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<strong>Create the Angular 7 Application!</strong>
+
+<br><br>
+
+First, you will want to open up a Bash/Terminal prompt and type the following to create a new angular project in:
+
+<br><br>
+
+<pre><code class="language-bash">
+ng new angular7-azure-storage-sdk-v10-demo
+</code></pre>
+
+<br><br>
+
+After the new Angular project has been created, navigate to the new project's directory.  You will want to install the Azure Storage SDK V10 for JavaScript Library.  In the Bash/Terminal prompte, type the following:
+
+<br><br>
+
+<pre><code class="language-bash">
+npm install @azure/storage-blob --save
+</code></pre>
+
+
+<br><br>
+
+Next, I am going to create a Angular service that contains the code used to upload a file to Azure Storage.  
+
+
+<br><br>
+
+<pre><code class="language-typescript">
+ng g service azure-storage/blobStorage
+</code></pre>
+
+<br><br>
+
+Inside of the BlobStorageService, import the following modules:
+
+<pre><code class="language-typescript">
+import { 
+  AnonymousCredential, 
+  BlobURL,
+  BlockBlobURL,  
+  ContainerURL, 
+  ServiceURL, 
+  StorageURL, 
+  Aborter,
+  uploadBrowserDataToBlockBlob,
+  BlobUploadCommonResponse,
+} from '@azure/storage-blob';
+import { TransferProgressEvent } from '@azure/ms-rest-js';
+import { BehaviorSubject } from 'rxjs';
+</code></pre>
+
+
+<br><br>
+
+Next, we need to create the private method that will be used to provide <i>percentage uploaded</i> information.  This method uses Azure Storage SDK V10 <i>TransferProgressEvent</i> event to provide these details:
+
+<br><br>
+
+<pre><code class="language-typescript">
+  private onProgressChanged(transferProgressEvent: TransferProgressEvent, file: File,
+    uploadProgressSource: BehaviorSubject<number>) {
+      const percentCompleted: number = Math.round((transferProgressEvent.loadedBytes / file.size) * 100);
+      uploadProgressSource.next(percentCompleted);
+  }
+</code></pre>
+
+<br><br>
+
+Next, we will want to create a function that will determine the blocksize based on the file size you are trying to upload.  Basically, if the file is larger than 32MB the block sizes will be 4MB, else 512KB.
+<br><br>
+
+<pre><code class="language-typescript">
+  private getBlockSize(file: File): number {
+    const size32Mb = 1024 * 1024 * 32;
+    const size4Mb = 1024 * 1024 * 4;
+    const size512Kb = 1024 * 512;
+
+    return file.size > size32Mb ? size4Mb : size512Kb;
+  }  }
+</code></pre>
+
+<br><br>
+
+Next, we need to create two variables, one that is private and one that is public. The private <i>_uploadProgressSource</i> variable is a BehaviorSubject that will be passed to the <i>onProgressChanged</i> method (the code that performs this will be shown later) and will be updated each time a block is uploaded.  
+<br><br>
+
+The public <i>uploadProgress</i> is an observable used to observe the <i>_uploadProgressSource</i> variable and will be used to display this information to the user.
+
+<br><br>
+
+<pre><code class="language-typescript">
+  private _uploadProgressSource = new BehaviorSubject<number>(0);
+  public UploadProgress = this._uploadProgressSource.asObservable();
+</code></pre>
+
+
+<br><br>
+
+Now it is time to create the function that uploads the file to Azure Storage.
+
+<br><br>
+
+<pre><code class="language-typescript">
+  public async uploadBlobToStorage (file: File): Promise<BlobUploadCommonResponse> {
+    const anonymousCredential = new AnonymousCredential();
+    const pipeline = StorageURL.newPipeline(anonymousCredential);
+    const serviceURL = new ServiceURL(
+      `PASTE BLOB SERVICE SAS URL HERE`,
+      pipeline
+    );
+    const containerName = "files";
+    const containerURL = ContainerURL.fromServiceURL(serviceURL, containerName);
+    const blobName = `${file.name}-${new Date().getTime()}`
+    const blobUrl = BlobURL.fromContainerURL(containerURL, blobName);
+    const blockblobURL = BlockBlobURL.fromBlobURL(blobUrl);
+    const options = {blockSize: this.getBlockSize(file), parallelism: 10, progress: (transferProgressEvent: TransferProgressEvent) => {
+      this.onProgressChanged(transferProgressEvent, file, this._uploadProgressSource);
+    } };
+    const blobUploadCommonResponse = await uploadBrowserDataToBlockBlob(Aborter.none, file, blockblobURL,options);
+
+    return blobUploadCommonResponse;
+  }
+</code></pre>
+
+The <i>uploadBlobToStorage</i> method will be called from any component to upload a file to Azure Storage.  Noticed that it is an <i>async</i> method and returns a <i>Promise</i> of type <i>uploadBlobToStorage</i>.
+
+<br><br>
+
+You will want to paste the <i>Blob service SAS URL</i> that you got from the Azure Portal into the <i>ServiceURL</i> constructor.
+
+<br><br>
+
+The <i>options</i> variable is of type <i>IUploadStreamToBlockBlobOptions</i> and is used to configure upload options:
+
+<br><br>
+<ul>
+	<li>blockSize: Used to set the Block Size.  I am using the getBlockSize method.<li>
+	<li>parallelism: Used to set the number of concurrent block uploads.  I have hardcoded it to 10.<li>
+	<li>progress: Anonymous function that allows you to implement code that react whenever this is progress on an upload.  Here we are calling the onProgressChanged method.<li>
+</ul>
+
+<br><br>
+
+There are other parameters that I am not using and you can find the API for the Azure Storage SDK V10 library <a href="https://docs.microsoft.com/en-us/javascript/api/overview/azure/storage/client?view=azure-node-preview" target="_blank">here</a>
+
+<br><br>
+
+We then call the Azure Storage SDK V10 library's <i>uploadBrowserDataToBlockBlob</i> function to start the upload process.
+
+<br><br>
+
+Next, we will need to add the BlobStorageService to <i>app.module.ts</i>:
+
+<br><br>
+
+<pre><code class="language-typescript">
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { BlobStorageService } from './azure-storage/blob-storage.service';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [BlobStorageService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+</code></pre>
+
+<br><br>
+
+Now that we have implemented the base functionality to upload a file, we will implement the UI logic to call this code.  In <i>app.component.ts</i>, import the following:
+
+<br><br>
+
+<pre><code class="language-typescript">
+import { BlobStorageService } from './azure-storage/blob-storage.service';
+import { from, Observable } from 'rxjs';
+import { BlobUploadCommonResponse } from '@azure/storage-blob';
+</code></pre>
+
+
+<br><br>
+
+In the constructor, you will want to inject the BlobStorageService:
+
+<br><br>
+
+<pre><code class="language-typescript">
+constructor(private blobStorageService: BlobStorageService) {}
+</code></pre>
+
+<br><br>
+
+Next, declare the following app.component variables:
+
+<br><br>
+
+<pre><code class="language-typescript">
+  private _response: BlobUploadCommonResponse;
+  public UploadStarted: boolean = false;
+  public UploadCompleted: boolean = false;
+  public UploadProgress: Observable<number>;
+</code></pre>
+
+
+<br><br>
+
+Next, we need to create the <i>private</i> method which will call our <i>BlobStorageService</i> to start the upload process.
+
+<br><br>
+
+<pre><code class="language-typescript">
+  private uploadFile(file: File) {
+    this.blobStorageService.uploadBlobToStorage(file).then(response => {
+      this._response = response;
+      this.UploadCompleted = true;
+      this.UploadStarted = false;      
+    }).catch(error => {
+      this._response = error;
+      this.UploadCompleted = true;     
+      this.UploadStarted = false;       
+    });    
+  }  
+</code></pre>
+
+<br><br>
+
+Now we need to create the public <i>onFileChange</i> method the UI will call when the user selects a file.  This method will ultimately call the <i>uploadFile</i> method.  Note, we are only allowing 1 file to be uploaded at a time, so we only choose the first file in the <i>event.target.files</i> array.
+
+<br><br>
+
+Also notice that we the public <i>UploadProgress</i> variable is being set to the <i>BlobStorageService</i> uploadProgress observable.
+
+<br><br>
+
+<pre><code class="language-typescript">
+  public onFileChange(event: any): void {
+    const file = event.target.files[0];
+    this.UploadStarted = true;
+    this.UploadProgress = this.blobStorageService.UploadProgress;
+    this.uploadFile(file);
+  }
+</code></pre>
+
+<br><br>
+
+Next, open <i>app.component.html</i> and paste the following:
+
+<br><br>
+
+<pre><code class="language-html">
+    &lt;div style="text-align:center"&gt;
+    &lt;h1&gt;
+    Please upload a file!
+    &lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;input type="file" (change)="onFileChange($event)"&gt;
+    &lt;div *ngIf="UploadStarted"&gt;
+    &lt;h2&gt;Upload In Progress...&lt;/h2&gt;
+    &lt;pre&gt;{{UploadProgress | async}}%
+    &lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;div *ngIf="UploadCompleted"&gt;
+    &lt;h2&gt;Upload Complete!&lt;/h2&gt;
+    &lt;/div&gt;
+</code></pre>
+
+<br><br>
+
+Now that coding is complete, it is time to run our app and upload a file to Azure Storage.  In the Bash/Terminal prompt type the following:
+
+<br><br>
+
+<pre><code class="language-bash">
+ng serve
+</code></pre>
+
+<br><br>
+
+Once the app is running, navigate to <i>http://localhost:4200</i> and you should see: 
+
+<br><br>
+
+<a href="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-006.png"><img class="img-responsive" src="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-006.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+Open up <i>Developer Tools</i> in the browser and navigate to the <i>Network</i> table so you can view networw activity when you start the upload process.  Now choose a file and you should start to see network activity:
+
+<br><br>
+
+<a href="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-007.png"><img class="img-responsive" src="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-007.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<a href="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-008.png"><img class="img-responsive" src="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-008.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<a href="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-009.png"><img class="img-responsive" src="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-009.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+Navigate to the Azure Portal, select the Azure Storage Account and inside of the container, you should see your file:
+
+<br><br>
+
+<a href="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-010.png"><img class="img-responsive" src="assets/images/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-010.png" alt="Grenitaus Consulting"></a>
+
+<strong>Final Thoughts!</strong>
+
+<br><br>
+
+This blog entry served as a introduction into how to use the <a href="https://github.com/Azure/azure-storage-js" target="_blank">Azure Storage SDK V10 for JavaScript</a> library with Angular 7 to upload a file.  It is not <i>Production Level</i> code and here are items that should be taken into consideration and/or improved upon:
+
+<br><br>
+
+<ul>
+	<li>Instead of using a real Azure Storage Account, you could have used the <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-use-emulator" target="_blank">Azure Storage Emulator</a> </li>
+	<li>The Front-End would probably call a Middle-Tier Service that is responsible for creating Containers & SAS Tokens programmically and passing it back to the Front-End </li>
+	<li>The SAS Tokens would be short-lived and have dramatically less permissions then what was given in this blog entry</li>
+	<li>CORS configuration for the Azure Storage Account would be more restrictive then what was given in in this blog entry</li>
+	<li>Front-End would typically allow for multiple uploads and implement drag and drop functionality along with allowing the user to choose a file manually </li>
+</ul>
