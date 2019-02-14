@@ -1,12 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.26228.73
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{E7F6DECE-ACDC-480F-A036-C9FDC0605D12}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.GrenitausConsulting.Client", "..\Client\Blog.GrenitausConsulting.Client.csproj", "{799C980D-7D97-4B87-A1A6-F14B5C4ABC53}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cli", "cli", "{331C0A68-6315-41A6-9620-0ACC3F0948EC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{FA8E9B36-2907-4052-91EC-C7B0D7D200CA}"
@@ -37,10 +33,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{799C980D-7D97-4B87-A1A6-F14B5C4ABC53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{799C980D-7D97-4B87-A1A6-F14B5C4ABC53}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{799C980D-7D97-4B87-A1A6-F14B5C4ABC53}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{799C980D-7D97-4B87-A1A6-F14B5C4ABC53}.Release|Any CPU.Build.0 = Release|Any CPU
 		{46928142-77BE-4143-BD0D-81CE83C273EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{46928142-77BE-4143-BD0D-81CE83C273EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46928142-77BE-4143-BD0D-81CE83C273EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -86,7 +78,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{799C980D-7D97-4B87-A1A6-F14B5C4ABC53} = {E7F6DECE-ACDC-480F-A036-C9FDC0605D12}
 		{46928142-77BE-4143-BD0D-81CE83C273EE} = {FA8E9B36-2907-4052-91EC-C7B0D7D200CA}
 		{9AA115F6-B649-46FC-86CC-3EC17DE1636C} = {FA8E9B36-2907-4052-91EC-C7B0D7D200CA}
 		{0159BAD2-D067-4817-8C4F-6501E61E7304} = {FA8E9B36-2907-4052-91EC-C7B0D7D200CA}
