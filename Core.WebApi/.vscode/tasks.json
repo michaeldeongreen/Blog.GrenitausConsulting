@@ -10,16 +10,6 @@
                 "${workspaceFolder}/Blog.GrenitausConsulting.Core.Web.Api/Blog.GrenitausConsulting.Core.Web.Api.csproj"
             ],
             "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "build",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/Core.cli/gc-cli/gc-cli.csproj"
-            ],
-            "problemMatcher": "$msCompile"
-        }        
+        }
     ]
 }

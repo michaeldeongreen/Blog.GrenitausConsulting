@@ -9,9 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Blog.GrenitausConsulting.Core.Common\Blog.GrenitausConsulting.Core.Common.csproj" />
-    <ProjectReference Include="..\..\..\Blog.GrenitausConsulting.Core.Domain\Blog.GrenitausConsulting.Core.Domain.csproj" />
-    <ProjectReference Include="..\..\..\Blog.GrenitausConsulting.Core.Services\Blog.GrenitausConsulting.Core.Services.csproj" />
+    <ProjectReference Include="..\..\Core.WebApi\Blog.GrenitausConsulting.Core.Common\Blog.GrenitausConsulting.Core.Common.csproj" />
+    <ProjectReference Include="..\..\Core.WebApi\Blog.GrenitausConsulting.Core.Domain\Blog.GrenitausConsulting.Core.Domain.csproj" />
+    <ProjectReference Include="..\..\Core.WebApi\Blog.GrenitausConsulting.Core.Services\Blog.GrenitausConsulting.Core.Services.csproj" />
     <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Core.Common\Blog.GrenitausConsulting.CLI.Core.Common.csproj" />
     <ProjectReference Include="..\Blog.GrenitausConsulting.CLI.Core.Domain\Blog.GrenitausConsulting.CLI.Core.Domain.csproj" />
   </ItemGroup>
