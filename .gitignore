@@ -23,7 +23,6 @@ static-pages
 # compiled output
 /Client/dist
 /Client/tmp
-/Client/.vscode/*
 
 # dependencies
 /Client/node_modules
