@@ -34,12 +34,12 @@ namespace Blog.GrenitausConsulting.Core.Common
 
         private void BuildPostSummaries()
         {
-            _postSummaries = JsonConvert.DeserializeObject<IEnumerable<PostSummary>>(File.ReadAllText(string.Format(@"{0}\configuration\post-summaries.json", _path)));
+            _postSummaries = JsonConvert.DeserializeObject<IEnumerable<PostSummary>>(File.ReadAllText(string.Format(@"{0}/configuration/post-summaries.json", _path)));
         }
 
         private void BuildPostHtml()
         {
-            var blogs = Directory.GetFiles(string.Format(@"{0}\html",_path), "*.html");
+            var blogs = Directory.GetFiles(string.Format(@"{0}/html",_path), "*.html");
 
             foreach (var blog in blogs)
             {
@@ -54,17 +54,17 @@ namespace Blog.GrenitausConsulting.Core.Common
 
         private void BuildCategories()
         {
-            _categories = JsonConvert.DeserializeObject<IEnumerable<Category>>(File.ReadAllText(string.Format(@"{0}\configuration\categories.json", _path)));
+            _categories = JsonConvert.DeserializeObject<IEnumerable<Category>>(File.ReadAllText(string.Format(@"{0}/configuration/categories.json", _path)));
         }
 
         private void BuildTags()
         {
-            _tags = JsonConvert.DeserializeObject<IEnumerable<Tag>>(File.ReadAllText(string.Format(@"{0}\configuration\tags.json", _path)));
+            _tags = JsonConvert.DeserializeObject<IEnumerable<Tag>>(File.ReadAllText(string.Format(@"{0}/configuration/tags.json", _path)));
         }
 
         private void BuildQuotes()
         {
-            _quotes = JsonConvert.DeserializeObject<IEnumerable<Quote>>(File.ReadAllText(string.Format(@"{0}\configuration\quotes.json", _path)));
+            _quotes = JsonConvert.DeserializeObject<IEnumerable<Quote>>(File.ReadAllText(string.Format(@"{0}/configuration/quotes.json", _path)));
         }
     }
 }

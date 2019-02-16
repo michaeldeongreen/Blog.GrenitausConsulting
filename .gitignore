@@ -10,22 +10,22 @@ obj
 packages
 static-pages
 
-/Client/.vs
-/Client/bin
-/Client/obj
-/Client/packages
-/Client/src/static-pages
+/WebWebClient/.vs
+/WebWebClient/bin
+/WebWebClient/obj
+/WebWebClient/packages
+/WebWebClient/src/static-pages
 
 
-/Client/src/*.js
-/Client/src/app/**/*.js
+/WebClient/src/*.js
+/WebClient/src/app/**/*.js
 
 # compiled output
-/Client/dist
-/Client/tmp
+/WebClient/dist
+/WebClient/tmp
 
 # dependencies
-/Client/node_modules
+/WebClient/node_modules
 
 # IDEs and editors
 /.idea
@@ -53,16 +53,16 @@ testem.log
 /typings
 
 # e2e
-/Client/e2e/*.js
-/Client/e2e/*.map
+/WebClient/e2e/*.js
+/WebClient/e2e/*.map
 
 #System Files
 .DS_Store
 Thumbs.db
 
-Client/src/category-sitemap.xml
-Client/src/page-sitemap.xml
-Client/src/post-sitemap.xml
-Client/src/post_tag-sitemap.xml
-Client/src/rss.xml
-Client/src/sitemap.xml
+WebClient/src/category-sitemap.xml
+WebClient/src/page-sitemap.xml
+WebClient/src/post-sitemap.xml
+WebClient/src/post_tag-sitemap.xml
+WebClient/src/rss.xml
+WebClient/src/sitemap.xml

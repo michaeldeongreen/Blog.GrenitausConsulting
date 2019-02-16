@@ -171,7 +171,14 @@
     "id": 25,
     "author": "Martin Luther King Jr.",
     "quote": "The time is always right to do what is right.",
-    "url": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.",
+    "url": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr",
     "addedDate": "2019-01-19"
+  },
+  {
+    "id": 26,
+    "author": "Frederick Douglas",
+    "quote": "If there is no struggle, there is no progress.",
+    "url": "https://en.wikipedia.org/wiki/Frederick_Douglass",
+    "addedDate": "2019-02-16"
   }
 ]
