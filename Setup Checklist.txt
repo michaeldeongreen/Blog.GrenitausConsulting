@@ -15,7 +15,7 @@ New PC Setup:
 For DEV:
 1) Open a Bash Prompt and type in "gc-cli.sh build -dev"
 
-2) Open a Bash Prompt and navigate to "SOMEPATH/Blog.GrenitausConsulting/Client" and run "ng serve"
+2) Open a Bash Prompt and navigate to "SOMEPATH/Blog.GrenitausConsulting/WebClient" and run "ng serve"
 
 For PROD:
 1) Run ./publish.sh
