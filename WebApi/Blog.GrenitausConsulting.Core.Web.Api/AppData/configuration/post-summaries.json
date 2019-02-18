@@ -3126,5 +3126,46 @@
     ],
     "canPreview": false,
     "previewExpirationDate": null
-  }
+  },
+  {
+    "id": 61,
+    "title": "How to Set HTTP Headers When Uploading Files Using Angular 7 and the Azure Storage SDK V10 for JavaScript Library",
+    "author": "Michael D. Green",
+    "postDate": "2019-02-17",
+    "snippet": "In this blog, I want to demonstrate how set HTTP Headers when uploading files using the Azure Storage SDK V10 for JavaScript Library with Angular 7 to upload files to Azure Storage.",
+    "link": "how-to-set-http-headers-when-uploading-files-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 72,
+        "name": "angular-cli"
+      },
+      {
+        "id": 95,
+        "name": "Angular 7"
+      },
+      {
+        "id": 94,
+        "name": "Azure Storage"
+      }
+    ],
+    "images": [
+      {
+        "name": "michaeldeongreen-logo.png",
+        "url": "assets/images/michaeldeongreen-logo.png"
+      },
+      {
+        "name": "how-to-set-http-headers-when-uploading-files-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-001.png",
+        "url": "assets/images/how-to-set-http-headers-when-uploading-files-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-001.png"
+      }
+    ],
+    "canPreview": false,
+    "previewExpirationDate": null
+  }  
 ]  
