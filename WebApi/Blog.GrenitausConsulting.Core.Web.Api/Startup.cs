@@ -43,7 +43,7 @@ namespace Blog.GrenitausConsulting.Core.Web.Api
             }
 
             app.UseCors(c => c.AllowAnyOrigin());
-            BlogConfig.Configure($"{env.ContentRootPath}\\AppData");
+            BlogConfig.Configure($"{env.ContentRootPath}//AppData");
 
             app.UseMvc();
         }

@@ -24,7 +24,11 @@ In this blog, I want to build on top of the previous blog and demonstrate how to
 
 <br><br>
 
-When uploading files using the <a href="https://docs.microsoft.com/en-us/javascript/api/@azure/storage-blob/?view=azure-node-preview#uploadbrowserdatatoblockblob-aborter--blob---arraybuffer---arraybufferview--blockbloburl--iuploadtoblockbloboptions-" target="_blank">uploadBrowserDataToBlockBlob</a> method for parallel uploading, there are only 6 HTTP Headers that you can set using the <a href="https://docs.microsoft.com/en-us/javascript/api/%40azure/storage-blob/blobhttpheaders?view=azure-node-preview" target="_blank">BlobHTTPHeaders</a> attribute of the <a href="https://docs.microsoft.com/en-us/javascript/api/@azure/storage-blob/IUploadToBlockBlobOptions?view=azure-node-preview" target="_blank">IUploadToBlockBlobOptions</a> interface.  One of our Client Partners at Microsoft recently asked me if it was possible to set the <a href="https://msdn.microsoft.com/en-us/library/dn364662.aspx" target="_blank">client-request-id</a> HTTP Headers and the purpose of this blog is to demonstrate how this can be done using the existing codebase that we used in the previous blog, which you can find <a href="https://github.com/michaeldeongreen/angular7-azure-storage-sdk-v10-demo" target="_blank">here</a>.
+When uploading files using the <a href="https://docs.microsoft.com/en-us/javascript/api/@azure/storage-blob/?view=azure-node-preview#uploadbrowserdatatoblockblob-aborter--blob---arraybuffer---arraybufferview--blockbloburl--iuploadtoblockbloboptions-" target="_blank">uploadBrowserDataToBlockBlob</a> method for parallel uploading, there are only 6 HTTP Request Headers that you can set using the <a href="https://docs.microsoft.com/en-us/javascript/api/%40azure/storage-blob/blobhttpheaders?view=azure-node-preview" target="_blank">BlobHTTPHeaders</a> attribute of the <a href="https://docs.microsoft.com/en-us/javascript/api/@azure/storage-blob/IUploadToBlockBlobOptions?view=azure-node-preview" target="_blank">IUploadToBlockBlobOptions</a> interface.  
+
+<br><br>
+
+Recently, one of our Client Partners at Microsoft recently asked me if it was possible to set the <a href="https://msdn.microsoft.com/en-us/library/dn364662.aspx" target="_blank">client-request-id</a> HTTP Request Header and the purpose of this blog is to demonstrate how this can be done using the existing codebase that we used in the previous blog, which you can find <a href="https://github.com/michaeldeongreen/angular7-azure-storage-sdk-v10-demo" target="_blank">here</a>.
 
 <br><br>
 
@@ -73,7 +77,7 @@ export class ClientRequestIDPolicy extends BaseRequestPolicy {
 
 <br><br>
 
-The class above implements the Azure Storage SDK V10 for JavaScript <i>BaseRequestPolicy</i> interface.  One of the parameters for the constructor is the <i>client-request-id</i>.  The <i>sendRequest</i> method is an implementation of the <i>BaseRequestPolicy</i> interface and is the piece of code that set the <i>client-request-id</i> HTTP Header per upload.
+The class above implements the Azure Storage SDK V10 for JavaScript <i>BaseRequestPolicy</i> interface.  One of the parameters for the constructor is the <i>client-request-id</i>.  The <i>sendRequest</i> method is an implementation of the <i>BaseRequestPolicy</i> interface and is the piece of code that sets the <i>client-request-id</i> HTTP Header per upload.
 
 <br><br>
 
@@ -115,7 +119,7 @@ The class above implements the Azure Storage SDK V10 for JavaScript <i>RequestPo
 
 <br><br>
 
-Next, we need to make a small modifications to our <i>BlobStorageService</i> service.
+Next, we need to make a few small modifications to our <i>BlobStorageService</i> service.
 
 <br><br>
 
@@ -153,7 +157,7 @@ The new line of code above will create a new <i>ClientRequestIDPolicyFactory</i>
 
 <br><br>
 
-<strong>Upload a File and View the client-request-id!</strong>
+<strong>Upload a file and view the client-request-id!</strong>
 
 <br><br>
 
