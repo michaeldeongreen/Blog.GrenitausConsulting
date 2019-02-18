@@ -3,19 +3,19 @@ New PC Setup:
 
 2) In gc-cli.sh, Modify the directory path
 	* configdir should point to the Web API AppData directory
-	* outputdir should point to the Client/src, which is the directory where angular-cli will build the deployable bits
+	* outputdir should point to the WebClient/src, which is the directory where angular-cli will build the deployable bits
 	* Point to publish where the gc-cli.exe executable is located
 	
-3) In publish.sh, Modify the directory paths
+3) In publish.sh, modify the directory paths
 
 4) Place the "SOMEPATH\gc-cli\bin\Release\netcoreapp2.0\win10-x64\publish" in the PATH Environment Variable [OBSOLETE]
 
-5) Place the path to gc-cli.sh in the PATH Environment Variable
+5) Place the path to gc-cli.sh in the PATH Environment Variable [OBSOLETE]
 
 For DEV:
-1) Open a Bash Prompt and type in "gc-cli.sh build -dev"
+1) Open a Bash Prompt and navigate to the directory that contains "gc-cli.sh" and run "gc-cli.sh build -dev"
 
 2) Open a Bash Prompt and navigate to "SOMEPATH/Blog.GrenitausConsulting/WebClient" and run "ng serve"
 
 For PROD:
-1) Run ./publish.sh
+1) Open a Bash Prompt and navigate to the directory that contains "gc-cli.sh" and run ./publish.sh 

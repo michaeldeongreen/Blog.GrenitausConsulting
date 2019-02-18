@@ -1,0 +1,168 @@
+<a href="assets/images/michaeldeongreen-logo.png"><img class="img-responsive" src="assets/images/michaeldeongreen-logo.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+In my previous blog <a href="https://blog.michaeldeongreen.com/post/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library" target="_blank">How to Upload Files to Azure Storage Using Angular 7 and the Azure Storage SDK V10 for JavaScript Library</a>, I demonstrated how to upload files to Azure Storage using Angular 7 and the Azure Storage SDK V10 for JavaScript Library.
+
+<br><br>
+
+In this blog, I want to build on top of the previous blog and demonstrate how to how to set HTTP Headers when uploading files using Angular 7 and the Azure Storage SDK V10 for JavaScript Library.
+
+<br><br>
+
+<strong>Prerequisites!</strong>
+
+<br><br>
+
+<ul>
+	<li>All the prerequisites listed in the <a href="https://blog.michaeldeongreen.com/post/how-to-upload-files-to-azure-storage-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library" target="_blank">previous</a> blog</li>
+</ul>
+
+<br><br>
+
+<strong>Background!</strong>
+
+<br><br>
+
+When uploading files using the <a href="https://docs.microsoft.com/en-us/javascript/api/@azure/storage-blob/?view=azure-node-preview#uploadbrowserdatatoblockblob-aborter--blob---arraybuffer---arraybufferview--blockbloburl--iuploadtoblockbloboptions-" target="_blank">uploadBrowserDataToBlockBlob</a> method for parallel uploading, there are only 6 HTTP Request Headers that you can set using the <a href="https://docs.microsoft.com/en-us/javascript/api/%40azure/storage-blob/blobhttpheaders?view=azure-node-preview" target="_blank">BlobHTTPHeaders</a> attribute of the <a href="https://docs.microsoft.com/en-us/javascript/api/@azure/storage-blob/IUploadToBlockBlobOptions?view=azure-node-preview" target="_blank">IUploadToBlockBlobOptions</a> interface.  
+
+<br><br>
+
+Recently, one of our Client Partners at Microsoft recently asked me if it was possible to set the <a href="https://msdn.microsoft.com/en-us/library/dn364662.aspx" target="_blank">client-request-id</a> HTTP Request Header and the purpose of this blog is to demonstrate how this can be done using the existing codebase that we used in the previous blog, which you can find <a href="https://github.com/michaeldeongreen/angular7-azure-storage-sdk-v10-demo" target="_blank">here</a>.
+
+<br><br>
+
+<strong>Setting the client-request-id per upload!</strong>
+
+<br><br>
+
+First, we need to create a <i>Request Policy</i> to set the <a href="https://msdn.microsoft.com/en-us/library/dn364662.aspx" target="_blank">client-request-id</a>.  The new policy class for the <a href="https://msdn.microsoft.com/en-us/library/dn364662.aspx" target="_blank">client-request-id</a> HTTP Header will allow the <a href="https://msdn.microsoft.com/en-us/library/dn364662.aspx" target="_blank">client-request-id</a> to be set per request.
+
+<br><br>
+
+Create the new Request Policy by typing the following:
+
+<br><br>
+
+<pre><code class="language-bash">
+ng g class azure-storage/clientRequestIDPolicy
+</code></pre>
+
+<br><br>
+
+Next, open up the new class and paste the following code:
+
+<br><br>
+
+<pre><code class="language-typescript">
+import { BaseRequestPolicy, RequestPolicy, RequestPolicyOptions, WebResource, HttpOperationResponse } from '@azure/ms-rest-js';
+
+export class ClientRequestIDPolicy extends BaseRequestPolicy {
+    private clientRequestId: string;
+
+    constructor(nextPolicy: RequestPolicy, options: RequestPolicyOptions, clientRequestId: string) {
+        super(nextPolicy, options);
+        this.clientRequestId = clientRequestId;
+      }
+    
+      async sendRequest(webResource: WebResource): Promise<HttpOperationResponse> {
+        const CLIENT_REQUEST_ID = 'client-request-id';
+        webResource.headers.set(CLIENT_REQUEST_ID, this.clientRequestId);
+    
+        const response = await this._nextPolicy.sendRequest(webResource);
+        return response;
+      }    
+}
+</code></pre>
+
+<br><br>
+
+The class above implements the Azure Storage SDK V10 for JavaScript <i>BaseRequestPolicy</i> interface.  One of the parameters for the constructor is the <i>client-request-id</i>.  The <i>sendRequest</i> method is an implementation of the <i>BaseRequestPolicy</i> interface and is the piece of code that sets the <i>client-request-id</i> HTTP Header per upload.
+
+<br><br>
+
+Next, we need to create the <i>Request Policy Factory</i> that will be used to call the <i>ClientRequestIDPolicy</i> class.
+
+<br><br>
+
+Type the following:
+
+<pre><code class="language-bash">
+ng g class azure-storage/clientRequestIDPolicyFactory
+</code></pre>
+
+<br><br>
+
+Next, open up the new class and paste the following code:
+
+<br><br>
+
+<pre><code class="language-typescript">
+import { RequestPolicy, RequestPolicyOptions, RequestPolicyFactory } from '@azure/ms-rest-js';
+import { ClientRequestIDPolicy } from './client-request-idpolicy';
+
+export class ClientRequestIDPolicyFactory implements RequestPolicyFactory {
+    private clientRequestId: string;
+    constructor(clientRequestId: string) {
+      this.clientRequestId = clientRequestId;
+    }
+  
+     create(nextPolicy: RequestPolicy, options: RequestPolicyOptions): ClientRequestIDPolicy {
+       return new ClientRequestIDPolicy(nextPolicy, options, this.clientRequestId);
+     }    
+}
+</code></pre>
+
+<br><br>
+
+The class above implements the Azure Storage SDK V10 for JavaScript <i>RequestPolicyFactory</i> interface.  The constructor accepts the <i>client-request-id</i> as a parameter and implements the <i>create</i> method of the <i>RequestPolicyFactory</i> interface.  The <i>create</i> method will instantiate our new <i>ClientRequestIDPolicy</i> class where it will set the <i>client-request-id</i>.
+
+<br><br>
+
+Next, we need to make a few small modifications to our <i>BlobStorageService</i> service.
+
+<br><br>
+
+First, you will want to import the new <i>ClientRequestIDPolicyFactory</i> class:
+
+<br><br>
+
+<pre><code class="language-typescript">
+import { ClientRequestIDPolicyFactory } from './client-request-idpolicy-factory';
+</code></pre>
+
+<br><br>
+
+Next, in the <i>uploadBlobToStorage</i> method, after the line below:
+
+<br><br>
+
+<pre><code class="language-typescript">
+const pipeline = StorageURL.newPipeline(anonymousCredential);
+</code></pre>
+
+<br><br>
+
+Add the following line of code to call the <i>ClientRequestIDPolicyFactory</i> class to set the <i>client-request-id</i>:
+
+<br><br>
+
+<pre><code class="language-typescript">
+pipeline.factories.unshift(new ClientRequestIDPolicyFactory('dba75b71-a943-4532-86be-07f86b1e78f0'));
+</code></pre>
+
+<br><br>
+
+The new line of code above will create a new <i>ClientRequestIDPolicyFactory</i> class and pass a GUID to the constructor.  Also note, for brevity, I have hardcoded a GUID value but for <i>Production Level</i> code, you will want to research effective ways to generate GUIDs in JavaScript or use a Middle-Tier API to retrieve a GUID.
+
+<br><br>
+
+<strong>Upload a file and view the client-request-id!</strong>
+
+<br><br>
+
+Now, upload a file and view the network activity after the file has been uploaded.  Find the <i>last</i> uploaded activity, which is the final <i>BlockBlob</i> and you should see that the <i>client-request-id</i> HTTP Header has been set to the hardcoded GUID value:
+
+<br><br>
+
+<a href="assets/images/how-to-set-http-headers-when-uploading-files-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-001.png"><img class="img-responsive" src="assets/images/how-to-set-http-headers-when-uploading-files-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-001.png" alt="Grenitaus Consulting"></a>
