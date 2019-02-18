@@ -1104,8 +1104,8 @@
     ],
     "images": [
       {
-        "name": "michaeldeongreen-logo.png",
-        "url": "assets/images/michaeldeongreen-logo.png"
+        "name": "michaeldeongreen-logo-medium.png",
+        "url": "assets/images/michaeldeongreen-logo-medium.png"
       }
     ],
     "canPreview": false,
@@ -3157,8 +3157,8 @@
     ],
     "images": [
       {
-        "name": "michaeldeongreen-logo.png",
-        "url": "assets/images/michaeldeongreen-logo.png"
+        "name": "michaeldeongreen-logo-medium.png",
+        "url": "assets/images/michaeldeongreen-logo-medium.png"
       },
       {
         "name": "how-to-set-http-headers-when-uploading-files-using-angular-7-and-the-azure-storage-sdk-v10-for-javascript-library-001.png",
