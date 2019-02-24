@@ -75,6 +75,7 @@ namespace Blog.GrenitausConsulting.CLI.Core.Services
             sb.AppendLine("<head>");
             sb.AppendLine("<meta charset=\"utf-8\">");
             sb.AppendLine(string.Format("<title>{0}</title>", post.Title));
+            sb.AppendLine(string.Format("<link rel=\"canonical\" href=\"{0}/{1}/{2}.html\">",_domain, _staticPageHtmlPath, post.Link));            
             sb.AppendLine("<meta name=\"viewport\" content=\"width=device-width, initial-scale = 1\">");
             sb.AppendLine("<meta http-equiv=\"Content-Language\"content=\"en\">");
             sb.AppendLine(string.Format("<meta name=\"description\" content=\"{0}\">", post.Snippet));
