@@ -3175,7 +3175,7 @@
     "postDate": "2019-02-25",
     "snippet": "In this blog, I want to review the Azure DevOps Retrospectives extension.",
     "link": "my-azure-devops-retrospectives-extension-review",
-    "isActive": false,
+    "isActive": true,
     "categories": [
       {
         "id": 3,
@@ -3194,15 +3194,43 @@
         "url": "assets/images/michaeldeongreen-logo.png"
       },
       {
-        "name": "my-azure-devops-retrospectives-extension-review-001.png",
-        "url": "assets/images/my-azure-devops-retrospectives-extension-review-001.png"
+        "name": "my-azure-devops-retrospectives-extension-review-001.gif",
+        "url": "assets/images/my-azure-devops-retrospectives-extension-review-001.gif"
       },
       {
-        "name": "my-azure-devops-retrospectives-extension-review-002.png",
-        "url": "assets/images/my-azure-devops-retrospectives-extension-review-002.png"
-      }      
+        "name": "my-azure-devops-retrospectives-extension-review-002.gif",
+        "url": "assets/images/my-azure-devops-retrospectives-extension-review-002.gif"
+      },
+      {
+        "name": "my-azure-devops-retrospectives-extension-review-003.png",
+        "url": "assets/images/my-azure-devops-retrospectives-extension-review-003.png"
+      },
+      {
+        "name": "my-azure-devops-retrospectives-extension-review-004.png",
+        "url": "assets/images/my-azure-devops-retrospectives-extension-review-004.png"
+      },
+      {
+        "name": "my-azure-devops-retrospectives-extension-review-005.png",
+        "url": "assets/images/my-azure-devops-retrospectives-extension-review-005.png"
+      },
+      {
+        "name": "my-azure-devops-retrospectives-extension-review-006.gif",
+        "url": "assets/images/my-azure-devops-retrospectives-extension-review-006.gif"
+      },
+      {
+        "name": "my-azure-devops-retrospectives-extension-review-007.gif",
+        "url": "assets/images/my-azure-devops-retrospectives-extension-review-007.gif"
+      }, 
+      {
+        "name": "my-azure-devops-retrospectives-extension-review-008.gif",
+        "url": "assets/images/my-azure-devops-retrospectives-extension-review-008.gif"
+      },       
+      {
+        "name": "my-azure-devops-retrospectives-extension-review-009.gif",
+        "url": "assets/images/my-azure-devops-retrospectives-extension-review-009.gif"
+      }                                                    
     ],
-    "canPreview": true,
+    "canPreview": false,
     "previewExpirationDate": "2019-03-01"
   }     
 ]  
