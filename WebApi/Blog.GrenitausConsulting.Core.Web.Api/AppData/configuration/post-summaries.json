@@ -3167,5 +3167,42 @@
     ],
     "canPreview": false,
     "previewExpirationDate": null
-  }  
+  },
+  {
+    "id": 62,
+    "title": "My Azure DevOps Retrospectives Extension Review",
+    "author": "Michael D. Green",
+    "postDate": "2019-02-25",
+    "snippet": "In this blog, I want to review the Azure DevOps Retrospectives extension.",
+    "link": "my-azure-devops-retrospectives-extension-review",
+    "isActive": false,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 90,
+        "name": "Azure DevOps"
+      }
+    ],
+    "images": [
+      {
+        "name": "michaeldeongreen-logo-medium.png",
+        "url": "assets/images/michaeldeongreen-logo.png"
+      },
+      {
+        "name": "my-azure-devops-retrospectives-extension-review-001.png",
+        "url": "assets/images/my-azure-devops-retrospectives-extension-review-001.png"
+      },
+      {
+        "name": "my-azure-devops-retrospectives-extension-review-002.png",
+        "url": "assets/images/my-azure-devops-retrospectives-extension-review-002.png"
+      }      
+    ],
+    "canPreview": true,
+    "previewExpirationDate": "2019-03-01"
+  }     
 ]  
