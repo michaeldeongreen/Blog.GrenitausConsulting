@@ -2,7 +2,7 @@
 
 <br><br>
 
-On one of my engagements here at Microsoft, we helped a Client Partner implement several Azure Backend components related to Azure Media Services.  The Client Partner's Frontend Angular application requried the Azure Media Player to send telemetry information to <a href="https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview" target="_blank">Azure Application Insights</a>.
+On one of my engagements here at Microsoft, we helped a Client Partner implement several Azure Backend components related to Azure Media Services.  One of the requirements stated that the Client Partner's Frontend Angular application would need to send Azure Media Player telemetry information to <a href="https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview" target="_blank">Azure Application Insights</a>.
 
 <br><br>
 
@@ -30,7 +30,11 @@ You can find the code used in this blog on Github <a href="https://github.com/mi
 
 <br><br>
 
-The sample code is a basic Angular 7 Application that uses the Azure Media Player to stream sample media and send the telemetry information to Azure Application Insights.  For brevity, please review the <a href="https://github.com/michaeldeongreen/angular7-amp-appinsights-demo/blob/master/README.md" target="_blank">README.md</a> file, which provides a detailed breakdown of the <i>AmpDiagnosticsLoggerService</i>, which is a custom TypeScript library I created based upon the <a href="https://github.com/Azure-Samples/media-services-javascript-azure-media-player-diagnostic-logger-plugin/blob/master/amp-diagnosticsLogger.js" target="_blank">amp-diagnosticsLogger.js </a> JavaScript library that is responsible for sending Azure Media Player telemetry informaton to Azure Application Insights.
+The sample code is a basic Angular 7 Application that uses the Azure Media Player to stream sample media and send the telemetry information to Azure Application Insights.  
+
+<br><br>
+
+For brevity, please review the <a href="https://github.com/michaeldeongreen/angular7-amp-appinsights-demo/blob/master/README.md" target="_blank">README.md</a> file for the sample code, which provides a detailed breakdown of the <i>AmpDiagnosticsLoggerService</i>, which is a custom TypeScript library I created based upon the <a href="https://github.com/Azure-Samples/media-services-javascript-azure-media-player-diagnostic-logger-plugin/blob/master/amp-diagnosticsLogger.js" target="_blank">amp-diagnosticsLogger.js </a> JavaScript library that is responsible for sending Azure Media Player telemetry informaton to Azure Application Insights.
 
 <br><br>
 
@@ -39,10 +43,10 @@ The sample code is a basic Angular 7 Application that uses the Azure Media Playe
 <br><br>
 
 <ul>
-    <li>In *ngOnInit*, creates a list of custom <i>mezzanine</i> objects, which is just a custom interface with hardcoded values.</li>
-    <li>In *ngAfterViewInit*, initializes the Azure Media Player that is embedded in <i>app.component.html</i></li>
-    <li>In *ngAfterViewInit*, configures the <i>AmpDiagnosticsLoggerConfiguration</i> object and passes the object to the "Initialize" method in the <i>AmpDiagnosticsLoggerService</i> Service</li>.  See <a href="https://github.com/michaeldeongreen/angular7-amp-appinsights-demo/blob/master/README.md" target="_blank">README.md</a> file for details on the <i>AmpDiagnosticsLoggerConfiguration</i> and <i>AmpDiagnosticsLoggerService</i> classes</li>
-    <li>setMovie method is called whenever the user clicks to play a movie.  When *setMovie* is called, the *log* method of the <i>AmpDiagnosticsLoggerConfiguration</i> service is called and the *mezzanine* id is passed.  This id will be set to the Application Insights <i>User Id</i> field.</li>
+    <li>In <i>gOnInit</i>, creates a list of custom <i>mezzanine</i> objects, which is just a custom interface with hardcoded values.</li>
+    <li>In <i>ngAfterViewInit</i>, initializes the Azure Media Player that is embedded in <i>app.component.html</i></li>
+    <li>In <i>ngAfterViewInit</i>, configures the <i>AmpDiagnosticsLoggerConfiguration</i> object and passes the object to the "Initialize" method in the <i>AmpDiagnosticsLoggerService</i> Service</li>.  See <a href="https://github.com/michaeldeongreen/angular7-amp-appinsights-demo/blob/master/README.md" target="_blank">README.md</a> file for details on the <i>AmpDiagnosticsLoggerConfiguration</i> and <i>AmpDiagnosticsLoggerService</i> classes</li>
+    <li>The <i>setMovie</i> method is called whenever the user clicks to play a movie.  When <i>setMovie</i> is called, the <i>log</i> method of the <i>AmpDiagnosticsLoggerConfiguration</i> service is called and the <i>mezzanine</i> id is passed.  This id will be set to the Application Insights <i>User Id</i> field.</li>
 </ul>
  
 
