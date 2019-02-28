@@ -378,5 +378,13 @@
   {
     "id": 95,
     "name": "Angular 7"
-  }
+  },
+  {
+    "id": 96,
+    "name": "Azure Media Player"
+  },
+  {
+    "id": 97,
+    "name": "Azure Application Insights"
+  }      
 ]

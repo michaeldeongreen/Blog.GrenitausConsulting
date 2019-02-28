@@ -3232,5 +3232,62 @@
     ],
     "canPreview": false,
     "previewExpirationDate": "2019-03-01"
-  }     
+  },
+  {
+    "id": 63,
+    "title": "How to Send Azure Media Player Telemetry Information to Azure Application Insights in a Angular 7 Application",
+    "author": "Michael D. Green",
+    "postDate": "2019-02-28",
+    "snippet": "In this blog I want to give a brief overview of the sample code I wrote that demonstrates how to send Azure Media Player telemetry information to Azure Application Insights.",
+    "link": "how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 3,
+        "name": "Technology"
+      }
+    ],
+    "tags": [
+      {
+        "id": 95,
+        "name": "Angular 7"
+      },
+      {
+        "id": 96,
+        "name": "Azure Media Player"
+      },
+      {
+        "id": 97,
+        "name": "Azure Application Insights"
+      }                 
+    ],
+    "images": [
+      {
+        "name": "michaeldeongreen-logo-1200x627.jpg",
+        "url": "assets/images/michaeldeongreen-logo-1200x627.jpg"
+      },
+      {
+        "name": "how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-001.png",
+        "url": "assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-001.png"
+      },      
+      {
+        "name": "how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-002.png",
+        "url": "assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-002.png"
+      },
+      {
+        "name": "how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-003.png",
+        "url": "assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-003.png"
+      },
+      {
+        "name": "how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-004.png",
+        "url": "assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-004.png"
+      },
+      {
+        "name": "how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-005.png",
+        "url": "assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-005.png"
+      }                        
+    ],
+    "canPreview": false,
+    "previewExpirationDate": "2019-03-01"
+  }      
 ]  

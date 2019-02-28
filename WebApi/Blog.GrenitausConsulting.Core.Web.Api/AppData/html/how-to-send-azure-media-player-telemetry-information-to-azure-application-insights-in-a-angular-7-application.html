@@ -1,0 +1,90 @@
+<a href="assets/images/michaeldeongreen-logo.png"><img class="img-responsive" src="assets/images/michaeldeongreen-logo.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+On one of my engagements here at Microsoft, we helped a Client Partner implement several Azure Backend components related to Azure Media Services.  One of the requirements stated that the Client Partner's Frontend Angular application would need to send Azure Media Player telemetry information to <a href="https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview" target="_blank">Azure Application Insights</a>.
+
+<br><br>
+
+In this blog I want to give a brief overview of the sample code I wrote that demonstrates how to send Azure Media Player telemetry information to <a href="https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview" target="_blank">Azure Application Insights</a>.
+
+<br><br>
+
+You can find the code used in this blog on Github <a href="https://github.com/michaeldeongreen/angular7-amp-appinsights-demo" target="_blank">here</a>
+
+<br><br>
+
+<strong>Prerequisites!</strong>
+
+<br><br>
+
+<ul>
+    <li>Access to the Azure Portal to view Telemetry information</li>
+    <li>Angular 7</li>
+    <li>Application Insights Asset and the Instrumentation Key</li>
+</ul>
+
+<br><br>
+
+<strong>Overview!</strong>
+
+<br><br>
+
+The sample code is a basic Angular 7 Application that uses the Azure Media Player to stream sample media and send the telemetry information to Azure Application Insights.  
+
+<br><br>
+
+For brevity, please review the <a href="https://github.com/michaeldeongreen/angular7-amp-appinsights-demo/blob/master/README.md" target="_blank">README.md</a> file for the sample code, which provides a detailed breakdown of the <i>AmpDiagnosticsLoggerService</i>, which is a custom TypeScript library I created based upon the <a href="https://github.com/Azure-Samples/media-services-javascript-azure-media-player-diagnostic-logger-plugin/blob/master/amp-diagnosticsLogger.js" target="_blank">amp-diagnosticsLogger.js </a> JavaScript library that is responsible for sending Azure Media Player telemetry informaton to Azure Application Insights.
+
+<br><br>
+
+<strong>app.component.ts</strong>
+
+<br><br>
+
+<ol>
+    <li>The <i>ngOnInit</i> event creates a list of custom <i>mezzanine</i> objects, which is just a custom interface with hardcoded sample values.</li>
+    <li>The <i>ngAfterViewInit</i> event:</li>
+        <ul>
+            <li>Initializes the Azure Media Player that is embedded in <i>app.component.html</i></li>
+            <li>Configures the <i>AmpDiagnosticsLoggerConfiguration</i> object and passes the object to the <i>Initialize</i> method in the <i>AmpDiagnosticsLoggerService</i> Service</li>.  See <a href="https://github.com/michaeldeongreen/angular7-amp-appinsights-demo/blob/master/README.md" target="_blank">README.md</a> file for details on the <i>AmpDiagnosticsLoggerConfiguration</i> and <i>AmpDiagnosticsLoggerService</i> classes</li>
+        </ul>
+    <li>The <i>setMovie</i> method is called whenever the user clicks to play a movie.  When <i>setMovie</i> is called:</li>
+        <ul>
+            <li>The Azure Media Player <i>src</i> property is set to the <i>url</i> of the mezzanine the user has chosen to play and the sample media starts to stream</li>
+            <li>The <i>log</i> method of the <i>AmpDiagnosticsLoggerConfiguration</i> service is called and the mezzanine <i>id</i> is passed.  This id will be set to the Application Insights <i>User Id</i> field.</li>
+        </ul>
+</ol>
+ 
+
+<br><br>
+
+<strong>app.component.html</strong>
+
+<br><br>
+
+The html template for <i>app.component.ts</i> displays an Azure Media Player and loops through the list of <i>mezzanine</i> objects and displays them on the screen.  When the user clicks on either the Play picture or url, the <i>setMovie</i> method will be called and will be passed the current <i>mezzanine</i> object.  The video should start playing and Azure Media Player telmetry information will be sent to Application Insights.
+
+<br><br>
+
+Screenshots:
+
+<br><br>
+
+<a href="assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-001.png"><img class="img-responsive" src="assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-001.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<a href="assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-002.png"><img class="img-responsive" src="assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-002.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<a href="assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-003.png"><img class="img-responsive" src="assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-003.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<a href="assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-004.png"><img class="img-responsive" src="assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-004.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+<a href="assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-005.png"><img class="img-responsive" src="assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-005.png" alt="Grenitaus Consulting"></a>
