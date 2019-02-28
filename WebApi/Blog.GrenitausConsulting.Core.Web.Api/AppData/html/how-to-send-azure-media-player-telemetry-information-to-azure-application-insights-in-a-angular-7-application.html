@@ -43,7 +43,7 @@ For brevity, please review the <a href="https://github.com/michaeldeongreen/angu
 <br><br>
 
 <ul>
-    <li>In <i>gOnInit</i>, creates a list of custom <i>mezzanine</i> objects, which is just a custom interface with hardcoded values.</li>
+    <li>In <i>ngOnInit</i>, creates a list of custom <i>mezzanine</i> objects, which is just a custom interface with hardcoded values.</li>
     <li>In <i>ngAfterViewInit</i>, initializes the Azure Media Player that is embedded in <i>app.component.html</i></li>
     <li>In <i>ngAfterViewInit</i>, configures the <i>AmpDiagnosticsLoggerConfiguration</i> object and passes the object to the "Initialize" method in the <i>AmpDiagnosticsLoggerService</i> Service</li>.  See <a href="https://github.com/michaeldeongreen/angular7-amp-appinsights-demo/blob/master/README.md" target="_blank">README.md</a> file for details on the <i>AmpDiagnosticsLoggerConfiguration</i> and <i>AmpDiagnosticsLoggerService</i> classes</li>
     <li>The <i>setMovie</i> method is called whenever the user clicks to play a movie.  When <i>setMovie</i> is called, the <i>log</i> method of the <i>AmpDiagnosticsLoggerConfiguration</i> service is called and the <i>mezzanine</i> id is passed.  This id will be set to the Application Insights <i>User Id</i> field.</li>
