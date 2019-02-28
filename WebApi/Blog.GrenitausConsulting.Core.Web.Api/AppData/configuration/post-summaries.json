@@ -3265,7 +3265,27 @@
       {
         "name": "michaeldeongreen-logo-1200x627.jpg",
         "url": "assets/images/michaeldeongreen-logo-1200x627.jpg"
-      }
+      },
+      {
+        "name": "how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-001.png",
+        "url": "assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-001.png"
+      },      
+      {
+        "name": "how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-002.png",
+        "url": "assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-002.png"
+      },
+      {
+        "name": "how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-003.png",
+        "url": "assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-003.png"
+      },
+      {
+        "name": "how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-004.png",
+        "url": "assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-004.png"
+      },
+      {
+        "name": "how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-005.png",
+        "url": "assets/images/how-to-send-azure-media-player-telemetry-information-to-azure-application-insights-in-a-angular-7-application-005.png"
+      }                        
     ],
     "canPreview": false,
     "previewExpirationDate": "2019-03-01"
