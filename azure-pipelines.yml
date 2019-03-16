@@ -1,0 +1,9 @@
+pool:
+    vmImage: 'ubuntu-16.04'
+
+variables:
+    buildConfiguration: 'Release'
+
+steps:
+    - script: dotnet build '$(System.DefaultWorkingDirectory)/cli/gc-cli/gc-cli.csproject' --configuration $(buildConfiguration)
+      displayName: 'Build gc-cli'
