@@ -8,3 +8,7 @@ steps:
     - script: dotnet build '$(System.DefaultWorkingDirectory)/cli/gc-cli/gc-cli.csproject' --configuration $(buildConfiguration)
       displayName: 'Build gc-cli'
       continueOnError: false
+
+    - script: dotnet build | 
+        '$(System.DefaultWorkingDirectory)/WebApi/Blog.GrenitausConsulting.Core.Web.Api/Blog.GrenitausConsulting.Core.Web.Api.csproj' |
+        --configuration $(buildConfiguration)
