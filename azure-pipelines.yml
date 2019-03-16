@@ -12,3 +12,4 @@ steps:
     - script: dotnet build | 
         '$(System.DefaultWorkingDirectory)/WebApi/Blog.GrenitausConsulting.Core.Web.Api/Blog.GrenitausConsulting.Core.Web.Api.csproj' |
         --configuration $(buildConfiguration)
+      continueOnError: false
