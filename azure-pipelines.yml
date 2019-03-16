@@ -12,3 +12,11 @@ steps:
     - script: dotnet build '$(System.DefaultWorkingDirectory)/WebApi/Blog.GrenitausConsulting.Core.Web.Api/Blog.GrenitausConsulting.Core.Web.Api.csproj' --configuration $(buildConfiguration)
       displayName: 'Build Web API'
       continueOnError: false
+
+    - script: dotnet test '$(System.DefaultWorkingDirectory)/WebApi/Blog.GrenitausConsulting.Core.Unit.Tests/Blog.GrenitausConsulting.Core.Unit.Tests.csproj' --configuration $(buildConfiguration)
+      displayName: 'Run Web API Tests'
+      continueOnError: false      
+
+    - script: dotnet test '$(System.DefaultWorkingDirectory)/cli/Blog.GrenitausConsulting.CLI.Core.Unit.Tests/Blog.GrenitausConsulting.CLI.Core.Unit.Tests.csproj' --configuration $(buildConfiguration)
+      displayName: 'Run gc-cli Tests'
+      continueOnError: false            
