@@ -5,7 +5,7 @@ variables:
     buildConfiguration: 'Release'
 
 steps:
-    - script: dotnet build '$(System.DefaultWorkingDirectory)/cli/gc-cli/gc-cli.csproject' --configuration $(buildConfiguration)
+    - script: dotnet build '$(System.DefaultWorkingDirectory)/cli/gc-cli/gc-cli.csproj' --configuration $(buildConfiguration)
       displayName: 'Build gc-cli'
       continueOnError: false
 
