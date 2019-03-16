@@ -7,3 +7,4 @@ variables:
 steps:
     - script: dotnet build '$(System.DefaultWorkingDirectory)/cli/gc-cli/gc-cli.csproject' --configuration $(buildConfiguration)
       displayName: 'Build gc-cli'
+      continueOnError: false
