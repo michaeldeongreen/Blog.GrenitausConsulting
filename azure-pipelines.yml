@@ -12,5 +12,7 @@ steps:
 
     - script: |
         echo $(System.DefaultWorkingDirectory)
+
+        SET @configdir=$(System.DefaultWorkingDirectory)/$(cli.argument.configdir)
       displayName: 'Step 6 - Run gc-cli'
       continueOnError: false
