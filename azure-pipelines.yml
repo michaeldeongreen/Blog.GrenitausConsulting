@@ -11,8 +11,9 @@ steps:
       continueOnError: false
 
     - script: |
-        echo $(System.DefaultWorkingDirectory)
+        configdir="$(System.DefaultWorkingDirectory)/$(cli.argument.configdir)"
+        outputdir="$(System.DefaultWorkingDirectory)/$(cli.argument.outputdir)"
 
-        SET @configdir=$(System.DefaultWorkingDirectory)/$(cli.argument.configdir)
+        "$(System.DefaultWorkingDirectory)/cli/gc-cli/bin/Release/netcoreapp2.0/win10-x64/publish/gc-cli.exe" "-blogurl" $(cli.argument.blogurl) "-configdir" $configdir "-outputdir" $outputdir
       displayName: 'Step 6 - Run gc-cli'
       continueOnError: false
