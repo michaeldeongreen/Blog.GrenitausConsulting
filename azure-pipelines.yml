@@ -5,7 +5,7 @@ variables:
     buildConfiguration: 'Release'
 
 steps:
-- script: dotnet publish --configuration $(buildConfiguration) -o '$(System.DefaultWorkingDirectory)\WebApi\dist'
+- script: dotnet publish -c $(buildConfiguration) -o '$(System.DefaultWorkingDirectory)\WebApi\dist'
   workingDirectory: '$(System.DefaultWorkingDirectory)\WebApi\Blog.GrenitausConsulting.Core.Web.Api'
   displayName: 'Step 7 - Publish Web API'
   continueOnError: false
