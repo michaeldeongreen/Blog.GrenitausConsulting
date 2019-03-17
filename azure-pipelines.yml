@@ -5,6 +5,26 @@ variables:
     buildConfiguration: 'Release'
 
 steps:
+    - script: dotnet build --configuration $(buildConfiguration)
+      workingDirectory: '$(System.DefaultWorkingDirectory)/cli/gc-cli'
+      displayName: 'Step 1 - Build gc-cli'
+      continueOnError: false
+
+    - script: dotnet build --configuration $(buildConfiguration)
+      workingDirectory: '$(System.DefaultWorkingDirectory)/WebApi/Blog.GrenitausConsulting.Core.Web.Api'
+      displayName: 'Step 2 - Build Web API'
+      continueOnError: false
+
+    - script: dotnet test --configuration $(buildConfiguration)
+      workingDirectory: '$(System.DefaultWorkingDirectory)/WebApi/Blog.GrenitausConsulting.Core.Unit.Tests'
+      displayName: 'Step 3 - Run Web API Tests'
+      continueOnError: false
+
+    - script: dotnet test --configuration $(buildConfiguration)
+      workingDirectory: '$(System.DefaultWorkingDirectory)/cli/Blog.GrenitausConsulting.CLI.Core.Unit.Tests'
+      displayName: 'Step 4 - Run gc-cli Tests'
+      continueOnError: false
+
     - script: dotnet publish --configuration $(buildConfiguration) -r win10-x64
       workingDirectory: '$(System.DefaultWorkingDirectory)/cli/gc-cli'
       displayName: 'Step 5 - Publish gc-cli'
