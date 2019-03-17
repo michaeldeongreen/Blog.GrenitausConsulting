@@ -3,7 +3,7 @@ pool:
 
 variables:
     buildConfiguration: 'Release'
-    tempDirectory: '$(System.DefaultWorkingDirectory)/temp'
+    webClientOutputPath: '$(System.DefaultWorkingDirectory)/temp/webclient'
 
 steps:
 - script: npm install -g @angular/cli
@@ -14,6 +14,14 @@ steps:
   workingDirectory: '$(System.DefaultWorkingDirectory)/WebClient'
   displayName: 'Step 8 - npm install packages dependencies'
 
-- script: ng build --prod --outputPath '$(tempDirectory)/webclient'
+- script: ng build --prod --outputPath '$(webClientOutputPath)'
   workingDirectory: '$(System.DefaultWorkingDirectory)/WebClient'
   displayName: 'Step 9 - Build WebClient'
+
+- task: ArchiveFiles@2
+  displayName: 'Step 10 - Zip WebClient Artifacts'
+  inputs:
+    rootFolderOrFile: '$(webClientOutputPath)'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/webclient.zip'
