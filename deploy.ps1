@@ -24,4 +24,4 @@ az login --service-principal --username $username --password $password --tenant 
 az webapp deployment source config-zip --name $webclientname --resource-group $resourcegroup --src $webclientZipFile
 
 # Deploy Web API files to Azure
-az webapp deployment source config-zip --name $webapiname --resource-group $resourcegroup --src $webclientZipFile
+az webapp deployment source config-zip --name $webapiname --resource-group $resourcegroup --src $webapiZipFile
