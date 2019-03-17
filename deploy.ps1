@@ -20,5 +20,8 @@ $webclientZipFile = "$workingdirectory\_$builddefinitionname\drop\webclient.zip"
 # Login via Service Principal
 az login --service-principal --username $username --password $password --tenant $tenant
 
-# Deploy zipped files
+# Deploy Web Client files to Azure
 az webapp deployment source config-zip --name $webclientname --resource-group $resourcegroup --src $webclientZipFile
+
+# Deploy Web API files to Azure
+az webapp deployment source config-zip --name $webapiname --resource-group $resourcegroup --src $webclientZipFile
