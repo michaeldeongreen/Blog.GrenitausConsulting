@@ -14,8 +14,8 @@ param([string]$username,[string]$password,[string]$tenant,[string]$resourcegroup
 [string]$webclientname,[string]$workingdirectory,[string]$builddefinitionname)
 
 # Initialize variables
-$webapiZipFile = "$workdingdirectory\_$builddefinitionname\drop\webapi.zip"
-$webclientZipFile = "$workdingdirectory\_$builddefinitionname\drop\webclient.zip"
+$webapiZipFile = "$workingdirectory\_$builddefinitionname\drop\webapi.zip"
+$webclientZipFile = "$workingdirectory\_$builddefinitionname\drop\webclient.zip"
 
 # Login via Service Principal
 az login --service-principal --username $username --password $password --tenant $tenant
