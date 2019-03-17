@@ -3,16 +3,17 @@ pool:
 
 variables:
     buildConfiguration: 'Release'
+    tempDirectory: '$(System.DefaultWorkingDirectory)/temp'
 
 steps:
 - script: npm install -g @angular/cli
-  displayName: 'Step 7 - npm install @angular/cli'
+  displayName: 'Step 7 - npm install @angular/cli@7.2.2'
   workingDirectory: '$(System.DefaultWorkingDirectory)/WebClient'
 
 - script: npm install
   workingDirectory: '$(System.DefaultWorkingDirectory)/WebClient'
   displayName: 'Step 8 - npm install packages dependencies'
 
-- script: ng build --prod --outputPath '$(Build.ArtifactStagingDirectory)/webclient'
+- script: ng build --prod --outputPath '$(tempDirectory)/webclient'
   workingDirectory: '$(System.DefaultWorkingDirectory)/WebClient'
   displayName: 'Step 9 - Build WebClient'
