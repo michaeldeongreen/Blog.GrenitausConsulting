@@ -6,8 +6,8 @@ variables:
     webClientOutputPath: '$(System.DefaultWorkingDirectory)/temp/webclient'
 
 steps:
-- script: npm install -g @angular/cli
-  displayName: 'Step 7 - npm install @angular/cli@7.2.2'
+- script: npm install -g @angular/cli@7.2.2
+  displayName: 'Step 7 - npm install @angular/cli 7.2.2'
   workingDirectory: '$(System.DefaultWorkingDirectory)/WebClient'
 
 - script: npm install
