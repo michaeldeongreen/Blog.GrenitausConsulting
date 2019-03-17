@@ -89,7 +89,7 @@ steps:
 
 # Copy the deploy.ps1 Powershell script into the artifacts directory for the release pipleline
 - task: CopyFiles@2
-  displayName: 'Step 13 - Copy Powershell scripts to: $(Build.ArtifactStagingDirectory)'
+  displayName: 'Step 13 - Copy Powershell scripts to Artifacts Directory'
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)'
     Contents: |
