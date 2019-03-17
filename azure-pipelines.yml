@@ -6,9 +6,13 @@ variables:
 
 steps:
 - script: npm install -g @angular/cli
-  displayName: 'Step 8 - npm install @angular/cli'
+  displayName: 'Step 7 - npm install @angular/cli'
   workingDirectory: '$(System.DefaultWorkingDirectory)/WebClient'
 
 - script: npm install
   workingDirectory: '$(System.DefaultWorkingDirectory)/WebClient'
-  displayName: 'Step 9 - npm install packages dependencies'
+  displayName: 'Step 8 - npm install packages dependencies'
+
+- script: ng build --prod --outputPath '$(Build.ArtifactStagingDirectory)/webclient'
+  workingDirectory: '$(System.DefaultWorkingDirectory)/WebClient'
+  displayName: 'Step 9 - Build WebClient'
