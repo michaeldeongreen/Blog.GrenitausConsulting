@@ -5,9 +5,10 @@ variables:
     buildConfiguration: 'Release'
 
 steps:
-- task: Npm@1
-  displayName: 'Step 7 - Install npm package dependencies'
-  inputs:
-    command: install
-    workingDir: WebClient
-    verbose: false
+- script: npm install -g @angular/cli
+  displayName: 'Step 8 - npm install @angular/cli'
+  workingDirectory: '$(System.DefaultWorkingDirectory)/WebClient'
+
+- script: npm install
+  workingDirectory: '$(System.DefaultWorkingDirectory)/WebClient'
+  displayName: 'Step 9 - npm install packages dependencies'
