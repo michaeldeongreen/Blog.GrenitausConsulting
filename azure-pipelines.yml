@@ -5,7 +5,7 @@ variables:
     buildConfiguration: 'Release'
 
 steps:
-- script: dotnet publish -c $(buildConfiguration) -o '$(System.DefaultWorkingDirectory)\WebApi\dist'
+- script: dotnet publish -c $(buildConfiguration) -o dist
   workingDirectory: '$(System.DefaultWorkingDirectory)\WebApi\Blog.GrenitausConsulting.Core.Web.Api'
   displayName: 'Step 7 - Publish Web API'
   continueOnError: false
@@ -13,7 +13,7 @@ steps:
 - task: ArchiveFiles@2
   displayName: 'Step 8 - Zip WebApi Artifacts'
   inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)\WebApi\dist'
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)\WebApi\Blog.GrenitausConsulting.Core.Web.Api\dist'
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)\webapi.zip'  
