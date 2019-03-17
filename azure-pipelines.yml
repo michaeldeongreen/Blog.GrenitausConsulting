@@ -5,20 +5,33 @@ variables:
     buildConfiguration: 'Release'
 
 steps:
+- script: dotnet publish --configuration $(buildConfiguration) -o '$(System.DefaultWorkingDirectory)\WebApi\dist'
+  workingDirectory: '$(System.DefaultWorkingDirectory)\WebApi\Blog.GrenitausConsulting.Core.Web.Api'
+  displayName: 'Step 7 - Publish Web API'
+  continueOnError: false
+
+- task: ArchiveFiles@2
+  displayName: 'Step 8 - Zip WebApi Artifacts'
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)\WebApi\dist'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)\webapi.zip'  
+
 - script: npm install -g @angular/cli@7.2.2
-  displayName: 'Step 7 - npm install @angular/cli 7.2.2'
+  displayName: 'Step 9 - npm install @angular/cli 7.2.2'
   workingDirectory: '$(System.DefaultWorkingDirectory)\WebClient'
 
 - script: npm install
   workingDirectory: '$(System.DefaultWorkingDirectory)\WebClient'
-  displayName: 'Step 8 - npm install packages dependencies'
+  displayName: 'Step 10 - npm install packages dependencies'
 
 - script: ng build --prod
   workingDirectory: '$(System.DefaultWorkingDirectory)\WebClient'
-  displayName: 'Step 9 - Build WebClient'
+  displayName: 'Step 11 - Build WebClient'
 
 - task: ArchiveFiles@2
-  displayName: 'Step 10 - Zip WebClient Artifacts'
+  displayName: 'Step 12 - Zip WebClient Artifacts'
   inputs:
     rootFolderOrFile: '$(System.DefaultWorkingDirectory)\WebClient\dist'
     includeRootFolder: false
