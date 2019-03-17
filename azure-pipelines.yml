@@ -7,7 +7,7 @@ variables:
 steps:
 # Build gc-cli dotnet core console application
 - script: dotnet build --configuration $(buildConfiguration)
-  workingDirectory: '$(System.DefaultWorkingDirectory)\cli/gc-cli'
+  workingDirectory: '$(System.DefaultWorkingDirectory)\cli\gc-cli'
   displayName: 'Step 1 - Build gc-cli'
   continueOnError: false
 
