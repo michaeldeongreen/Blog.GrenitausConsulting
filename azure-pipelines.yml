@@ -8,5 +8,6 @@ steps:
 - task: Npm@1
   displayName: 'Step 7 - Install npm package dependencies'
   inputs:
+    command: install
     workingDir: WebClient
     verbose: false
