@@ -386,5 +386,13 @@
   {
     "id": 97,
     "name": "Azure Application Insights"
-  }      
+  },      
+  {
+    "id": 98,
+    "name": "docker"
+  },
+  {
+    "id": 99,
+    "name": "Virtual Machine"
+  }          
 ]
