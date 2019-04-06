@@ -1,0 +1,114 @@
+<a href="assets/images/michaeldeongreen-logo.png"><img class="img-responsive" src="assets/images/michaeldeongreen-logo.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+I wanted to write a very quick blog on how to run docker on a Windows 10 Hyper-V Virtual Machine.
+
+<br><br>
+
+<strong>Caveats!</strong>
+
+<br><br>
+
+This blog entry is not a tutorial on Docker, Hyper-V or Powershell.  The expectation is that you already have basic knowledge about these topics and concepts.  
+
+<br><br>
+
+<strong>Prerequisites!</strong>
+
+<br><br>
+
+<ul>
+<li>Hyper-V</li>
+<li>Powershell</li>
+<li>Windows 10 Pro Hyper-V Host VM</li>
+<li>Windows 10 Pro Hyper-V Guest VM</li>
+</ul>
+
+<br><br>
+
+<strong>Background!</strong>
+
+<br><br>
+
+As I have progressed through my consulting career, one of the skills I have started to employ is to use Hyper-V to create a VM for each of my projects to avoid having to install a bunch of software directly on my laptop.  Lately, I have been using Ubuntu VMs over Windows VMs for a variety of reasons and docker works perfectly fine running on an Ubuntu 18.04 Hyper-V VM.
+
+<br><br>
+
+On my last project here at Microsoft, our Client Partner had a <i>hard</i> dependency on Windows and I quickly found out that running docker on a Windows Hyper-V VM was non-trivial (or at least it appeared this way at the time).  Due to a lack of time and knowledge, I had to shelf learning how to get docker to work inside of a Windows Hyper-V VM.
+
+<br><br>
+
+On my current project, we are working a lot with docker and with some guidance from my co-workers, I was able to learn how to get docker up and running on a Windows Hyper-V VM and it turned out to be fairly trivial.
+
+
+<br><br>
+
+<strong>Let's Get Started!</strong>
+
+<br><br>
+
+First, navigate to Microsoft Docs GitHub repository for virtualization and get the Powershell script that can be used to enable <a href="https://www.webopedia.com/TERM/N/nested-virtualization.html" target="_blank">Nested Virtualiztion</a>, which can be found <a href="https://github.com/MicrosoftDocs/Virtualization-Documentation/blob/live/hyperv-tools/Nested/Enable-NestedVm.ps1" target="_blank">here</a>.
+
+<br><br>
+
+Copy this Powershell script to a folder on your computer.
+
+<br><br>
+
+Next, open up Hyper-V and do the following:
+
+<br><br>
+
+<ul>
+	<li>Ensure that your Windows VM is not running</li>
+	<li>Get the name of the Windows VM</li>
+</ul>
+
+<br><br>
+
+Next, open up Powershell as an administrator, navigate to the directory where you downloaded <i>Nested/Enable-NestedVm.ps1</i> and run the following command (<i>Enter Y for all question prompts</i>):
+
+<br><br>
+
+<pre><code class="language-powershell">
+.\Nested/Enable-NestedVm.ps1 {name-of-windows-vm}
+</code></pre>
+
+<br><br>
+
+In Hyepr-V, start your vm and install <a href="https://docs.docker.com/docker-for-windows/install/" target="_blank">docker docker for windows</a>.  After docker for windows has been installed, you will need to logout of the VM.
+
+<br><br>
+
+Once you have logged back into your Windows VM, you will be prompted with the following (<i>which you will select Ok</i>):
+
+<br><br>
+
+<a href="assets/images/how-to-run-docker-on-a-windows-10-pro-hyper-v-virtual-machine-001.png"><img class="img-responsive" src="assets/images/how-to-run-docker-on-a-windows-10-pro-hyper-v-virtual-machine-001.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+After docker for windows is installed, the VM will restart and will take several minutes for docker to start.
+
+<br><br>
+
+<a href="assets/images/how-to-run-docker-on-a-windows-10-pro-hyper-v-virtual-machine-002.png"><img class="img-responsive" src="assets/images/how-to-run-docker-on-a-windows-10-pro-hyper-v-virtual-machine-002.png" alt="Grenitaus Consulting"></a>
+
+<br><br>
+
+Once docker for windows is finished loading, you will want to ensure docker for windows is working correctly inside of the Hyper-V VM by pulling down the <i>hello-world</i> image and running it.  Open a bash prompt and type the following:
+
+<br><br>
+
+<pre><code class="language-powershell">
+docker pull hello-world && docker run hello-world
+</code></pre>
+
+<br><br>
+
+If docker is installed correctly, you should see the following:
+
+<br><br>
+
+<a href="assets/images/how-to-run-docker-on-a-windows-10-pro-hyper-v-virtual-machine-003.png"><img class="img-responsive" src="assets/images/how-to-run-docker-on-a-windows-10-pro-hyper-v-virtual-machine-003.png" alt="Grenitaus Consulting"></a>
