@@ -8,31 +8,31 @@ steps:
 # Build gc-cli dotnet core console application
 - script: dotnet build --configuration $(buildConfiguration)
   workingDirectory: '$(System.DefaultWorkingDirectory)\cli\gc-cli'
-  displayName: 'Step 1 - Build gc-cli'
+  displayName: 'Build gc-cli'
   continueOnError: false
 
 # Build web api dotnet webapi application
 - script: dotnet build --configuration $(buildConfiguration)
   workingDirectory: '$(System.DefaultWorkingDirectory)\WebApi\Blog.GrenitausConsulting.Core.Web.Api'
-  displayName: 'Step 2 - Build Web API'
+  displayName: 'Build Web API'
   continueOnError: false
 
 # Run Unit Tests for web api application
 - script: dotnet test --configuration $(buildConfiguration)
   workingDirectory: '$(System.DefaultWorkingDirectory)\WebApi\Blog.GrenitausConsulting.Core.Unit.Tests'
-  displayName: 'Step 3 - Run Web API Tests'
+  displayName: 'Run Web API Tests'
   continueOnError: false
 
 # Run Unit Tests for gc-cli console application
 - script: dotnet test --configuration $(buildConfiguration)
   workingDirectory: '$(System.DefaultWorkingDirectory)\cli\Blog.GrenitausConsulting.CLI.Core.Unit.Tests'
-  displayName: 'Step 4 - Run gc-cli Tests'
+  displayName: 'Run gc-cli Tests'
   continueOnError: false
 
 # Publish gc-cli as a windows 10 64-bit executable (hard dependency on Windows vm)
 - script: dotnet publish --configuration $(buildConfiguration) -r win10-x64
   workingDirectory: '$(System.DefaultWorkingDirectory)\cli\gc-cli'
-  displayName: 'Step 5 - Publish gc-cli'
+  displayName: 'Publish gc-cli'
   continueOnError: false
 
 # Command Line Script does the following:
@@ -45,18 +45,18 @@ steps:
 
     gc-cli.exe -blogurl $(cli.argument.blogurl) -configdir %@configdir% -outputdir %@outputdir%
   workingDirectory: '$(System.DefaultWorkingDirectory)\cli\gc-cli\bin\Release\netcoreapp2.0\win10-x64\publish'
-  displayName: 'Step 6 - Run gc-cli'
+  displayName: 'Run gc-cli'
   continueOnError: false
 
 # Publish web api dotnet webapi application (Note: dist will be inside the main webapi project folder)
 - script: dotnet publish -c $(buildConfiguration) -o dist
   workingDirectory: '$(System.DefaultWorkingDirectory)\WebApi\Blog.GrenitausConsulting.Core.Web.Api'
-  displayName: 'Step 7 - Publish Web API'
+  displayName: 'Publish Web API'
   continueOnError: false
 
 # Find the newly created dist folder with web api artifacts and zip them to artifacts staging for release pipeline
 - task: ArchiveFiles@2
-  displayName: 'Step 8 - Zip WebApi Artifacts'
+  displayName: 'Zip WebApi Artifacts'
   inputs:
     rootFolderOrFile: '$(System.DefaultWorkingDirectory)\WebApi\Blog.GrenitausConsulting.Core.Web.Api\dist'
     includeRootFolder: false
@@ -65,22 +65,22 @@ steps:
 
 # Install @angular/cli, with a specific version
 - script: npm install -g @angular/cli@7.2.2
-  displayName: 'Step 9 - npm install @angular/cli 7.2.2'
+  displayName: 'npm install @angular/cli 7.2.2'
   workingDirectory: '$(System.DefaultWorkingDirectory)\WebClient'
 
 # Install all npm package dependencies for the angular web client
 - script: npm install
   workingDirectory: '$(System.DefaultWorkingDirectory)\WebClient'
-  displayName: 'Step 10 - npm install packages dependencies'
+  displayName: 'npm install packages dependencies'
 
 # Build the angular web client
 - script: ng build --prod
   workingDirectory: '$(System.DefaultWorkingDirectory)\WebClient'
-  displayName: 'Step 11 - Build WebClient'
+  displayName: 'Build WebClient'
 
 # Find the newly created dist folder with web client artifacts zip them to artifacts staging for release pipeline
 - task: ArchiveFiles@2
-  displayName: 'Step 12 - Zip WebClient Artifacts'
+  displayName: 'Zip WebClient Artifacts'
   inputs:
     rootFolderOrFile: '$(System.DefaultWorkingDirectory)\WebClient\dist'
     includeRootFolder: false
@@ -89,7 +89,7 @@ steps:
 
 # Copy the deploy.ps1 Powershell script into the artifacts directory for the release pipleline
 - task: CopyFiles@2
-  displayName: 'Step 13 - Copy Powershell scripts to Artifacts Directory'
+  displayName: 'Copy Powershell scripts to Artifacts Directory'
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)'
     Contents: |
@@ -102,4 +102,4 @@ steps:
 # webclient.zip
 # deploy.ps1
 - task: PublishBuildArtifacts@1
-  displayName: 'Step 14 - Publish Build Artifacts'
+  displayName: 'Publish Build Artifacts'
