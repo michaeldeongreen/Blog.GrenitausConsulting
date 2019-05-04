@@ -63,18 +63,13 @@ steps:
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)\webapi.zip'  
 
-# Install @angular/cli, with a specific version
-- script: npm install -g @angular/cli@7.2.2
-  displayName: 'npm install @angular/cli 7.2.2'
-  workingDirectory: '$(System.DefaultWorkingDirectory)\WebClient'
-
 # Install all npm package dependencies for the angular web client
-- script: npm install
+- script: npm ci
   workingDirectory: '$(System.DefaultWorkingDirectory)\WebClient'
-  displayName: 'npm install packages dependencies'
+  displayName: 'Install npm packages dependencies'
 
 # Build the angular web client
-- script: ng build --prod
+- script: npx ng build --prod
   workingDirectory: '$(System.DefaultWorkingDirectory)\WebClient'
   displayName: 'Build WebClient'
 
