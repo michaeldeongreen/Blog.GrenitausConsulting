@@ -1,21 +1,40 @@
 <#
 Powershell script is uses azure-cli to deploy the Blog Web API and Blog Web Client.
 Parameters are:
-1. $username: Service Principal Username
-2. $password: Service Principal Password
-3. $tenant: Tenant Id
-4. $resourcegroup: WebApp Resource Group
-5. $webapiname: WebApp Web API Name
-6. $webclientname: WebApp Web Client Name
-7. $workingdirectory: Release Pipeline Working Directory
-8. $builddefinitionname: Build Pipeline Definition Name
+* $username: Service Principal Username
+* $password: Service Principal Password
+* $tenant: Tenant Id
+* $resourcegroup: WebApp Resource Group
+* $webapiname: WebApp Web API Name
+* $webclientname: WebApp Web Client Name
+* $dropdirectory: Release Pipeline Drop Working Directory
 #>
-param([string]$username,[string]$password,[string]$tenant,[string]$resourcegroup,[string]$webapiname,
-[string]$webclientname,[string]$workingdirectory,[string]$builddefinitionname)
+param(
+    [Parameter(Mandatory=$true)]    
+    [string]$username=$(throw "username is mandatory"),
+    
+    [Parameter(Mandatory=$true)]
+    [string]$password=$(throw "password is mandatory"),
+
+    [Parameter(Mandatory=$true)]
+    [string]$tenant=$(throw "tenant is mandatory"),
+
+    [Parameter(Mandatory=$true)]
+    [string]$resourcegroup=$(throw "resourcegroup is mandatory"),
+
+    [Parameter(Mandatory=$true)]
+    [string]$webapiname=$(throw "webapiname is mandatory"),
+
+    [Parameter(Mandatory=$true)]
+    [string]$webclientname=$(throw "webclientname is mandatory"),
+
+    [Parameter(Mandatory=$true)]
+    [string]$dropdirectory=$(throw "dropdirectory is mandatory")
+)
 
 # Initialize variables
-$webapiZipFile = "$workingdirectory\_$builddefinitionname\drop\webapi.zip"
-$webclientZipFile = "$workingdirectory\_$builddefinitionname\drop\webclient.zip"
+$webapiZipFile = "$dropdirectory\webapi.zip"
+$webclientZipFile = "$dropdirectory\webclient.zip"
 
 # Login via Service Principal
 az login --service-principal --username $username --password $password --tenant $tenant
