@@ -3346,7 +3346,7 @@
     "postDate": "2019-05-11",
     "snippet": "I joined Microsoft about 6 months ago and in this blog, I want to take some time to write about some of my experiences.",
     "link": "my-first-six-months-at-microsoft",
-    "isActive": true,
+    "isActive": false,
     "categories": [
       {
         "id": 1,
@@ -3365,7 +3365,7 @@
         "url": "assets/images/microsoft-logo.png"
       }
     ],
-    "canPreview": false,
+    "canPreview": true,
     "previewExpirationDate": "2019-05-15"
   }        
 ]  
