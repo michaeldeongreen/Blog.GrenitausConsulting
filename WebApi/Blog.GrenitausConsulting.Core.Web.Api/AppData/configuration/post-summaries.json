@@ -3338,5 +3338,34 @@
     ],
     "canPreview": false,
     "previewExpirationDate": "2019-04-06"
-  }          
+  },
+  {
+    "id": 65,
+    "title": "My First Six Months at Microsoft",
+    "author": "Michael D. Green",
+    "postDate": "2019-05-11",
+    "snippet": "I joined Microsoft about 6 months ago and in this blog, I want to take some time to write about some of my experiences.",
+    "link": "my-first-six-months-at-microsoft",
+    "isActive": true,
+    "categories": [
+      {
+        "id": 1,
+        "name": "Career Advice"
+      }
+    ],
+    "tags": [
+      {
+        "id": 4,
+        "name": "Career"
+      }                  
+    ],
+    "images": [
+      {
+        "name": "microsoft-logo.png",
+        "url": "assets/images/microsoft-logo.png"
+      }
+    ],
+    "canPreview": false,
+    "previewExpirationDate": "2019-05-15"
+  }        
 ]  
